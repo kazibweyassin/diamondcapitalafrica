@@ -1,0 +1,128 @@
+---
+pid: 5128
+cwd: "C:\Users\Admin\PROJECTS\goldcapital"
+command: "npm run dev"
+started_at: 2026-06-18T14:28:30.025Z
+running_for_ms: 2600014  
+---
+
+> goldcapital@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.6:3000
+- Environments: .env
+✓ Ready in 1072ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\Admin\PROJECTS\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\Admin\PROJECTS\goldcapital\package-lock.json
+
+
+ GET / 200 in 4.6s (next.js: 1032ms, application-code: 3.6s)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="page.tsx">
+                  <SegmentTrieNode>
+                  <Home>
+                    <HeroCarousel>
+                    <div className="mx-auto ma...">
+                      <div>
+                      <div className="grid gap-0...">
+                        <MarketPrices>
+                          <section className="py-12">
+                            <div className="mb-8 flex ...">
+                              <h2>
+                              <button
+                                type="button"
+                                onClick={function loadPrices}
++                               disabled={true}
+-                               disabled={null}
+                                className="flex items-center gap-1 text-sm font-semibold text-gold-dark transition hov..."
+                              >
+                            ...
+                        ...
+                      ...
+                    ...
+                ...
+              ...
+ 
+ GET /api/market 200 in 1243ms (next.js: 153ms, application-code: 1090ms)
+[browser] ObjectMultiplex - orphaned data for stream "metamask-multichain-provider" (moz-extension://a14e2f94-24e5-4981-9397-bfa1d84eb638/scripts/inpage.js;:1:28267)
+[browser] ObjectMultiplex - orphaned data for stream "metamask-multichain-provider" (moz-extension://a14e2f94-24e5-4981-9397-bfa1d84eb638/scripts/inpage.js;:1:28267)
+ GET /api/market 200 in 7.1s (next.js: 9ms, application-code: 7.1s)
+ GET /api/market 200 in 9.8s (next.js: 6ms, application-code: 9.8s)
+ GET /api/market 200 in 8.9s (next.js: 7ms, application-code: 8.9s)
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$goldcapital$2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].marketSnapshot.findFirst()` invocation in
+C:\Users\Admin\PROJECTS\goldcapital\.next\dev\server\chunks\[root-of-the-server]__10v4lte._.js:713:195
+
+  710 }
+  711 async function fetchMarketPricesServer() {
+  712     const now = new Date();
+→ 713     const previousSnapshot = await __TURBOPACK__imported__module__$5b$project$5d2f$goldcapital$2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].marketSnapshot.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+ GET / 200 in 2.9s (next.js: 7ms, application-code: 2.9s)
+ GET /api/health 200 in 991ms (next.js: 117ms, application-code: 874ms)
+ GET /api/market 200 in 3.5s (next.js: 5ms, application-code: 3.5s)
+ GET /api/health 200 in 589ms (next.js: 6ms, application-code: 582ms)
+ GET /api/market 200 in 1804ms (next.js: 4ms, application-code: 1800ms)
+ GET /api/market 200 in 763ms (next.js: 16ms, application-code: 746ms)
+ GET /api/market 200 in 2.6s (next.js: 4ms, application-code: 2.6s)
+ GET /api/market 200 in 5.7s (next.js: 6ms, application-code: 5.7s)
+ GET /api/market 200 in 801ms (next.js: 6ms, application-code: 794ms)
+ GET /api/market 200 in 3.1s (next.js: 4ms, application-code: 3.1s)
+ GET /api/market 200 in 765ms (next.js: 3ms, application-code: 761ms)
+ GET /api/market 200 in 794ms (next.js: 18ms, application-code: 775ms)
+ GET /api/market 200 in 815ms (next.js: 5ms, application-code: 809ms)
+ GET /api/market 200 in 809ms (next.js: 8ms, application-code: 801ms)
+ GET /api/market 200 in 808ms (next.js: 4ms, application-code: 803ms)
+ GET /api/market 200 in 10.2s (next.js: 6ms, application-code: 10.2s)
+ GET /api/market 200 in 1073ms (next.js: 4ms, application-code: 1069ms)
+ GET /api/market 200 in 1961ms (next.js: 5ms, application-code: 1956ms)
+ GET /api/market 200 in 1967ms (next.js: 6ms, application-code: 1961ms)
+ GET /api/market 200 in 2.1s (next.js: 5ms, application-code: 2.1s)
+ GET /api/market 200 in 1961ms (next.js: 6ms, application-code: 1955ms)
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$goldcapital$2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].marketSnapshot.findFirst()` invocation in
+C:\Users\Admin\PROJECTS\goldcapital\.next\dev\server\chunks\[root-of-the-server]__10v4lte._.js:713:195
+
+  710 }
+  711 async function fetchMarketPricesServer() {
+  712     const now = new Date();
+→ 713     const previousSnapshot = await __TURBOPACK__imported__module__$5b$project$5d2f$goldcapital$2f$src$2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].marketSnapshot.findFirst(
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 5)
+ GET /api/market 500 in 10.1s (next.js: 5ms, application-code: 10.1s)
+ GET /api/market 200 in 7.3s (next.js: 4ms, application-code: 7.3s)
+○ Compiling /news/[slug] ...
+ GET /news/q3-2025-operational-review 200 in 10.6s (next.js: 6.0s, application-code: 4.7s)
+ GET /news/q3-2025-operational-review 200 in 364ms (next.js: 66ms, application-code: 298ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+⨯ upstream image response failed for https://images.unsplash.com/photo-1488526537651-ab6a4fbb7654?w=800&q=80 404
+ GET /about 200 in 2.4s (next.js: 2.3s, application-code: 126ms)
+ GET /about 200 in 81ms (next.js: 7ms, application-code: 73ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1610375461246-83c8595890e7?w=800&q=80 404
+ GET /services 200 in 232ms (next.js: 110ms, application-code: 122ms)
+⨯ upstream image response failed for https://images.unsplash.com/photo-1610375461246-83c8595890e7?w=800&q=80 404
+⨯ upstream image response failed for https://images.unsplash.com/photo-1532187863486-abf9dbad1b42?w=800&q=80 404
+ GET /services 200 in 137ms (next.js: 6ms, application-code: 131ms)
