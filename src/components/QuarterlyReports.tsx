@@ -12,27 +12,29 @@ export default function QuarterlyReports() {
   const hasMore = quarterlyStats.metrics.length > MOBILE_VISIBLE;
 
   return (
-    <section className="py-12" id="quarterly-reports">
+    <section className="py-8 sm:py-12" id="quarterly-reports">
       <SectionHeader title="Quarterly reports" />
-      <p className="mb-6 text-sm text-muted">
+      <p className="mb-4 text-sm text-muted sm:mb-6">
         Operational highlights for {quarterlyStats.period},{" "}
         {quarterlyStats.asAt.toLowerCase()}.
       </p>
-      <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {quarterlyStats.metrics.map((stat, index) => (
           <div
             key={stat.label}
-            className={`border-l-4 border-gold bg-white p-4 shadow-sm sm:p-5 ${
-              !expanded && index >= MOBILE_VISIBLE ? "hidden lg:block" : ""
+            className={`border-l-4 border-gold bg-white p-3 shadow-sm sm:p-5 ${
+              !expanded && index >= MOBILE_VISIBLE ? "hidden sm:block" : ""
             }`}
           >
-            <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted">
+            <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wider text-muted sm:mb-1 sm:text-xs">
               {stat.label}
             </p>
-            <p className="text-xl font-bold text-primary sm:text-2xl md:text-3xl">
+            <p className="text-lg font-bold text-primary sm:text-2xl md:text-3xl">
               {stat.value}
             </p>
-            <p className="mt-1 text-sm text-muted">{stat.suffix}</p>
+            <p className="mt-0.5 text-xs text-muted sm:mt-1 sm:text-sm">
+              {stat.suffix}
+            </p>
           </div>
         ))}
       </div>
@@ -40,7 +42,7 @@ export default function QuarterlyReports() {
         <button
           type="button"
           onClick={() => setExpanded((open) => !open)}
-          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold lg:hidden"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold sm:hidden"
         >
           {expanded
             ? "Show fewer metrics"
