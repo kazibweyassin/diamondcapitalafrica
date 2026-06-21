@@ -95,10 +95,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/gold-in-uganda"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Gold in Uganda
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#faq"
                   className="text-sm text-white/70 transition hover:text-gold"
                 >
-                  Gold in Uganda FAQ
+                  Gold FAQ
                 </Link>
               </li>
             </ul>

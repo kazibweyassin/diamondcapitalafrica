@@ -4,9 +4,9 @@ import { images } from "@/data/images";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Sustainability",
+  title: "Responsible Gold Sourcing Uganda",
   description:
-    "Responsible gold sourcing, environmental stewardship, and community investment. ESG transparency at Diamond Capital Africa.",
+    "ESG and responsible gold sourcing in Uganda and East Africa: traceability, environmental care, and community investment at Diamond Capital Africa.",
   path: "/sustainability",
   image: images.pageHero.sustainability,
 });

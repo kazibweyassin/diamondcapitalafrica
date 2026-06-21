@@ -12,9 +12,9 @@ import { images } from "@/data/images";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "About Gold",
+  title: "About Gold | Value & Investment in Africa",
   description:
-    "Why gold endures as a store of value: scarcity, stability, symbolism, sustainability, and versatility. Educational guide from Diamond Capital Africa.",
+    "Why gold matters in Uganda and Africa: scarcity, stability, responsible sourcing, and investment value. Educational guide from Diamond Capital Africa.",
   path: "/about-gold",
   image: images.aboutGold.hero,
 });

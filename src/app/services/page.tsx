@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { services, serviceProcess } from "@/data/content";
 import { images } from "@/data/images";
-import { pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata, servicesJsonLd } from "@/lib/seo";
 import ServiceSectionNav from "@/components/ServiceSectionNav";
 import {
   ArrowRight,
@@ -33,6 +34,7 @@ const serviceIcons: Record<string, LucideIcon> = {
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesJsonLd()} />
       <section className="relative h-72 bg-primary md:h-96">
         <Image
           src={images.pageHero.services}

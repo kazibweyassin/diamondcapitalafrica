@@ -22,12 +22,14 @@ Diamond Capital Africa buys, refines, assays, and exports 99.99% pure gold bars 
 ## Primary pages
 
 - Home / market prices: https://diamondcapitalafrica.com/
+- Gold in Uganda guide: https://diamondcapitalafrica.com/gold-in-uganda
 - Gold services: https://diamondcapitalafrica.com/services
 - Operations (refinery & centres): https://diamondcapitalafrica.com/operations
 - About gold: https://diamondcapitalafrica.com/about-gold
 - Corporate profile: https://diamondcapitalafrica.com/about
 - Sustainability & responsible sourcing: https://diamondcapitalafrica.com/sustainability
 - Industry news: https://diamondcapitalafrica.com/news
+- News RSS feed: https://diamondcapitalafrica.com/news/feed.xml
 - Contact: https://diamondcapitalafrica.com/contact
 - Sitemap: https://diamondcapitalafrica.com/sitemap.xml
 

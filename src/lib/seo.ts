@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { company } from "@/data/content";
+import { company, services } from "@/data/content";
 import type { FaqItem } from "@/data/faqs";
 
 export const siteUrl =
@@ -144,6 +144,30 @@ export function localBusinessJsonLd() {
       "Gold assay testing",
       "Gold export",
     ],
+  };
+}
+
+export function servicesJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Gold services in Uganda",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Service",
+        name: service.title,
+        description: service.description,
+        url: absoluteUrl(`/services#${service.id}`),
+        provider: {
+          "@type": "Organization",
+          name: company.name,
+          url: siteUrl,
+        },
+        areaServed: ["Uganda", "East Africa", "Central Africa"],
+      },
+    })),
   };
 }
 

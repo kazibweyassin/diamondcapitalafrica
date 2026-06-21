@@ -1,16 +1,24 @@
 import Link from "next/link";
 import NewsListItem from "@/components/NewsListItem";
 import { getPublishedNews } from "@/lib/news";
-import { pageMetadata } from "@/lib/seo";
+import { absoluteUrl, pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
-export const metadata = pageMetadata({
-  title: "News & Announcements",
-  description:
-    "Industry news and announcements on Uganda's gold sector: curated updates with links to original publishers.",
-  path: "/news",
-});
+export const metadata = {
+  ...pageMetadata({
+    title: "Uganda Gold News & Industry Updates",
+    description:
+      "Latest gold news from Uganda and East Africa: exports, refining, policy, and market updates curated by Diamond Capital Africa.",
+    path: "/news",
+  }),
+  alternates: {
+    canonical: absoluteUrl("/news"),
+    types: {
+      "application/rss+xml": absoluteUrl("/news/feed.xml"),
+    },
+  },
+};
 
 export default async function NewsPage() {
   const announcements = await getPublishedNews("announcement");

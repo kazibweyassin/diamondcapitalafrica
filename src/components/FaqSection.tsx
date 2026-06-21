@@ -28,6 +28,13 @@ export default function FaqSection() {
         </div>
         <div className="mt-6 flex flex-wrap gap-4">
           <Link
+            href="/gold-in-uganda"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+          >
+            Gold in Uganda guide
+            <ArrowRight size={14} />
+          </Link>
+          <Link
             href="/services"
             className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
           >

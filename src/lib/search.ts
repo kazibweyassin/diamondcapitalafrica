@@ -16,6 +16,13 @@ const staticPages: SearchResult[] = [
     category: "About",
   },
   {
+    title: "Gold in Uganda",
+    href: "/gold-in-uganda",
+    excerpt:
+      "Licensed gold buying, Kampala refining, and export services across Uganda and East Africa.",
+    category: "About",
+  },
+  {
     title: "Our Services",
     href: "/services",
     excerpt: "Gold buying, refining, assay testing, and export services.",

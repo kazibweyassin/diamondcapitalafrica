@@ -5,8 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { Shield, Award, Globe, Users } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "About Us",
-  description: `${company.name} corporate profile: leadership, values, compliance, and investor information. Licensed gold dealer and refiner since ${company.founded}.`,
+  title: "About Us | Licensed Gold Company Uganda",
+  description: `${company.name} corporate profile: licensed gold dealer and refinery in Kampala, Uganda since ${company.founded}. Leadership, compliance, and investor information.`,
   path: "/about",
   image: images.pageHero.about,
 });
