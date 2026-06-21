@@ -6,9 +6,9 @@ import OperationsSections from "@/components/OperationsSections";
 import NationalCoverage from "@/components/NationalCoverage";
 
 export const metadata = pageMetadata({
-  title: "Operations",
+  title: "Gold Refinery & Collection Centres Uganda",
   description:
-    "Kampala refinery, nationwide collection centres, and fully traceable mine-to-market supply chain operations.",
+    "Diamond Capital Africa operates a Kampala gold refinery and eight collection centres across Uganda. Fully traceable mine-to-market supply chain for gold in East Africa.",
   path: "/operations",
   image: images.pageHero.operations,
 });

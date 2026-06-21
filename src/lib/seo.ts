@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { company } from "@/data/content";
+import type { FaqItem } from "@/data/faqs";
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_APP_URL ?? "https://diamondcapitalafrica.com";
@@ -73,9 +74,11 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: company.name,
+    alternateName: company.shortName,
     url: siteUrl,
     logo: absoluteUrl("/Logo.png"),
     description: company.description,
+    slogan: company.tagline,
     email: company.email,
     telephone: company.phoneTel,
     foundingDate: String(company.founded),
@@ -83,6 +86,7 @@ export function organizationJsonLd() {
       "@type": "PostalAddress",
       streetAddress: company.address,
       addressLocality: "Kampala",
+      addressRegion: "Central Region",
       addressCountry: "UG",
     },
     contactPoint: {
@@ -91,8 +95,70 @@ export function organizationJsonLd() {
       contactType: "customer service",
       email: company.email,
       availableLanguage: ["English"],
+      areaServed: ["UG", "CD", "Africa"],
     },
-    areaServed: ["UG", "CD"],
+    areaServed: [
+      { "@type": "Country", name: "Uganda" },
+      { "@type": "Country", name: "Democratic Republic of the Congo" },
+      { "@type": "Place", name: "East Africa" },
+      { "@type": "Place", name: "Central Africa" },
+    ],
+    knowsAbout: [
+      "Gold dealing",
+      "Gold refining",
+      "Gold export",
+      "Fire assay",
+      "LBMA gold bars",
+      "Responsible gold sourcing",
+      "Artisanal mining Uganda",
+    ],
+  };
+}
+
+export function localBusinessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    name: company.name,
+    image: absoluteUrl("/Logo.png"),
+    url: siteUrl,
+    telephone: company.phoneTel,
+    email: company.email,
+    description: company.description,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: company.address,
+      addressLocality: "Kampala",
+      addressCountry: "UG",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 0.3163,
+      longitude: 32.5825,
+    },
+    areaServed: ["Uganda", "East Africa", "Central Africa"],
+    serviceType: [
+      "Gold buying",
+      "Gold refining",
+      "Gold assay testing",
+      "Gold export",
+    ],
+  };
+}
+
+export function faqJsonLd(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }
 
@@ -103,6 +169,11 @@ export function websiteJsonLd() {
     name: company.name,
     url: siteUrl,
     description: company.tagline,
+    inLanguage: "en-UG",
+    about: {
+      "@type": "Thing",
+      name: "Gold dealing and refining in Uganda and Africa",
+    },
     publisher: {
       "@type": "Organization",
       name: company.name,

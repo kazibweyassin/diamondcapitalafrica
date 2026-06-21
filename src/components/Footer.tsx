@@ -93,6 +93,14 @@ export default function Footer() {
                   ESG Transparency
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/#faq"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Gold in Uganda FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 

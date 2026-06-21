@@ -16,9 +16,9 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "Services",
+  title: "Gold Services Uganda | Buying, Refining & Export",
   description:
-    "End-to-end gold services: fair-price buying, 99.99% refining, certified assay & testing, and licensed export facilitation across Uganda and the region.",
+    "Licensed gold buying, 99.99% refining, fire assay, and export services in Uganda and East Africa. Fair prices for miners, LBMA-standard bars for international buyers.",
   path: "/services",
   image: images.pageHero.services,
 });

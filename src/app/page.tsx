@@ -1,13 +1,8 @@
-import { pageMetadata } from "@/lib/seo";
+import { pageMetadata, faqJsonLd } from "@/lib/seo";
+import { goldFaqs } from "@/data/faqs";
+import { company } from "@/data/content";
 import HeroCarousel from "@/components/HeroCarousel";
-
-export const metadata = pageMetadata({
-  title: "Gold Dealing & Refining",
-  description:
-    "Licensed gold buying, refining, assay, and export services across East and Central Africa. Traceable, LBMA-standard gold bars.",
-  path: "/",
-  image: "/images/heroes/home-sourcing.jpg",
-});
+import JsonLd from "@/components/JsonLd";
 import Announcements from "@/components/Announcements";
 import Presentations from "@/components/Presentations";
 import MarketPrices from "@/components/MarketPrices";
@@ -15,10 +10,19 @@ import EventsCalendar from "@/components/EventsCalendar";
 import CompanyStats from "@/components/CompanyStats";
 import ReportsSection from "@/components/ReportsSection";
 import ESGHub from "@/components/ESGHub";
+import FaqSection from "@/components/FaqSection";
+
+export const metadata = pageMetadata({
+  title: "Gold Dealer & Refinery Uganda | East & Central Africa",
+  description: `${company.name} is a licensed gold dealer and refinery in Kampala, Uganda. Buy, refine, and export 99.99% pure gold bars across East and Central Africa with full traceability.`,
+  path: "/",
+  image: "/images/heroes/home-sourcing.jpg",
+});
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqJsonLd(goldFaqs)} />
       <HeroCarousel />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -37,6 +41,7 @@ export default function Home() {
 
       <CompanyStats />
       <ESGHub />
+      <FaqSection />
     </>
   );
 }

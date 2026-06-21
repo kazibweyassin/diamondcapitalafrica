@@ -2,8 +2,8 @@ import { company } from "@/data/content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact",
-  description: `Contact ${company.contactName} at ${company.name}, ${company.phone}. Gold price quotes, refining enquiries, and partnership opportunities.`,
+  title: "Contact Gold Dealer Uganda",
+  description: `Contact ${company.contactName} at ${company.name}, ${company.phone}. Gold buying, refining, and export enquiries in Kampala, Uganda and across East Africa.`,
   path: "/contact",
 });
 

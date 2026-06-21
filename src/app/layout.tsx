@@ -8,6 +8,7 @@ import { company } from "@/data/content";
 import {
   defaultOgImage,
   defaultOgImageSize,
+  localBusinessJsonLd,
   organizationJsonLd,
   siteUrl,
   websiteJsonLd,
@@ -33,14 +34,23 @@ export const metadata: Metadata = {
   },
   description: company.description,
   keywords: [
+    "gold Uganda",
+    "gold Africa",
     "gold dealer Uganda",
     "gold refinery Kampala",
+    "gold refinery Uganda",
+    "sell gold Uganda",
+    "buy gold Uganda",
     "gold export Africa",
+    "gold export Uganda",
     "LBMA gold bars",
     "artisanal gold Uganda",
     "gold assay testing",
     "responsible gold sourcing",
+    "licensed gold buyer Uganda",
+    "East Africa gold",
     company.name,
+    "Diamond Capital Africa",
   ],
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -83,6 +93,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={localBusinessJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <Header />
         <main className="flex-1">{children}</main>
