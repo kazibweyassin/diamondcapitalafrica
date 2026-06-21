@@ -1,7 +1,8 @@
 import SectionHeader from "./SectionHeader";
 import DocumentDownloadButton from "./DocumentDownloadButton";
+import QuarterlyReports from "./QuarterlyReports";
 import { getPublishedDocuments } from "@/lib/documents";
-import { company, quarterlyStats } from "@/data/content";
+import { company } from "@/data/content";
 
 function EmptyReports({ message }: { message: string }) {
   return (
@@ -64,29 +65,7 @@ export default async function ReportsSection() {
         )}
       </section>
 
-      <section className="py-12" id="quarterly-reports">
-        <SectionHeader title="Quarterly reports" />
-        <p className="mb-6 text-sm text-muted">
-          Operational highlights for {quarterlyStats.period},{" "}
-          {quarterlyStats.asAt.toLowerCase()}.
-        </p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {quarterlyStats.metrics.map((stat) => (
-            <div
-              key={stat.label}
-              className="border-l-4 border-gold bg-white p-5 shadow-sm"
-            >
-              <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted">
-                {stat.label}
-              </p>
-              <p className="text-2xl font-bold text-primary md:text-3xl">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-sm text-muted">{stat.suffix}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <QuarterlyReports />
     </>
   );
 }
