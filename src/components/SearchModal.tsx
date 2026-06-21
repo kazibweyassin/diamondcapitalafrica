@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
-import { searchContent } from "@/lib/search";
 import type { SearchResult } from "@/types";
 
 interface SearchModalProps {
@@ -14,6 +13,7 @@ interface SearchModalProps {
 export default function SearchModal({ open, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!open) {
@@ -35,14 +35,41 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
   }, [open, onClose]);
 
   useEffect(() => {
-    setResults(searchContent(query));
+    if (!query.trim()) {
+      setResults([]);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(
+          `/api/search?q=${encodeURIComponent(query)}`,
+          { signal: controller.signal }
+        );
+        const json = await res.json();
+        setResults(json.success ? json.data : []);
+      } catch (error) {
+        if (error instanceof Error && error.name !== "AbortError") {
+          setResults([]);
+        }
+      } finally {
+        setLoading(false);
+      }
+    }, 250);
+
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [query]);
 
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-start justify-center bg-black/50 p-4 pt-24">
-      <div className="w-full max-w-2xl rounded-lg bg-white shadow-2xl">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center bg-black/50 p-3 pt-16 sm:p-4 sm:pt-24">
+      <div className="flex max-h-[min(85dvh,640px)] w-full max-w-2xl flex-col rounded-lg bg-white shadow-2xl sm:max-h-none">
         <div className="flex items-center gap-3 border-b border-border px-4 py-3">
           <Search size={20} className="text-muted" />
           <input
@@ -63,8 +90,14 @@ export default function SearchModal({ open, onClose }: SearchModalProps) {
           </button>
         </div>
 
-        <div className="max-h-96 overflow-y-auto p-2">
-          {query && results.length === 0 && (
+        <div className="min-h-0 flex-1 overflow-y-auto p-2 sm:max-h-96">
+          {query && loading && (
+            <p className="px-4 py-8 text-center text-sm text-muted">
+              Searching...
+            </p>
+          )}
+
+          {query && !loading && results.length === 0 && (
             <p className="px-4 py-8 text-center text-sm text-muted">
               No results for &ldquo;{query}&rdquo;
             </p>

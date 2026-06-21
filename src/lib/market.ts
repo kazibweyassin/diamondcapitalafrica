@@ -18,7 +18,7 @@ function calcChange(current: number, previous: number) {
   return Number((((current - previous) / previous) * 100).toFixed(2));
 }
 
-const PREVIOUS_KEY = "gcu_market_previous";
+const PREVIOUS_KEY = "dca_market_previous";
 
 function getPreviousPrices(): Record<string, number> {
   if (typeof window === "undefined") return {};
@@ -79,7 +79,7 @@ export async function fetchMarketPrices(): Promise<{
         change: calcChange(current.ugx, previous.ugx),
       },
       {
-        label: "GCU Spot (US$/g)",
+        label: "DCA Spot (US$/g)",
         value: formatNumber(current.spot, 2),
         change: calcChange(current.spot, previous.spot),
       },

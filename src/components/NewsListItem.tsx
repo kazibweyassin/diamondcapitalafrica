@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FileText, Download } from "lucide-react";
+import { FileText, ExternalLink } from "lucide-react";
 import type { NewsItem } from "@/types";
 
 interface NewsListItemProps {
@@ -9,10 +9,6 @@ interface NewsListItemProps {
 }
 
 export default function NewsListItem({ item }: NewsListItemProps) {
-  function handleDownload() {
-    window.open(`/api/documents/news-${item.slug}`, "_blank");
-  }
-
   return (
     <li className="group flex items-start gap-4 py-5">
       <Link
@@ -29,18 +25,22 @@ export default function NewsListItem({ item }: NewsListItemProps) {
           </p>
           <p className="mt-1 flex items-center gap-1 text-xs text-muted">
             <FileText size={12} />
-            {item.type}, {item.size}
+            {item.type === "article" ? "Industry news" : item.type}
+            {item.size ? ` · ${item.size}` : ""}
           </p>
         </div>
       </Link>
-      <button
-        type="button"
-        onClick={handleDownload}
-        aria-label={`Download ${item.title}`}
-        className="shrink-0 rounded border border-border p-2 text-muted transition hover:border-gold hover:text-gold"
-      >
-        <Download size={16} />
-      </button>
+      {item.sourceUrl && (
+        <a
+          href={item.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open document for ${item.title}`}
+          className="shrink-0 rounded border border-border p-2 text-muted transition hover:border-gold hover:text-gold"
+        >
+          <ExternalLink size={16} />
+        </a>
+      )}
     </li>
   );
 }

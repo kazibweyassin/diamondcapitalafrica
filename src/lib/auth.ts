@@ -1,7 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const COOKIE_NAME = "gcu_admin_session";
+const COOKIE_NAME = "dca_admin_session";
 
 function getSecret() {
   const secret = process.env.AUTH_SECRET;

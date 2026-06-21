@@ -1,12 +1,12 @@
 import type { Enquiry } from "@/types";
 
-const ENQUIRIES_KEY = "gcu_enquiries";
-const COOKIE_CONSENT_KEY = "gcu_cookie_consent";
+const ENQUIRIES_KEY = "dca_enquiries";
+const COOKIE_CONSENT_KEY = "dca_cookie_consent";
 
 export function saveEnquiry(enquiry: Omit<Enquiry, "id" | "createdAt">) {
   const record: Enquiry = {
     ...enquiry,
-    id: `GCU-${Date.now().toString(36).toUpperCase()}`,
+    id: `DCA-${Date.now().toString(36).toUpperCase()}`,
     createdAt: new Date().toISOString(),
   };
 

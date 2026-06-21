@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { legalPages } from "@/data/content";
+import { pageMetadata } from "@/lib/seo";
 
 const pages = {
   privacy: legalPages.privacy,
@@ -21,7 +22,12 @@ export function generateMetadata({
 }) {
   return params.then(({ slug }) => {
     const page = pages[slug as LegalSlug];
-    return { title: page?.title ?? "Legal" };
+    if (!page) return { title: "Legal" };
+    return pageMetadata({
+      title: page.title,
+      description: page.sections[0]?.body ?? page.title,
+      path: `/legal/${slug}`,
+    });
   });
 }
 

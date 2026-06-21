@@ -1,17 +1,30 @@
 import Image from "next/image";
 import { operations } from "@/data/content";
 import { images } from "@/data/images";
+import { pageMetadata } from "@/lib/seo";
 import { MapPin, Gauge } from "lucide-react";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Operations",
-};
+  description:
+    "Kampala refinery, nationwide collection centres, and fully traceable mine-to-market supply chain operations.",
+  path: "/operations",
+  image: images.pageHero.operations,
+});
 
 export default function OperationsPage() {
   return (
     <>
-      <section className="relative h-64 bg-primary md:h-80">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark" />
+      <section className="relative h-72 bg-primary md:h-96">
+        <Image
+          src={images.pageHero.operations}
+          alt="Gold mining and refining operations"
+          fill
+          priority
+          className="object-cover opacity-40"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
           <h1 className="text-3xl font-bold text-white md:text-4xl">
             Our Operations
@@ -53,13 +66,7 @@ export default function OperationsPage() {
               }`}
             >
               <Image
-                src={
-                  index === 0
-                    ? images.operations.refinery
-                    : index === 1
-                      ? images.operations.centres
-                      : images.operations.supplyChain
-                }
+                src={op.image}
                 alt={op.title}
                 fill
                 className="object-cover"
@@ -73,7 +80,7 @@ export default function OperationsPage() {
           <h2 className="mb-4 text-2xl font-bold">National Coverage</h2>
           <p className="mb-8 max-w-2xl text-white/80">
             Our eight collection centres ensure miners across Uganda have access
-            to fair, transparent gold buying — reducing informal trade and
+            to fair, transparent gold buying, reducing informal trade and
             strengthening the formal economy.
           </p>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">

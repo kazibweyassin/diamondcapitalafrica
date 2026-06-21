@@ -8,11 +8,11 @@ export function downloadIcsEvent(event: CalendarEvent) {
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Gold Capital Uganda//EN",
+    "PRODID:-//Diamond Capital Africa//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:${event.id}@goldcapital.ug`,
+    `UID:${event.id}@diamondcapitalafrica.com`,
     `DTSTAMP:${formatIcsDate(new Date().toISOString())}`,
     `DTSTART:${formatIcsDate(event.isoStart)}`,
     `DTEND:${formatIcsDate(event.isoEnd)}`,

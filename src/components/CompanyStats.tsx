@@ -11,10 +11,10 @@ export default function CompanyStats() {
             The world of {company.name}
           </h2>
           <p className="mb-6 leading-relaxed text-muted">
-            {company.name} is Uganda&apos;s premier gold dealing and refining
-            company, operating collection centres across the country and
+            {company.name} is a leading gold dealing and refining company
+            across East and Central Africa, operating collection centres and
             exporting LBMA-standard gold bars to international markets. We
-            combine local expertise with global standards to deliver value at
+            combine regional expertise with global standards to deliver value at
             every stage of the gold value chain.
           </p>
           <div className="flex flex-wrap gap-4">

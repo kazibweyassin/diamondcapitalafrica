@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -41,6 +42,9 @@ export default function AdminLoginPage() {
   return (
     <div className="flex min-h-[70vh] items-center justify-center px-4">
       <div className="w-full max-w-md rounded-lg border border-border bg-white p-8 shadow-sm">
+        <div className="mb-6 flex justify-center">
+          <BrandLogo className="h-12 w-auto" />
+        </div>
         <h1 className="mb-2 text-2xl font-bold text-primary">Admin Login</h1>
         <p className="mb-6 text-sm text-muted">
           Sign in to manage enquiries and content.

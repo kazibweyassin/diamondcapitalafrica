@@ -6,29 +6,25 @@ interface DocumentDownloadButtonProps {
   slug: string;
   title: string;
   type: string;
+  sourceUrl: string;
   kind?: "document" | "webcast";
-  onWebcast?: () => void;
 }
 
 export default function DocumentDownloadButton({
   slug,
   title,
   type,
+  sourceUrl,
   kind = "document",
-  onWebcast,
 }: DocumentDownloadButtonProps) {
-  function handleClick() {
-    if (kind === "webcast" && onWebcast) {
-      onWebcast();
-      return;
-    }
-    window.open(`/api/documents/${slug}`, "_blank");
-  }
+  const href = sourceUrl || `/api/documents/${slug}`;
+  const isExternal = sourceUrl.startsWith("http");
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
+    <a
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className="group flex w-full items-center gap-3 rounded border border-border p-4 text-left transition hover:border-gold hover:bg-section-alt"
     >
       {kind === "webcast" ? (
@@ -46,6 +42,6 @@ export default function DocumentDownloadButton({
         {title}
       </span>
       <span className="ml-auto text-xs uppercase text-muted">{type}</span>
-    </button>
+    </a>
   );
 }

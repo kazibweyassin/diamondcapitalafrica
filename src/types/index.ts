@@ -11,6 +11,7 @@ export interface NewsItem {
   category: NewsCategory;
   summary: string;
   body: string[];
+  sourceUrl?: string | null;
 }
 
 export interface CalendarEvent {
@@ -24,11 +25,12 @@ export interface CalendarEvent {
 }
 
 export interface DocumentItem {
-  id: string;
+  slug: string;
   title: string;
   type: string;
   category: string;
   summary: string;
+  sourceUrl: string;
 }
 
 export interface Enquiry {

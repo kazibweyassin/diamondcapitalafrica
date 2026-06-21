@@ -33,6 +33,7 @@ model NewsArticle {
   date      String
   day       String
   month     String
+  sourceUrl String?
   published Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -45,7 +46,7 @@ model Document {
   type      String
   category  String
   summary   String
-  content   String
+  sourceUrl String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

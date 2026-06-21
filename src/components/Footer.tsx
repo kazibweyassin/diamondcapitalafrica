@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { company, navItems } from "@/data/content";
 import { Mail, Phone, MapPin } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
   return (
@@ -8,15 +9,11 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded bg-gold">
-                <span className="text-lg font-bold text-primary">GC</span>
-              </div>
-              <span className="font-semibold">{company.name}</span>
-            </div>
+            <Link href="/" className="mb-4 inline-block">
+              <BrandLogo className="h-11 w-auto" />
+            </Link>
             <p className="mb-6 text-sm leading-relaxed text-white/70">
-              Uganda&apos;s leading licensed gold dealer and refiner, delivering
-              traceable, high-purity gold to global markets since {company.founded}.
+              {company.description}
             </p>
             <div className="space-y-2 text-sm text-white/70">
               <p className="flex items-center gap-2">
@@ -25,8 +22,8 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0 text-gold" />
-                <a href="tel:+256700123456" className="transition hover:text-gold">
-                  {company.phone}
+                <a href={`tel:${company.phoneTel}`} className="transition hover:text-gold">
+                  {company.contactName}: {company.phone}
                 </a>
               </p>
               <p className="flex items-center gap-2">
@@ -142,12 +139,14 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-white/50 md:flex-row lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-center text-sm text-white/50 sm:gap-4 md:flex-row md:text-left lg:px-8">
           <p>
             &copy; {new Date().getFullYear()} {company.name} Ltd. All rights
             reserved.
           </p>
-          <p>Licensed by the Ministry of Energy & Mineral Development, Uganda</p>
+          <p className="max-w-md md:max-w-none">
+            Licensed by the Ministry of Energy & Mineral Development, Uganda
+          </p>
         </div>
       </div>
     </footer>

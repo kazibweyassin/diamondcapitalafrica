@@ -12,7 +12,7 @@ const enquirySchema = z.object({
 });
 
 function generateReference() {
-  return `GCU-${Date.now().toString(36).toUpperCase()}`;
+  return `DCA-${Date.now().toString(36).toUpperCase()}`;
 }
 
 export async function POST(request: Request) {

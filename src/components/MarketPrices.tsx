@@ -50,7 +50,7 @@ export default function MarketPrices() {
         </button>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-3">
         {(quotes.length ? quotes : [1, 2, 3]).map((price, index) => (
           <div
             key={typeof price === "object" ? price.label : index}
@@ -62,7 +62,7 @@ export default function MarketPrices() {
                   {price.label}
                 </h4>
                 <p className="text-2xl font-bold text-primary">
-                  {loading ? "—" : price.value}
+                  {loading ? "-" : price.value}
                 </p>
                 {!loading && (
                   <p
@@ -83,15 +83,15 @@ export default function MarketPrices() {
             ) : (
               <>
                 <h4 className="mb-2 h-4 w-24 animate-pulse rounded bg-section-alt" />
-                <p className="text-2xl font-bold text-primary">—</p>
+                <p className="text-2xl font-bold text-primary">-</p>
               </>
             )}
           </div>
         ))}
       </div>
       <p className="mt-4 text-xs text-muted">
-        As at {updatedAt || "—"}
-        {source === "cached" && quotes.length > 0 && " (cached rates — live feed unavailable)"}
+        As at {updatedAt || "-"}
+        {source === "cached" && quotes.length > 0 && " (cached rates; live feed unavailable)"}
       </p>
     </section>
   );

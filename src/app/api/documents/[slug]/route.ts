@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { getDocumentBySlug } from "@/lib/documents";
 import { jsonError } from "@/lib/api-response";
 
 export async function GET(
@@ -7,21 +7,13 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
-    const document = await prisma.document.findUnique({ where: { slug } });
+    const document = await getDocumentBySlug(slug);
 
     if (!document) {
       return jsonError("Document not found", 404);
     }
 
-    const extension = document.type === "xlsx" ? "csv" : "txt";
-    const filename = `${document.slug}.${extension}`;
-
-    return new Response(document.content, {
-      headers: {
-        "Content-Type": "text/plain; charset=utf-8",
-        "Content-Disposition": `attachment; filename="${filename}"`,
-      },
-    });
+    return Response.redirect(document.sourceUrl, 302);
   } catch {
     return jsonError("Failed to download document", 500);
   }

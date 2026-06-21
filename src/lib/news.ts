@@ -12,6 +12,7 @@ function mapArticle(article: {
   date: string;
   day: string;
   month: string;
+  sourceUrl: string | null;
 }): NewsItem {
   return {
     slug: article.slug,
@@ -24,6 +25,7 @@ function mapArticle(article: {
     date: article.date,
     day: article.day,
     month: article.month,
+    sourceUrl: article.sourceUrl,
   };
 }
 
@@ -65,6 +67,19 @@ export async function getAllNewsSlugs() {
     });
     return articles.map((a) => a.slug);
   } catch {
+    return [];
+  }
+}
+
+export async function getSitemapNewsEntries() {
+  try {
+    return await prisma.newsArticle.findMany({
+      where: { published: true },
+      select: { slug: true, updatedAt: true },
+      orderBy: { updatedAt: "desc" },
+    });
+  } catch (error) {
+    console.error("Failed to fetch sitemap news entries:", error);
     return [];
   }
 }

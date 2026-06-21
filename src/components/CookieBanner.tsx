@@ -24,7 +24,7 @@ export default function CookieBanner() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-[90] border-t border-border bg-white p-4 shadow-lg md:p-6">
+    <div className="fixed bottom-0 left-0 right-0 z-[90] border-t border-border bg-white p-4 shadow-lg pb-[max(1rem,env(safe-area-inset-bottom))] md:p-6">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-sm text-muted">
           We use essential local storage for form submissions and market data

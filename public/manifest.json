@@ -1,0 +1,26 @@
+{
+  "name": "Diamond Capital Africa",
+  "short_name": "Diamond Capital",
+  "description": "Ethically sourced, certified gold from Uganda and the Congo. Institutional supplier of assay-verified bars with full OECD-compliant documentation.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0A1628",
+  "background_color": "#F7F6F2",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business"]
+}

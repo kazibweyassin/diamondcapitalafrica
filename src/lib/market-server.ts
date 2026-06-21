@@ -74,7 +74,7 @@ export async function fetchMarketPricesServer() {
         change: calcChange(current.ugx, previous.ugx),
       },
       {
-        label: "GCU Spot (US$/g)",
+        label: "DCA Spot (US$/g)",
         value: formatNumber(current.spot, 2),
         change: calcChange(current.spot, previous.spot),
       },

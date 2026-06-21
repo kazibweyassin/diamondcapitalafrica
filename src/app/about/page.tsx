@@ -1,17 +1,29 @@
 import Image from "next/image";
 import { leadership, values, company } from "@/data/content";
 import { images } from "@/data/images";
+import { pageMetadata } from "@/lib/seo";
 import { Shield, Award, Globe, Users } from "lucide-react";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About Us",
-};
+  description: `${company.name} corporate profile: leadership, values, compliance, and investor information. Licensed gold dealer and refiner since ${company.founded}.`,
+  path: "/about",
+  image: images.pageHero.about,
+});
 
 export default function AboutPage() {
   return (
     <>
-      <section className="relative h-64 bg-primary md:h-80">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark" />
+      <section className="relative h-72 bg-primary md:h-96">
+        <Image
+          src={images.pageHero.about}
+          alt={`${company.name} corporate headquarters`}
+          fill
+          priority
+          className="object-cover opacity-40"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
           <h1 className="text-3xl font-bold text-white md:text-4xl">
             Corporate Profile
@@ -30,8 +42,8 @@ export default function AboutPage() {
             </h2>
             <p className="mb-4 leading-relaxed text-muted">
               Founded in {company.founded}, {company.name} has grown from a
-              single Kampala buying desk into Uganda&apos;s most trusted gold
-              dealer and refiner. We serve over 2,400 licensed artisanal miners,
+              single Kampala buying desk into one of the region&apos;s most trusted gold
+              dealers and refiners. We serve over 2,400 licensed artisanal miners,
               export to 12 countries, and maintain the highest standards of
               purity, traceability, and compliance.
             </p>
@@ -135,13 +147,13 @@ export default function AboutPage() {
         <section id="investors" className="mt-20 rounded-lg bg-primary p-8 text-white md:p-12">
           <h2 className="mb-4 text-2xl font-bold">Investor Information</h2>
           <p className="mb-6 max-w-2xl leading-relaxed text-white/80">
-            Gold Capital Uganda is a privately held company with a strong track
+            {company.name} is a privately held company with a strong track
             record of growth and profitability. For investor enquiries, partnership
             opportunities, or access to our data room, please contact our corporate
             team.
           </p>
           <p className="text-gold-light">
-            Email: investors@goldcapital.ug
+            Email: {company.investorsEmail}
           </p>
         </section>
       </div>

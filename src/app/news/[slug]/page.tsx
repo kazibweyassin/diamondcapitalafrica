@@ -3,7 +3,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import ShareButtons from "@/components/ShareButtons";
 import NewsDownloadButton from "@/components/NewsDownloadButton";
+import JsonLd from "@/components/JsonLd";
 import { getNewsBySlug } from "@/lib/news";
+import { articleJsonLd, pageMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -14,10 +16,14 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const article = await getNewsBySlug(slug);
-  return {
-    title: article?.title ?? "News",
-    description: article?.summary,
-  };
+  if (!article) return { title: "News" };
+
+  return pageMetadata({
+    title: article.title,
+    description: article.summary,
+    path: `/news/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function NewsArticlePage({
@@ -32,12 +38,25 @@ export default async function NewsArticlePage({
 
   return (
     <>
+      <JsonLd
+        data={articleJsonLd({
+          title: article.title,
+          description: article.summary,
+          path: `/news/${slug}`,
+          datePublished: article.date,
+          sourceUrl: article.sourceUrl,
+        })}
+      />
       <section className="relative bg-primary py-16 md:py-20">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark" />
         <div className="relative mx-auto max-w-3xl px-4 lg:px-8">
           <p className="mb-2 text-sm font-medium text-gold">
             {article.date} &middot;{" "}
-            {article.category === "announcement" ? "Announcement" : "Presentation"}
+            {article.type === "article"
+              ? "Industry news"
+              : article.category === "announcement"
+                ? "Announcement"
+                : "Presentation"}
           </p>
           <h1 className="text-2xl font-bold text-white md:text-4xl">
             {article.title}
@@ -59,7 +78,12 @@ export default async function NewsArticlePage({
         </div>
 
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-border pt-8">
-          <NewsDownloadButton slug={article.slug} title={article.title} />
+          {article.sourceUrl && (
+            <NewsDownloadButton
+              sourceUrl={article.sourceUrl}
+              title={article.title}
+            />
+          )}
           <ShareButtons title={article.title} />
         </div>
 

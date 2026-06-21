@@ -228,9 +228,9 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <Phone size={20} className="mt-1 shrink-0 text-gold" />
                 <div>
-                  <p className="font-semibold">Phone</p>
+                  <p className="font-semibold">{company.contactName}</p>
                   <a
-                    href="tel:+256700123456"
+                    href={`tel:${company.phoneTel}`}
                     className="text-sm text-muted transition hover:text-gold"
                   >
                     {company.phone}
@@ -254,10 +254,10 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold">Business Hours</p>
                   <p className="text-sm text-muted">
-                    Mon – Fri: 8:00 AM – 6:00 PM EAT
+                    Mon-Fri: 8:00 AM-6:00 PM EAT
                   </p>
                   <p className="text-sm text-muted">
-                    Sat: 9:00 AM – 1:00 PM EAT
+                    Sat: 9:00 AM-1:00 PM EAT
                   </p>
                 </div>
               </div>

@@ -1,11 +1,4 @@
-import {
-  announcements,
-  presentations,
-  annualReports,
-  services,
-  operations,
-  company,
-} from "@/data/content";
+import { services, operations, company } from "@/data/content";
 import type { SearchResult } from "@/types";
 
 const staticPages: SearchResult[] = [
@@ -13,6 +6,13 @@ const staticPages: SearchResult[] = [
     title: "Corporate Profile",
     href: "/about",
     excerpt: company.purpose,
+    category: "About",
+  },
+  {
+    title: "About Gold",
+    href: "/about-gold",
+    excerpt:
+      "Why gold endures: scarcity, stability, symbolism, sustainability, and versatility.",
     category: "About",
   },
   {
@@ -36,35 +36,30 @@ const staticPages: SearchResult[] = [
   {
     title: "Contact Us",
     href: "/contact",
-    excerpt: `${company.address} — ${company.phone}`,
+    excerpt: `${company.contactName}, ${company.phone}, ${company.address}`,
     category: "Contact",
   },
   {
     title: "Market Prices",
     href: "/#market-prices",
-    excerpt: "Live gold spot price, UGX/USD, and GCU spot rates.",
+    excerpt: "Live gold spot price, UGX/USD, and DCA spot rates.",
     category: "Investors",
+  },
+  {
+    title: "News & Announcements",
+    href: "/news",
+    excerpt: "Company announcements and investor presentations.",
+    category: "News",
+  },
+  {
+    title: "Annual Reports",
+    href: "/#annual-reports",
+    excerpt: "Annual reports and quarterly operational highlights for investors.",
+    category: "Reports",
   },
 ];
 
 export function buildSearchIndex(): SearchResult[] {
-  const newsResults: SearchResult[] = [
-    ...announcements,
-    ...presentations,
-  ].map((item) => ({
-    title: item.title,
-    href: `/news/${item.slug}`,
-    excerpt: item.summary,
-    category: item.category === "announcement" ? "News" : "Presentation",
-  }));
-
-  const reportResults: SearchResult[] = annualReports.map((report) => ({
-    title: report.title,
-    href: "/#annual-reports",
-    excerpt: report.summary,
-    category: "Reports",
-  }));
-
   const serviceResults: SearchResult[] = services.map((service) => ({
     title: service.title,
     href: `/services#${service.id}`,
@@ -79,13 +74,7 @@ export function buildSearchIndex(): SearchResult[] {
     category: "Operations",
   }));
 
-  return [
-    ...staticPages,
-    ...newsResults,
-    ...reportResults,
-    ...serviceResults,
-    ...operationResults,
-  ];
+  return [...staticPages, ...serviceResults, ...operationResults];
 }
 
 export function searchContent(query: string): SearchResult[] {

@@ -1,15 +1,29 @@
 import Image from "next/image";
-import { esgCards } from "@/data/content";
+import { company, esgCards } from "@/data/content";
+import { images } from "@/data/images";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Sustainability",
-};
+  description:
+    "Responsible gold sourcing, environmental stewardship, and community investment. ESG transparency at Diamond Capital Africa.",
+  path: "/sustainability",
+  image: images.pageHero.sustainability,
+});
 
 export default function SustainabilityPage() {
   return (
     <>
-      <section className="relative h-64 bg-primary md:h-80">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark" />
+      <section className="relative h-72 bg-primary md:h-96">
+        <Image
+          src={images.pageHero.sustainability}
+          alt="Sustainable forestry and environmental stewardship"
+          fill
+          priority
+          className="object-cover opacity-40"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
           <h1 className="text-3xl font-bold text-white md:text-4xl">
             Sustainability
@@ -23,7 +37,7 @@ export default function SustainabilityPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <p className="mb-12 max-w-3xl text-lg leading-relaxed text-muted">
-          Sustainability is not a separate initiative at Gold Capital Uganda — it
+          Sustainability is not a separate initiative at {company.name}; it
           is embedded in our business model. From the moment gold enters our
           supply chain to the moment it reaches international buyers, we ensure
           full traceability, fair compensation, and minimal environmental impact.

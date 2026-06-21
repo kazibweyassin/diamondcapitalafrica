@@ -1,4 +1,13 @@
+import { pageMetadata } from "@/lib/seo";
 import HeroCarousel from "@/components/HeroCarousel";
+
+export const metadata = pageMetadata({
+  title: "Gold Dealing & Refining",
+  description:
+    "Licensed gold buying, refining, assay, and export services across East and Central Africa. Traceable, LBMA-standard gold bars.",
+  path: "/",
+  image: "/images/heroes/home-sourcing.jpg",
+});
 import Announcements from "@/components/Announcements";
 import Presentations from "@/components/Presentations";
 import MarketPrices from "@/components/MarketPrices";

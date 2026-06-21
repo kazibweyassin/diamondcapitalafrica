@@ -1,24 +1,25 @@
 "use client";
 
-import { Download } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface NewsDownloadButtonProps {
-  slug: string;
+  sourceUrl: string;
   title: string;
 }
 
 export default function NewsDownloadButton({
-  slug,
+  sourceUrl,
   title,
 }: NewsDownloadButtonProps) {
   return (
     <a
-      href={`/api/documents/news-${slug}`}
-      download
+      href={sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className="inline-flex items-center gap-2 rounded bg-gold px-4 py-2 text-sm font-semibold text-primary transition hover:bg-gold-light"
     >
-      <Download size={16} />
-      Download document
+      <ExternalLink size={16} />
+      Read full article
     </a>
   );
 }

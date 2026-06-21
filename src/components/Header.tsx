@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
-import { company, navItems } from "@/data/content";
+import { navItems } from "@/data/content";
+import BrandLogo from "./BrandLogo";
 import SearchModal from "./SearchModal";
 
 export default function Header() {
@@ -11,23 +12,22 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-primary shadow-lg">
         <div className="border-b border-white/10">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded bg-gold">
-                <span className="text-lg font-bold text-primary">GC</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="block text-sm font-semibold tracking-wide text-white">
-                  {company.name}
-                </span>
-                <span className="block text-xs text-gold-light">
-                  Gold Dealing & Refining
-                </span>
-              </div>
+            <Link href="/" className="flex items-center">
+              <BrandLogo priority className="h-9 w-auto sm:h-10 md:h-11" />
             </Link>
 
             <div className="flex items-center gap-4">
@@ -137,6 +137,15 @@ export default function Header() {
                   )}
                 </li>
               ))}
+              <li className="px-0 py-4">
+                <Link
+                  href="/contact?subject=Gold%20Buying%20Enquiry"
+                  className="flex min-h-11 items-center justify-center rounded bg-gold px-4 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Get a Quote
+                </Link>
+              </li>
             </ul>
           </nav>
         )}
