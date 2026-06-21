@@ -1,3 +1,4 @@
+import { industryNews } from "@/data/industry-news";
 import { prisma } from "@/lib/prisma";
 import type { NewsItem } from "@/types";
 
@@ -29,6 +30,28 @@ function mapArticle(article: {
   };
 }
 
+function mapSeedArticle(article: (typeof industryNews)[number]): NewsItem {
+  return {
+    slug: article.slug,
+    title: article.title,
+    summary: article.summary,
+    body: article.body,
+    category: article.category,
+    type: article.type,
+    size: article.size,
+    date: article.date,
+    day: article.day,
+    month: article.month,
+    sourceUrl: article.sourceUrl,
+  };
+}
+
+function getStaticNews(category?: string) {
+  return industryNews
+    .filter((article) => !category || article.category === category)
+    .map(mapSeedArticle);
+}
+
 export async function getPublishedNews(category?: string) {
   try {
     const articles = await prisma.newsArticle.findMany({
@@ -39,11 +62,14 @@ export async function getPublishedNews(category?: string) {
       orderBy: { createdAt: "desc" },
     });
 
-    return articles.map(mapArticle);
+    if (articles.length > 0) {
+      return articles.map(mapArticle);
+    }
   } catch (error) {
     console.error("Failed to fetch news from database:", error);
-    return [];
   }
+
+  return getStaticNews(category);
 }
 
 export async function getNewsBySlug(slug: string) {
@@ -52,11 +78,13 @@ export async function getNewsBySlug(slug: string) {
       where: { slug, published: true },
     });
 
-    return article ? mapArticle(article) : null;
+    if (article) return mapArticle(article);
   } catch (error) {
     console.error("Failed to fetch article from database:", error);
-    return null;
   }
+
+  const seedArticle = industryNews.find((article) => article.slug === slug);
+  return seedArticle ? mapSeedArticle(seedArticle) : null;
 }
 
 export async function getAllNewsSlugs() {
@@ -65,21 +93,32 @@ export async function getAllNewsSlugs() {
       where: { published: true },
       select: { slug: true },
     });
-    return articles.map((a) => a.slug);
+
+    if (articles.length > 0) {
+      return articles.map((a) => a.slug);
+    }
   } catch {
-    return [];
+    // fall through to static slugs
   }
+
+  return industryNews.map((article) => article.slug);
 }
 
 export async function getSitemapNewsEntries() {
   try {
-    return await prisma.newsArticle.findMany({
+    const entries = await prisma.newsArticle.findMany({
       where: { published: true },
       select: { slug: true, updatedAt: true },
       orderBy: { updatedAt: "desc" },
     });
+
+    if (entries.length > 0) return entries;
   } catch (error) {
     console.error("Failed to fetch sitemap news entries:", error);
-    return [];
   }
+
+  return industryNews.map((article) => ({
+    slug: article.slug,
+    updatedAt: new Date(),
+  }));
 }
