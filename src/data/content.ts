@@ -336,6 +336,7 @@ export const operations = [
       "Our flagship 2,400 sqm refinery houses induction furnaces, assay laboratories, vault storage, and a certified weighing facility. Licensed by the Ministry of Energy and Mineral Development.",
     capacity: "500 kg/month",
     image: images.operations.refinery,
+    imageAlt: "Assay laboratory testing gold purity samples",
   },
   {
     id: "centres",
@@ -345,6 +346,7 @@ export const operations = [
       "Strategically located centres in Kampala, Mbarara, Fort Portal, Jinja, Gulu, Mbale, Arua, and Moroto provide miners with accessible, fair-price gold buying services.",
     capacity: "50+ staff",
     image: images.operations.centres,
+    imageAlt: "Raw gold nuggets sourced from licensed miners",
   },
   {
     id: "supply-chain",
@@ -354,6 +356,7 @@ export const operations = [
       "Every gram is tracked through our digital supply chain platform, linking miner ID, assay results, transport logs, and export documentation in a single auditable record.",
     capacity: "100% traceable",
     image: images.operations.supplyChain,
+    imageAlt: "Certified 999.9 fine gold bars ready for export",
   },
 ];
 

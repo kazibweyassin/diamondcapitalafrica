@@ -18,7 +18,7 @@ export default function OperationsPage() {
       <section className="relative h-72 bg-primary md:h-96">
         <Image
           src={images.pageHero.operations}
-          alt="Gold mining and refining operations"
+          alt="Refined gold bars from Diamond Capital Africa operations"
           fill
           priority
           className="object-cover opacity-40"
@@ -67,7 +67,7 @@ export default function OperationsPage() {
             >
               <Image
                 src={op.image}
-                alt={op.title}
+                alt={op.imageAlt ?? op.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

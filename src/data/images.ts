@@ -23,9 +23,9 @@ export const images = {
     export: "/images/services/export.jpg",
   } as const,
   operations: {
-    refinery: "/images/operations/refinery.jpg",
-    centres: "/images/operations/collection-centres.jpg",
-    supplyChain: "/images/operations/supply-chain.jpg",
+    refinery: "/images/operations/refinery.jpg", // assay laboratory
+    centres: "/images/operations/collection-centres.jpg", // raw gold sourcing
+    supplyChain: "/images/operations/supply-chain.jpg", // 999.9 fine gold bars
   },
   esg: {
     sourcing: "/images/esg/responsible-sourcing.jpg",
