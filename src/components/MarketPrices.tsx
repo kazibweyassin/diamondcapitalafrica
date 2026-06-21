@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { TrendingUp, TrendingDown, RefreshCw } from "lucide-react";
+import { marketPrices as fallbackPrices } from "@/data/content";
 import type { MarketQuote } from "@/types";
 
 export default function MarketPrices() {
@@ -12,6 +13,8 @@ export default function MarketPrices() {
 
   async function loadPrices() {
     setLoading(true);
+    let loaded = false;
+
     try {
       const res = await fetch("/api/market");
       const json = await res.json();
@@ -19,10 +22,24 @@ export default function MarketPrices() {
         setQuotes(json.data.quotes);
         setUpdatedAt(json.data.updatedAt);
         setSource(json.data.source);
+        loaded = true;
       }
     } catch {
-      // keep previous values on error
+      // fall through to static fallback
     } finally {
+      if (!loaded) {
+        setQuotes((prev) => (prev.length ? prev : fallbackPrices));
+        setUpdatedAt(
+          (prev) =>
+            prev ||
+            new Date().toLocaleString("en-UG", {
+              hour: "2-digit",
+              minute: "2-digit",
+              timeZoneName: "short",
+            })
+        );
+        setSource("cached");
+      }
       setLoading(false);
     }
   }
