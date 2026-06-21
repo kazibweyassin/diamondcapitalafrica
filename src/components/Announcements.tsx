@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
-import NewsListItem from "./NewsListItem";
+import ExpandableNewsList from "./ExpandableNewsList";
 import { getPublishedNews } from "@/lib/news";
 
 export default async function Announcements() {
@@ -15,11 +15,11 @@ export default async function Announcements() {
           No announcements published yet.
         </p>
       ) : (
-        <ul className="divide-y divide-border">
-          {announcements.map((item) => (
-            <NewsListItem key={item.slug} item={item} />
-          ))}
-        </ul>
+        <ExpandableNewsList
+          items={announcements}
+          mobileVisible={2}
+          expandLabel="announcements"
+        />
       )}
       <Link
         href="/news"

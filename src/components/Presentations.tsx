@@ -1,5 +1,5 @@
 import SectionHeader from "./SectionHeader";
-import NewsListItem from "./NewsListItem";
+import ExpandableNewsList from "./ExpandableNewsList";
 import { getPublishedNews } from "@/lib/news";
 
 export default async function Presentations() {
@@ -13,11 +13,11 @@ export default async function Presentations() {
           No presentations published yet.
         </p>
       ) : (
-        <ul className="divide-y divide-border">
-          {presentations.map((item) => (
-            <NewsListItem key={item.slug} item={item} />
-          ))}
-        </ul>
+        <ExpandableNewsList
+          items={presentations}
+          mobileVisible={1}
+          expandLabel="presentations"
+        />
       )}
     </section>
   );
