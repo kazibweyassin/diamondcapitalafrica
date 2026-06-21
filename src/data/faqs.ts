@@ -5,6 +5,11 @@ export interface FaqItem {
 
 export const goldFaqs: FaqItem[] = [
   {
+    question: "What does Diamond Capital Africa do?",
+    answer:
+      "Diamond Capital Africa is a licensed gold dealer, refinery, and exporter headquartered at Plot 42, Nakasero Road, Kampala, Uganda. We buy gold from miners, refine to 99.99% purity, assay every batch, and export LBMA-standard bars with OECD-aligned traceability across East and Central Africa.",
+  },
+  {
     question: "Who is a licensed gold dealer in Uganda?",
     answer:
       "Diamond Capital Africa is a licensed gold dealer and refinery based in Kampala, Uganda. We buy gold from artisanal and small-scale miners at eight collection centres nationwide, refine to 99.99% purity, and export LBMA-standard bars with full OECD-aligned traceability.",

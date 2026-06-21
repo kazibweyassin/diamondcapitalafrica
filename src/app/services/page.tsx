@@ -200,6 +200,26 @@ export default function ServicesPage() {
                   </ol>
                 </div>
 
+                {"deliveryOptions" in service && service.deliveryOptions && (
+                  <div className="mb-8 rounded-lg border border-gold/30 bg-section-alt p-5">
+                    <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">
+                      Delivery &amp; logistics options
+                    </h3>
+                    <ul className="space-y-4">
+                      {service.deliveryOptions.map((option) => (
+                        <li key={option.name}>
+                          <p className="text-sm font-semibold text-foreground">
+                            {option.name}
+                          </p>
+                          <p className="mt-1 text-sm text-muted">
+                            {option.description}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <Link
                   href={`/contact?subject=${encodeURIComponent(service.cta.subject)}`}
                   className="inline-flex items-center gap-2 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"

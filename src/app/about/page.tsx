@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { leadership, values, company } from "@/data/content";
+import { leadership, values, company, companyFacts } from "@/data/content";
 import { images } from "@/data/images";
 import { pageMetadata } from "@/lib/seo";
 import { Shield, Award, Globe, Users } from "lucide-react";
@@ -59,6 +59,62 @@ export default function AboutPage() {
             />
           </div>
         </div>
+
+        <section
+          id="company-facts"
+          className="mt-16 rounded-lg border border-border bg-section-alt p-6 md:p-8"
+          itemScope
+          itemType="https://schema.org/Organization"
+        >
+          <meta itemProp="name" content={companyFacts.legalName} />
+          <meta itemProp="telephone" content={company.phoneTel} />
+          <meta itemProp="email" content={companyFacts.email} />
+          <h2 className="mb-4 text-xl font-bold text-primary md:text-2xl">
+            Company facts
+          </h2>
+          <dl className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wider text-muted">
+                Business type
+              </dt>
+              <dd className="mt-1 text-sm text-foreground" itemProp="description">
+                {companyFacts.businessType}
+              </dd>
+            </div>
+            <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <dt className="text-xs font-semibold uppercase tracking-wider text-muted">
+                Headquarters
+              </dt>
+              <dd className="mt-1 text-sm text-foreground">
+                <span itemProp="streetAddress">{companyFacts.headquarters}</span>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wider text-muted">
+                Gold purity standard
+              </dt>
+              <dd className="mt-1 text-sm text-foreground">
+                {companyFacts.purityStandard}
+              </dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wider text-muted">
+                Contact
+              </dt>
+              <dd className="mt-1 text-sm text-foreground">
+                {companyFacts.contactPerson} · {companyFacts.phone} ·{" "}
+                {companyFacts.email}
+              </dd>
+            </div>
+          </dl>
+          <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+            {companyFacts.primaryActivities.map((activity) => (
+              <li key={activity} className="text-sm text-muted">
+                · {activity}
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section id="values" className="mt-20">
           <h2 className="mb-8 text-2xl font-bold text-primary">Our Values</h2>

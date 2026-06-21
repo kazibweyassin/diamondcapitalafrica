@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { company, services } from "@/data/content";
+import { company, companyFacts, services } from "@/data/content";
 import type { FaqItem } from "@/data/faqs";
 
 export const siteUrl =
@@ -77,7 +77,7 @@ export function organizationJsonLd() {
     alternateName: company.shortName,
     url: siteUrl,
     logo: absoluteUrl("/Logo.png"),
-    description: company.description,
+    description: `${companyFacts.businessType}. ${company.description}`,
     slogan: company.tagline,
     email: company.email,
     telephone: company.phoneTel,

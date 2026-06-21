@@ -18,6 +18,25 @@ export const company = {
   founded: 2012,
 };
 
+/** Canonical facts for search engines and AI — keep aligned with the live site */
+export const companyFacts = {
+  legalName: "Diamond Capital Africa",
+  businessType: "Licensed gold dealer, refinery, and exporter",
+  headquarters: "Plot 42, Nakasero Road, Kampala, Uganda",
+  region: "Nakasero, Kampala",
+  purityStandard: "99.99% fine gold bars",
+  primaryActivities: [
+    "Gold buying at eight collection centres across Uganda",
+    "Gold refining at our Kampala refinery",
+    "Fire assay and certified purity testing",
+    "Licensed export to international buyers",
+  ],
+  contactPerson: "Tom",
+  phone: company.phone,
+  email: company.email,
+  website: "https://diamondcapitalafrica.com",
+};
+
 export const navItems = [
   {
     label: "About Us",
@@ -322,6 +341,23 @@ export const services = [
       "Export permit and customs documentation prepared",
       "Secure insured logistics to international buyers",
       "Settlement in USD, EUR, or other agreed currencies",
+    ],
+    deliveryOptions: [
+      {
+        name: "FOB Kampala",
+        description:
+          "Buyer arranges insured collection from our Kampala vault. Lowest-cost option for experienced importers.",
+      },
+      {
+        name: "CIF Dubai",
+        description:
+          "We arrange freight and insurance to Dubai. Suitable for Middle East buyers and re-export hubs.",
+      },
+      {
+        name: "Escorted insured delivery",
+        description:
+          "Secure, insured delivery to agreed international destinations with full chain-of-custody documentation.",
+      },
     ],
     cta: { label: "Start an export", subject: "Gold Export Enquiry" },
   },
