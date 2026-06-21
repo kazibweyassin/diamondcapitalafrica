@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   robots: { index: true, follow: true },
+  verification: {
+    google: "rn-Ay9i6B-OFBRvbynMMd0mvYfDwYXx77FV2Fb380rw",
+  },
   openGraph: {
     type: "website",
     locale: "en_UG",
