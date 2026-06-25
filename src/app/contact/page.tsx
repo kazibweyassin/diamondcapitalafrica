@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { company } from "@/data/content";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const subjects = [
   "Gold Buying Enquiry",
@@ -237,6 +238,29 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+              <div className="flex items-start gap-4">
+                <WhatsAppIcon className="mt-1 size-5 shrink-0 text-[#25D366]" />
+                <div>
+                  <p className="font-semibold">WhatsApp</p>
+                  <a
+                    href={company.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted transition hover:text-gold"
+                  >
+                    Chat with {company.contactName}
+                  </a>
+                </div>
+              </div>
+              <a
+                href={company.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#20bd5a] sm:w-auto"
+              >
+                <WhatsAppIcon className="size-5" />
+                Message on WhatsApp
+              </a>
               <div className="flex items-start gap-4">
                 <Mail size={20} className="mt-1 shrink-0 text-gold" />
                 <div>

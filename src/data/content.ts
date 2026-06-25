@@ -14,6 +14,8 @@ export const company = {
   privacyEmail: "privacy@diamondcapitalafrica.com",
   phone: "+256 704 833 021",
   phoneTel: "+256704833021",
+  whatsappUrl:
+    "https://wa.me/256704833021?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20gold%20services.",
   address: "Plot 42, Nakasero Road, Kampala, Uganda",
   founded: 2012,
 };
