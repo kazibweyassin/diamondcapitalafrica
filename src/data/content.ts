@@ -26,7 +26,7 @@ export const companyFacts = {
   region: "Nakasero, Kampala",
   purityStandard: "99.99% fine gold bars",
   primaryActivities: [
-    "Gold buying at eight collection centres across Uganda",
+    "Gold buying at collection centres in Kampala and Arua",
     "Gold refining at our Kampala refinery",
     "Fire assay and certified purity testing",
     "Licensed export to international buyers",
@@ -36,6 +36,8 @@ export const companyFacts = {
   email: company.email,
   website: "https://diamondcapitalafrica.com",
 };
+
+export const collectionCentres = ["Kampala", "Arua"] as const;
 
 export const navItems = [
   {
@@ -128,7 +130,7 @@ export const marketPrices = [
 export { events } from "./events";
 
 export const companyStats = [
-  { label: "Collection centres", value: "8", suffix: "across Uganda" },
+  { label: "Collection centres", value: "2", suffix: "Kampala & Arua" },
   { label: "Gold refined (2025)", value: "218", suffix: "kg" },
   { label: "Purity standard", value: "99.99", suffix: "% gold bars" },
   { label: "Licensed miners", value: "2,400+", suffix: "in our network" },
@@ -251,7 +253,7 @@ export const services = [
     highlights: [
       { label: "Pricing", value: "LBMA-referenced spot" },
       { label: "Payment", value: "Same day" },
-      { label: "Coverage", value: "8 centres" },
+      { label: "Coverage", value: "2 centres" },
     ],
     features: [
       "Live spot-price quotes",
@@ -377,9 +379,9 @@ export const operations = [
   {
     id: "centres",
     title: "Collection Centres",
-    location: "8 locations nationwide",
+    location: "Kampala & Arua",
     description:
-      "Strategically located centres in Kampala, Mbarara, Fort Portal, Jinja, Gulu, Mbale, Arua, and Moroto provide miners with accessible, fair-price gold buying services.",
+      "Collection centres in Kampala and Arua provide miners with accessible, fair-price gold buying, on-site assay checks, and transparent documentation.",
     capacity: "50+ staff",
     image: images.operations.centres,
     imageAlt: "Raw gold nuggets sourced from licensed miners",

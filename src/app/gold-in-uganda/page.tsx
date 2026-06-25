@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
 });
 
 const highlights = [
-  "Eight collection centres for miners across Uganda",
+  "Collection centres in Kampala and Arua",
   "Kampala refinery producing 99.99% fine gold bars",
   "Fire assay verification and full chain-of-custody records",
   "OECD-aligned responsible sourcing and traceability",
@@ -30,7 +30,7 @@ const sections = [
   },
   {
     title: "Licensed gold buying for miners",
-    body: "Diamond Capital Africa operates collection centres in Kampala, Mbarara, Fort Portal, Jinja, Gulu, Mbale, Arua, and Moroto. Miners receive fair-price buying, on-site assay checks, and documentation that supports formal trade and export readiness.",
+    body: "Diamond Capital Africa operates collection centres in Kampala and Arua. Miners receive fair-price buying, on-site assay checks, and documentation that supports formal trade and export readiness.",
   },
   {
     title: "Refining and export from Kampala",
