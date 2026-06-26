@@ -206,7 +206,11 @@ export default function AboutPage() {
             {company.name} is a privately held company with a strong track
             record of growth and profitability. For investor enquiries, partnership
             opportunities, or access to our data room, please contact our corporate
-            team.
+            team. Retail savers can also join our{" "}
+            <a href="/gold-savings" className="font-semibold text-gold underline hover:text-gold-light">
+              Gold Savings waitlist
+            </a>{" "}
+            to accumulate physical bullion from $20.
           </p>
           <p className="text-gold-light">
             Email: {company.investorsEmail}

@@ -13,6 +13,7 @@ const staticRoutes: {
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about-gold", changeFrequency: "monthly", priority: 0.8 },
   { path: "/gold-in-uganda", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/gold-savings", changeFrequency: "monthly", priority: 0.9 },
   { path: "/services", changeFrequency: "monthly", priority: 0.8 },
   { path: "/operations", changeFrequency: "monthly", priority: 0.8 },
   { path: "/sustainability", changeFrequency: "monthly", priority: 0.8 },

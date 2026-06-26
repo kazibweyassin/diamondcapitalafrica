@@ -11,6 +11,7 @@ const subjects = [
   "Refining Services",
   "Assay & Testing",
   "Export Services",
+  "Gold Savings Waitlist",
   "Investor Relations",
   "Media Enquiry",
   "Other",

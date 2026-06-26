@@ -45,6 +45,11 @@ export const goldFaqs: FaqItem[] = [
       "Our primary operations are in Uganda, with buying, refining, and export services extending across East and Central Africa including the Democratic Republic of Congo. We export to international markets across twelve destination countries.",
   },
   {
+    question: "Can I save in gold with Diamond Capital Africa?",
+    answer:
+      "Yes. Our Gold Savings programme lets you accumulate physical 99.99% fine gold from $20 — credited in grams at published spot prices. This is bullion savings, not mining shares. Join the waitlist at diamondcapitalafrica.com/gold-savings.",
+  },
+  {
     question: "How can investors or exporters contact Diamond Capital Africa?",
     answer:
       "Contact Tom at +256 704 833 021 or email info@diamondcapitalafrica.com. Visit diamondcapitalafrica.com for services, live market prices, operations details, and industry news on Uganda's gold sector.",

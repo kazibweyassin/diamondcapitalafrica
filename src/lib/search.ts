@@ -23,6 +23,13 @@ const staticPages: SearchResult[] = [
     category: "About",
   },
   {
+    title: "Gold Savings",
+    href: "/gold-savings",
+    excerpt:
+      "Save in physical 99.99% gold from $20. Bullion accumulation, not mining shares.",
+    category: "Investors",
+  },
+  {
     title: "Our Services",
     href: "/services",
     excerpt: "Gold buying, refining, assay testing, and export services.",
