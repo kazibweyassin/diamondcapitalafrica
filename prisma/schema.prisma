@@ -64,3 +64,22 @@ model AdminUser {
   password  String
   createdAt DateTime @default(now())
 }
+
+model GoldDeposit {
+  id               String   @id @default(cuid())
+  reference        String   @unique
+  name             String
+  email            String
+  phone            String
+  amountUsd        Decimal  @db.Decimal(12, 2)
+  gramsQuoted      Decimal  @db.Decimal(12, 6)
+  spotPricePerG    Decimal  @db.Decimal(12, 4)
+  priceLockedUntil DateTime
+  paymentMethod    String   @default("usdt")
+  status           String   @default("pending_payment")
+  txHash           String?
+  proofUrl         String?
+  adminNotes       String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}

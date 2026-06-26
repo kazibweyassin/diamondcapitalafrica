@@ -4,39 +4,40 @@ export const goldSavings = {
   minDepositUsd: 20,
   minRedemptionGrams: 5,
   purity: "99.99%",
-  waitlistSubject: "Gold Savings Waitlist",
+  priceLockHours: 24,
+  paymentMethod: "usdt" as const,
 };
 
 export const goldSavingsSteps = [
   {
     step: 1,
-    title: "Open your account",
+    title: "Enter your amount",
     description:
-      "Register with your name, phone, and email. Complete ID verification (KYC) before your first deposit.",
+      "Choose how much you want to save in USD (from $20). See the exact grams of 99.99% gold you will receive at today's spot price.",
   },
   {
     step: 2,
-    title: "Deposit from $20",
+    title: "Get USDT instructions",
     description:
-      "Add funds via mobile money (MTN or Airtel), bank transfer, or card when online payments launch. No fixed monthly amount required.",
+      "Receive a unique reference, wallet address, and exact USDT amount. Your quoted gold price is locked for 24 hours.",
   },
   {
     step: 3,
-    title: "Balance credited in grams",
+    title: "Pay & submit proof",
     description:
-      "Your deposit is converted to 99.99% fine gold at our published spot price (US$/g). Track your gram balance in your account.",
+      "Send USDT on the stated network, then submit your transaction hash and optional payment screenshot for verification.",
   },
   {
     step: 4,
-    title: "Redeem when ready",
+    title: "Gold credited",
     description:
-      "Collect physical gold at our Kampala or Arua centres when you reach the minimum redemption threshold, or sell back at our published buy-back rate.",
+      "Once verified, your gram balance is credited. Redeem physical gold at Kampala or Arua when you reach the minimum threshold.",
   },
 ];
 
 export const goldSavingsBenefits = [
   "Own physical gold — not shares, not paper promises",
-  "Start from $20; top up anytime",
+  "Start from $20 via USDT",
   "Assay-verified 99.99% purity through our licensed refinery",
   "Transparent pricing tied to live spot rates",
   "Redeem in person at Kampala or Arua collection centres",
@@ -45,8 +46,9 @@ export const goldSavingsBenefits = [
 export const goldSavingsDisclaimers = [
   "Gold savings is a physical bullion accumulation service, not a securities investment or deposit account.",
   "Gold prices can rise or fall. Past performance does not guarantee future results.",
+  "Send only USDT on the network shown in your payment instructions. Wrong-network transfers may be unrecoverable.",
   "Spreads, fees, and redemption minimums apply and will be published in the programme terms.",
-  "Account opening requires identity verification under our AML policy.",
+  "Identity verification may be required before redemption.",
 ];
 
 export const goldSavingsFaqs: FaqItem[] = [
@@ -58,26 +60,26 @@ export const goldSavingsFaqs: FaqItem[] = [
   {
     question: "What is the minimum deposit?",
     answer:
-      "The programme is designed to start from $20 (or equivalent in UGX). You can top up at any time; there is no required monthly contribution.",
+      "The programme starts from $20 USDT. You can deposit more at any time; there is no required monthly contribution.",
+  },
+  {
+    question: "How do I pay?",
+    answer:
+      "After entering your amount, the site generates USDT payment instructions: wallet address, network (TRC20), exact USDT amount, and a unique reference number. Send USDT only on the stated network.",
+  },
+  {
+    question: "How do I submit proof of payment?",
+    answer:
+      "After sending USDT, return to your deposit flow and submit the on-chain transaction hash. You can also upload a screenshot or WhatsApp it to our team with your reference number.",
   },
   {
     question: "How is my gold priced?",
     answer:
-      "Deposits are credited in grams at our published DCA spot price (US$ per gram), aligned with international gold markets. Live rates are shown on our homepage and gold savings calculator.",
+      "Your grams are quoted at our published DCA spot price (US$ per gram) when you generate payment instructions. The quote is locked for 24 hours.",
   },
   {
     question: "When can I collect physical gold?",
     answer:
       "Once your balance reaches the published minimum redemption weight (initially 5 grams), you can arrange collection at our Kampala head office or Arua collection centre with valid ID.",
-  },
-  {
-    question: "Is my gold insured and verified?",
-    answer:
-      "Gold held under the programme is managed through our licensed refinery operations with fire assay verification on refined material. Full custody and insurance terms will be set out in the account agreement.",
-  },
-  {
-    question: "How do I join before accounts launch?",
-    answer:
-      "Submit the waitlist form on this page or contact investors@diamondcapitalafrica.com. We will notify you when account opening goes live.",
   },
 ];

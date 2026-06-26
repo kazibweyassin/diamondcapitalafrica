@@ -208,9 +208,9 @@ export default function AboutPage() {
             opportunities, or access to our data room, please contact our corporate
             team. Retail savers can also join our{" "}
             <a href="/gold-savings" className="font-semibold text-gold underline hover:text-gold-light">
-              Gold Savings waitlist
+              Gold Savings programme
             </a>{" "}
-            to accumulate physical bullion from $20.
+            to accumulate physical bullion from $20 via USDT.
           </p>
           <p className="text-gold-light">
             Email: {company.investorsEmail}

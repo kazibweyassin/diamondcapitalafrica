@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Gem } from "lucide-react";
-import GoldSavingsCalculator from "@/components/GoldSavingsCalculator";
-import GoldSavingsWaitlistForm from "@/components/GoldSavingsWaitlistForm";
+import GoldSavingsDepositWizard from "@/components/GoldSavingsDepositWizard";
 import JsonLd from "@/components/JsonLd";
 import { company } from "@/data/content";
 import {
@@ -18,7 +17,7 @@ import { faqJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Gold Savings | Save in Physical Gold from $20",
   description:
-    "Save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Not shares — real bullion through our licensed Kampala refinery. Join the waitlist.",
+    "Save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion — not mining shares.",
   path: "/gold-savings",
   image: images.about.goldNuggets,
 });
@@ -39,14 +38,14 @@ export default function GoldSavingsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gold">
-            Physical gold · Not shares
+            Physical gold · Pay with USDT
           </p>
           <h1 className="max-w-3xl text-3xl font-bold text-white md:text-4xl">
             Save in gold from ${goldSavings.minDepositUsd}
           </h1>
           <p className="mt-3 max-w-2xl text-white/80">
-            Build a gram balance in 99.99% fine gold through {company.name}&apos;s
-            licensed refinery. Redeem at Kampala or Arua when you&apos;re ready.
+            Enter your amount, get USDT payment instructions, and accumulate
+            99.99% fine gold through {company.name}&apos;s licensed refinery.
           </p>
         </div>
       </section>
@@ -86,7 +85,7 @@ export default function GoldSavingsPage() {
               <ArrowRight size={16} />
             </Link>
           </div>
-          <GoldSavingsCalculator />
+          <GoldSavingsDepositWizard />
         </div>
 
         <section className="mt-16">
@@ -109,13 +108,13 @@ export default function GoldSavingsPage() {
           </div>
         </section>
 
-        <section className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-start">
+        <section className="mt-16">
           <div className="rounded-lg bg-primary p-6 text-white md:p-8">
             <div className="mb-4 flex items-center gap-3">
               <Gem className="text-gold" size={28} />
               <h2 className="text-xl font-bold">Redemption</h2>
             </div>
-            <p className="mb-4 text-sm leading-relaxed text-white/80">
+            <p className="mb-4 max-w-2xl text-sm leading-relaxed text-white/80">
               When your balance reaches{" "}
               <strong className="text-white">
                 {goldSavings.minRedemptionGrams} grams
@@ -132,7 +131,6 @@ export default function GoldSavingsPage() {
               <ArrowRight size={16} />
             </Link>
           </div>
-          <GoldSavingsWaitlistForm />
         </section>
 
         <section className="mt-16">

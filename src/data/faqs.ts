@@ -47,7 +47,7 @@ export const goldFaqs: FaqItem[] = [
   {
     question: "Can I save in gold with Diamond Capital Africa?",
     answer:
-      "Yes. Our Gold Savings programme lets you accumulate physical 99.99% fine gold from $20 — credited in grams at published spot prices. This is bullion savings, not mining shares. Join the waitlist at diamondcapitalafrica.com/gold-savings.",
+      "Yes. Our Gold Savings programme lets you accumulate physical 99.99% fine gold from $20 — pay via USDT, submit proof of payment, and receive grams at published spot prices. This is bullion savings, not mining shares. Start at diamondcapitalafrica.com/gold-savings.",
   },
   {
     question: "How can investors or exporters contact Diamond Capital Africa?",
