@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Diamond Capital Africa">
-  <rect width="512" height="512" fill="#0A1628" rx="96"/>
+  <rect width="512" height="512" fill="#000000" rx="96"/>
   <g fill="none" stroke="#00C853" stroke-width="16" stroke-linejoin="round" stroke-linecap="round">
     <path d="M256 72 L404 256 L256 440 L108 256 Z"/>
     <path d="M108 256 L404 256"/>
