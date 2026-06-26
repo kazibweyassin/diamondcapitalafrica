@@ -20,7 +20,7 @@ export const company = {
   founded: 2012,
 };
 
-/** Canonical facts for search engines and AI — keep aligned with the live site */
+/** Canonical facts for search engines and AI. Keep aligned with the live site. */
 export const companyFacts = {
   legalName: "Diamond Capital Africa",
   businessType: "Licensed gold dealer, refinery, and exporter",

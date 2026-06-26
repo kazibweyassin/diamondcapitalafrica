@@ -270,7 +270,7 @@ export default function GoldSavingsDepositWizard() {
               You will receive
             </p>
             <p className="mt-1 text-3xl font-bold text-primary">
-              {priceLoading || !grams ? "—" : `${grams.toFixed(4)} g`}
+              {priceLoading || !grams ? "..." : `${grams.toFixed(4)} g`}
             </p>
             <p className="mt-2 text-xs text-muted">
               {spotPerGram
@@ -295,7 +295,7 @@ export default function GoldSavingsDepositWizard() {
           <h3 className="mb-1 text-lg font-bold text-primary">Your details</h3>
           <p className="mb-6 text-sm text-muted">
             Depositing ${amountUsd.toFixed(2)} for{" "}
-            {grams ? `${grams.toFixed(4)} g` : "—"} of gold.
+            {grams ? `${grams.toFixed(4)} g` : "..."} of gold.
           </p>
 
           <div className="space-y-4">
@@ -435,7 +435,7 @@ export default function GoldSavingsDepositWizard() {
               onClick={() => setStep("proof")}
               className="flex-1 rounded bg-gold px-6 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light"
             >
-              I have paid — submit proof
+              I have paid. Submit proof
             </button>
             <a
               href={company.whatsappUrl}

@@ -36,7 +36,7 @@ export const goldSavingsSteps = [
 ];
 
 export const goldSavingsBenefits = [
-  "Own physical gold — not shares, not paper promises",
+  "Own physical gold, not shares or paper promises",
   "Start from $20 via USDT",
   "Assay-verified 99.99% purity through our licensed refinery",
   "Transparent pricing tied to live spot rates",
@@ -55,7 +55,7 @@ export const goldSavingsFaqs: FaqItem[] = [
   {
     question: "Is this buying shares in a mining company?",
     answer:
-      "No. Diamond Capital Africa Gold Savings lets you accumulate grams of physical 99.99% fine gold. You are saving in bullion we assay and vault — not buying equity or mining shares.",
+      "No. Diamond Capital Africa Gold Savings lets you accumulate grams of physical 99.99% fine gold. You are saving in bullion we assay and vault, not buying equity or mining shares.",
   },
   {
     question: "What is the minimum deposit?",

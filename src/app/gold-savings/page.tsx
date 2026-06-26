@@ -17,7 +17,7 @@ import { faqJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Gold Savings | Save in Physical Gold from $20",
   description:
-    "Save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion — not mining shares.",
+    "Save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion, not mining shares.",
   path: "/gold-savings",
   image: images.about.goldNuggets,
 });
@@ -29,7 +29,7 @@ export default function GoldSavingsPage() {
       <section className="relative h-72 bg-primary md:h-96">
         <Image
           src={images.about.goldNuggets}
-          alt="Gold savings — physical bullion"
+          alt="Gold savings: physical bullion"
           fill
           priority
           className="object-cover opacity-40"
@@ -54,12 +54,12 @@ export default function GoldSavingsPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-primary">
-              Why gold savings — not mining shares
+              Why gold savings, not mining shares
             </h2>
             <p className="mb-6 leading-relaxed text-muted">
               {company.name} is a licensed gold dealer and refinery. Our savings
               programme lets you accumulate <strong>physical gold</strong> at
-              transparent spot prices — backed by assay verification and vault
+              transparent spot prices, backed by assay verification and vault
               operations we already run every day. This is bullion accumulation,
               not equity in a mining project.
             </p>
