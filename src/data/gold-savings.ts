@@ -2,7 +2,7 @@ import type { FaqItem } from "./faqs";
 
 export const goldSavings = {
   minDepositUsd: 20,
-  minRedemptionGrams: 5,
+  minRedemptionGrams: 20,
   purity: "99.99%",
   priceLockHours: 24,
   paymentMethod: "usdt" as const,
@@ -80,6 +80,6 @@ export const goldSavingsFaqs: FaqItem[] = [
   {
     question: "When can I collect physical gold?",
     answer:
-      "Once your balance reaches the published minimum redemption weight (initially 5 grams), you can arrange collection at our Kampala head office or Arua collection centre with valid ID.",
+      "Once your balance reaches the published minimum redemption weight (20 grams), you can arrange collection at our Kampala head office or Arua collection centre with valid ID.",
   },
 ];
