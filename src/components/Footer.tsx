@@ -53,6 +53,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/services#export"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Buy Gold Bars
+                </Link>
+              </li>
             </ul>
           </div>
 

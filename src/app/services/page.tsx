@@ -17,11 +17,19 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "Gold Services Uganda | Buying, Refining & Export",
+  title: "Buy Gold Bars Uganda | Refining, Assay & Export",
   description:
-    "Licensed gold buying, 99.99% refining, fire assay, and export services in Uganda and East Africa. Fair prices for miners, LBMA-standard bars for international buyers.",
+    "Buy 99.99% LBMA gold bars from a licensed Kampala refinery. Fire-assay certified bullion, FOB Kampala and CIF Dubai delivery, plus refining and export services across East Africa.",
   path: "/services",
   image: images.pageHero.services,
+  keywords: [
+    "buy gold bars Uganda",
+    "gold bullion supplier",
+    "gold export Kampala",
+    "gold refining Uganda",
+    "fire assay Uganda",
+    "LBMA gold bars",
+  ],
 });
 
 const serviceIcons: Record<string, LucideIcon> = {

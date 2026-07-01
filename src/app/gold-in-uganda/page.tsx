@@ -8,11 +8,19 @@ import { images } from "@/data/images";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Gold in Uganda | Licensed Dealer & Refinery",
+  title: "Gold in Uganda | Where to Buy Certified Bars",
   description:
-    "Guide to gold in Uganda: licensed buying, Kampala refining, collection centres nationwide, and export across East Africa. Diamond Capital Africa since 2012.",
+    "Where to buy gold in Uganda: licensed dealer and Kampala refinery selling 99.99% LBMA bars. Export, Gold Savings from $20, and live spot pricing. Diamond Capital Africa since 2012.",
   path: "/gold-in-uganda",
   image: images.hero.sourcing,
+  keywords: [
+    "gold in Uganda",
+    "where to buy gold Uganda",
+    "gold seller Uganda",
+    "gold dealer Uganda",
+    "gold refinery Kampala",
+    "buy gold bars Uganda",
+  ],
 });
 
 const highlights = [
@@ -39,7 +47,7 @@ const sections = [
 ];
 
 export default function GoldInUgandaPage() {
-  const pageFaqs = goldFaqs.slice(0, 5);
+  const pageFaqs = goldFaqs;
 
   return (
     <>

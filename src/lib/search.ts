@@ -19,9 +19,17 @@ const staticPages: SearchResult[] = [
     title: "Gold in Uganda",
     href: "/gold-in-uganda",
     excerpt:
-      "Licensed gold buying, Kampala refining, and export services across Uganda and East Africa.",
+      "Where to buy gold in Uganda: licensed dealer, Kampala refinery, and export across East Africa.",
     category: "About",
   },
+  {
+    title: "Buy Gold Bars",
+    href: "/services#export",
+    excerpt:
+      "Purchase 99.99% LBMA-standard gold bars. FOB Kampala, CIF Dubai, or insured delivery.",
+    category: "Services",
+  },
+
   {
     title: "Gold Savings",
     href: "/gold-savings",

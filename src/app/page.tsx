@@ -1,4 +1,4 @@
-import { pageMetadata, faqJsonLd } from "@/lib/seo";
+import { faqJsonLd, goldProductsJsonLd, pageMetadata } from "@/lib/seo";
 import { goldFaqs } from "@/data/faqs";
 import { company } from "@/data/content";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -13,16 +13,27 @@ import ESGHub from "@/components/ESGHub";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = pageMetadata({
-  title: "Gold Dealer & Refinery Uganda | East & Central Africa",
-  description: `${company.name} is a licensed gold dealer and refinery in Kampala, Uganda. Buy, refine, and export 99.99% pure gold bars across East and Central Africa with full traceability.`,
+  title: "Buy Gold Uganda | Licensed Dealer & Refinery",
+  description: `${company.name} sells 99.99% LBMA gold bars from Kampala, Uganda. Wholesale export (FOB Kampala, CIF Dubai), live DCA spot pricing, and Gold Savings from $20. Licensed refinery with full OECD traceability.`,
   path: "/",
   image: "/images/heroes/home-sourcing.jpg",
+  keywords: [
+    "buy gold Uganda",
+    "gold seller Uganda",
+    "gold supplier Kampala",
+    "gold bullion Uganda",
+    "LBMA gold bars Africa",
+    "gold export East Africa",
+    "gold savings Uganda",
+    "buy gold bars Africa",
+  ],
 });
 
 export default function Home() {
   return (
     <>
       <JsonLd data={faqJsonLd(goldFaqs)} />
+      <JsonLd data={goldProductsJsonLd()} />
       <HeroCarousel />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">

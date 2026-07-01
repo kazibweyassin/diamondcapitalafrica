@@ -11,6 +11,7 @@ import {
   defaultOgImageSize,
   localBusinessJsonLd,
   organizationJsonLd,
+  siteKeywords,
   siteUrl,
   websiteJsonLd,
 } from "@/lib/seo";
@@ -30,29 +31,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${company.name} | Gold Dealing & Refining`,
+    default: `${company.name} | Buy Gold in Uganda`,
     template: `%s | ${company.name}`,
   },
   description: company.description,
-  keywords: [
-    "gold Uganda",
-    "gold Africa",
-    "gold dealer Uganda",
-    "gold refinery Kampala",
-    "gold refinery Uganda",
-    "sell gold Uganda",
-    "buy gold Uganda",
-    "gold export Africa",
-    "gold export Uganda",
-    "LBMA gold bars",
-    "artisanal gold Uganda",
-    "gold assay testing",
-    "responsible gold sourcing",
-    "licensed gold buyer Uganda",
-    "East Africa gold",
-    company.name,
-    "Diamond Capital Africa",
-  ],
+  keywords: [...siteKeywords],
+  alternates: { canonical: siteUrl },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },
@@ -70,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_UG",
     siteName: company.name,
-    title: `${company.name} | Gold Dealing & Refining`,
+    title: `${company.name} | Buy Gold in Uganda`,
     description: company.description,
     images: [
       {
@@ -82,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${company.name} | Gold Dealing & Refining`,
+    title: `${company.name} | Buy Gold in Uganda`,
     description: company.description,
     images: [{ url: defaultOgImage, ...defaultOgImageSize }],
   },
@@ -95,6 +79,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <link rel="llms-txt" type="text/plain" href="/llms.txt" />
+      </head>
       <body className="flex min-h-full flex-col">
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={localBusinessJsonLd()} />

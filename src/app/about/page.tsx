@@ -5,8 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { Shield, Award, Globe, Users } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "About Us | Licensed Gold Company Uganda",
-  description: `${company.name} corporate profile: licensed gold dealer and refinery in Kampala, Uganda since ${company.founded}. Leadership, compliance, and investor information.`,
+  title: "About Us | Licensed Gold Dealer & Refinery Uganda",
+  description: `${company.name} corporate profile: licensed gold dealer and refinery in Kampala, Uganda since ${company.founded}. We sell 99.99% gold bars to buyers worldwide. Leadership, compliance, and investor information.`,
   path: "/about",
   image: images.pageHero.about,
 });

@@ -11,8 +11,8 @@ export default function FaqSection() {
         <SectionHeader title="Gold in Uganda & Africa: common questions" />
         <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
           {company.name} is a licensed gold dealer, refinery, and exporter in
-          Kampala serving miners, traders, and international buyers across East
-          and Central Africa.
+          Kampala. We sell 99.99% assay-verified gold bars to institutional
+          buyers and individual savers across East and Central Africa.
         </p>
         <div className="divide-y divide-border rounded-lg border border-border bg-white">
           {goldFaqs.map((faq) => (

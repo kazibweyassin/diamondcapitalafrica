@@ -8,6 +8,33 @@ export const siteUrl =
 export const defaultOgImage = "/opengraph-image";
 export const defaultOgImageSize = { width: 1200, height: 630 };
 
+/** Shared keywords — keep aligned with public/llms.txt */
+export const siteKeywords = [
+  "buy gold Uganda",
+  "gold seller Uganda",
+  "gold supplier Uganda",
+  "gold dealer Uganda",
+  "gold bullion Uganda",
+  "LBMA gold bars",
+  "99.99% gold bars",
+  "buy gold bars Africa",
+  "gold export Uganda",
+  "gold export Africa",
+  "gold refinery Kampala",
+  "gold refinery Uganda",
+  "physical gold Uganda",
+  "gold savings Uganda",
+  "licensed gold dealer Uganda",
+  "responsible gold sourcing",
+  "gold assay testing",
+  "East Africa gold",
+  "Central Africa gold",
+  "gold Uganda",
+  "gold Africa",
+  company.name,
+  company.shortName,
+] as const;
+
 export function absoluteUrl(path: string) {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${siteUrl}${normalized}`;
@@ -20,6 +47,7 @@ interface PageMetadataOptions {
   image?: string;
   type?: "website" | "article";
   publishedTime?: string;
+  keywords?: string[];
 }
 
 export function pageMetadata({
@@ -29,6 +57,7 @@ export function pageMetadata({
   image = defaultOgImage,
   type = "website",
   publishedTime,
+  keywords,
 }: PageMetadataOptions): Metadata {
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
@@ -38,6 +67,7 @@ export function pageMetadata({
   return {
     title,
     description,
+    keywords: keywords ?? [...siteKeywords],
     alternates: { canonical: url },
     openGraph: {
       title: fullTitle,
@@ -105,12 +135,14 @@ export function organizationJsonLd() {
     ],
     knowsAbout: [
       "Gold dealing",
+      "Gold selling",
+      "Gold bullion supply",
       "Gold refining",
       "Gold export",
       "Fire assay",
       "LBMA gold bars",
       "Responsible gold sourcing",
-      "Artisanal mining Uganda",
+      "Physical gold savings",
     ],
   };
 }
@@ -139,10 +171,38 @@ export function localBusinessJsonLd() {
     },
     areaServed: ["Uganda", "East Africa", "Central Africa"],
     serviceType: [
-      "Gold buying",
+      "Gold selling",
+      "Gold bullion supply",
+      "Gold export",
       "Gold refining",
       "Gold assay testing",
-      "Gold export",
+    ],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Product",
+          name: "99.99% Fine Gold Bars",
+          description:
+            "LBMA Good Delivery standard gold bars, fire-assay verified with serial numbers. Available FOB Kampala, CIF Dubai, or escorted insured delivery.",
+          category: "Gold bullion",
+          brand: { "@type": "Brand", name: company.name },
+        },
+        areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
+        url: absoluteUrl("/services#export"),
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Product",
+          name: "Gold Savings — Physical Bullion",
+          description:
+            "Accumulate assay-verified 99.99% physical gold from $20 via USDT. Redeem from 20 g at Kampala or Arua.",
+          category: "Gold savings",
+          brand: { "@type": "Brand", name: company.name },
+        },
+        url: absoluteUrl("/gold-savings"),
+      },
     ],
   };
 }
@@ -192,17 +252,61 @@ export function websiteJsonLd() {
     "@type": "WebSite",
     name: company.name,
     url: siteUrl,
-    description: company.tagline,
+    description: company.description,
     inLanguage: "en-UG",
     about: {
       "@type": "Thing",
-      name: "Gold dealing and refining in Uganda and Africa",
+      name: "Licensed gold dealer, refinery, and exporter in Uganda — sell 99.99% gold bars to buyers",
     },
     publisher: {
       "@type": "Organization",
       name: company.name,
       logo: absoluteUrl("/Logo.png"),
     },
+  };
+}
+
+export function goldProductsJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Gold products and services",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "Product",
+          name: "99.99% Fine Gold Bars",
+          description:
+            "Fire-assay verified LBMA Good Delivery gold bars in 10 oz, 1 kg, and 12.5 kg formats.",
+          brand: { "@type": "Brand", name: company.name },
+          category: "Gold bullion",
+          offers: {
+            "@type": "Offer",
+            url: absoluteUrl("/services#export"),
+            seller: { "@type": "Organization", name: company.name },
+            areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
+          },
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "Product",
+          name: "Gold Savings",
+          description: "Physical 99.99% gold accumulation from $20 via USDT.",
+          brand: { "@type": "Brand", name: company.name },
+          category: "Gold savings",
+          offers: {
+            "@type": "Offer",
+            url: absoluteUrl("/gold-savings"),
+            seller: { "@type": "Organization", name: company.name },
+          },
+        },
+      },
+    ],
   };
 }
 

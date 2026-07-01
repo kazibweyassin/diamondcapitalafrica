@@ -5,7 +5,7 @@ export const company = {
   shortName: "Diamond Capital",
   tagline: "Premium gold supply across East & Central Africa",
   description:
-    "Ethically sourced, certified gold from Uganda and the Congo. Institutional supplier of assay-verified bars with full OECD-compliant documentation.",
+    "Licensed gold dealer, refinery, and exporter in Kampala, Uganda. We sell 99.99% assay-verified LBMA gold bars to institutional buyers and individual savers — FOB Kampala, CIF Dubai, and Gold Savings from $20. Full OECD-compliant traceability across East and Central Africa.",
   purpose:
     "Our purpose is refining with integrity to empower communities and advance Africa's formal gold economy. It underpins every transaction, every bar we produce, and every partnership we build.",
   contactName: "Tom",
@@ -28,10 +28,11 @@ export const companyFacts = {
   region: "Nakasero, Kampala",
   purityStandard: "99.99% fine gold bars",
   primaryActivities: [
-    "Gold buying at collection centres in Kampala and Arua",
+    "Selling 99.99% fine gold bars to institutional and individual buyers",
+    "Licensed export to international buyers (FOB Kampala, CIF Dubai)",
     "Gold refining at our Kampala refinery",
     "Fire assay and certified purity testing",
-    "Licensed export to international buyers",
+    "Gold Savings — physical bullion from $20",
   ],
   contactPerson: "Tom",
   phone: company.phone,

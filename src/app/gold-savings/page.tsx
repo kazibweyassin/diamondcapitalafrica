@@ -15,11 +15,17 @@ import { images } from "@/data/images";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Gold Savings | Save in Physical Gold from $20",
+  title: "Gold Savings | Buy Physical Gold from $20",
   description:
-    "Save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion, not mining shares.",
+    "Buy and save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion — not mining shares.",
   path: "/gold-savings",
   image: images.about.goldNuggets,
+  keywords: [
+    "buy physical gold Uganda",
+    "gold savings Uganda",
+    "buy gold from $20",
+    "physical bullion Uganda",
+  ],
 });
 
 export default function GoldSavingsPage() {

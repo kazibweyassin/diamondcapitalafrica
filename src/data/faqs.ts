@@ -7,32 +7,42 @@ export const goldFaqs: FaqItem[] = [
   {
     question: "What does Diamond Capital Africa do?",
     answer:
-      "Diamond Capital Africa is a licensed gold dealer, refinery, and exporter headquartered at Plot 42, Nakasero Road, Kampala, Uganda. We buy gold from miners at collection centres in Kampala and Arua, refine to 99.99% purity, assay every batch, and export LBMA-standard bars with OECD-aligned traceability across East and Central Africa.",
+      "Diamond Capital Africa is a licensed gold dealer, refinery, and exporter headquartered at Plot 42, Nakasero Road, Kampala, Uganda. We sell assay-verified 99.99% fine gold bars to institutional buyers, international importers, and individual savers. We refine at our Kampala facility, assay every batch, and export LBMA-standard bars with OECD-aligned traceability across East and Central Africa.",
+  },
+  {
+    question: "Where can I buy gold in Uganda?",
+    answer:
+      "Diamond Capital Africa sells assay-verified 99.99% fine gold bars to institutional buyers, international importers, and individual savers. Wholesale buyers can enquire at diamondcapitalafrica.com/services#export for FOB Kampala, CIF Dubai, or insured delivery. Individuals can start from $20 via our Gold Savings programme at diamondcapitalafrica.com/gold-savings.",
+  },
+  {
+    question: "Who sells gold bars in Uganda?",
+    answer:
+      "Diamond Capital Africa is a licensed gold dealer and refinery in Kampala that sells LBMA-standard 99.99% gold bars. We refine, vault, and supply bullion with full fire-assay certification, OECD-aligned traceability, and export documentation to buyers in Uganda, East Africa, and internationally.",
   },
   {
     question: "Who is a licensed gold dealer in Uganda?",
     answer:
-      "Diamond Capital Africa is a licensed gold dealer and refinery based in Kampala, Uganda. We buy gold from artisanal and small-scale miners at collection centres in Kampala and Arua, refine to 99.99% purity, and export LBMA-standard bars with full OECD-aligned traceability.",
+      "Diamond Capital Africa is a licensed gold dealer and refinery based in Kampala, Uganda. We supply 99.99% fine gold bars to buyers worldwide, refine at our Nakasero facility, and export LBMA-standard bars with full OECD-aligned traceability.",
   },
   {
-    question: "Where can I sell gold in Uganda?",
+    question: "What purity of gold bars does Diamond Capital Africa sell?",
     answer:
-      "Miners and sellers can bring gold to Diamond Capital Africa collection centres in Kampala and Arua. Each centre offers fair-price buying, on-site assay verification, and transparent documentation for formal market access.",
+      "We sell 99.99% fine gold bars that meet international bullion standards. Every batch is fire-assay verified before delivery, supporting LBMA good-delivery requirements and responsible sourcing expectations.",
   },
   {
     question: "Is there a gold refinery in Kampala, Uganda?",
     answer:
-      "Yes. Diamond Capital Africa operates a flagship refinery in Nakasero, Kampala with induction furnaces, fire assay laboratories, vault storage, and certified weighing. The facility is licensed by Uganda's Ministry of Energy and Mineral Development and produces 99.99% fine gold bars.",
+      "Yes. Diamond Capital Africa operates a flagship refinery in Nakasero, Kampala with induction furnaces, fire assay laboratories, vault storage, and certified weighing. The facility is licensed by Uganda's Ministry of Energy and Mineral Development and produces 99.99% fine gold bars for buyers.",
   },
   {
     question: "How does gold export work in East Africa?",
     answer:
-      "Diamond Capital Africa manages mine-to-market export for clients across East and Central Africa. Our process covers gold intake, assay, refining, Bank of Uganda clearance, customs documentation, secure logistics, and international buyer matching with a fully auditable digital supply chain.",
+      "Diamond Capital Africa supplies buyers across East and Central Africa and internationally. Our export process covers assay, refining, Bank of Uganda clearance, customs documentation, secure logistics, and delivery with a fully auditable digital supply chain.",
   },
   {
-    question: "What purity of gold bars does Diamond Capital Africa produce?",
+    question: "Can I save in gold with Diamond Capital Africa?",
     answer:
-      "We refine and deliver 99.99% fine gold bars that meet international bullion standards. Every batch is fire-assay verified before export, supporting LBMA good-delivery requirements and responsible sourcing expectations.",
+      "Yes. Our Gold Savings programme lets you buy and accumulate physical 99.99% fine gold from $20. Pay via USDT, submit proof of payment, and receive grams at published spot prices. This is bullion savings, not mining shares. Start at diamondcapitalafrica.com/gold-savings.",
   },
   {
     question: "Does Diamond Capital Africa source gold responsibly in Africa?",
@@ -42,16 +52,11 @@ export const goldFaqs: FaqItem[] = [
   {
     question: "Which countries does Diamond Capital Africa serve?",
     answer:
-      "Our primary operations are in Uganda, with buying, refining, and export services extending across East and Central Africa including the Democratic Republic of Congo. We export to international markets across twelve destination countries.",
+      "We sell gold to buyers in Uganda, across East and Central Africa including the Democratic Republic of Congo, and internationally across twelve export destination countries.",
   },
   {
-    question: "Can I save in gold with Diamond Capital Africa?",
+    question: "How can buyers contact Diamond Capital Africa?",
     answer:
-      "Yes. Our Gold Savings programme lets you accumulate physical 99.99% fine gold from $20. Pay via USDT, submit proof of payment, and receive grams at published spot prices. This is bullion savings, not mining shares. Start at diamondcapitalafrica.com/gold-savings.",
-  },
-  {
-    question: "How can investors or exporters contact Diamond Capital Africa?",
-    answer:
-      "Contact Tom at +256 704 833 021 or email info@diamondcapitalafrica.com. Visit diamondcapitalafrica.com for services, live market prices, operations details, and industry news on Uganda's gold sector.",
+      "Contact Tom at +256 704 833 021 or email info@diamondcapitalafrica.com. Visit diamondcapitalafrica.com for live market prices, export enquiries, Gold Savings, and industry news on Uganda's gold sector.",
   },
 ];
