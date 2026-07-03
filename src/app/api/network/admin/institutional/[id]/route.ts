@@ -16,6 +16,14 @@ const patchSchema = z.object({
   sendCredentials: z.boolean().optional(),
 });
 
+function handleRouteError(err: unknown, fallback: string) {
+  if (err instanceof Error && err.message === "Unauthorized") {
+    return jsonError("Unauthorized — sign in to admin again", 401);
+  }
+  console.error(fallback, err);
+  return jsonError(fallback, 500);
+}
+
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -62,30 +70,29 @@ export async function PATCH(
         );
       }
 
-      if (!isEmailConfigured()) {
-        return jsonError(
-          "Email is not configured. Set SMTP_HOST, SMTP_USER, and SMTP_PASS on the server.",
-          503
-        );
-      }
-
       const temporaryPassword = generatePortalPassword();
+      let emailSent = false;
+      let emailError: string | undefined;
 
-      try {
-        await sendInstitutionalCredentialsEmail({
-          to: existing.email,
-          contactName: existing.contactName,
-          companyName: existing.companyName,
-          reference: existing.reference,
-          password: temporaryPassword,
-        });
-      } catch (err) {
-        return jsonError(
-          err instanceof Error
-            ? err.message
-            : "Failed to send credentials email",
-          502
-        );
+      if (isEmailConfigured()) {
+        try {
+          await sendInstitutionalCredentialsEmail({
+            to: existing.email,
+            contactName: existing.contactName,
+            companyName: existing.companyName,
+            reference: existing.reference,
+            password: temporaryPassword,
+          });
+          emailSent = true;
+        } catch (err) {
+          emailError =
+            err instanceof Error
+              ? err.message
+              : "Failed to send credentials email";
+        }
+      } else {
+        emailError =
+          "SMTP not configured on the server — copy the password below and share it manually.";
       }
 
       const account = await prisma.institutionalAccount.update({
@@ -101,7 +108,9 @@ export async function PATCH(
       return jsonOk({
         ...account,
         passwordHash: undefined,
-        emailSent: true,
+        temporaryPassword,
+        emailSent,
+        emailError,
         resent: Boolean(existing.credentialsSentAt),
       });
     }
@@ -112,7 +121,7 @@ export async function PATCH(
     });
 
     return jsonOk({ ...account, passwordHash: undefined });
-  } catch {
-    return jsonError("Failed to update institutional account", 500);
+  } catch (err) {
+    return handleRouteError(err, "Failed to update institutional account");
   }
 }

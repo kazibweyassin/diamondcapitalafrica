@@ -90,6 +90,7 @@ export default function NetworkAdminPanel() {
   const [error, setError] = useState("");
   const [supplyDraft, setSupplyDraft] = useState<SupplyDraft>(emptySupply);
   const [actionMessage, setActionMessage] = useState("");
+  const [institutionalActionId, setInstitutionalActionId] = useState("");
 
   async function load() {
     setLoading(true);
@@ -153,27 +154,41 @@ export default function NetworkAdminPanel() {
   ) {
     setError("");
     setActionMessage("");
-    const res = await fetch(`/api/network/admin/institutional/${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    const json = await res.json();
-    if (res.ok) {
-      if (data.confirmPayment) {
-        setActionMessage(`Payment confirmed for ${json.data.email}.`);
+    setInstitutionalActionId(id);
+    try {
+      const res = await fetch(`/api/network/admin/institutional/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (res.ok) {
+        if (data.confirmPayment) {
+          setActionMessage(`Payment confirmed for ${json.data.email}.`);
+        }
+        if (data.sendCredentials) {
+          const login = `${json.data.email}: ${json.data.temporaryPassword}`;
+          if (json.data.emailSent) {
+            setActionMessage(
+              json.data.resent
+                ? `New portal credentials emailed to ${json.data.email}. Backup copy: ${login}`
+                : `Portal credentials emailed to ${json.data.email}. Backup copy: ${login}`
+            );
+          } else {
+            setActionMessage(
+              `Portal activated for ${json.data.email}. ${json.data.emailError ?? "Email not sent."} Share sign-in: ${login}`
+            );
+          }
+        }
+        load();
+        return;
       }
-      if (data.sendCredentials) {
-        setActionMessage(
-          json.data.resent
-            ? `New portal credentials emailed to ${json.data.email}.`
-            : `Portal credentials emailed to ${json.data.email}.`
-        );
-      }
-      load();
-      return;
+      setError(json.error ?? "Failed to update institutional account");
+    } catch {
+      setError("Network error — could not reach the server");
+    } finally {
+      setInstitutionalActionId("");
     }
-    setError(json.error ?? "Failed to update institutional account");
   }
 
   async function patchEnquiry(id: string, status: string) {
@@ -466,7 +481,7 @@ export default function NetworkAdminPanel() {
                   <span>
                     Credentials:{" "}
                     {account.credentialsSentAt
-                      ? `Emailed ${new Date(account.credentialsSentAt).toLocaleDateString("en-UG")}`
+                      ? `Sent ${new Date(account.credentialsSentAt).toLocaleDateString("en-UG")}`
                       : "Not sent"}
                   </span>
                 </div>
@@ -474,25 +489,31 @@ export default function NetworkAdminPanel() {
                   {!account.paymentReceivedAt && account.status !== "rejected" && (
                     <button
                       type="button"
+                      disabled={institutionalActionId === account.id}
                       onClick={() =>
                         patchInstitutional(account.id, { confirmPayment: true })
                       }
-                      className="rounded bg-gold px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-gold-light"
+                      className="rounded bg-gold px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-gold-light disabled:opacity-50"
                     >
-                      Confirm payment received
+                      {institutionalActionId === account.id
+                        ? "Working..."
+                        : "Confirm payment received"}
                     </button>
                   )}
                   {account.paymentReceivedAt && (
                     <button
                       type="button"
+                      disabled={institutionalActionId === account.id}
                       onClick={() =>
                         patchInstitutional(account.id, { sendCredentials: true })
                       }
-                      className="rounded bg-primary px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-primary-dark"
+                      className="rounded bg-primary px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-primary-dark disabled:opacity-50"
                     >
-                      {account.credentialsSentAt
-                        ? "Resend portal credentials"
-                        : "Send portal credentials"}
+                      {institutionalActionId === account.id
+                        ? "Working..."
+                        : account.credentialsSentAt
+                          ? "Resend portal credentials"
+                          : "Send portal credentials"}
                     </button>
                   )}
                 </div>
