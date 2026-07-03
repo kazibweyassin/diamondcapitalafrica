@@ -63,8 +63,9 @@ export default function InstitutionalAccessForm() {
           Reference: <span className="font-mono font-semibold">{reference}</span>
         </p>
         <p className="mt-4 text-sm leading-relaxed text-muted">
-          DCA will review your application. Once approved, you will receive
-          portal login credentials for the Institutional Gold Network.
+          DCA will review your application and confirm membership payment.
+          After payment is received, portal login credentials will be emailed
+          to you for the Institutional Gold Network.
         </p>
         <Link
           href="/network/login"

@@ -137,6 +137,8 @@ model InstitutionalAccount {
   status              String            @default("pending")
   membershipTier      String            @default("standard")
   membershipExpiresAt DateTime?
+  paymentReceivedAt   DateTime?
+  credentialsSentAt   DateTime?
   adminNotes          String?
   enquiries           ExchangeEnquiry[]
   createdAt           DateTime          @default(now())

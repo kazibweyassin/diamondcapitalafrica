@@ -41,6 +41,8 @@ interface InstitutionalAccount {
   buyerType: string;
   status: string;
   membershipTier: string;
+  paymentReceivedAt: string | null;
+  credentialsSentAt: string | null;
   adminNotes: string | null;
 }
 
@@ -87,7 +89,7 @@ export default function NetworkAdminPanel() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [supplyDraft, setSupplyDraft] = useState<SupplyDraft>(emptySupply);
-  const [lastPassword, setLastPassword] = useState("");
+  const [actionMessage, setActionMessage] = useState("");
 
   async function load() {
     setLoading(true);
@@ -149,6 +151,8 @@ export default function NetworkAdminPanel() {
     id: string,
     data: Record<string, unknown>
   ) {
+    setError("");
+    setActionMessage("");
     const res = await fetch(`/api/network/admin/institutional/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -156,11 +160,20 @@ export default function NetworkAdminPanel() {
     });
     const json = await res.json();
     if (res.ok) {
-      if (json.data?.temporaryPassword) {
-        setLastPassword(`${json.data.email}: ${json.data.temporaryPassword}`);
+      if (data.confirmPayment) {
+        setActionMessage(`Payment confirmed for ${json.data.email}.`);
+      }
+      if (data.sendCredentials) {
+        setActionMessage(
+          json.data.resent
+            ? `New portal credentials emailed to ${json.data.email}.`
+            : `Portal credentials emailed to ${json.data.email}.`
+        );
       }
       load();
+      return;
     }
+    setError(json.error ?? "Failed to update institutional account");
   }
 
   async function patchEnquiry(id: string, status: string) {
@@ -181,7 +194,8 @@ export default function NetworkAdminPanel() {
           Institutional Gold Network
         </h2>
         <p className="text-sm text-muted">
-          Verify suppliers, publish supply, and activate institutional access.
+          Verify suppliers, publish supply, confirm buyer payment, then email
+          portal credentials.
         </p>
       </div>
 
@@ -191,10 +205,9 @@ export default function NetworkAdminPanel() {
         </p>
       )}
 
-      {lastPassword && (
+      {actionMessage && (
         <p className="rounded border border-gold/30 bg-gold/10 px-4 py-3 text-sm text-primary">
-          Portal password set — share securely with the buyer:{" "}
-          <span className="font-mono font-semibold">{lastPassword}</span>
+          {actionMessage}
         </p>
       )}
 
@@ -443,19 +456,46 @@ export default function NetworkAdminPanel() {
                   </select>
                 </div>
                 <p className="mb-3 text-sm text-muted">{account.email}</p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const pwd = crypto.randomUUID().slice(0, 10);
-                    patchInstitutional(account.id, {
-                      status: "active",
-                      setPassword: pwd,
-                    });
-                  }}
-                  className="rounded bg-primary px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-primary-dark"
-                >
-                  Activate & generate portal password
-                </button>
+                <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
+                  <span>
+                    Payment:{" "}
+                    {account.paymentReceivedAt
+                      ? `Received ${new Date(account.paymentReceivedAt).toLocaleDateString("en-UG")}`
+                      : "Not confirmed"}
+                  </span>
+                  <span>
+                    Credentials:{" "}
+                    {account.credentialsSentAt
+                      ? `Emailed ${new Date(account.credentialsSentAt).toLocaleDateString("en-UG")}`
+                      : "Not sent"}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {!account.paymentReceivedAt && account.status !== "rejected" && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        patchInstitutional(account.id, { confirmPayment: true })
+                      }
+                      className="rounded bg-gold px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-gold-light"
+                    >
+                      Confirm payment received
+                    </button>
+                  )}
+                  {account.paymentReceivedAt && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        patchInstitutional(account.id, { sendCredentials: true })
+                      }
+                      className="rounded bg-primary px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-primary-dark"
+                    >
+                      {account.credentialsSentAt
+                        ? "Resend portal credentials"
+                        : "Send portal credentials"}
+                    </button>
+                  )}
+                </div>
               </div>
             ))}
           </div>
