@@ -12,6 +12,8 @@ const subjects = [
   "Assay & Testing",
   "Export Services",
   "Gold Savings Deposit",
+  "Institutional Network Access",
+  "Verified Supplier Application",
   "Investor Relations",
   "Media Enquiry",
   "Other",

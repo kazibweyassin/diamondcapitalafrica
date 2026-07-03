@@ -40,6 +40,13 @@ export default function CompanyStats() {
               Our operations
               <ArrowRight size={14} />
             </Link>
+            <Link
+              href="/network"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+            >
+              Institutional Network
+              <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
 

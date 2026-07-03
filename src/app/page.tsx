@@ -8,6 +8,7 @@ import Presentations from "@/components/Presentations";
 import MarketPrices from "@/components/MarketPrices";
 import EventsCalendar from "@/components/EventsCalendar";
 import CompanyStats from "@/components/CompanyStats";
+import NetworkPromo from "@/components/NetworkPromo";
 import ReportsSection from "@/components/ReportsSection";
 import ESGHub from "@/components/ESGHub";
 import FaqSection from "@/components/FaqSection";
@@ -50,6 +51,7 @@ export default function Home() {
         <ReportsSection />
       </div>
 
+      <NetworkPromo />
       <CompanyStats />
       <ESGHub />
       <FaqSection />

@@ -30,7 +30,7 @@ export default function Header() {
               <BrandLogo priority className="h-9 w-auto sm:h-10 md:h-11" />
             </Link>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               <button
                 type="button"
                 aria-label="Search"
@@ -39,6 +39,12 @@ export default function Header() {
               >
                 <Search size={20} />
               </button>
+              <Link
+                href="/network"
+                className="hidden text-sm font-semibold text-white/90 transition hover:text-gold lg:block"
+              >
+                Institutional Network
+              </Link>
               <Link
                 href="/contact?subject=Gold%20Buying%20Enquiry"
                 className="hidden rounded bg-gold px-4 py-2 text-sm font-semibold text-primary transition hover:bg-gold-light md:block"
@@ -137,6 +143,15 @@ export default function Header() {
                   )}
                 </li>
               ))}
+              <li className="px-0 py-3">
+                <Link
+                  href="/network"
+                  className="flex min-h-11 items-center justify-center rounded border border-white/30 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Institutional Network
+                </Link>
+              </li>
               <li className="px-0 py-4">
                 <Link
                   href="/contact?subject=Gold%20Buying%20Enquiry"

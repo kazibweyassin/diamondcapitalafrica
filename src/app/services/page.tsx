@@ -257,6 +257,35 @@ export default function ServicesPage() {
           );
         })}
 
+        <section className="mt-8 overflow-hidden rounded-xl bg-primary p-8 md:p-12">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gold">
+            Institutional buyers & verified suppliers
+          </p>
+          <h2 className="mb-3 text-2xl font-bold text-white">
+            Institutional Gold Network
+          </h2>
+          <p className="mb-6 max-w-2xl text-white/80">
+            Browse Level 3+ verified supply, request structured quotes, or apply
+            as a supplier through our Verified Gold Exchange — coordinated by
+            DCA, not an open marketplace.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/network"
+              className="inline-flex items-center gap-2 rounded bg-gold px-6 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light"
+            >
+              Explore the Network
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/network/access"
+              className="inline-flex items-center gap-2 rounded border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Request institutional access
+            </Link>
+          </div>
+        </section>
+
         <section className="mt-8 rounded-xl bg-section-alt p-8 text-center md:p-12">
           <h2 className="mb-3 text-2xl font-bold text-primary">
             Not sure which service you need?

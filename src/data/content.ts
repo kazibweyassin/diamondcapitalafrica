@@ -93,6 +93,7 @@ export const navItems = [
       { label: "Compliance", href: "/about#compliance" },
     ],
   },
+  { label: "Network", href: "/network" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -123,6 +124,15 @@ export const heroSlides = [
       "From collection centres across Uganda to LBMA-standard refining and export facilitation, we connect artisanal miners to international markets with full regulatory compliance.",
     cta: { label: "Our services", href: "/services" },
     tab: "Export",
+  },
+  {
+    id: 4,
+    image: images.pageHero.operations,
+    title: "Institutional Gold Network",
+    description:
+      "Verified supply, institutional buyer access, and DCA-coordinated quotes through our Verified Gold Exchange — not an open marketplace.",
+    cta: { label: "Explore the Network", href: "/network" },
+    tab: "Network",
   },
 ];
 

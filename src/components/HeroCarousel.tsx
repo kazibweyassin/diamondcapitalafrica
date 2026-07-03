@@ -101,7 +101,8 @@ export default function HeroCarousel() {
               key={s.id}
               type="button"
               onClick={() => goTo(i)}
-              className={`min-w-[33.333%] flex-1 snap-start border-t-2 px-3 py-3 text-left transition sm:min-w-0 sm:px-4 sm:py-4 md:px-6 ${
+              style={{ minWidth: `${100 / heroSlides.length}%` }}
+              className={`flex-1 snap-start border-t-2 px-3 py-3 text-left transition sm:min-w-0 sm:px-4 sm:py-4 md:px-6 ${
                 i === current
                   ? "border-gold bg-primary-dark"
                   : "border-transparent hover:bg-white/5"
