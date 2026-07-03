@@ -82,10 +82,11 @@ export async function sendInstitutionalApplicationEmail({
     "",
     "Payment instructions:",
     "",
-    `Option 1 — USDT (${usdt.network})`,
+    `Option 1 — USDT (${usdt.networkGuide.label})`,
     `Amount: ${usdt.amount.toLocaleString()} USDT`,
     `Wallet: ${usdt.wallet}`,
     `Reference / memo: ${reference}`,
+    `Binance: choose network ${usdt.networkGuide.binanceLabel}`,
     "",
     "Option 2 — Bank wire",
     `Email ${wire.email} with reference ${reference} for a proforma invoice and bank details.`,
@@ -104,11 +105,13 @@ export async function sendInstitutionalApplicationEmail({
     <p><strong>Reference:</strong> ${reference}<br />
     <strong>Company:</strong> ${companyName}<br />
     <strong>Membership:</strong> ${tier.name} — $${tier.feeUsd.toLocaleString()} / ${tier.period}</p>
-    <p><strong>Option 1 — USDT (${usdt.network})</strong></p>
+    <p><strong>Option 1 — USDT (${usdt.networkGuide.label})</strong></p>
     <ul>
       <li><strong>Amount:</strong> ${usdt.amount.toLocaleString()} USDT</li>
+      <li><strong>Network:</strong> ${usdt.networkGuide.label}</li>
       <li><strong>Wallet:</strong> <code>${usdt.wallet}</code></li>
       <li><strong>Reference / memo:</strong> <code>${reference}</code></li>
+      <li><strong>Binance:</strong> select network <strong>${usdt.networkGuide.binanceLabel}</strong></li>
     </ul>
     <p><strong>Option 2 — Bank wire</strong><br />
     Email <a href="mailto:${wire.email}">${wire.email}</a> with reference <code>${reference}</code> for a proforma invoice and bank details.</p>

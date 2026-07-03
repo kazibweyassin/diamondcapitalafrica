@@ -67,7 +67,7 @@ export default function InstitutionalPaymentInstructions({
         <div className="mt-5 space-y-5">
           <div className="rounded-lg border border-border bg-white p-4">
             <p className="text-sm font-semibold text-primary">
-              Option 1 — USDT ({usdt.network})
+              Option 1 — USDT ({usdt.networkGuide.label})
             </p>
             <dl className="mt-3 space-y-2 text-sm">
               <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between">
@@ -78,12 +78,17 @@ export default function InstitutionalPaymentInstructions({
               </div>
               <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between">
                 <dt className="text-muted">Network</dt>
-                <dd className="font-semibold text-foreground">{usdt.network}</dd>
+                <dd className="font-semibold text-foreground">
+                  {usdt.networkGuide.label}
+                </dd>
               </div>
               <div>
                 <dt className="text-muted">Wallet address</dt>
                 <dd className="mt-1 break-all font-mono text-xs text-foreground sm:text-sm">
                   {usdt.wallet}
+                </dd>
+                <dd className="mt-1 text-xs text-muted">
+                  {usdt.networkGuide.addressHint}
                 </dd>
               </div>
               {reference && (
@@ -95,9 +100,28 @@ export default function InstitutionalPaymentInstructions({
                 </div>
               )}
             </dl>
+
+            <div className="mt-4 rounded border border-primary/15 bg-primary/5 p-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                Binance users
+              </p>
+              <p className="mt-1 text-xs text-muted">
+                On Binance, choose{" "}
+                <strong className="text-foreground">
+                  {usdt.networkGuide.binanceLabel}
+                </strong>{" "}
+                as the network — not the label &quot;TRC20&quot; alone.
+              </p>
+              <ol className="mt-2 list-decimal space-y-1 pl-4 text-xs leading-relaxed text-muted">
+                {usdt.networkGuide.binanceSteps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </div>
+
             <p className="mt-3 text-xs leading-relaxed text-muted">
-              Send only USDT on {usdt.network}. Wrong-network transfers may be
-              unrecoverable.
+              Send only USDT on {usdt.networkGuide.label}. Wrong-network
+              transfers may be unrecoverable.
             </p>
           </div>
 
