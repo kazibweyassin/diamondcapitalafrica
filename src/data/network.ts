@@ -50,6 +50,23 @@ export const networkPillars = [
   },
 ] as const;
 
+export const institutionalMembership = {
+  id: "network-membership",
+  name: "Institutional Network Membership",
+  feeUsd: 1500,
+  period: "annual",
+  summary:
+    "Full access to Level 3+ verified supply, assay documentation, and structured quote requests through the Verified Gold Exchange.",
+  includes: [
+    "Browse Level 3+ verified supply in the institutional portal",
+    "Submit structured quote requests coordinated by DCA",
+    "Assay references and verification detail on listings",
+    "Dedicated institutional onboarding and support",
+  ],
+  paymentNote:
+    "Include your application reference in the USDT memo or wire payment reference so we can match your payment.",
+} as const;
+
 export const networkSteps = [
   { step: 1, label: "Apply", detail: "Suppliers apply free; buyers request institutional access." },
   { step: 2, label: "Verify", detail: "DCA assigns verification levels and approves supply." },

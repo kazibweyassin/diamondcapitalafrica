@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import InstitutionalPaymentInstructions from "@/components/InstitutionalPaymentInstructions";
 import { buyerTypes } from "@/data/network";
 
 const inputClass =
@@ -57,22 +58,22 @@ export default function InstitutionalAccessForm() {
 
   if (reference) {
     return (
-      <div className="rounded-lg border border-gold/30 bg-gold/10 p-8 text-center">
-        <h2 className="text-xl font-bold text-primary">Access request received</h2>
-        <p className="mt-2 text-sm text-muted">
-          Reference: <span className="font-mono font-semibold">{reference}</span>
-        </p>
-        <p className="mt-4 text-sm leading-relaxed text-muted">
-          DCA will review your application and confirm membership payment.
-          After payment is received, portal login credentials will be emailed
-          to you for the Institutional Gold Network.
-        </p>
-        <Link
-          href="/network/login"
-          className="mt-6 inline-block text-sm font-semibold text-gold-dark underline"
-        >
-          Already have credentials? Sign in
-        </Link>
+      <div className="space-y-8">
+        <div className="rounded-lg border border-gold/30 bg-gold/10 p-6 text-center sm:p-8">
+          <h2 className="text-xl font-bold text-primary">Access request received</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            DCA will review your application. Complete membership payment below
+            using your reference — portal credentials are emailed after payment
+            is confirmed.
+          </p>
+          <Link
+            href="/network/login"
+            className="mt-5 inline-block text-sm font-semibold text-gold-dark underline"
+          >
+            Already have credentials? Sign in
+          </Link>
+        </div>
+        <InstitutionalPaymentInstructions reference={reference} showTierSummary={false} />
       </div>
     );
   }

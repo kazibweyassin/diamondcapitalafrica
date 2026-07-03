@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { company } from "@/data/content";
+import { getInstitutionalMembershipPayment } from "@/lib/network-membership-config";
 import { siteUrl } from "@/lib/seo";
 
 function smtpConfigured() {
@@ -51,6 +52,75 @@ export async function sendEmail({
     from,
     to,
     subject,
+    text,
+    html,
+  });
+}
+
+export async function sendInstitutionalApplicationEmail({
+  to,
+  contactName,
+  companyName,
+  reference,
+}: {
+  to: string;
+  contactName: string;
+  companyName: string;
+  reference: string;
+}) {
+  const accessUrl = `${siteUrl}/network/access`;
+  const { tier, usdt, wire } = getInstitutionalMembershipPayment();
+
+  const text = [
+    `Dear ${contactName},`,
+    "",
+    `Thank you for applying to the ${company.name} Institutional Gold Network.`,
+    "",
+    `Reference: ${reference}`,
+    `Company: ${companyName}`,
+    `Membership: ${tier.name} — $${tier.feeUsd.toLocaleString()} / ${tier.period}`,
+    "",
+    "Payment instructions:",
+    "",
+    `Option 1 — USDT (${usdt.network})`,
+    `Amount: ${usdt.amount.toLocaleString()} USDT`,
+    `Wallet: ${usdt.wallet}`,
+    `Reference / memo: ${reference}`,
+    "",
+    "Option 2 — Bank wire",
+    `Email ${wire.email} with reference ${reference} for a proforma invoice and bank details.`,
+    "",
+    "Portal credentials are emailed after DCA confirms your payment.",
+    `Payment details: ${accessUrl}`,
+    "",
+    `${company.contactName} — ${company.name}`,
+    company.investorsEmail,
+    company.phone,
+  ].join("\n");
+
+  const html = `
+    <p>Dear ${contactName},</p>
+    <p>Thank you for applying to the <strong>${company.name} Institutional Gold Network</strong>.</p>
+    <p><strong>Reference:</strong> ${reference}<br />
+    <strong>Company:</strong> ${companyName}<br />
+    <strong>Membership:</strong> ${tier.name} — $${tier.feeUsd.toLocaleString()} / ${tier.period}</p>
+    <p><strong>Option 1 — USDT (${usdt.network})</strong></p>
+    <ul>
+      <li><strong>Amount:</strong> ${usdt.amount.toLocaleString()} USDT</li>
+      <li><strong>Wallet:</strong> <code>${usdt.wallet}</code></li>
+      <li><strong>Reference / memo:</strong> <code>${reference}</code></li>
+    </ul>
+    <p><strong>Option 2 — Bank wire</strong><br />
+    Email <a href="mailto:${wire.email}">${wire.email}</a> with reference <code>${reference}</code> for a proforma invoice and bank details.</p>
+    <p>Portal credentials are emailed after DCA confirms your payment.<br />
+    <a href="${accessUrl}">View payment instructions online</a></p>
+    <p>${company.contactName} — ${company.name}<br />
+    <a href="mailto:${company.investorsEmail}">${company.investorsEmail}</a> · ${company.phone}</p>
+  `;
+
+  await sendEmail({
+    to,
+    subject: `${company.name} Institutional Network — payment instructions (${reference})`,
     text,
     html,
   });

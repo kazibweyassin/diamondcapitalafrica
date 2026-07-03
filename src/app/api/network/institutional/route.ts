@@ -1,6 +1,10 @@
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { jsonOk, jsonError } from "@/lib/api-response";
+import {
+  isEmailConfigured,
+  sendInstitutionalApplicationEmail,
+} from "@/lib/email";
 import { generateNetworkReference } from "@/lib/network";
 
 const accessSchema = z.object({
@@ -38,6 +42,19 @@ export async function POST(request: Request) {
         ...parsed.data,
       },
     });
+
+    if (isEmailConfigured()) {
+      try {
+        await sendInstitutionalApplicationEmail({
+          to: account.email,
+          contactName: account.contactName,
+          companyName: account.companyName,
+          reference: account.reference,
+        });
+      } catch {
+        // Application is saved even if the confirmation email fails.
+      }
+    }
 
     return jsonOk({ reference: account.reference }, 201);
   } catch {

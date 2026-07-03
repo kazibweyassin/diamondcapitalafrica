@@ -3,7 +3,12 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Users, Workflow } from "lucide-react";
 import { company } from "@/data/content";
 import { images } from "@/data/images";
-import { networkPillars, networkSteps, verificationLevels } from "@/data/network";
+import {
+  institutionalMembership,
+  networkPillars,
+  networkSteps,
+  verificationLevels,
+} from "@/data/network";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -165,8 +170,10 @@ export default function NetworkPage() {
           <div className="rounded-lg border border-border bg-primary p-5 text-white md:p-8">
             <h2 className="text-xl font-bold">For institutional buyers</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/80">
-              Pay for membership to access Level 3+ verified supply, assay
-              documentation, and structured quote requests through DCA.
+              {institutionalMembership.name} from $
+              {institutionalMembership.feeUsd.toLocaleString()}/year — Level 3+
+              verified supply, assay documentation, and structured quote requests
+              through DCA.
             </p>
             <Link
               href="/network/access"
