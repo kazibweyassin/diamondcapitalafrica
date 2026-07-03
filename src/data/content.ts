@@ -86,6 +86,7 @@ export const navItems = [
     href: "/about#investors",
     children: [
       { label: "Gold Savings", href: "/gold-savings" },
+      { label: "Institutional Network", href: "/network" },
       { label: "About Gold", href: "/about-gold" },
       { label: "Market Data", href: "/#market-prices" },
       { label: "News & Announcements", href: "/#announcements" },

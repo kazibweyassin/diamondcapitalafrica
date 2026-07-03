@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ExternalLink, LogOut, Mail, RefreshCw } from "lucide-react";
+import NetworkAdminPanel from "./NetworkAdminPanel";
 function txExplorerUrl(txHash: string) {
   return `https://tronscan.org/#/transaction/${txHash}`;
 }
@@ -286,6 +287,10 @@ export default function AdminDashboard({ email }: { email: string }) {
             ))}
           </div>
         )}
+      </div>
+
+      <div className="mb-12">
+        <NetworkAdminPanel />
       </div>
 
       <div className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">

@@ -83,3 +83,78 @@ model GoldDeposit {
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 }
+
+model NetworkMember {
+  id                String           @id @default(cuid())
+  reference         String           @unique
+  companyName       String
+  contactName       String
+  email             String
+  phone             String
+  licenseNumber     String?
+  location          String
+  productType       String
+  volumeRange       String
+  notes             String?
+  status            String           @default("pending")
+  verificationLevel Int              @default(0)
+  adminNotes        String?
+  supply            VerifiedSupply[]
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+}
+
+model VerifiedSupply {
+  id                String            @id @default(cuid())
+  reference         String            @unique
+  memberId          String
+  member            NetworkMember     @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  title             String
+  productType       String
+  purity            String?
+  volumeEstimate    String
+  location          String
+  verificationLevel Int               @default(3)
+  assayRef          String?
+  status            String            @default("draft")
+  summary           String?
+  enquiries         ExchangeEnquiry[]
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+}
+
+model InstitutionalAccount {
+  id                  String            @id @default(cuid())
+  reference           String            @unique
+  companyName         String
+  contactName         String
+  email               String            @unique
+  phone               String?
+  country             String?
+  buyerType           String
+  message             String?
+  passwordHash        String?
+  status              String            @default("pending")
+  membershipTier      String            @default("standard")
+  membershipExpiresAt DateTime?
+  adminNotes          String?
+  enquiries           ExchangeEnquiry[]
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+}
+
+model ExchangeEnquiry {
+  id            String                @id @default(cuid())
+  reference     String                @unique
+  supplyId      String
+  supply        VerifiedSupply        @relation(fields: [supplyId], references: [id], onDelete: Cascade)
+  accountId     String?
+  account       InstitutionalAccount? @relation(fields: [accountId], references: [id], onDelete: SetNull)
+  contactName   String
+  email         String
+  companyName   String?
+  message       String
+  status        String                @default("new")
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+}

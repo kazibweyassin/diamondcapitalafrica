@@ -31,6 +31,13 @@ const staticPages: SearchResult[] = [
   },
 
   {
+    title: "Institutional Gold Network",
+    href: "/network",
+    excerpt:
+      "Verified supply network and institutional buyer access to the DCA Verified Gold Exchange.",
+    category: "Network",
+  },
+  {
     title: "Gold Savings",
     href: "/gold-savings",
     excerpt:

@@ -111,6 +111,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/network"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Institutional Network
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/gold-in-uganda"
                   className="text-sm text-white/70 transition hover:text-gold"
                 >
