@@ -1,15 +1,17 @@
 import { company } from "@/data/content";
 import { institutionalMembership } from "@/data/network";
-import { getUsdtConfig } from "@/lib/gold-savings-config";
 import { getUsdtNetworkGuide } from "@/lib/usdt-network";
 
+const DEFAULT_INSTITUTIONAL_USDT_WALLET =
+  "TS9mVMnyBufFb1wN2AyixDVsSAE6EF7rwT";
+const DEFAULT_INSTITUTIONAL_USDT_NETWORK = "TRC20";
+
 export function getInstitutionalUsdtConfig() {
-  const fallback = getUsdtConfig();
   const wallet = (
-    process.env.INSTITUTIONAL_USDT_WALLET ?? fallback.wallet
+    process.env.INSTITUTIONAL_USDT_WALLET ?? DEFAULT_INSTITUTIONAL_USDT_WALLET
   ).trim();
   const network = (
-    process.env.INSTITUTIONAL_USDT_NETWORK ?? fallback.network
+    process.env.INSTITUTIONAL_USDT_NETWORK ?? DEFAULT_INSTITUTIONAL_USDT_NETWORK
   )
     .trim()
     .toUpperCase();
