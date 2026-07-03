@@ -37,7 +37,7 @@ export const companyFacts = {
   contactPerson: "Tom",
   phone: company.phone,
   email: company.email,
-  website: "https://diamondcapitalafrica.com",
+  website: "https://www.diamondcapitalafrica.com",
 };
 
 export const collectionCentres = ["Kampala", "Arua"] as const;

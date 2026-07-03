@@ -2,8 +2,24 @@ import type { Metadata } from "next";
 import { company, companyFacts, services } from "@/data/content";
 import type { FaqItem } from "@/data/faqs";
 
-export const siteUrl =
-  process.env.NEXT_PUBLIC_APP_URL ?? "https://diamondcapitalafrica.com";
+const PRODUCTION_SITE_URL = "https://www.diamondcapitalafrica.com";
+
+function resolveSiteUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
+
+  if (process.env.VERCEL_ENV === "production") {
+    if (!configured || configured.includes("localhost")) return PRODUCTION_SITE_URL;
+    return configured;
+  }
+
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return configured ?? PRODUCTION_SITE_URL;
+}
+
+export const siteUrl = resolveSiteUrl();
 
 export const defaultOgImage = "/opengraph-image";
 export const defaultOgImageSize = { width: 1200, height: 630 };
