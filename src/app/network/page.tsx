@@ -64,18 +64,18 @@ export default function NetworkPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
-        <section className="mb-16">
-          <h2 className="mb-8 text-2xl font-bold text-primary">
+      <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 lg:py-16">
+        <section className="mb-10 md:mb-16">
+          <h2 className="mb-5 text-xl font-bold text-primary md:mb-8 md:text-2xl">
             How the Network works
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3 md:gap-6">
             {networkPillars.map((pillar, i) => {
               const Icon = pillarIcons[i] ?? ShieldCheck;
               return (
                 <div
                   key={pillar.title}
-                  className="rounded-lg border border-border bg-white p-6 shadow-sm"
+                  className="rounded-lg border border-border bg-white p-4 shadow-sm md:p-6"
                 >
                   <Icon className="mb-3 text-gold" size={28} />
                   <h3 className="mb-2 font-bold text-primary">{pillar.title}</h3>
@@ -88,19 +88,19 @@ export default function NetworkPage() {
           </div>
         </section>
 
-        <section className="mb-16 rounded-lg bg-section-alt p-8 md:p-10">
-          <h2 className="mb-6 text-2xl font-bold text-primary">
+        <section className="mb-10 rounded-lg bg-section-alt p-5 md:mb-16 md:p-10">
+          <h2 className="mb-3 text-xl font-bold text-primary md:mb-6 md:text-2xl">
             Verification levels
           </h2>
-          <p className="mb-6 max-w-3xl text-sm leading-relaxed text-muted">
+          <p className="mb-4 max-w-3xl text-sm leading-relaxed text-muted md:mb-6">
             Only Level 3 and above appears in the institutional buyer portal.
             DCA assigns levels after KYC, license checks, and product inspection.
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-2 md:space-y-3">
             {verificationLevels.map((item) => (
               <li
                 key={item.level}
-                className="flex items-center gap-3 rounded border border-border bg-white px-4 py-3 text-sm"
+                className="flex items-center gap-2.5 rounded border border-border bg-white px-3 py-2 text-sm md:gap-3 md:px-4 md:py-3"
               >
                 <span className="font-mono text-xs font-bold text-gold-dark">
                   L{item.level}
@@ -111,17 +111,44 @@ export default function NetworkPage() {
           </ul>
         </section>
 
-        <section className="mb-16">
-          <h2 className="mb-8 text-2xl font-bold text-primary">Process</h2>
-          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <section className="mb-10 md:mb-16">
+          <h2 className="mb-4 text-xl font-bold text-primary md:mb-6 md:text-2xl">
+            Process
+          </h2>
+
+          {/* Mobile: compact vertical timeline */}
+          <ol className="md:hidden">
+            {networkSteps.map((step, index) => (
+              <li key={step.step} className="relative flex gap-3 pb-3 last:pb-0">
+                {index < networkSteps.length - 1 && (
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-4 top-8 w-px bg-border"
+                  />
+                )}
+                <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold text-xs font-bold text-primary">
+                  {step.step}
+                </span>
+                <div className="min-w-0 pb-1">
+                  <p className="text-sm font-semibold text-primary">{step.label}</p>
+                  <p className="text-xs leading-snug text-muted">{step.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          {/* Tablet/desktop: step cards */}
+          <ol className="hidden gap-3 sm:grid-cols-2 md:grid lg:grid-cols-5 lg:gap-4">
             {networkSteps.map((step) => (
               <li
                 key={step.step}
-                className="rounded-lg border border-border bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-white p-4 shadow-sm lg:p-5"
               >
-                <p className="text-2xl font-bold text-gold">{step.step}</p>
-                <p className="mt-1 font-semibold text-primary">{step.label}</p>
-                <p className="mt-2 text-xs leading-relaxed text-muted">
+                <p className="text-xl font-bold text-gold lg:text-2xl">{step.step}</p>
+                <p className="mt-1 text-sm font-semibold text-primary lg:text-base">
+                  {step.label}
+                </p>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted">
                   {step.detail}
                 </p>
               </li>
@@ -129,8 +156,8 @@ export default function NetworkPage() {
           </ol>
         </section>
 
-        <section className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-lg border border-border bg-primary p-8 text-white">
+        <section className="grid gap-4 md:gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-border bg-primary p-5 text-white md:p-8">
             <h2 className="text-xl font-bold">For institutional buyers</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/80">
               Pay for membership to access Level 3+ verified supply, assay
@@ -143,7 +170,7 @@ export default function NetworkPage() {
               Request access <ArrowRight size={14} />
             </Link>
           </div>
-          <div className="rounded-lg border border-border bg-white p-8 shadow-sm">
+          <div className="rounded-lg border border-border bg-white p-5 shadow-sm md:p-8">
             <h2 className="text-xl font-bold text-primary">For verified suppliers</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Apply free. DCA verifies your license and product before supply
