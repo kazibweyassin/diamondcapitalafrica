@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Institutional Gold Network",
   description:
-    "Diamond Capital Africa Institutional Gold Network and Verified Gold Exchange — verified supply, institutional buyer access, and DCA-facilitated transaction coordination.",
+    "Diamond Capital Africa Institutional Gold Network and Verified Gold Exchange: verified supply, institutional buyer access, and DCA-facilitated transaction coordination.",
   path: "/network",
   image: images.pageHero.operations,
   keywords: [
@@ -53,7 +53,7 @@ export default function NetworkPage() {
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
               {company.name} verifies supply, grants institutional access, and
-              coordinates quotes through our Verified Gold Exchange — not an open
+              coordinates quotes through our Verified Gold Exchange, not an open
               marketplace.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -171,7 +171,7 @@ export default function NetworkPage() {
             <h2 className="text-xl font-bold">For institutional buyers</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/80">
               {institutionalMembership.name} from $
-              {institutionalMembership.feeUsd.toLocaleString()}/year — Level 3+
+              {institutionalMembership.feeUsd.toLocaleString()}/year. Level 3+
               verified supply, assay documentation, and structured quote requests
               through DCA.
             </p>

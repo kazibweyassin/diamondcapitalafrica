@@ -16,7 +16,7 @@ const networkGuides: Record<
     binanceSteps: [
       "Binance app → Wallet → Withdraw",
       "Coin: USDT",
-      'Network: select TRON (may appear as "TRON", "TRX", or "TRC20" — not BSC or Ethereum)',
+      'Network: select TRON (may appear as "TRON", "TRX", or "TRC20", not BSC or Ethereum)',
       "Paste the wallet address below and send the exact USDT amount",
       "Add your application reference in the memo/note field if available",
     ],

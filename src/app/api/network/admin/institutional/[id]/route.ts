@@ -18,7 +18,7 @@ const patchSchema = z.object({
 
 function handleRouteError(err: unknown, fallback: string) {
   if (err instanceof Error && err.message === "Unauthorized") {
-    return jsonError("Unauthorized — sign in to admin again", 401);
+    return jsonError("Unauthorized. Sign in to admin again", 401);
   }
   console.error(fallback, err);
   return jsonError(fallback, 500);
@@ -92,7 +92,7 @@ export async function PATCH(
         }
       } else {
         emailError =
-          "SMTP not configured on the server — copy the password below and share it manually.";
+          "SMTP not configured on the server. Copy the password below and share it manually.";
       }
 
       const account = await prisma.institutionalAccount.update({

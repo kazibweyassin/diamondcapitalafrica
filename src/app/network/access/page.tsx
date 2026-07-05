@@ -20,7 +20,7 @@ export default function InstitutionalAccessPage() {
           </p>
           <h1 className="mt-2 text-3xl font-bold">Request network access</h1>
           <p className="mt-3 text-white/80">
-            {institutionalMembership.name} — ${institutionalMembership.feeUsd.toLocaleString()}{" "}
+            {institutionalMembership.name}: ${institutionalMembership.feeUsd.toLocaleString()}{" "}
             per year for Level 3+ verified supply and structured quote requests
             coordinated by DCA.
           </p>

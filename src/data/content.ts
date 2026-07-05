@@ -5,7 +5,7 @@ export const company = {
   shortName: "Diamond Capital",
   tagline: "Premium gold supply across East & Central Africa",
   description:
-    "Licensed gold dealer, refinery, and exporter in Kampala, Uganda. We sell 99.99% assay-verified LBMA gold bars to institutional buyers and individual savers — FOB Kampala, CIF Dubai, and Gold Savings from $20. Full OECD-compliant traceability across East and Central Africa.",
+    "Licensed gold dealer, refinery, and exporter in Kampala, Uganda. We sell 99.99% assay-verified LBMA gold bars to institutional buyers and individual savers: FOB Kampala, CIF Dubai, and Gold Savings from $20. Full OECD-compliant traceability across East and Central Africa.",
   purpose:
     "Our purpose is refining with integrity to empower communities and advance Africa's formal gold economy. It underpins every transaction, every bar we produce, and every partnership we build.",
   contactName: "Tom",
@@ -32,7 +32,7 @@ export const companyFacts = {
     "Licensed export to international buyers (FOB Kampala, CIF Dubai)",
     "Gold refining at our Kampala refinery",
     "Fire assay and certified purity testing",
-    "Gold Savings — physical bullion from $20",
+    "Gold Savings: physical bullion from $20",
   ],
   contactPerson: "Tom",
   phone: company.phone,
@@ -159,7 +159,7 @@ export const heroSlides = [
     image: images.pageHero.operations,
     title: "Institutional Gold Network",
     description:
-      "Verified supply, institutional buyer access, and DCA-coordinated quotes through our Verified Gold Exchange — not an open marketplace.",
+      "Verified supply, institutional buyer access, and DCA-coordinated quotes through our Verified Gold Exchange, not an open marketplace.",
     cta: { label: "Explore the Network", href: "/network" },
     tab: "Network",
   },

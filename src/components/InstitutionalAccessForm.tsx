@@ -63,7 +63,7 @@ export default function InstitutionalAccessForm() {
           <h2 className="text-xl font-bold text-primary">Access request received</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
             DCA will review your application. Complete membership payment below
-            using your reference — portal credentials are emailed after payment
+            using your reference. Portal credentials are emailed after payment
             is confirmed.
           </p>
           <Link

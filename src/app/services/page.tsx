@@ -315,7 +315,7 @@ export default function ServicesPage() {
           </h2>
           <p className="mb-6 max-w-2xl text-white/80">
             Browse Level 3+ verified supply, request structured quotes, or apply
-            as a supplier through our Verified Gold Exchange — coordinated by
+            as a supplier through our Verified Gold Exchange, coordinated by
             DCA, not an open marketplace.
           </p>
           <div className="flex flex-wrap gap-3">

@@ -30,7 +30,7 @@ export default function NetworkPromo() {
             </h2>
             <p className="mb-6 text-sm leading-relaxed text-white/80 sm:mb-8 sm:text-base">
               Suppliers apply free. Institutional buyers request access to
-              Level 3+ verified supply and structured quotes — coordinated by
+              Level 3+ verified supply and structured quotes, coordinated by
               Diamond Capital Africa, not peer-to-peer trading.
             </p>
 
@@ -43,7 +43,7 @@ export default function NetworkPromo() {
                   <span className="font-semibold text-white">
                     {pillar.title}
                   </span>
-                  {" — "}
+                  {": "}
                   {pillar.description}
                 </li>
               ))}

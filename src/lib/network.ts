@@ -5,11 +5,11 @@ export function generateNetworkReference(prefix: string) {
 }
 
 export function verificationLabel(level: number) {
-  if (level >= 5) return "Level 5 — Chain of custody";
-  if (level >= 4) return "Level 4 — Assay verified";
-  if (level >= 3) return "Level 3 — Product verified";
-  if (level >= 2) return "Level 2 — License verified";
-  if (level >= 1) return "Level 1 — Identity verified";
+  if (level >= 5) return "Level 5: Chain of custody";
+  if (level >= 4) return "Level 4: Assay verified";
+  if (level >= 3) return "Level 3: Product verified";
+  if (level >= 2) return "Level 2: License verified";
+  if (level >= 1) return "Level 1: Identity verified";
   return "Pending verification";
 }
 

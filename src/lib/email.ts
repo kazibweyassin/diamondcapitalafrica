@@ -78,23 +78,23 @@ export async function sendInstitutionalApplicationEmail({
     "",
     `Reference: ${reference}`,
     `Company: ${companyName}`,
-    `Membership: ${tier.name} — $${tier.feeUsd.toLocaleString()} / ${tier.period}`,
+    `Membership: ${tier.name}: $${tier.feeUsd.toLocaleString()} / ${tier.period}`,
     "",
     "Payment instructions:",
     "",
-    `Option 1 — USDT (${usdt.networkGuide.label})`,
+    `Option 1: USDT (${usdt.networkGuide.label})`,
     `Amount: ${usdt.amount.toLocaleString()} USDT`,
     `Wallet: ${usdt.wallet}`,
     `Reference / memo: ${reference}`,
     `Binance: choose network ${usdt.networkGuide.binanceLabel}`,
     "",
-    "Option 2 — Bank wire",
+    "Option 2: Bank wire",
     `Email ${wire.email} with reference ${reference} for a proforma invoice and bank details.`,
     "",
     "Portal credentials are emailed after DCA confirms your payment.",
     `Payment details: ${accessUrl}`,
     "",
-    `${company.contactName} — ${company.name}`,
+    `${company.contactName}: ${company.name}`,
     company.investorsEmail,
     company.phone,
   ].join("\n");
@@ -104,8 +104,8 @@ export async function sendInstitutionalApplicationEmail({
     <p>Thank you for applying to the <strong>${company.name} Institutional Gold Network</strong>.</p>
     <p><strong>Reference:</strong> ${reference}<br />
     <strong>Company:</strong> ${companyName}<br />
-    <strong>Membership:</strong> ${tier.name} — $${tier.feeUsd.toLocaleString()} / ${tier.period}</p>
-    <p><strong>Option 1 — USDT (${usdt.networkGuide.label})</strong></p>
+    <strong>Membership:</strong> ${tier.name}: $${tier.feeUsd.toLocaleString()} / ${tier.period}</p>
+    <p><strong>Option 1: USDT (${usdt.networkGuide.label})</strong></p>
     <ul>
       <li><strong>Amount:</strong> ${usdt.amount.toLocaleString()} USDT</li>
       <li><strong>Network:</strong> ${usdt.networkGuide.label}</li>
@@ -113,17 +113,17 @@ export async function sendInstitutionalApplicationEmail({
       <li><strong>Reference / memo:</strong> <code>${reference}</code></li>
       <li><strong>Binance:</strong> select network <strong>${usdt.networkGuide.binanceLabel}</strong></li>
     </ul>
-    <p><strong>Option 2 — Bank wire</strong><br />
+    <p><strong>Option 2: Bank wire</strong><br />
     Email <a href="mailto:${wire.email}">${wire.email}</a> with reference <code>${reference}</code> for a proforma invoice and bank details.</p>
     <p>Portal credentials are emailed after DCA confirms your payment.<br />
     <a href="${accessUrl}">View payment instructions online</a></p>
-    <p>${company.contactName} — ${company.name}<br />
+    <p>${company.contactName}: ${company.name}<br />
     <a href="mailto:${company.investorsEmail}">${company.investorsEmail}</a> · ${company.phone}</p>
   `;
 
   await sendEmail({
     to,
-    subject: `${company.name} Institutional Network — payment instructions (${reference})`,
+    subject: `${company.name} Institutional Network: payment instructions (${reference})`,
     text,
     html,
   });
@@ -161,7 +161,7 @@ export async function sendInstitutionalCredentialsEmail({
     "",
     "Keep this password confidential. Contact us if you need it reset.",
     "",
-    `${company.contactName} — ${company.name}`,
+    `${company.contactName}: ${company.name}`,
     company.email,
     company.phone,
   ].join("\n");
@@ -179,7 +179,7 @@ export async function sendInstitutionalCredentialsEmail({
     </ul>
     <p>Sign in to browse Level 3+ verified supply and submit structured quote requests through the Verified Gold Exchange.</p>
     <p>Keep this password confidential. Contact us if you need it reset.</p>
-    <p>${company.contactName} — ${company.name}<br />
+    <p>${company.contactName}: ${company.name}<br />
     <a href="mailto:${company.email}">${company.email}</a> · ${company.phone}</p>
   `;
 

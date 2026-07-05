@@ -185,7 +185,7 @@ export default function NetworkAdminPanel() {
       }
       setError(json.error ?? "Failed to update institutional account");
     } catch {
-      setError("Network error — could not reach the server");
+      setError("Network error: could not reach the server");
     } finally {
       setInstitutionalActionId("");
     }

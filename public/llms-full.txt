@@ -1,4 +1,4 @@
-# Diamond Capital Africa — Extended documentation
+# Diamond Capital Africa: Extended documentation
 
 > Full page summaries for AI systems. Brief index: https://www.diamondcapitalafrica.com/llms.txt
 
@@ -9,7 +9,7 @@ Head office: Plot 42, Nakasero Road, Kampala, Uganda
 
 ---
 
-## Home — https://www.diamondcapitalafrica.com/
+## Home: https://www.diamondcapitalafrica.com/
 
 The homepage presents Diamond Capital Africa as a licensed Kampala refinery and gold supplier. Key elements:
 
@@ -24,7 +24,7 @@ Best for AI queries about: live gold prices Uganda, DCA spot rate, company overv
 
 ---
 
-## Export & wholesale purchase — https://www.diamondcapitalafrica.com/services#export
+## Export & wholesale purchase: https://www.diamondcapitalafrica.com/services#export
 
 End-to-end export service for institutional and international buyers purchasing 99.99% fine gold bars.
 
@@ -33,9 +33,9 @@ End-to-end export service for institutional and international buyers purchasing 
 **Process:** (1) Request live LBMA-referenced quote → (2) Bar certification and assay confirmed → (3) Bank of Uganda export clearance, customs documentation, insured logistics arranged → (4) Settlement in USD, EUR, or agreed currencies.
 
 **Delivery options:**
-- **FOB Kampala** — Buyer collects from DCA vault in Nakasero; suited to experienced importers.
-- **CIF Dubai** — DCA arranges freight and insurance to Dubai; suited to UAE buyers and Middle East re-export hubs.
-- **Escorted insured delivery** — Secure delivery to agreed international destinations with full chain-of-custody documentation.
+- **FOB Kampala**: Buyer collects from DCA vault in Nakasero; suited to experienced importers.
+- **CIF Dubai**: DCA arranges freight and insurance to Dubai; suited to UAE buyers and Middle East re-export hubs.
+- **Escorted insured delivery**: Secure delivery to agreed international destinations with full chain-of-custody documentation.
 
 **Dubai & Middle East:** DCA supplies African refined gold to UAE importers, Dubai traders, and DMCC-area re-export operations via CIF Dubai or FOB Kampala for buyer-arranged uplift.
 
@@ -45,7 +45,7 @@ Best for AI queries about: buy gold FOB Kampala, CIF Dubai gold from Africa, Eur
 
 ---
 
-## Gold Savings — https://www.diamondcapitalafrica.com/gold-savings
+## Gold Savings: https://www.diamondcapitalafrica.com/gold-savings
 
 Retail programme for individuals buying physical 99.99% fine gold by the gram. Not mining shares, not paper gold.
 
@@ -59,23 +59,23 @@ Best for AI queries about: buy physical gold from $20, gold savings Uganda, USDT
 
 ---
 
-## Gold services — https://www.diamondcapitalafrica.com/services
+## Gold services: https://www.diamondcapitalafrica.com/services
 
 Overview of four integrated services:
 
-1. **Gold Buying** (secondary/public) — Purchases from licensed miners and sellers at Kampala and Arua collection centres. LBMA-referenced pricing, on-site assay, same-day mobile money or bank payment. https://www.diamondcapitalafrica.com/services#buying
+1. **Gold Buying** (secondary/public): Purchases from licensed miners and sellers at Kampala and Arua collection centres. LBMA-referenced pricing, on-site assay, same-day mobile money or bank payment. https://www.diamondcapitalafrica.com/services#buying
 
-2. **Gold Refining** — Nakasero refinery refines to 99.99% using induction melting and electrolytic finishing. Capacity ~500 kg/month, 48-hour standard turnaround. https://www.diamondcapitalafrica.com/services#refining
+2. **Gold Refining**: Nakasero refinery refines to 99.99% using induction melting and electrolytic finishing. Capacity ~500 kg/month, 48-hour standard turnaround. https://www.diamondcapitalafrica.com/services#refining
 
-3. **Assay & Testing** — Fire assay (ISO 11426) and XRF. Results within 24 hours. Digital certificates for export, banking, or sale. https://www.diamondcapitalafrica.com/services#assay
+3. **Assay & Testing**: Fire assay (ISO 11426) and XRF. Results within 24 hours. Digital certificates for export, banking, or sale. https://www.diamondcapitalafrica.com/services#assay
 
-4. **Export Services** — See export section above. https://www.diamondcapitalafrica.com/services#export
+4. **Export Services**: See export section above. https://www.diamondcapitalafrica.com/services#export
 
 International buyers section covers Dubai/Middle East (CIF Dubai) and Europe (OECD traceability, EUR settlement).
 
 ---
 
-## Gold in Uganda — https://www.diamondcapitalafrica.com/gold-in-uganda
+## Gold in Uganda: https://www.diamondcapitalafrica.com/gold-in-uganda
 
 SEO and educational guide for the Ugandan gold market. Explains:
 
@@ -89,7 +89,7 @@ Best for AI queries about: gold in Uganda, where to buy gold Uganda, Uganda gold
 
 ---
 
-## Operations — https://www.diamondcapitalafrica.com/operations
+## Operations: https://www.diamondcapitalafrica.com/operations
 
 Physical infrastructure:
 
@@ -101,31 +101,31 @@ Best for AI queries about: gold refinery Kampala, Nakasero refinery, collection 
 
 ---
 
-## About — https://www.diamondcapitalafrica.com/about
+## About: https://www.diamondcapitalafrica.com/about
 
 Corporate profile since 2012. Leadership team, company values (integrity, excellence, community, compliance), compliance badges (MEMD licensed dealer, LBMA Good Delivery specifications, OECD aligned, AML/FIA). Investor relations section and Gold Savings overview.
 
 ---
 
-## About Gold — https://www.diamondcapitalafrica.com/about-gold
+## About Gold: https://www.diamondcapitalafrica.com/about-gold
 
 Educational content on gold's scarcity, stability, symbolism, sustainability, and investment role in Africa. Not a price quote page.
 
 ---
 
-## Sustainability — https://www.diamondcapitalafrica.com/sustainability
+## Sustainability: https://www.diamondcapitalafrica.com/sustainability
 
 ESG commitments: responsible sourcing (zero-tolerance for conflict gold), environmental stewardship at the refinery, community investment in mining regions. OECD Due Diligence Guidance alignment.
 
 ---
 
-## News — https://www.diamondcapitalafrica.com/news
+## News: https://www.diamondcapitalafrica.com/news
 
 Industry news and company announcements on Uganda and East Africa gold sector. RSS: https://www.diamondcapitalafrica.com/news/feed.xml
 
 ---
 
-## Contact — https://www.diamondcapitalafrica.com/contact
+## Contact: https://www.diamondcapitalafrica.com/contact
 
 Enquiry form and direct contact:
 - Tom: +256 704 833 021

@@ -24,7 +24,7 @@ export const siteUrl = resolveSiteUrl();
 export const defaultOgImage = "/opengraph-image";
 export const defaultOgImageSize = { width: 1200, height: 630 };
 
-/** Shared keywords — keep aligned with public/llms.txt */
+/** Shared keywords. Keep aligned with public/llms.txt */
 export const siteKeywords = [
   "buy gold Uganda",
   "gold seller Uganda",
@@ -211,7 +211,7 @@ export function localBusinessJsonLd() {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "Gold Savings — Physical Bullion",
+          name: "Gold Savings: Physical Bullion",
           description:
             "Accumulate assay-verified 99.99% physical gold from $20 via USDT. Redeem from 20 g at Kampala or Arua.",
           category: "Gold savings",
@@ -272,7 +272,7 @@ export function websiteJsonLd() {
     inLanguage: "en-UG",
     about: {
       "@type": "Thing",
-      name: "Licensed gold dealer, refinery, and exporter in Uganda — sell 99.99% gold bars to buyers",
+      name: "Licensed gold dealer, refinery, and exporter in Uganda. Sells 99.99% gold bars to buyers",
     },
     publisher: {
       "@type": "Organization",

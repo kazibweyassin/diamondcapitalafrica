@@ -46,7 +46,7 @@ export const networkPillars = [
   {
     title: "DCA coordination",
     description:
-      "Diamond Capital Africa structures assay, compliance, and execution — not open peer-to-peer contact.",
+      "Diamond Capital Africa structures assay, compliance, and execution, not open peer-to-peer contact.",
   },
 ] as const;
 

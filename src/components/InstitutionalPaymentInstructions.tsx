@@ -67,7 +67,7 @@ export default function InstitutionalPaymentInstructions({
         <div className="mt-5 space-y-5">
           <div className="rounded-lg border border-border bg-white p-4">
             <p className="text-sm font-semibold text-primary">
-              Option 1 — USDT ({usdt.networkGuide.label})
+              Option 1: USDT ({usdt.networkGuide.label})
             </p>
             <dl className="mt-3 space-y-2 text-sm">
               <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between">
@@ -110,7 +110,7 @@ export default function InstitutionalPaymentInstructions({
                 <strong className="text-foreground">
                   {usdt.networkGuide.binanceLabel}
                 </strong>{" "}
-                as the network — not the label &quot;TRC20&quot; alone.
+                as the network, not the label &quot;TRC20&quot; alone.
               </p>
               <ol className="mt-2 list-decimal space-y-1 pl-4 text-xs leading-relaxed text-muted">
                 {usdt.networkGuide.binanceSteps.map((step) => (
@@ -127,7 +127,7 @@ export default function InstitutionalPaymentInstructions({
 
           <div className="rounded-lg border border-border bg-white p-4">
             <p className="text-sm font-semibold text-primary">
-              Option 2 — Bank wire
+              Option 2: Bank wire
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               Email{" "}
