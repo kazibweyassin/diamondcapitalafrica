@@ -42,6 +42,35 @@ export const companyFacts = {
 
 export const collectionCentres = ["Kampala", "Arua"] as const;
 
+export const internationalBuyerRegions = [
+  {
+    id: "dubai",
+    title: "Dubai & Middle East buyers",
+    summary:
+      "Purchase 99.99% assay-verified gold bars from our Kampala refinery with CIF Dubai delivery or FOB Kampala vault collection.",
+    points: [
+      "CIF Dubai: we arrange freight and insurance to Dubai for UAE importers and re-export hubs",
+      "FOB Kampala: experienced buyers arrange insured uplift from our Nakasero vault",
+      "LBMA Good Delivery specifications, serial-numbered bars, OECD-aligned traceability",
+      "USD settlement; BoU export clearance and full customs documentation",
+    ],
+    cta: { label: "Enquire about CIF Dubai export", subject: "Export Services" },
+  },
+  {
+    id: "europe",
+    title: "European buyers",
+    summary:
+      "Source African refined gold with documentation suited to EU due diligence expectations and multi-currency settlement.",
+    points: [
+      "99.99% fine gold bars with fire-assay certificates and chain-of-custody records",
+      "OECD Due Diligence Guidance aligned sourcing for European importers and refiners",
+      "EUR or USD settlement; export documentation prepared for EU customs",
+      "Escorted insured delivery or FOB Kampala collection for institutional buyers",
+    ],
+    cta: { label: "Enquire about European export", subject: "Export Services" },
+  },
+] as const;
+
 export const navItems = [
   {
     label: "About Us",

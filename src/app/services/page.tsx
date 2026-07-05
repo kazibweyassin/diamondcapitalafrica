@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { services, serviceProcess } from "@/data/content";
+import { internationalBuyerRegions, services, serviceProcess } from "@/data/content";
 import { images } from "@/data/images";
 import JsonLd from "@/components/JsonLd";
 import { pageMetadata, servicesJsonLd } from "@/lib/seo";
@@ -19,12 +19,14 @@ import type { LucideIcon } from "lucide-react";
 export const metadata = pageMetadata({
   title: "Buy Gold Bars Uganda | Refining, Assay & Export",
   description:
-    "Buy 99.99% LBMA gold bars from a licensed Kampala refinery. Fire-assay certified bullion, FOB Kampala and CIF Dubai delivery, plus refining and export services across East Africa.",
+    "Buy 99.99% LBMA gold bars from a licensed Kampala refinery. CIF Dubai and European export, FOB Kampala collection, fire-assay certified bullion, and OECD-aligned traceability.",
   path: "/services",
   image: images.pageHero.services,
   keywords: [
     "buy gold bars Uganda",
     "gold bullion supplier",
+    "CIF Dubai gold export",
+    "gold export Europe Uganda",
     "gold export Kampala",
     "gold refining Uganda",
     "fire assay Uganda",
@@ -256,6 +258,53 @@ export default function ServicesPage() {
             </section>
           );
         })}
+
+        <section className="mt-8 border-t border-border pt-12">
+          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-gold">
+            International buyers
+          </h2>
+          <p className="mb-8 max-w-3xl text-muted">
+            Diamond Capital Africa exports assay-verified 99.99% gold bars from
+            Kampala to institutional buyers in Dubai, the wider Middle East, and
+            Europe with full OECD-aligned traceability.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {internationalBuyerRegions.map((region) => (
+              <div
+                key={region.id}
+                className="rounded-xl border border-border bg-white p-6 md:p-8"
+              >
+                <h3 className="mb-3 text-xl font-bold text-primary">
+                  {region.title}
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-muted">
+                  {region.summary}
+                </p>
+                <ul className="mb-6 space-y-2">
+                  {region.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2 text-sm text-muted"
+                    >
+                      <CheckCircle
+                        size={16}
+                        className="mt-0.5 shrink-0 text-gold"
+                      />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={`/contact?subject=${encodeURIComponent(region.cta.subject)}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-gold-dark transition hover:text-gold"
+                >
+                  {region.cta.label}
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-8 overflow-hidden rounded-xl bg-primary p-8 md:p-12">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gold">

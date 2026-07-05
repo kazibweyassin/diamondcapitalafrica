@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
-import { company } from "@/data/content";
+import { company, internationalBuyerRegions } from "@/data/content";
 import { goldFaqs } from "@/data/faqs";
 import { images } from "@/data/images";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
@@ -10,7 +10,7 @@ import { faqJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Gold in Uganda | Where to Buy Certified Bars",
   description:
-    "Where to buy gold in Uganda: licensed dealer and Kampala refinery selling 99.99% LBMA bars. Export, Gold Savings from $20, and live spot pricing. Diamond Capital Africa since 2012.",
+    "Where to buy gold in Uganda: licensed dealer and Kampala refinery selling 99.99% LBMA bars. CIF Dubai and European export, Gold Savings from $20, live spot pricing. Diamond Capital Africa since 2012.",
   path: "/gold-in-uganda",
   image: images.hero.sourcing,
   keywords: [
@@ -20,6 +20,8 @@ export const metadata = pageMetadata({
     "gold dealer Uganda",
     "gold refinery Kampala",
     "buy gold bars Uganda",
+    "CIF Dubai gold Uganda",
+    "gold export Europe Uganda",
   ],
 });
 
@@ -44,6 +46,10 @@ const sections = [
     title: "Refining and export from Kampala",
     body: "Our Nakasero refinery converts raw gold into 99.99% purity bars using induction furnaces and ISO-certified quality controls. We manage assay, vaulting, Bank of Uganda clearance, customs documentation, and international logistics for exporters and institutional buyers.",
   },
+  ...internationalBuyerRegions.map((region) => ({
+    title: region.title,
+    body: `${region.summary} ${region.points.join(" ")}`,
+  })),
 ];
 
 export default function GoldInUgandaPage() {

@@ -81,6 +81,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <head>
         <link rel="llms-txt" type="text/plain" href="/llms.txt" />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms-full.txt"
+          title="Diamond Capital Africa extended LLM documentation"
+        />
       </head>
       <body className="flex min-h-full flex-col">
         <JsonLd data={organizationJsonLd()} />

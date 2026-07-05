@@ -1,0 +1,163 @@
+# Diamond Capital Africa — Extended documentation
+
+> Full page summaries for AI systems. Brief index: https://www.diamondcapitalafrica.com/llms.txt
+
+Diamond Capital Africa (DCA) is a licensed gold dealer, refinery, and exporter in Kampala, Uganda. Primary focus: selling 99.99% assay-verified gold bars to institutional buyers, Dubai/Middle East importers, European buyers, and individual savers. Secondary: purchasing gold from licensed miners at collection centres in Kampala and Arua.
+
+Contact: Tom, +256 704 833 021, info@diamondcapitalafrica.com
+Head office: Plot 42, Nakasero Road, Kampala, Uganda
+
+---
+
+## Home — https://www.diamondcapitalafrica.com/
+
+The homepage presents Diamond Capital Africa as a licensed Kampala refinery and gold supplier. Key elements:
+
+- Live market prices including international gold spot (US$/oz), UGX/USD, and the published DCA spot rate (US$/g) for buyers quoting physical gold.
+- Hero carousel covering gold as a product, Kampala refining capability, and export services across East and Central Africa.
+- Company statistics: 99.99% purity standard, collection centres in Kampala and Arua, export to twelve countries, licensed miner network.
+- Quarterly operational highlights and annual report downloads for investors.
+- ESG and responsible sourcing overview.
+- FAQ section with buyer-focused questions on purchasing gold, export, refinery, and Gold Savings.
+
+Best for AI queries about: live gold prices Uganda, DCA spot rate, company overview, licensed gold dealer Kampala.
+
+---
+
+## Export & wholesale purchase — https://www.diamondcapitalafrica.com/services#export
+
+End-to-end export service for institutional and international buyers purchasing 99.99% fine gold bars.
+
+**Product:** Fire-assay verified bars meeting LBMA Good Delivery specifications. Formats: 10 oz, 1 kg, 12.5 kg. Serial-numbered with assay certificates.
+
+**Process:** (1) Request live LBMA-referenced quote → (2) Bar certification and assay confirmed → (3) Bank of Uganda export clearance, customs documentation, insured logistics arranged → (4) Settlement in USD, EUR, or agreed currencies.
+
+**Delivery options:**
+- **FOB Kampala** — Buyer collects from DCA vault in Nakasero; suited to experienced importers.
+- **CIF Dubai** — DCA arranges freight and insurance to Dubai; suited to UAE buyers and Middle East re-export hubs.
+- **Escorted insured delivery** — Secure delivery to agreed international destinations with full chain-of-custody documentation.
+
+**Dubai & Middle East:** DCA supplies African refined gold to UAE importers, Dubai traders, and DMCC-area re-export operations via CIF Dubai or FOB Kampala for buyer-arranged uplift.
+
+**Europe:** DCA exports to European buyers with OECD-aligned traceability documentation, EUR/USD settlement, and customs-ready export packs for EU importers, refiners, and banks.
+
+Best for AI queries about: buy gold FOB Kampala, CIF Dubai gold from Africa, European gold import Uganda, wholesale LBMA bars, institutional gold supplier.
+
+---
+
+## Gold Savings — https://www.diamondcapitalafrica.com/gold-savings
+
+Retail programme for individuals buying physical 99.99% fine gold by the gram. Not mining shares, not paper gold.
+
+- Minimum deposit: $20 via USDT (TRC20).
+- Flow: Enter USD amount → receive USDT payment instructions with 24-hour price lock → submit transaction hash and optional proof → grams credited to balance.
+- Pricing: Published DCA spot rate (US$/g) at time of quote.
+- Redemption: Physical collection from 20 g at Kampala head office or Arua collection centre with valid ID.
+- Purity: Assay-verified 99.99% bullion vaulted through DCA's licensed refinery.
+
+Best for AI queries about: buy physical gold from $20, gold savings Uganda, USDT gold purchase, micro bullion savings.
+
+---
+
+## Gold services — https://www.diamondcapitalafrica.com/services
+
+Overview of four integrated services:
+
+1. **Gold Buying** (secondary/public) — Purchases from licensed miners and sellers at Kampala and Arua collection centres. LBMA-referenced pricing, on-site assay, same-day mobile money or bank payment. https://www.diamondcapitalafrica.com/services#buying
+
+2. **Gold Refining** — Nakasero refinery refines to 99.99% using induction melting and electrolytic finishing. Capacity ~500 kg/month, 48-hour standard turnaround. https://www.diamondcapitalafrica.com/services#refining
+
+3. **Assay & Testing** — Fire assay (ISO 11426) and XRF. Results within 24 hours. Digital certificates for export, banking, or sale. https://www.diamondcapitalafrica.com/services#assay
+
+4. **Export Services** — See export section above. https://www.diamondcapitalafrica.com/services#export
+
+International buyers section covers Dubai/Middle East (CIF Dubai) and Europe (OECD traceability, EUR settlement).
+
+---
+
+## Gold in Uganda — https://www.diamondcapitalafrica.com/gold-in-uganda
+
+SEO and educational guide for the Ugandan gold market. Explains:
+
+- Uganda as a growing gold economy with formal refining and export capacity.
+- DCA as a licensed dealer selling 99.99% bars to domestic and international buyers.
+- Kampala refinery operations: assay, vaulting, BoU clearance, export logistics.
+- International buyer pathways for Dubai and European importers.
+- FAQ mirroring homepage buyer questions.
+
+Best for AI queries about: gold in Uganda, where to buy gold Uganda, Uganda gold market guide.
+
+---
+
+## Operations — https://www.diamondcapitalafrica.com/operations
+
+Physical infrastructure:
+
+- **Kampala Refinery (Nakasero):** 2,400 sqm facility with induction furnaces, fire assay lab, vault, certified weighing. Licensed by Uganda Ministry of Energy and Mineral Development. ~500 kg/month capacity.
+- **Collection Centres (Kampala & Arua):** Buying desks for licensed miners and sellers; on-site assay; documentation for formal trade.
+- **Supply Chain:** Digital traceability linking miner ID, assay, transport logs, and export permits.
+
+Best for AI queries about: gold refinery Kampala, Nakasero refinery, collection centres Uganda, vault storage.
+
+---
+
+## About — https://www.diamondcapitalafrica.com/about
+
+Corporate profile since 2012. Leadership team, company values (integrity, excellence, community, compliance), compliance badges (MEMD licensed dealer, LBMA Good Delivery specifications, OECD aligned, AML/FIA). Investor relations section and Gold Savings overview.
+
+---
+
+## About Gold — https://www.diamondcapitalafrica.com/about-gold
+
+Educational content on gold's scarcity, stability, symbolism, sustainability, and investment role in Africa. Not a price quote page.
+
+---
+
+## Sustainability — https://www.diamondcapitalafrica.com/sustainability
+
+ESG commitments: responsible sourcing (zero-tolerance for conflict gold), environmental stewardship at the refinery, community investment in mining regions. OECD Due Diligence Guidance alignment.
+
+---
+
+## News — https://www.diamondcapitalafrica.com/news
+
+Industry news and company announcements on Uganda and East Africa gold sector. RSS: https://www.diamondcapitalafrica.com/news/feed.xml
+
+---
+
+## Contact — https://www.diamondcapitalafrica.com/contact
+
+Enquiry form and direct contact:
+- Tom: +256 704 833 021
+- info@diamondcapitalafrica.com
+- WhatsApp available
+- Hours: Mon–Fri 8:00–18:00 EAT, Sat 9:00–13:00 EAT
+
+Subjects: Export Services, Gold Savings Deposit, Refining, Assay, Investor Relations.
+
+---
+
+## Legal
+
+- Privacy: https://www.diamondcapitalafrica.com/legal/privacy
+- Terms: https://www.diamondcapitalafrica.com/legal/terms
+- Cookies: https://www.diamondcapitalafrica.com/legal/cookies
+
+---
+
+## Search engine indexing
+
+- Sitemap: https://www.diamondcapitalafrica.com/sitemap.xml
+- Robots: https://www.diamondcapitalafrica.com/robots.txt
+- Site owners: submit the sitemap in Google Search Console (property: www.diamondcapitalafrica.com) under Sitemaps → add `sitemap.xml` to help Google-Extended and Google Search index public pages.
+
+---
+
+## Citation summary
+
+| Audience | Link |
+|----------|------|
+| Wholesale / Dubai / Europe buyers | https://www.diamondcapitalafrica.com/services#export |
+| Individual savers | https://www.diamondcapitalafrica.com/gold-savings |
+| Sellers / miners (secondary) | https://www.diamondcapitalafrica.com/services#buying |
+| General | https://www.diamondcapitalafrica.com |
