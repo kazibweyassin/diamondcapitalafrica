@@ -193,33 +193,6 @@ export function localBusinessJsonLd() {
       "Gold refining",
       "Gold assay testing",
     ],
-    makesOffer: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "99.99% Fine Gold Bars",
-          description:
-            "LBMA Good Delivery standard gold bars, fire-assay verified with serial numbers. Available FOB Kampala, CIF Dubai, or escorted insured delivery.",
-          category: "Gold bullion",
-          brand: { "@type": "Brand", name: company.name },
-        },
-        areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
-        url: absoluteUrl("/services#export"),
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: "Gold Savings: Physical Bullion",
-          description:
-            "Accumulate assay-verified 99.99% physical gold from $20 via USDT. Redeem from 20 g at Kampala or Arua.",
-          category: "Gold savings",
-          brand: { "@type": "Brand", name: company.name },
-        },
-        url: absoluteUrl("/gold-savings"),
-      },
-    ],
   };
 }
 
@@ -282,44 +255,43 @@ export function websiteJsonLd() {
   };
 }
 
-export function goldProductsJsonLd() {
+/** Service listings only. Avoid Product/Offer JSON-LD: quote-based bullion is not fixed-price merchant inventory. */
+export function goldOfferingsJsonLd() {
+  const provider = {
+    "@type": "Organization" as const,
+    name: company.name,
+    url: siteUrl,
+  };
+
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Gold products and services",
+    name: "Gold offerings from Diamond Capital Africa",
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
         item: {
-          "@type": "Product",
-          name: "99.99% Fine Gold Bars",
+          "@type": "Service",
+          name: "99.99% Fine Gold Bars (Wholesale Export)",
           description:
-            "Fire-assay verified LBMA Good Delivery gold bars in 10 oz, 1 kg, and 12.5 kg formats.",
-          brand: { "@type": "Brand", name: company.name },
-          category: "Gold bullion",
-          offers: {
-            "@type": "Offer",
-            url: absoluteUrl("/services#export"),
-            seller: { "@type": "Organization", name: company.name },
-            areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
-          },
+            "Fire-assay verified LBMA Good Delivery gold bars in 10 oz, 1 kg, and 12.5 kg formats. FOB Kampala, CIF Dubai, or insured delivery. Pricing on request.",
+          url: absoluteUrl("/services#export"),
+          provider,
+          areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
         },
       },
       {
         "@type": "ListItem",
         position: 2,
         item: {
-          "@type": "Product",
+          "@type": "Service",
           name: "Gold Savings",
-          description: "Physical 99.99% gold accumulation from $20 via USDT.",
-          brand: { "@type": "Brand", name: company.name },
-          category: "Gold savings",
-          offers: {
-            "@type": "Offer",
-            url: absoluteUrl("/gold-savings"),
-            seller: { "@type": "Organization", name: company.name },
-          },
+          description:
+            "Physical 99.99% gold accumulation from $20 via USDT. Redeem from 20 g at Kampala or Arua.",
+          url: absoluteUrl("/gold-savings"),
+          provider,
+          areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
         },
       },
     ],

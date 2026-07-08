@@ -1,4 +1,4 @@
-import { faqJsonLd, goldProductsJsonLd, pageMetadata } from "@/lib/seo";
+import { faqJsonLd, goldOfferingsJsonLd, pageMetadata } from "@/lib/seo";
 import { goldFaqs } from "@/data/faqs";
 import { company } from "@/data/content";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqJsonLd(goldFaqs)} />
-      <JsonLd data={goldProductsJsonLd()} />
+      <JsonLd data={goldOfferingsJsonLd()} />
       <HeroCarousel />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
