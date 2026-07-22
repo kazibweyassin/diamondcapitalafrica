@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buyerProcedureSteps } from "@/data/buyer-education";
 import { company, companyFacts, services } from "@/data/content";
 import type { FaqItem } from "@/data/faqs";
 
@@ -304,16 +305,18 @@ export function articleJsonLd({
   path,
   datePublished,
   sourceUrl,
+  type = "NewsArticle",
 }: {
   title: string;
   description: string;
   path: string;
   datePublished: string;
   sourceUrl?: string | null;
+  type?: "NewsArticle" | "Article";
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": type,
     headline: title,
     description,
     url: absoluteUrl(path),
@@ -326,5 +329,37 @@ export function articleJsonLd({
     },
     mainEntityOfPage: absoluteUrl(path),
     ...(sourceUrl ? { isBasedOn: sourceUrl } : {}),
+  };
+}
+
+/** HowTo schema for the institutional buying procedure page. */
+export function howToBuyJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to buy gold from Diamond Capital Africa",
+    description:
+      "Procedure for institutional buyers to purchase assay-verified 99.99% gold bars from a licensed Kampala refinery: enquiry, KYC, quote, assay, and delivery.",
+    url: absoluteUrl("/how-to-buy"),
+    totalTime: "P14D",
+    supply: [
+      {
+        "@type": "HowToSupply",
+        name: "Corporate KYC documents and proof of funds",
+      },
+    ],
+    tool: [
+      {
+        "@type": "HowToTool",
+        name: "Export enquiry via contact form or phone",
+      },
+    ],
+    step: buyerProcedureSteps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.body,
+      url: absoluteUrl(`/how-to-buy#step-${index + 1}`),
+    })),
   };
 }

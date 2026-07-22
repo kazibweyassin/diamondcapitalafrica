@@ -3,6 +3,7 @@ import Link from "next/link";
 import { internationalBuyerRegions, services, serviceProcess } from "@/data/content";
 import { images } from "@/data/images";
 import JsonLd from "@/components/JsonLd";
+import TrustPrequalBlock from "@/components/TrustPrequalBlock";
 import { pageMetadata, servicesJsonLd } from "@/lib/seo";
 import ServiceSectionNav from "@/components/ServiceSectionNav";
 import {
@@ -260,6 +261,32 @@ export default function ServicesPage() {
         })}
 
         <section className="mt-8 border-t border-border pt-12">
+          <div className="mb-10 flex flex-col gap-4 rounded-xl border border-gold/30 bg-section-alt p-6 md:flex-row md:items-center md:justify-between md:p-8">
+            <div>
+              <h2 className="text-xl font-bold text-primary md:text-2xl">
+                New to buying from a Uganda refinery?
+              </h2>
+              <p className="mt-2 max-w-xl text-sm text-muted">
+                Read the full procedure for KYC, quotes, assay, and delivery
+                options before you enquire.
+              </p>
+            </div>
+            <Link
+              href="/how-to-buy"
+              className="inline-flex shrink-0 items-center gap-2 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
+            >
+              How to buy gold
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <h2 className="mb-6 text-sm font-semibold uppercase tracking-wider text-gold">
+            Trust &amp; enquiry checklist
+          </h2>
+          <div className="mb-16">
+            <TrustPrequalBlock />
+          </div>
+
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-gold">
             International buyers
           </h2>

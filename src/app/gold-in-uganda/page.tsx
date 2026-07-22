@@ -149,6 +149,20 @@ export default function GoldInUgandaPage() {
 
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
+            href="/how-to-buy"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+          >
+            How to buy gold
+            <ArrowRight size={14} />
+          </Link>
+          <Link
+            href="/guides"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+          >
+            Buyer guides
+            <ArrowRight size={14} />
+          </Link>
+          <Link
             href="/services"
             className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
           >

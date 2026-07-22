@@ -86,10 +86,12 @@ export const navItems = [
     label: "Services",
     href: "/services",
     children: [
+      { label: "How to Buy Gold", href: "/how-to-buy" },
+      { label: "Export Services", href: "/services#export" },
       { label: "Gold Buying", href: "/services#buying" },
       { label: "Gold Refining", href: "/services#refining" },
       { label: "Assay & Testing", href: "/services#assay" },
-      { label: "Export Services", href: "/services#export" },
+      { label: "Buyer Guides", href: "/guides" },
     ],
   },
   {
@@ -115,8 +117,10 @@ export const navItems = [
     href: "/about#investors",
     children: [
       { label: "Gold Savings", href: "/gold-savings" },
+      { label: "How to Buy Gold", href: "/how-to-buy" },
       { label: "Institutional Network", href: "/network" },
       { label: "About Gold", href: "/about-gold" },
+      { label: "Buyer Guides", href: "/guides" },
       { label: "Market Data", href: "/#market-prices" },
       { label: "News & Announcements", href: "/#announcements" },
       { label: "Compliance", href: "/about#compliance" },

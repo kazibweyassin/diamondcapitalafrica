@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Contact | Buy Gold in Uganda",
-  description: `Contact ${company.contactName} at ${company.name}, ${company.phone}. Enquire about buying 99.99% gold bars, wholesale export, Gold Savings, refining, or assay services in Kampala, Uganda.`,
+  description: `Contact ${company.contactName} at ${company.name}, ${company.phone}. Enquire about buying 99.99% gold bars, wholesale export, CIF Dubai, Gold Savings, refining, or assay. Include volume and destination for faster response.`,
   path: "/contact",
 });
 

@@ -61,6 +61,22 @@ export default function Footer() {
                   Buy Gold Bars
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/how-to-buy"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  How to Buy Gold
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Buyer Guides
+                </Link>
+              </li>
             </ul>
           </div>
 

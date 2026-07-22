@@ -2,9 +2,11 @@
 
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { company } from "@/data/content";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import TrustPrequalBlock from "@/components/TrustPrequalBlock";
 
 const subjects = [
   "Gold Buying Enquiry",
@@ -295,6 +297,35 @@ export default function ContactPage() {
             <ContactForm />
           </Suspense>
         </div>
+
+        <section className="mt-16 border-t border-border pt-12">
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-primary">
+                For gold export buyers
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted">
+                Help us prioritise serious enquiries. Include volume, destination,
+                and delivery preference. Full procedure on{" "}
+                <Link
+                  href="/how-to-buy"
+                  className="font-semibold text-gold-dark hover:text-gold"
+                >
+                  How to buy gold
+                </Link>
+                .
+              </p>
+            </div>
+            <Link
+              href="/how-to-buy"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+            >
+              Buying procedure
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+          <TrustPrequalBlock compact showProcedureLink={false} />
+        </section>
       </div>
     </>
   );
