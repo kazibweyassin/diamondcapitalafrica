@@ -18,9 +18,9 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "Buy Gold Bars Uganda | Refining, Assay & Export",
+  title: "Buy Gold Bars Uganda | Assay, Export & Planned Refining",
   description:
-    "Buy 99.99% LBMA gold bars from a licensed Kampala refinery. CIF Dubai and European export, FOB Kampala collection, fire-assay certified bullion, and OECD-aligned traceability.",
+    "Gold buying, export coordination, assay services, and a planned refining platform from Diamond Capital Africa in Kampala. CIF Dubai, FOB Kampala, and OECD-aligned traceability.",
   path: "/services",
   image: images.pageHero.services,
   keywords: [
@@ -31,7 +31,6 @@ export const metadata = pageMetadata({
     "gold export Kampala",
     "gold refining Uganda",
     "fire assay Uganda",
-    "LBMA gold bars",
   ],
 });
 
@@ -264,7 +263,7 @@ export default function ServicesPage() {
           <div className="mb-10 flex flex-col gap-4 rounded-xl border border-gold/30 bg-section-alt p-6 md:flex-row md:items-center md:justify-between md:p-8">
             <div>
               <h2 className="text-xl font-bold text-primary md:text-2xl">
-                New to buying from a Uganda refinery?
+                New to buying gold from a licensed Uganda dealer?
               </h2>
               <p className="mt-2 max-w-xl text-sm text-muted">
                 Read the full procedure for KYC, quotes, assay, and delivery
@@ -291,9 +290,9 @@ export default function ServicesPage() {
             International buyers
           </h2>
           <p className="mb-8 max-w-3xl text-muted">
-            Diamond Capital Africa exports assay-verified 99.99% gold bars from
-            Kampala to institutional buyers in Dubai, the wider Middle East, and
-            Europe with full OECD-aligned traceability.
+            Diamond Capital Africa coordinates export of assay-verified gold
+            from Kampala to institutional buyers in Dubai, the wider Middle
+            East, and Europe with OECD-aligned traceability documentation.
           </p>
           <div className="grid gap-6 md:grid-cols-2">
             {internationalBuyerRegions.map((region) => (

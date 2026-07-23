@@ -21,6 +21,19 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
+  // Signal open overlays so InvestmentPopup does not stack on top of menu/search
+  useEffect(() => {
+    const open = mobileOpen || searchOpen;
+    document.documentElement.dataset.dcaOverlayOpen = open ? "true" : "false";
+    window.dispatchEvent(new CustomEvent("dca:overlay-change"));
+    return () => {
+      if (!open) return;
+      // Recompute on unmount only if this effect owned the flag
+      document.documentElement.dataset.dcaOverlayOpen = "false";
+      window.dispatchEvent(new CustomEvent("dca:overlay-change"));
+    };
+  }, [mobileOpen, searchOpen]);
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-primary shadow-lg">

@@ -5,9 +5,9 @@ export const company = {
   shortName: "Diamond Capital",
   tagline: "Premium gold supply across East & Central Africa",
   description:
-    "Licensed gold dealer, refinery, and exporter in Kampala, Uganda. We sell 99.99% assay-verified LBMA gold bars to institutional buyers and individual savers: FOB Kampala, CIF Dubai, and Gold Savings from $20. Full OECD-compliant traceability across East and Central Africa.",
+    "Licensed gold dealer and exporter based in Kampala, Uganda. Diamond Capital Africa is developing an integrated precious-metals processing platform through strategic partnerships, including a planned gold refinery and assay laboratory. OECD-aligned responsible sourcing across East and Central Africa.",
   purpose:
-    "Our purpose is refining with integrity to empower communities and advance Africa's formal gold economy. It underpins every transaction, every bar we produce, and every partnership we build.",
+    "Our purpose is to advance Africa's formal gold economy with integrity—connecting verified upstream production to institutional markets while developing modern processing infrastructure.",
   contactName: "Tom",
   email: "info@diamondcapitalafrica.com",
   investorsEmail: "investors@diamondcapitalafrica.com",
@@ -23,16 +23,17 @@ export const company = {
 /** Canonical facts for search engines and AI. Keep aligned with the live site. */
 export const companyFacts = {
   legalName: "Diamond Capital Africa",
-  businessType: "Licensed gold dealer, refinery, and exporter",
+  businessType:
+    "Licensed gold dealer and exporter developing a planned refining and assay platform",
   headquarters: "Plot 42, Nakasero Road, Kampala, Uganda",
   region: "Nakasero, Kampala",
-  purityStandard: "99.99% fine gold bars",
+  purityStandard: "Assay-verified fine gold (target institutional standard)",
   primaryActivities: [
-    "Selling 99.99% fine gold bars to institutional and individual buyers",
-    "Licensed export to international buyers (FOB Kampala, CIF Dubai)",
-    "Gold refining at our Kampala refinery",
-    "Fire assay and certified purity testing",
-    "Gold Savings: physical bullion from $20",
+    "Gold dealing and institutional buyer coordination",
+    "Export facilitation for verified counterparties (FOB Kampala, CIF Dubai where agreed)",
+    "Developing a proposed gold refinery and modern assay laboratory",
+    "Working with mining, refining, logistics and trading stakeholders",
+    "Gold Savings: physical bullion accumulation from $20",
   ],
   contactPerson: "Tom",
   phone: company.phone,
@@ -47,12 +48,12 @@ export const internationalBuyerRegions = [
     id: "dubai",
     title: "Dubai & Middle East buyers",
     summary:
-      "Purchase 99.99% assay-verified gold bars from our Kampala refinery with CIF Dubai delivery or FOB Kampala vault collection.",
+      "Institutional gold supply coordination with CIF Dubai delivery or FOB Kampala collection, subject to availability, KYC and definitive agreements.",
     points: [
-      "CIF Dubai: we arrange freight and insurance to Dubai for UAE importers and re-export hubs",
-      "FOB Kampala: experienced buyers arrange insured uplift from our Nakasero vault",
-      "LBMA Good Delivery specifications, serial-numbered bars, OECD-aligned traceability",
-      "USD settlement; BoU export clearance and full customs documentation",
+      "CIF Dubai: freight and insurance arrangements for UAE importers and re-export hubs where agreed",
+      "FOB Kampala: experienced buyers arrange insured uplift from approved vault facilities",
+      "Assay documentation, serialised bars where applicable, OECD-aligned traceability",
+      "USD settlement; BoU export clearance and full customs documentation where required",
     ],
     cta: { label: "Enquire about CIF Dubai export", subject: "Export Services" },
   },
@@ -60,9 +61,9 @@ export const internationalBuyerRegions = [
     id: "europe",
     title: "European buyers",
     summary:
-      "Source African refined gold with documentation suited to EU due diligence expectations and multi-currency settlement.",
+      "Source African gold with documentation suited to EU due diligence expectations and multi-currency settlement.",
     points: [
-      "99.99% fine gold bars with fire-assay certificates and chain-of-custody records",
+      "Assay-verified fine gold with certificates and chain-of-custody records",
       "OECD Due Diligence Guidance aligned sourcing for European importers and refiners",
       "EUR or USD settlement; export documentation prepared for EU customs",
       "Escorted insured delivery or FOB Kampala collection for institutional buyers",
@@ -98,7 +99,7 @@ export const navItems = [
     label: "Operations",
     href: "/operations",
     children: [
-      { label: "Kampala Refinery", href: "/operations#refinery" },
+      { label: "Planned Processing Platform", href: "/operations#refinery" },
       { label: "Collection Centres", href: "/operations#centres" },
       { label: "Supply Chain", href: "/operations#supply-chain" },
     ],
@@ -116,6 +117,10 @@ export const navItems = [
     label: "Investors",
     href: "/about#investors",
     children: [
+      {
+        label: "Investment Opportunity",
+        href: "/investors/investment-opportunity",
+      },
       { label: "Gold Savings", href: "/gold-savings" },
       { label: "How to Buy Gold", href: "/how-to-buy" },
       { label: "Institutional Network", href: "/network" },
@@ -136,25 +141,25 @@ export const heroSlides = [
     image: images.hero.sourcing,
     title: "Our principal product: gold",
     description:
-      "Gold is scarce, enduring, and central to economies worldwide. From fair-price buying and 99.99% refining to certified export, it is the foundation of everything we do across East and Central Africa.",
+      "Gold is scarce, enduring, and central to economies worldwide. From fair-price buying and certified export coordination to responsible-sourcing controls, it is the foundation of everything we do across East and Central Africa.",
     cta: { label: "Learn more", href: "/about-gold" },
     tab: "About gold",
   },
   {
     id: 2,
     image: images.hero.refining,
-    title: "World-class refining capability",
+    title: "Building modern processing infrastructure",
     description:
-      "Our Kampala refinery delivers 99.99% pure gold bars using state-of-the-art induction furnaces, fire assay verification, and ISO-certified quality management systems.",
-    cta: { label: "Our operations", href: "/operations" },
-    tab: "Refining",
+      "Diamond Capital Africa is seeking investment to establish a modern gold refinery and assay laboratory, while working with mining, refining, logistics and international trading stakeholders.",
+    cta: { label: "Investment opportunity", href: "/investors/investment-opportunity" },
+    tab: "Platform",
   },
   {
     id: 3,
     image: images.hero.export,
     title: "Trusted partner for miners & exporters",
     description:
-      "From collection centres across Uganda to LBMA-standard refining and export facilitation, we connect artisanal miners to international markets with full regulatory compliance.",
+      "From collection centres across Uganda to export facilitation and institutional coordination, we connect verified participants to markets with regulatory compliance and OECD-aligned due diligence.",
     cta: { label: "Our services", href: "/services" },
     tab: "Export",
   },
@@ -179,23 +184,67 @@ export { events } from "./events";
 
 export const companyStats = [
   { label: "Collection centres", value: "2", suffix: "Kampala & Arua" },
-  { label: "Gold refined (2025)", value: "218", suffix: "kg" },
-  { label: "Purity standard", value: "99.99", suffix: "% gold bars" },
-  { label: "Licensed miners", value: "2,400+", suffix: "in our network" },
-  { label: "Workforce", value: "340", suffix: "employees & contractors" },
-  { label: "Export markets", value: "12", suffix: "countries served" },
+  {
+    label: "Headquarters",
+    value: "Kampala",
+    suffix: "Nakasero, Uganda",
+  },
+  {
+    label: "Platform focus",
+    value: "Planned",
+    suffix: "refinery & assay laboratory",
+  },
+  {
+    label: "Capital raise",
+    value: "USD 4M",
+    suffix: "preliminary requirement",
+  },
+  {
+    label: "Initial capacity",
+    value: "50",
+    suffix: "kg/month (planned)",
+  },
+  {
+    label: "Network",
+    value: "Institutional",
+    suffix: "verified supply coordination",
+  },
 ];
 
 export const quarterlyStats = {
-  period: "Q1 2026",
-  asAt: "Three months ended 31 March 2026",
+  period: "Development update",
+  asAt: "Preliminary planning assumptions — subject to due diligence",
   metrics: [
-    { label: "Gold refined", value: "61", suffix: "kg (~20 kg/month)" },
-    { label: "Export value", value: "$8.1M", suffix: "gross exports" },
-    { label: "LBMA bars produced", value: "37", suffix: "99.99% purity" },
-    { label: "Assay samples", value: "79", suffix: "certified" },
-    { label: "Centre transactions", value: "294", suffix: "buying desk" },
-    { label: "Traceability", value: "100%", suffix: "chain of custody" },
+    {
+      label: "Capital requirement",
+      value: "USD 4M",
+      suffix: "preliminary",
+    },
+    {
+      label: "Initial capacity",
+      value: "50",
+      suffix: "kg/month planned",
+    },
+    {
+      label: "Expansion target",
+      value: "150",
+      suffix: "kg/month planned",
+    },
+    {
+      label: "Development path",
+      value: "9–12",
+      suffix: "months indicative",
+    },
+    {
+      label: "Collection centres",
+      value: "2",
+      suffix: "Kampala & Arua",
+    },
+    {
+      label: "Traceability goal",
+      value: "OECD",
+      suffix: "aligned chain of custody",
+    },
   ],
 };
 
@@ -226,7 +275,7 @@ export const legalPages = {
     sections: [
       {
         heading: "Website use",
-        body: `This website is provided for informational purposes about ${company.name}'s gold dealing and refining services. Content does not constitute financial advice.`,
+        body: `This website is provided for informational purposes about ${company.name}'s gold dealing, export coordination and proposed processing-platform development. Content does not constitute financial advice or an offer of securities.`,
       },
       {
         heading: "Market data",
@@ -266,19 +315,19 @@ export const esgCards = [
     image: images.esg.sourcing,
     title: "Responsible sourcing",
     description:
-      "We maintain zero-tolerance for conflict gold, with blockchain-enabled traceability from mine site to export.",
+      "We maintain zero-tolerance for conflict gold and design chain-of-custody controls aligned with OECD Due Diligence Guidance.",
   },
   {
     image: images.esg.environment,
     title: "Environmental stewardship",
     description:
-      "Our refinery uses closed-loop water systems and solar-assisted power, cutting emissions by 35% since 2022.",
+      "The proposed processing platform is being designed with modern environmental controls, including closed-loop water systems and energy-efficient equipment where practicable.",
   },
   {
     image: images.esg.community,
     title: "Our people & communities",
     description:
-      "We invest in miner training, fair pricing programmes, and community health initiatives across our operating regions.",
+      "We prioritise fair dealing with mining partners and community engagement across the regions where we operate and plan to expand.",
   },
 ];
 
@@ -320,27 +369,27 @@ export const services = [
     id: "refining",
     title: "Gold Refining",
     shortTitle: "Refining",
-    tagline: "99.99% purity, LBMA-standard bars",
+    tagline: "Planned modern refining capability",
     description:
-      "Our Kampala facility refines raw gold to 99.99% purity using induction melting, chemical treatment, and electrolytic finishing. Capacity: 500 kg per month.",
+      "Diamond Capital Africa is developing a proposed gold refinery as part of an integrated precious-metals processing platform. Planned initial capacity is approximately 50 kg per month, subject to financing, licensing and commissioning.",
     image: images.services.refining,
     highlights: [
-      { label: "Purity", value: "99.99%" },
-      { label: "Capacity", value: "500 kg/mo" },
-      { label: "Turnaround", value: "48 hours" },
+      { label: "Status", value: "Proposed" },
+      { label: "Planned start", value: "50 kg/mo" },
+      { label: "Expansion", value: "Up to 150 kg/mo" },
     ],
     features: [
-      "99.99% LBMA Good Delivery bars",
-      "10 oz, 1 kg, and 12.5 kg formats",
-      "Serial-numbered certification",
-      "48-hour turnaround standard",
+      "Planned institutional-grade refining capability",
+      "Modern assay laboratory (proposed)",
+      "Serial-numbered certification (target)",
+      "Partner processing coordination during development",
     ],
     steps: [
-      "Raw gold intake with full chain-of-custody documentation",
-      "Induction melting, chemical treatment, and electrolytic finishing",
-      "Certified bars issued with serial numbers and assay certificates",
+      "Project validation, engineering design and permitting",
+      "Equipment procurement, construction and commissioning",
+      "Pilot operations then commercial ramp-up subject to due diligence",
     ],
-    cta: { label: "Discuss refining", subject: "Gold Refining Enquiry" },
+    cta: { label: "Discuss refining plans", subject: "Gold Refining Enquiry" },
   },
   {
     id: "assay",
@@ -377,15 +426,15 @@ export const services = [
       "End-to-end export facilitation including Bank of Uganda clearance, customs documentation, secure logistics, and international buyer matching.",
     image: images.services.export,
     highlights: [
-      { label: "Clearance", value: "BoU licensed" },
+      { label: "Clearance", value: "BoU process" },
       { label: "Logistics", value: "Insured freight" },
-      { label: "Markets", value: "12 countries" },
+      { label: "Markets", value: "Regional & intl." },
     ],
     features: [
-      "BoU export licensing",
-      "Insured air freight",
-      "LBMA-approved delivery",
-      "Multi-currency settlement",
+      "BoU export documentation support",
+      "Insured air freight coordination",
+      "Institutional delivery arrangements",
+      "Multi-currency settlement where agreed",
     ],
     steps: [
       "Export permit and customs documentation prepared",
@@ -416,11 +465,11 @@ export const services = [
 export const operations = [
   {
     id: "refinery",
-    title: "Kampala Refinery",
-    location: "Nakasero, Kampala",
+    title: "Proposed Processing Platform",
+    location: "Kampala area (site selection subject to due diligence)",
     description:
-      "Our flagship 2,400 sqm refinery houses induction furnaces, assay laboratories, vault storage, and a certified weighing facility. Licensed by the Ministry of Energy and Mineral Development.",
-    capacity: "500 kg/month",
+      "Diamond Capital Africa is seeking strategic investment to establish a modern gold refinery, assay laboratory, secure receiving and vault infrastructure. Capacities and timelines are preliminary planning assumptions.",
+    capacity: "50 kg/month planned initial",
     image: images.operations.refinery,
     imageAlt: "Assay laboratory testing gold purity samples",
   },
@@ -429,8 +478,8 @@ export const operations = [
     title: "Collection Centres",
     location: "Kampala & Arua",
     description:
-      "Collection centres in Kampala and Arua provide miners with accessible, fair-price gold buying, on-site assay checks, and transparent documentation.",
-    capacity: "50+ staff",
+      "Collection centres in Kampala and Arua provide miners with accessible, fair-price gold buying, on-site checks, and transparent documentation.",
+    capacity: "Regional coverage",
     image: images.operations.centres,
     imageAlt: "Raw gold nuggets sourced from licensed miners",
   },
@@ -439,10 +488,10 @@ export const operations = [
     title: "Supply Chain",
     location: "Mine to market",
     description:
-      "Every gram is tracked through our digital supply chain platform, linking miner ID, assay results, transport logs, and export documentation in a single auditable record.",
-    capacity: "100% traceable",
+      "DCA is building responsible-sourcing and chain-of-custody systems intended to link miner identification, assay results, transport logs, and export documentation in an auditable record.",
+    capacity: "OECD-aligned goal",
     image: images.operations.supplyChain,
-    imageAlt: "Certified 999.9 fine gold bars ready for export",
+    imageAlt: "Gold bars prepared for institutional delivery",
   },
 ];
 
@@ -476,7 +525,8 @@ export const values = [
   },
   {
     title: "Excellence",
-    description: "World-class refining standards that meet international buyer requirements.",
+    description:
+      "Institutional standards in dealing, documentation and the design of our proposed processing platform.",
   },
   {
     title: "Community",

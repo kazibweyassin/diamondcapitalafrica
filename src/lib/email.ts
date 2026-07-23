@@ -129,6 +129,83 @@ export async function sendInstitutionalApplicationEmail({
   });
 }
 
+export async function sendInvestorEnquiryNotification({
+  reference,
+  name,
+  email,
+  organisation,
+  position,
+  country,
+  investorType,
+  investmentRange,
+  website,
+  phone,
+  message,
+}: {
+  reference: string;
+  name: string;
+  email: string;
+  organisation: string;
+  position: string;
+  country: string;
+  investorType: string;
+  investmentRange: string;
+  website?: string;
+  phone?: string;
+  message?: string;
+}) {
+  const to =
+    process.env.INVESTOR_NOTIFICATION_EMAIL ??
+    company.investorsEmail ??
+    company.email;
+
+  const text = [
+    `New investor enquiry (${reference})`,
+    "",
+    `Name: ${name}`,
+    `Organisation: ${organisation}`,
+    `Position: ${position}`,
+    `Email: ${email}`,
+    `Country: ${country}`,
+    `Investor type: ${investorType}`,
+    `Indicative range: ${investmentRange}`,
+    website ? `Website / LinkedIn: ${website}` : null,
+    phone ? `Phone / WhatsApp: ${phone}` : null,
+    "",
+    "Message:",
+    message || "(none)",
+    "",
+    "Do not auto-send the confidential memorandum. Complete screening, NDA and preliminary KYC first.",
+  ]
+    .filter((line) => line !== null)
+    .join("\n");
+
+  const html = `
+    <p><strong>New investor enquiry</strong> (${reference})</p>
+    <ul>
+      <li><strong>Name:</strong> ${name}</li>
+      <li><strong>Organisation:</strong> ${organisation}</li>
+      <li><strong>Position:</strong> ${position}</li>
+      <li><strong>Email:</strong> <a href="mailto:${email}">${email}</a></li>
+      <li><strong>Country:</strong> ${country}</li>
+      <li><strong>Investor type:</strong> ${investorType}</li>
+      <li><strong>Indicative range:</strong> ${investmentRange}</li>
+      ${website ? `<li><strong>Website / LinkedIn:</strong> ${website}</li>` : ""}
+      ${phone ? `<li><strong>Phone / WhatsApp:</strong> ${phone}</li>` : ""}
+    </ul>
+    <p><strong>Message</strong></p>
+    <p>${message ? message.replace(/\n/g, "<br />") : "(none)"}</p>
+    <p><em>Do not auto-send the confidential memorandum. Complete screening, NDA and preliminary KYC first.</em></p>
+  `;
+
+  await sendEmail({
+    to,
+    subject: `[Investor] Confidential memorandum request — ${reference}`,
+    text,
+    html,
+  });
+}
+
 export async function sendInstitutionalCredentialsEmail({
   to,
   contactName,

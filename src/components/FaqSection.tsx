@@ -10,9 +10,10 @@ export default function FaqSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionHeader title="Gold in Uganda & Africa: common questions" />
         <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
-          {company.name} is a licensed gold dealer, refinery, and exporter in
-          Kampala. We sell 99.99% assay-verified gold bars to institutional
-          buyers and individual savers across East and Central Africa.
+          {company.name} is a licensed gold dealer and exporter in Kampala,
+          developing a proposed refining and assay platform. We coordinate
+          assay-verified gold supply for institutional buyers and individual
+          savers across East and Central Africa.
         </p>
         <div className="divide-y divide-border rounded-lg border border-border bg-white">
           {goldFaqs.map((faq) => (

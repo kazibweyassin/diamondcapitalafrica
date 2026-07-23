@@ -6,9 +6,9 @@ import OperationsSections from "@/components/OperationsSections";
 import NationalCoverage from "@/components/NationalCoverage";
 
 export const metadata = pageMetadata({
-  title: "Kampala Gold Refinery & Vault",
+  title: "Operations | Processing Platform & Collection Centres",
   description:
-    "Diamond Capital Africa's Nakasero refinery and vault in Kampala. Buy certified 99.99% gold bars direct from a licensed facility with fire assay labs and insured export logistics.",
+    "Diamond Capital Africa operations: collection centres in Kampala and Arua, proposed gold refinery and assay laboratory under development, and responsible supply-chain coordination.",
   path: "/operations",
   image: images.pageHero.operations,
 });
@@ -31,7 +31,8 @@ export default function OperationsPage() {
             Our Operations
           </h1>
           <p className="mt-2 max-w-xl text-white/80">
-            From mine-site collection to Kampala refining and global export.
+            From collection centres to a proposed modern processing platform and
+            international export coordination.
           </p>
         </div>
       </section>

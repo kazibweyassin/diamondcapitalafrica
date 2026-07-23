@@ -19,11 +19,11 @@ export default function CompanyStats() {
             The world of {company.name}
           </h2>
           <p className="mb-4 text-sm leading-relaxed text-muted sm:mb-6 sm:text-base">
-            {company.name} is a leading gold dealing and refining company
-            across East and Central Africa, operating collection centres and
-            exporting LBMA-standard gold bars to international markets. We
-            combine regional expertise with global standards to deliver value at
-            every stage of the gold value chain.
+            {company.name} is a licensed gold dealer and exporter across East
+            and Central Africa, operating collection centres and coordinating
+            institutional supply. We are developing a proposed modern refinery
+            and assay laboratory through strategic partnerships, combining
+            regional expertise with international standards.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -51,7 +51,7 @@ export default function CompanyStats() {
         </div>
 
         <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted sm:mb-6">
-          As at 31 December 2025
+          Development-stage profile — preliminary planning assumptions
         </p>
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">

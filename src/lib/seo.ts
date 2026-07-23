@@ -32,13 +32,10 @@ export const siteKeywords = [
   "gold supplier Uganda",
   "gold dealer Uganda",
   "gold bullion Uganda",
-  "LBMA gold bars",
-  "99.99% gold bars",
+  "gold bullion Africa",
   "buy gold bars Africa",
   "gold export Uganda",
   "gold export Africa",
-  "gold refinery Kampala",
-  "gold refinery Uganda",
   "physical gold Uganda",
   "gold savings Uganda",
   "licensed gold dealer Uganda",
@@ -48,6 +45,7 @@ export const siteKeywords = [
   "Central Africa gold",
   "gold Uganda",
   "gold Africa",
+  "gold investment East Africa",
   company.name,
   company.shortName,
 ] as const;
@@ -246,7 +244,7 @@ export function websiteJsonLd() {
     inLanguage: "en-UG",
     about: {
       "@type": "Thing",
-      name: "Licensed gold dealer, refinery, and exporter in Uganda. Sells 99.99% gold bars to buyers",
+      name: "Licensed gold dealer and exporter in Uganda developing a planned refining and assay platform",
     },
     publisher: {
       "@type": "Organization",
@@ -274,9 +272,9 @@ export function goldOfferingsJsonLd() {
         position: 1,
         item: {
           "@type": "Service",
-          name: "99.99% Fine Gold Bars (Wholesale Export)",
+          name: "Institutional Gold Export Coordination",
           description:
-            "Fire-assay verified LBMA Good Delivery gold bars in 10 oz, 1 kg, and 12.5 kg formats. FOB Kampala, CIF Dubai, or insured delivery. Pricing on request.",
+            "Assay-verified gold supply coordination with FOB Kampala, CIF Dubai, or insured delivery arrangements. Pricing on request.",
           url: absoluteUrl("/services#export"),
           provider,
           areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
@@ -289,8 +287,21 @@ export function goldOfferingsJsonLd() {
           "@type": "Service",
           name: "Gold Savings",
           description:
-            "Physical 99.99% gold accumulation from $20 via USDT. Redeem from 20 g at Kampala or Arua.",
+            "Physical fine gold accumulation from $20 via USDT. Redeem from 20 g at Kampala or Arua.",
           url: absoluteUrl("/gold-savings"),
+          provider,
+          areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "Service",
+          name: "Strategic Investment Opportunity",
+          description:
+            "Development-stage capital formation for a proposed gold refinery, assay laboratory and responsible-sourcing platform.",
+          url: absoluteUrl("/investors/investment-opportunity"),
           provider,
           areaServed: ["Uganda", "East Africa", "Central Africa", "Worldwide"],
         },
@@ -339,7 +350,7 @@ export function howToBuyJsonLd() {
     "@type": "HowTo",
     name: "How to buy gold from Diamond Capital Africa",
     description:
-      "Procedure for institutional buyers to purchase assay-verified 99.99% gold bars from a licensed Kampala refinery: enquiry, KYC, quote, assay, and delivery.",
+      "Procedure for institutional buyers to purchase assay-verified gold from a licensed Kampala dealer: enquiry, KYC, quote, assay, and delivery.",
     url: absoluteUrl("/how-to-buy"),
     totalTime: "P14D",
     supply: [

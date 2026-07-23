@@ -8,9 +8,9 @@ import { images } from "@/data/images";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Gold in Uganda | Where to Buy Certified Bars",
+  title: "Gold in Uganda | Where to Buy from a Licensed Dealer",
   description:
-    "Where to buy gold in Uganda: licensed dealer and Kampala refinery selling 99.99% LBMA bars. CIF Dubai and European export, Gold Savings from $20, live spot pricing. Diamond Capital Africa since 2012.",
+    "Where to buy gold in Uganda: licensed dealer Diamond Capital Africa in Kampala. CIF Dubai and European export coordination, Gold Savings from $20, live spot pricing. Developing a proposed refining platform.",
   path: "/gold-in-uganda",
   image: images.hero.sourcing,
   keywords: [
@@ -18,7 +18,6 @@ export const metadata = pageMetadata({
     "where to buy gold Uganda",
     "gold seller Uganda",
     "gold dealer Uganda",
-    "gold refinery Kampala",
     "buy gold bars Uganda",
     "CIF Dubai gold Uganda",
     "gold export Europe Uganda",
@@ -27,24 +26,24 @@ export const metadata = pageMetadata({
 
 const highlights = [
   "Collection centres in Kampala and Arua",
-  "Kampala refinery producing 99.99% fine gold bars",
-  "Fire assay verification and full chain-of-custody records",
-  "OECD-aligned responsible sourcing and traceability",
-  "Export facilitation to twelve international markets",
+  "Proposed modern gold refinery and assay laboratory under development",
+  "Assay verification and chain-of-custody documentation",
+  "OECD-aligned responsible sourcing and traceability goals",
+  "Export facilitation for institutional and international buyers",
 ];
 
 const sections = [
   {
     title: "Uganda's growing gold sector",
-    body: "Uganda is one of Africa's fastest-growing gold economies. Gold exports have outpaced traditional commodities, supported by new refining capacity, central bank purchasing programmes, and tighter licensing rules. Formal buyers and refiners play a critical role in bringing artisanal production into transparent markets.",
+    body: "Uganda is one of Africa's fastest-growing gold economies. Gold exports have outpaced traditional commodities, supported by new refining capacity, central bank purchasing programmes, and tighter licensing rules. Formal buyers play a critical role in bringing artisanal production into transparent markets.",
   },
   {
     title: "Licensed gold buying for miners",
-    body: "Diamond Capital Africa operates collection centres in Kampala and Arua. Miners receive fair-price buying, on-site assay checks, and documentation that supports formal trade and export readiness.",
+    body: "Diamond Capital Africa operates collection centres in Kampala and Arua. Miners receive fair-price buying, on-site checks, and documentation that supports formal trade and export readiness.",
   },
   {
-    title: "Refining and export from Kampala",
-    body: "Our Nakasero refinery converts raw gold into 99.99% purity bars using induction furnaces and ISO-certified quality controls. We manage assay, vaulting, Bank of Uganda clearance, customs documentation, and international logistics for exporters and institutional buyers.",
+    title: "Processing platform and export from Kampala",
+    body: "Diamond Capital Africa is seeking investment to establish a modern gold refinery and assay laboratory. While the platform is under development, DCA coordinates assay documentation, vaulting arrangements, Bank of Uganda clearance, customs paperwork, and international logistics for exporters and institutional buyers.",
   },
   ...internationalBuyerRegions.map((region) => ({
     title: region.title,
@@ -70,11 +69,12 @@ export default function GoldInUgandaPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
           <h1 className="max-w-3xl text-3xl font-bold text-white md:text-4xl">
-            Gold in Uganda: buying, refining & export
+            Gold in Uganda: buying, processing plans & export
           </h1>
           <p className="mt-3 max-w-2xl text-white/80">
             {company.name} connects licensed miners to international markets
-            through fair buying, Kampala refining, and fully traceable export.
+            through fair buying, export coordination, and a proposed modern
+            processing platform.
           </p>
         </div>
       </section>

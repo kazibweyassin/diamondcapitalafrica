@@ -9,13 +9,14 @@ import MarketPrices from "@/components/MarketPrices";
 import EventsCalendar from "@/components/EventsCalendar";
 import CompanyStats from "@/components/CompanyStats";
 import NetworkPromo from "@/components/NetworkPromo";
+import InvestmentPromo from "@/components/InvestmentPromo";
 import ReportsSection from "@/components/ReportsSection";
 import ESGHub from "@/components/ESGHub";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = pageMetadata({
-  title: "Buy Gold Uganda | Licensed Dealer & Refinery",
-  description: `${company.name} sells 99.99% LBMA gold bars from Kampala, Uganda. Wholesale export (FOB Kampala, CIF Dubai), live DCA spot pricing, and Gold Savings from $20. Licensed refinery with full OECD traceability.`,
+  title: "Buy Gold Uganda | Licensed Dealer & Exporter",
+  description: `${company.name} is a licensed gold dealer and exporter in Kampala, Uganda, developing a proposed refining and assay platform. Wholesale export coordination, live DCA spot pricing, and Gold Savings from $20.`,
   path: "/",
   image: "/images/heroes/home-sourcing.jpg",
   keywords: [
@@ -23,10 +24,10 @@ export const metadata = pageMetadata({
     "gold seller Uganda",
     "gold supplier Kampala",
     "gold bullion Uganda",
-    "LBMA gold bars Africa",
     "gold export East Africa",
     "gold savings Uganda",
     "buy gold bars Africa",
+    "gold investment Uganda",
   ],
 });
 
@@ -36,6 +37,7 @@ export default function Home() {
       <JsonLd data={faqJsonLd(goldFaqs)} />
       <JsonLd data={goldOfferingsJsonLd()} />
       <HeroCarousel />
+      <InvestmentPromo />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid gap-0 lg:grid-cols-2 lg:gap-12">

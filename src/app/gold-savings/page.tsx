@@ -17,7 +17,7 @@ import { faqJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Gold Savings | Buy Physical Gold from $20",
   description:
-    "Buy and save in assay-verified 99.99% physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion, not mining shares.",
+    "Buy and save in assay-verified physical gold from $20 with Diamond Capital Africa. Pay via USDT, submit proof, and accumulate real bullion, not mining shares.",
   path: "/gold-savings",
   image: images.about.goldNuggets,
   keywords: [
@@ -51,7 +51,7 @@ export default function GoldSavingsPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-white/80">
             Enter your amount, get USDT payment instructions, and accumulate
-            99.99% fine gold through {company.name}&apos;s licensed refinery.
+            assay-verified fine gold through {company.name}.
           </p>
         </div>
       </section>

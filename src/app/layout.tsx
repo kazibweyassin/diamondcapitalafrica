@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
+import InvestmentPopup from "@/components/InvestmentPopup";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
 import { company } from "@/data/content";
@@ -97,6 +98,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <CookieBanner />
+        <InvestmentPopup />
       </body>
     </html>
   );

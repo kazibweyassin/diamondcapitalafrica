@@ -19,17 +19,23 @@ const staticPages: SearchResult[] = [
     title: "Gold in Uganda",
     href: "/gold-in-uganda",
     excerpt:
-      "Where to buy gold in Uganda: licensed dealer, Kampala refinery, and export across East Africa.",
+      "Where to buy gold in Uganda: licensed dealer, export coordination, and proposed processing platform.",
     category: "About",
   },
   {
     title: "Buy Gold Bars",
     href: "/services#export",
     excerpt:
-      "Purchase 99.99% LBMA-standard gold bars. FOB Kampala, CIF Dubai, or insured delivery.",
+      "Institutional gold supply coordination. FOB Kampala, CIF Dubai, or insured delivery.",
     category: "Services",
   },
-
+  {
+    title: "Strategic Investment Opportunity",
+    href: "/investors/investment-opportunity",
+    excerpt:
+      "Proposed gold refinery, assay laboratory and integrated precious-metals platform — preliminary capital raise.",
+    category: "Investors",
+  },
   {
     title: "Institutional Gold Network",
     href: "/network",
@@ -41,19 +47,19 @@ const staticPages: SearchResult[] = [
     title: "Gold Savings",
     href: "/gold-savings",
     excerpt:
-      "Save in physical 99.99% gold from $20. Bullion accumulation, not mining shares.",
+      "Save in physical assay-verified gold from $20. Bullion accumulation, not mining shares.",
     category: "Investors",
   },
   {
     title: "Our Services",
     href: "/services",
-    excerpt: "Gold buying, refining, assay testing, and export services.",
+    excerpt: "Gold buying, planned refining, assay testing, and export services.",
     category: "Services",
   },
   {
     title: "Operations",
     href: "/operations",
-    excerpt: "Kampala refinery and collection centres across Uganda.",
+    excerpt: "Collection centres and proposed processing platform in Uganda.",
     category: "Operations",
   },
   {

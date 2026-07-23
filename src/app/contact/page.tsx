@@ -7,6 +7,7 @@ import { company } from "@/data/content";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import TrustPrequalBlock from "@/components/TrustPrequalBlock";
+import { setContactFormSuccessFlag } from "@/lib/storage";
 
 const subjects = [
   "Gold Buying Enquiry",
@@ -72,6 +73,7 @@ function ContactForm() {
       }
 
       setReferenceId(json.data.id);
+      setContactFormSuccessFlag();
       setSubmitted(true);
     } catch {
       setServerError("Network error. Please try again.");

@@ -131,7 +131,7 @@ export default function AboutGoldPage() {
             Trade gold with {company.shortName}
           </h2>
           <p className="mb-6 max-w-2xl text-white/80">
-            From fair-price buying and 99.99% refining to certified assay and
+            From fair-price buying and export coordination to certified assay and
             licensed export. We connect Africa&apos;s formal gold economy to
             global markets.
           </p>

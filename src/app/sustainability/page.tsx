@@ -87,18 +87,18 @@ export default function SustainabilityPage() {
               )}
               {index === 1 && (
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>• Closed-loop water recycling at refinery</li>
-                  <li>• 120 kW solar installation (35% energy offset)</li>
-                  <li>• Chemical waste neutralisation programme</li>
-                  <li>• Annual environmental impact assessments</li>
+                  <li>• Closed-loop water systems in proposed plant design</li>
+                  <li>• Energy-efficient equipment targets (preliminary)</li>
+                  <li>• Responsible chemical handling procedures</li>
+                  <li>• Environmental review as part of project due diligence</li>
                 </ul>
               )}
               {index === 2 && (
                 <ul className="space-y-2 text-sm text-foreground">
-                  <li>• Miner safety training at all collection centres</li>
-                  <li>• Fair-price premium programme (+5% above spot)</li>
-                  <li>• Community health clinics in 4 districts</li>
-                  <li>• Youth apprenticeship in metallurgy</li>
+                  <li>• Safety awareness at collection centres</li>
+                  <li>• Transparent pricing for mining partners</li>
+                  <li>• Community engagement in operating regions</li>
+                  <li>• Skills development where programmes are active</li>
                 </ul>
               )}
             </div>
@@ -111,10 +111,10 @@ export default function SustainabilityPage() {
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "100%", label: "Traceable supply chain" },
-              { value: "2,400+", label: "Miners in formal programme" },
-              { value: "35%", label: "Emissions reduction since 2022" },
-              { value: "UGX 1.2B", label: "Community investment" },
+              { value: "OECD", label: "Due diligence alignment goal" },
+              { value: "2", label: "Collection centres (Kampala & Arua)" },
+              { value: "Planned", label: "Modern closed-loop processing design" },
+              { value: "Zero", label: "Tolerance for conflict gold" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-3xl font-bold text-gold-dark">

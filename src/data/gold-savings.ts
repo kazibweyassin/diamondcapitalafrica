@@ -3,7 +3,7 @@ import type { FaqItem } from "./faqs";
 export const goldSavings = {
   minDepositUsd: 20,
   minRedemptionGrams: 20,
-  purity: "99.99%",
+  purity: "Assay-verified fine gold",
   priceLockHours: 24,
   paymentMethod: "usdt" as const,
 };
@@ -13,7 +13,7 @@ export const goldSavingsSteps = [
     step: 1,
     title: "Enter your amount",
     description:
-      "Choose how much you want to save in USD (from $20). See the exact grams of 99.99% gold you will receive at today's spot price.",
+      "Choose how much you want to save in USD (from $20). See the exact grams of fine gold you will receive at today's spot price.",
   },
   {
     step: 2,
@@ -38,7 +38,7 @@ export const goldSavingsSteps = [
 export const goldSavingsBenefits = [
   "Own physical gold, not shares or paper promises",
   "Start from $20 via USDT",
-  "Assay-verified 99.99% purity through our licensed refinery",
+  "Assay-verified fine gold with documented purity",
   "Transparent pricing tied to live spot rates",
   "Redeem in person at Kampala or Arua collection centres",
 ];
@@ -55,7 +55,7 @@ export const goldSavingsFaqs: FaqItem[] = [
   {
     question: "Is this buying shares in a mining company?",
     answer:
-      "No. Diamond Capital Africa Gold Savings lets you accumulate grams of physical 99.99% fine gold. You are saving in bullion we assay and vault, not buying equity or mining shares.",
+      "No. Diamond Capital Africa Gold Savings lets you accumulate grams of physical assay-verified fine gold. You are saving in bullion we document and vault, not buying equity or mining shares.",
   },
   {
     question: "What is the minimum deposit?",

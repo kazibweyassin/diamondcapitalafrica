@@ -238,7 +238,7 @@ export default function GoldSavingsDepositWizard() {
             How much do you want to save?
           </h3>
           <p className="mb-6 text-sm text-muted">
-            Enter your deposit in USD. We convert it to grams of 99.99% fine
+            Enter your deposit in USD. We convert it to grams of assay-verified fine
             gold at today&apos;s spot price.
           </p>
 
@@ -274,7 +274,7 @@ export default function GoldSavingsDepositWizard() {
             </p>
             <p className="mt-2 text-xs text-muted">
               {spotPerGram
-                ? `At $${spotPerGram.toFixed(2)}/g · 99.99% fine gold`
+                ? `At $${spotPerGram.toFixed(2)}/g · assay-verified fine gold`
                 : "Loading spot price…"}
             </p>
           </div>
@@ -418,7 +418,7 @@ export default function GoldSavingsDepositWizard() {
                 Gold credited (on verification)
               </p>
               <p className="font-bold text-primary">
-                {Number(deposit.gramsQuoted).toFixed(4)} g · 99.99%
+                {Number(deposit.gramsQuoted).toFixed(4)} g · assay-verified
               </p>
             </div>
           </div>

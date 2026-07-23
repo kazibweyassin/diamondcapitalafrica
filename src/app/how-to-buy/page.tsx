@@ -19,7 +19,7 @@ import { howToBuyJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "How to Buy Gold | Export Procedure Uganda",
   description:
-    "How to buy 99.99% gold bars from Diamond Capital Africa: KYC, quote-based pricing, fire assay, FOB Kampala, CIF Dubai, and insured delivery. Licensed Kampala refinery procedure for institutional buyers.",
+    "How to buy gold from Diamond Capital Africa: KYC, quote-based pricing, assay documentation, FOB Kampala, CIF Dubai, and insured delivery. Licensed Kampala dealer procedure for institutional buyers.",
   path: "/how-to-buy",
   image: images.pageHero.services,
   keywords: [
@@ -55,8 +55,8 @@ export default function HowToBuyPage() {
             How to buy gold from {company.shortName}
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
-            Clear procedure for assay-verified 99.99% bars from our Kampala
-            refinery: KYC, quote, documentation, then FOB Kampala, CIF Dubai, or
+            Clear procedure for assay-verified gold from a licensed Kampala
+            dealer: KYC, quote, documentation, then FOB Kampala, CIF Dubai, or
             escorted insured delivery.
           </p>
         </div>

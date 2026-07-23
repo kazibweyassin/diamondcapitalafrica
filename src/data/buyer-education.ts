@@ -3,11 +3,11 @@
 export const trustSignals = [
   {
     title: "Licensed principal, not a broker chain",
-    body: "Diamond Capital Africa is a licensed gold dealer and refinery in Kampala. We sell assay-verified bars from our own pipeline, not random social-media supply.",
+    body: "Diamond Capital Africa is a licensed gold dealer and exporter in Kampala. We coordinate assay-verified supply, not random social-media offerings.",
   },
   {
-    title: "99.99% fire-assay verification",
-    body: "Every batch is fire-assay verified. Bars are serial-numbered to LBMA Good Delivery specifications with certificates buyers can audit.",
+    title: "Assay verification",
+    body: "Transactions are supported by fire-assay or equivalent purity documentation and chain-of-custody records buyers can review.",
   },
   {
     title: "Real export documentation",
@@ -109,7 +109,7 @@ export const buyerGuides: BuyerGuide[] = [
       {
         heading: "When CIF Dubai is real",
         paragraphs: [
-          "CIF can be legitimate when the seller is a licensed principal with inventory, refining capacity, and export licences. Diamond Capital Africa refines and vaults 99.99% bars in Kampala and can arrange freight and insurance to Dubai for institutional importers and re-export hubs.",
+          "CIF can be legitimate when the seller is a licensed principal with inventory access, export capacity, and proper licences. Diamond Capital Africa coordinates assay-verified gold supply from Kampala and can arrange freight and insurance to Dubai for institutional importers and re-export hubs.",
           "Real CIF is a logistics and documentation package on top of assay-verified product. It is not a free holiday for the seller, and it is not priced as \"spot minus fantasy.\" Quotes reflect spot, premium, duties where applicable, insurance, and freight.",
         ],
       },
@@ -136,22 +136,22 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "buy-gold-uganda-refinery",
-    title: "How to buy gold from a licensed Uganda refinery",
+    title: "How to buy gold from a licensed Uganda dealer",
     description:
       "Step-by-step guide for institutional and serious private buyers: KYC, assay, bar formats, FOB Kampala, CIF Dubai, and Gold Savings for smaller physical accumulation.",
     date: "2026-07-08",
     keywords: [
-      "buy gold Uganda refinery",
+      "buy gold Uganda dealer",
       "how to buy gold bars Uganda",
       "licensed gold dealer Kampala",
-      "99.99% gold bars Uganda",
+      "assay-verified gold Uganda",
       "FOB Kampala gold",
     ],
     sections: [
       {
         heading: "What you are buying",
         paragraphs: [
-          "Diamond Capital Africa sells fire-assay verified 99.99% fine gold bars from our Kampala refinery. Typical institutional formats include 10 oz, 1 kg, and 12.5 kg, serial-numbered with certificates. This is physical bullion supply, not mining shares or paper gold.",
+          "Diamond Capital Africa coordinates fire-assay verified fine gold supply from Kampala. Typical institutional formats include 10 oz, 1 kg, and 12.5 kg where available, with certificates. This is physical bullion supply, not mining shares or paper gold. DCA is also developing a proposed modern refinery and assay laboratory.",
           "We also operate Gold Savings for individuals who want to accumulate physical gold from $20 via USDT, redeemable from 20 g at Kampala or Arua.",
         ],
       },
@@ -169,14 +169,14 @@ export const buyerGuides: BuyerGuide[] = [
           "2. Complete KYC: company details and proof of funds suited to the order. We do the same commercial diligence in reverse.",
           "3. Receive a quote: live spot reference plus premium and logistics where applicable.",
           "4. Confirm bar formats, settlement currency, and timeline.",
-          "5. We refine or allocate vaulted inventory, complete fire assay, and prepare export documents.",
+          "5. We allocate approved inventory, complete assay documentation, and prepare export documents.",
           "6. Delivery and settlement on the agreed Incoterms. Release of metal follows the commercial contract, not blind prepayment to a stranger.",
         ],
       },
       {
         heading: "Documents and compliance buyers should expect",
         paragraphs: [
-          "Fire-assay certificates, serial numbers, export permits, customs documentation, and OECD-aligned traceability records. European buyers should expect paperwork that supports due diligence reviews; Dubai buyers commonly use CIF or FOB structures around the re-export hub.",
+          "Assay certificates, serial numbers where applicable, export permits, customs documentation, and OECD-aligned traceability records. European buyers should expect paperwork that supports due diligence reviews; Dubai buyers commonly use CIF or FOB structures around the re-export hub.",
           "We do not replace your own counsel or bank compliance. We supply product and documentation from a licensed Uganda operation so your side can complete legitimate import.",
         ],
       },

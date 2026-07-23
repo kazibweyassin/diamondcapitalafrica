@@ -5,8 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { Shield, Award, Globe, Users } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "About Us | Licensed Gold Dealer & Refinery Uganda",
-  description: `${company.name} corporate profile: licensed gold dealer and refinery in Kampala, Uganda since ${company.founded}. We sell 99.99% gold bars to buyers worldwide. Leadership, compliance, and investor information.`,
+  title: "About Us | Licensed Gold Dealer Uganda",
+  description: `${company.name} corporate profile: licensed gold dealer and exporter in Kampala, Uganda since ${company.founded}. Developing a proposed refining and assay platform. Leadership, compliance, and investor information.`,
   path: "/about",
   image: images.pageHero.about,
 });
@@ -42,10 +42,11 @@ export default function AboutPage() {
             </h2>
             <p className="mb-4 leading-relaxed text-muted">
               Founded in {company.founded}, {company.name} has grown from a
-              single Kampala buying desk into one of the region&apos;s most trusted gold
-              dealers and refiners. We serve over 2,400 licensed artisanal miners,
-              export to 12 countries, and maintain the highest standards of
-              purity, traceability, and compliance.
+              Kampala buying desk into a regional gold dealer and exporter. We
+              work with mining, refining, logistics and international trading
+              stakeholders while developing our own proposed processing
+              infrastructure, with a focus on purity documentation, traceability
+              and compliance.
             </p>
             <p className="leading-relaxed text-muted">{company.purpose}</p>
           </div>
@@ -175,7 +176,7 @@ export default function AboutPage() {
               {
                 icon: Award,
                 title: "LBMA Standards",
-                desc: "99.99% Good Delivery gold bar certification",
+                desc: "Assay documentation and institutional bar standards",
               },
               {
                 icon: Globe,
@@ -200,21 +201,80 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section id="investors" className="mt-20 rounded-lg bg-primary p-8 text-white md:p-12">
-          <h2 className="mb-4 text-2xl font-bold">Investor Information</h2>
-          <p className="mb-6 max-w-2xl leading-relaxed text-white/80">
-            {company.name} is a privately held company with a strong track
-            record of growth and profitability. For investor enquiries, partnership
-            opportunities, or access to our data room, please contact our corporate
-            team. Retail savers can also join our{" "}
-            <a href="/gold-savings" className="font-semibold text-gold underline hover:text-gold-light">
-              Gold Savings programme
-            </a>{" "}
-            to accumulate physical bullion from $20 via USDT.
-          </p>
-          <p className="text-gold-light">
-            Email: {company.investorsEmail}
-          </p>
+        <section id="investors" className="mt-20 scroll-mt-24">
+          <div className="rounded-lg bg-primary p-8 text-white md:p-12">
+            <h2 className="mb-4 text-2xl font-bold">Investor Information</h2>
+            <p className="mb-6 max-w-2xl leading-relaxed text-white/80">
+              {company.name} is a privately held company seeking strategic
+              capital to develop a proposed modern gold refinery, assay
+              laboratory and responsible-sourcing platform. For investor
+              enquiries, partnership opportunities, or access to confidential
+              materials after screening, please contact our corporate team.
+              Retail savers can also join our{" "}
+              <a
+                href="/gold-savings"
+                className="font-semibold text-gold underline hover:text-gold-light"
+              >
+                Gold Savings programme
+              </a>{" "}
+              to accumulate physical bullion from $20 via USDT.
+            </p>
+            <div className="mb-8 flex flex-wrap gap-3">
+              <a
+                href="/investors/investment-opportunity"
+                className="inline-flex min-h-11 items-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
+              >
+                Explore investment opportunity
+              </a>
+              <a
+                href="/investors/diamond-capital-africa-investment-overview-2026.pdf"
+                download="diamond-capital-africa-investment-overview-2026.pdf"
+                className="inline-flex min-h-11 items-center rounded border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Download overview PDF
+              </a>
+            </div>
+            <p className="text-gold-light">Email: {company.investorsEmail}</p>
+          </div>
+
+          <div className="mt-6 rounded-lg border border-border bg-white p-6 shadow-sm md:p-8">
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted">
+              Featured resource
+            </p>
+            <h3 className="mb-2 text-xl font-bold text-primary">
+              Diamond Capital Africa Investment Overview 2026
+            </h3>
+            <p className="mb-3 max-w-3xl text-sm leading-relaxed text-muted">
+              A public overview of the proposed integrated precious-metals
+              processing platform, preliminary capital requirement, project
+              components, financial projections, governance framework and
+              investor engagement process.
+            </p>
+            <p className="mb-6 text-xs font-semibold uppercase tracking-wider text-muted">
+              PDF · 10 pages · July 2026
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/investors/investment-opportunity#investment-overview"
+                className="inline-flex min-h-11 items-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
+              >
+                Read Online
+              </a>
+              <a
+                href="/investors/diamond-capital-africa-investment-overview-2026.pdf"
+                download="diamond-capital-africa-investment-overview-2026.pdf"
+                className="inline-flex min-h-11 items-center rounded border border-border px-5 py-2.5 text-sm font-semibold text-primary transition hover:border-gold hover:bg-section-alt"
+              >
+                Download PDF
+              </a>
+              <a
+                href="/investors/investment-opportunity#investor-enquiry"
+                className="inline-flex min-h-11 items-center text-sm font-semibold text-gold-dark transition hover:text-gold"
+              >
+                Request Confidential Memorandum
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </>
