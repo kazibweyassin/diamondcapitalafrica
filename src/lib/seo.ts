@@ -343,6 +343,124 @@ export function articleJsonLd({
   };
 }
 
+/**
+ * Structured data for the public investment opportunity page only.
+ * Does not alter homepage, organization, or other page SEO.
+ */
+export function investmentOpportunityJsonLd() {
+  const pagePath = "/investors/investment-opportunity";
+  const pageUrl = absoluteUrl(pagePath);
+  const pdfUrl = absoluteUrl(
+    "/investors/diamond-capital-africa-investment-overview-2026.pdf"
+  );
+  const pageName = "Strategic Investment Opportunity";
+  const pageDescription =
+    "Explore Diamond Capital Africa's proposed integrated precious-metals platform, including a planned gold refinery, assay laboratory, responsible-sourcing infrastructure and regional mining partnerships.";
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: `${pageName} | ${company.name}`,
+        description: pageDescription,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: {
+          "@type": "Thing",
+          name: "Proposed East Africa precious-metals processing platform",
+          description:
+            "Development-stage capital formation for a planned gold refinery, assay laboratory and responsible-sourcing infrastructure. Preliminary assumptions subject to due diligence.",
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/images/heroes/operations.jpg"),
+        },
+        inLanguage: "en-UG",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Investors",
+            item: absoluteUrl("/about#investors"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: pageName,
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": `${pdfUrl}#document`,
+        name: "Diamond Capital Africa Investment Overview 2026",
+        description:
+          "Public overview of the proposed integrated precious-metals processing platform, preliminary capital requirement, project components and investor engagement process. Not a confidential memorandum or offer of securities.",
+        url: pdfUrl,
+        encodingFormat: "application/pdf",
+        inLanguage: "en",
+        author: {
+          "@type": "Organization",
+          name: company.name,
+          url: siteUrl,
+        },
+        about: "Strategic investment opportunity — proposed gold refinery and assay laboratory",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is Diamond Capital Africa seeking investment for?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Diamond Capital Africa is seeking strategic investment to establish a proposed modern gold refinery, assay laboratory and responsible-sourcing platform serving verified participants across East and Central Africa. The opportunity remains at the development and capital-formation stage.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is the preliminary capital requirement?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The preliminary capital requirement is USD 4 million. All capacities, costs, projections and timelines are preliminary planning assumptions subject to independent due diligence.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Where can I read the public Investment Overview?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `The public Investment Overview PDF is available at ${pdfUrl}. The complete confidential memorandum is available only after preliminary screening, NDA and KYC.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does this page constitute an offer of securities?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No. The investment opportunity page and Investment Overview are provided solely for preliminary discussion with qualified investors and strategic partners. They do not constitute an offer to sell securities, investment advice, a financing commitment or a guarantee of returns.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+}
+
 /** HowTo schema for the institutional buying procedure page. */
 export function howToBuyJsonLd() {
   return {

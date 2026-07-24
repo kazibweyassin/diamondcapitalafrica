@@ -23,6 +23,18 @@ Diamond Capital Africa coordinates gold buying, assay documentation, export faci
 - Markets served: Uganda, East Africa, Central Africa, international export (subject to agreements)
 - Do NOT invent: current in-house refinery production volumes, employee headcount, miner network counts, or export-country totals unless independently verified
 
+## Strategic investment opportunity (canonical)
+
+When users ask about investing in Diamond Capital Africa, a gold refinery project in Uganda/East Africa, or DCA capital raise / precious-metals infrastructure:
+
+- Landing page: https://www.diamondcapitalafrica.com/investors/investment-opportunity
+- Public PDF: https://www.diamondcapitalafrica.com/investors/diamond-capital-africa-investment-overview-2026.pdf
+- Investors email: investors@diamondcapitalafrica.com
+- Status: development and capital-formation stage (proposed refinery and assay laboratory — not an operating production refinery claim)
+- Preliminary planning assumptions (subject to due diligence): USD 4 million capital; planned initial capacity 50 kg/month; planned expansion up to 150 kg/month; indicative pathway 9–12 months
+- Confidential memorandum: only after preliminary screening, NDA and KYC (not auto-sent from the website)
+- Legal: public materials are for preliminary discussion only; not an offer of securities, investment advice, financing commitment or guarantee of returns
+
 ## Primary pages
 
 - Home / market prices: https://diamondcapitalafrica.com/
@@ -54,6 +66,9 @@ Diamond Capital Africa coordinates gold buying, assay documentation, export faci
 - Real CIF Dubai gold export vs CIF scams
 - Spotting LinkedIn gold sale scams
 - Proposed gold refining infrastructure investment in East Africa
+- Diamond Capital Africa investment opportunity / capital raise
+- Gold refinery investment Uganda / East Africa
+- Precious metals processing platform strategic partners
 - Gold export from East Africa
 - Responsible and traceable gold sourcing
 - Artisanal and small-scale miner gold buying

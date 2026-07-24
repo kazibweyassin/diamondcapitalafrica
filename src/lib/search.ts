@@ -37,6 +37,13 @@ const staticPages: SearchResult[] = [
     category: "Investors",
   },
   {
+    title: "Investment Overview 2026 (PDF)",
+    href: "/investors/diamond-capital-africa-investment-overview-2026.pdf",
+    excerpt:
+      "Public PDF: proposed precious-metals platform overview, preliminary capital requirement, project components and investor engagement process.",
+    category: "Investors",
+  },
+  {
     title: "Institutional Gold Network",
     href: "/network",
     excerpt:

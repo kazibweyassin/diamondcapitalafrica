@@ -17,6 +17,11 @@ const staticRoutes: {
     changeFrequency: "monthly",
     priority: 0.9,
   },
+  {
+    path: "/investors/diamond-capital-africa-investment-overview-2026.pdf",
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
   { path: "/gold-in-uganda", changeFrequency: "monthly", priority: 0.9 },
   { path: "/gold-savings", changeFrequency: "monthly", priority: 0.9 },
   { path: "/network", changeFrequency: "monthly", priority: 0.9 },
