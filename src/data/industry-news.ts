@@ -15,6 +15,34 @@ export interface IndustryNewsSeed {
 
 export const industryNews: IndustryNewsSeed[] = [
   {
+    slug: "dca-strategic-investment-opportunity-2026",
+    title:
+      "Diamond Capital Africa opens strategic investment process for proposed precious-metals platform",
+    summary:
+      "DCA is inviting qualified investors and operating partners to review a public Investment Overview for a planned modular gold refinery, assay laboratory and responsible-sourcing platform across East and Central Africa.",
+    body: [
+      "Diamond Capital Africa (DCA) has published a public Investment Overview and opened a structured engagement process for strategic investors and technical partners interested in supporting the development of an integrated precious-metals processing platform in East and Central Africa.",
+      "The proposed platform is designed around a greenfield modular gold refinery and modern assay laboratory, supported by responsible-sourcing controls, secure logistics and vaulting, selective upstream partnerships, and coordination with approved institutional buyers. The project remains at the pre-development stage: site, design, permits and partner validation are still to be completed, and construction has not started.",
+      "According to the July 2026 overview, DCA is seeking approximately USD 4.0 million in preliminary development capital. The initial design capacity is 50 kilograms per month, subject to engineering validation, with a longer-term expansion target of up to 150 kilograms per month after feedstock and demand have been demonstrated. An indicative commissioning pathway of nine to twelve months is described after financial close and regulatory approvals.",
+      "A central feature of the development approach is a partner-enabled bridge model. During the build phase, limited pilot transactions may be conducted through verified third-party facilities to test feedstock quality, assay procedures, settlement timing, logistics and customer demand. Partner facilities remain independent counterparties and are not presented as DCA-owned assets. Eligible volumes are intended to migrate to the DCA facility once commissioned.",
+      "The opportunity responds to practical market gaps rather than speculative market-size claims: dependence on external processors, fragmented documentation and chain-of-custody records, working-capital constraints for smaller compliant producers, security and logistics risk in high-value transactions, limited local value capture, and institutional buyer requirements for credible KYC, assay and origin evidence.",
+      "The preliminary capital plan allocates funds across site and design, civil works and utilities, refinery and laboratory equipment, security and vault infrastructure, licensing and professional fees, working capital, upstream pilot support, and contingency. Capital is intended to be released through milestone-based gates covering diligence, financial close, construction and commissioning, with dual-authorisation and investor oversight.",
+      "Governance is expected to include a dedicated project vehicle (SPV), board representation and reserved-matter rights for investors, core risk and technical committees, and responsible-sourcing controls covering supplier identity, beneficial ownership, origin documentation, sanctions screening, chain-of-custody and ESG standards. Financial projections in the overview are illustrative management assumptions and are not guaranteed outcomes.",
+      "Qualified investors and strategic partners can read the public Investment Overview online, download the PDF, or request access to the confidential memorandum following preliminary screening, NDA and KYC. Enquiries may be directed through the investment opportunity page or investors@diamondcapitalafrica.com.",
+      "This announcement and the accompanying materials are provided solely for preliminary discussion. They do not constitute an offer of securities, investment advice, a financing commitment or a guarantee of returns. All project, financial, operational, legal, technical and ESG information remains subject to independent verification, due diligence and definitive agreements.",
+      "Further information: https://www.diamondcapitalafrica.com/investors/investment-opportunity",
+    ],
+    category: "announcement",
+    type: "Company announcement",
+    size: "",
+    date: "Jul 24 2026",
+    day: "24",
+    month: "Jul",
+    sourceUrl:
+      "https://www.diamondcapitalafrica.com/investors/diamond-capital-africa-investment-overview-2026.pdf",
+    sourceName: "Diamond Capital Africa",
+  },
+  {
     slug: "bouk-starts-domestic-gold-purchase-programme",
     title: "Bank of Uganda begins domestic gold purchase programme",
     summary:
