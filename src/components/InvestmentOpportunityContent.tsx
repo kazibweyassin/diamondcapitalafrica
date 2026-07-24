@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowDown,
-  Download,
-  FileText,
-  ShieldCheck,
-  CheckCircle2,
-} from "lucide-react";
+import Image from "next/image";
 import {
   investmentGlance,
   investmentNeeds,
@@ -18,6 +12,7 @@ import {
   investmentRoadmap,
   investmentUseOfFunds,
 } from "@/data/investment";
+import { images } from "@/data/images";
 import { trackEvent } from "@/lib/analytics";
 import InvestmentPdfViewer from "./InvestmentPdfViewer";
 import InvestorEnquiryForm from "./InvestorEnquiryForm";
@@ -33,60 +28,65 @@ export default function InvestmentOpportunityContent() {
 
   return (
     <>
-      {/* SECTION 1: HERO */}
-      <section className="bg-primary text-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:py-20 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold sm:text-sm">
+      {/* Hero — matches other site page heroes */}
+      <section className="relative h-72 bg-primary md:h-96">
+        <Image
+          src={images.pageHero.operations}
+          alt="Strategic investment opportunity"
+          fill
+          priority
+          className="object-cover opacity-40"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
+        <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-gold">
             Strategic investment opportunity
           </p>
-          <h1 className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+          <h1 className="max-w-3xl text-3xl font-bold text-white md:text-4xl">
             Building East Africa&apos;s Integrated Precious Metals Platform
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="mt-3 max-w-2xl text-white/80">
             Diamond Capital Africa is seeking strategic investment to establish
             a modern gold refinery, assay laboratory and responsible-sourcing
             platform serving verified participants across East and Central
             Africa.
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="#investment-overview"
               onClick={handleHeroOpen}
-              className="inline-flex min-h-11 items-center gap-2 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="inline-flex min-h-11 items-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
             >
-              <FileText size={16} aria-hidden />
               Read Investment Overview
             </a>
             <a
               href={investmentOverviewPdf.path}
               download={investmentOverviewPdf.filename}
               onClick={handleHeroDownload}
-              className="inline-flex min-h-11 items-center gap-2 rounded border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex min-h-11 items-center rounded border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              <Download size={16} aria-hidden />
               Download PDF
             </a>
             <a
               href="#investor-enquiry"
-              className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-gold transition hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="inline-flex min-h-11 items-center text-sm font-semibold text-gold transition hover:text-gold-light"
             >
               Request Confidential Memorandum
-              <ArrowDown size={16} aria-hidden />
             </a>
           </div>
-
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/60">
-            This opportunity remains at the development and capital-formation
-            stage. All capacities, costs, projections and timelines are
-            preliminary and subject to independent due diligence.
-          </p>
         </div>
       </section>
 
-      {/* SECTION 2: AT A GLANCE */}
+      <p className="border-b border-border bg-section-alt px-4 py-4 text-center text-sm text-muted lg:px-8">
+        This opportunity remains at the development and capital-formation stage.
+        All capacities, costs, projections and timelines are preliminary and
+        subject to independent due diligence.
+      </p>
+
+      {/* At a glance — same card pattern as company stats */}
       <section
-        className="border-b border-border bg-section-alt py-12 sm:py-16"
+        className="border-b border-border py-12 sm:py-16"
         aria-labelledby="glance-heading"
       >
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -100,15 +100,13 @@ export default function InvestmentOpportunityContent() {
             {investmentGlance.map((card) => (
               <div
                 key={card.label}
-                className="rounded-lg border border-border bg-white p-5 shadow-sm"
+                className="border-l-4 border-gold bg-section-alt p-5"
               >
                 <p className="text-2xl font-bold text-primary sm:text-3xl">
                   {card.value}
                 </p>
-                <p className="mt-2 text-sm font-medium text-foreground">
-                  {card.label}
-                </p>
-                <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-muted">
+                <p className="mt-2 text-sm text-foreground">{card.label}</p>
+                <p className="mt-2 text-xs text-muted">
                   Preliminary planning assumption
                 </p>
               </div>
@@ -118,54 +116,44 @@ export default function InvestmentOpportunityContent() {
       </section>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16 lg:px-8">
-        {/* SECTION 3: THE OPPORTUNITY */}
         <section className="mb-16" aria-labelledby="opportunity-heading">
           <h2
             id="opportunity-heading"
-            className="mb-4 text-xl font-bold text-primary sm:text-2xl md:text-3xl"
+            className="mb-4 text-2xl font-bold text-primary"
           >
             A Regional Precious-Metals Infrastructure Opportunity
           </h2>
-          <p className="mb-6 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+          <p className="mb-6 max-w-3xl leading-relaxed text-muted">
             Diamond Capital Africa intends to connect verified upstream
             production with institutional-grade assaying, refining, secure
             logistics, responsible-sourcing controls and approved international
             markets.
           </p>
-          <p className="mb-4 text-sm font-semibold text-primary">
+          <p className="mb-3 text-sm font-semibold text-primary">
             The project is expected to include:
           </p>
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="grid gap-2 sm:grid-cols-2">
             {investmentProjectComponents.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2 rounded border border-border bg-section-alt px-4 py-3 text-sm text-foreground"
+                className="border border-border px-4 py-3 text-sm text-foreground"
               >
-                <CheckCircle2
-                  size={18}
-                  className="mt-0.5 shrink-0 text-gold-dark"
-                  aria-hidden
-                />
                 {item}
               </li>
             ))}
           </ul>
         </section>
 
-        {/* SECTION 4: WHY NEEDED */}
         <section className="mb-16" aria-labelledby="why-heading">
           <h2
             id="why-heading"
-            className="mb-8 text-xl font-bold text-primary sm:text-2xl"
+            className="mb-8 text-2xl font-bold text-primary"
           >
             Why the project is needed
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {investmentNeeds.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-lg border border-border p-6 shadow-sm"
-              >
+              <div key={item.title} className="border border-border p-6">
                 <h3 className="mb-2 font-bold text-primary">{item.title}</h3>
                 <p className="text-sm leading-relaxed text-muted">
                   {item.description}
@@ -175,15 +163,14 @@ export default function InvestmentOpportunityContent() {
           </div>
         </section>
 
-        {/* SECTION 5: REVENUE MODEL */}
         <section className="mb-16" aria-labelledby="revenue-heading">
           <h2
             id="revenue-heading"
-            className="mb-2 text-xl font-bold text-primary sm:text-2xl"
+            className="mb-2 text-2xl font-bold text-primary"
           >
             Proposed revenue model
           </h2>
-          <p className="mb-6 text-sm font-medium text-gold-dark">
+          <p className="mb-6 text-sm text-muted">
             Proposed revenue streams subject to licensing, commercial agreements
             and due diligence.
           </p>
@@ -199,105 +186,87 @@ export default function InvestmentOpportunityContent() {
           </ul>
         </section>
 
-        {/* SECTION 6: USE OF FUNDS */}
         <section className="mb-16" aria-labelledby="funds-heading">
           <h2
             id="funds-heading"
-            className="mb-6 text-xl font-bold text-primary sm:text-2xl"
+            className="mb-6 text-2xl font-bold text-primary"
           >
             Use of funds
           </h2>
-          <div className="space-y-4">
-            {investmentUseOfFunds.map((item) => (
-              <div key={item.label}>
-                <div className="mb-1 flex items-baseline justify-between gap-4 text-sm">
-                  <span className="font-medium text-foreground">
-                    {item.label}
-                  </span>
-                  <span className="shrink-0 font-bold text-primary">
-                    {item.percent.toFixed(1)}%
-                  </span>
-                </div>
-                <div
-                  className="h-2.5 overflow-hidden rounded-full bg-border"
-                  role="progressbar"
-                  aria-valuenow={item.percent}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  aria-label={`${item.label}: ${item.percent}%`}
-                >
-                  <div
-                    className="h-full rounded-full bg-gold"
-                    style={{ width: `${item.percent}%` }}
-                  />
-                </div>
-              </div>
-            ))}
+          <div className="overflow-x-auto border border-border">
+            <table className="w-full min-w-[320px] text-left text-sm">
+              <thead className="bg-section-alt text-xs font-semibold uppercase tracking-wider text-muted">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Allocation</th>
+                  <th className="px-4 py-3 text-right font-semibold">Share</th>
+                </tr>
+              </thead>
+              <tbody>
+                {investmentUseOfFunds.map((item) => (
+                  <tr key={item.label} className="border-t border-border">
+                    <td className="px-4 py-3 text-foreground">{item.label}</td>
+                    <td className="px-4 py-3 text-right font-semibold text-primary">
+                      {item.percent.toFixed(1)}%
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <p className="mt-6 text-sm leading-relaxed text-muted">
+          <p className="mt-4 text-sm leading-relaxed text-muted">
             The final capital budget will be determined through engineering
             design, vendor quotations, legal review, permitting and
             investor-approved financial modelling.
           </p>
         </section>
 
-        {/* SECTION 7: ROADMAP */}
         <section className="mb-16" aria-labelledby="roadmap-heading">
           <h2
             id="roadmap-heading"
-            className="mb-8 text-xl font-bold text-primary sm:text-2xl"
+            className="mb-6 text-2xl font-bold text-primary"
           >
             Projected development roadmap
           </h2>
-          <ol className="relative space-y-0 border-l-2 border-gold/40 pl-6 sm:pl-8">
+          <ol className="space-y-4">
             {investmentRoadmap.map((step) => (
-              <li key={step.phase} className="relative pb-8 last:pb-0">
-                <span
-                  className="absolute -left-[1.9rem] flex h-7 w-7 items-center justify-center rounded-full bg-gold text-xs font-bold text-primary sm:-left-[2.15rem]"
-                  aria-hidden
-                >
-                  {step.phase}
-                </span>
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+              <li
+                key={step.phase}
+                className="flex gap-4 border border-border px-4 py-4"
+              >
+                <span className="shrink-0 text-sm font-bold text-gold-dark">
                   Phase {step.phase}
-                </p>
-                <p className="mt-1 font-semibold text-primary">{step.title}</p>
+                </span>
+                <span className="text-sm font-medium text-primary">
+                  {step.title}
+                </span>
               </li>
             ))}
           </ol>
           <p className="mt-4 text-sm text-muted">
-            Timelines are indicative and subject to due diligence, permitting and
-            financing. Construction has not started.
+            Timelines are indicative and subject to due diligence, permitting
+            and financing. Construction has not started.
           </p>
         </section>
 
-        {/* SECTION 8: INVESTOR PROTECTION */}
         <section className="mb-16" aria-labelledby="protection-heading">
           <h2
             id="protection-heading"
-            className="mb-6 flex items-center gap-2 text-xl font-bold text-primary sm:text-2xl"
+            className="mb-6 text-2xl font-bold text-primary"
           >
-            <ShieldCheck className="text-gold-dark" size={28} aria-hidden />
             Investor protection
           </h2>
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="grid gap-2 sm:grid-cols-2">
             {investmentProtections.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2 rounded border border-border px-4 py-3 text-sm text-foreground"
+                className="border border-border px-4 py-3 text-sm text-foreground"
               >
-                <CheckCircle2
-                  size={18}
-                  className="mt-0.5 shrink-0 text-gold-dark"
-                  aria-hidden
-                />
                 {item}
               </li>
             ))}
           </ul>
         </section>
 
-        {/* SECTION 9: PDF READER */}
         <section
           id="investment-overview"
           className="mb-16 scroll-mt-24"
@@ -305,7 +274,7 @@ export default function InvestmentOpportunityContent() {
         >
           <h2
             id="pdf-heading"
-            className="mb-2 text-xl font-bold text-primary sm:text-2xl"
+            className="mb-2 text-2xl font-bold text-primary"
           >
             Read the Investment Overview
           </h2>
@@ -316,7 +285,6 @@ export default function InvestmentOpportunityContent() {
           <InvestmentPdfViewer />
         </section>
 
-        {/* SECTION 10: ENQUIRY FORM */}
         <section
           id="investor-enquiry"
           className="mb-16 scroll-mt-24"
@@ -326,7 +294,7 @@ export default function InvestmentOpportunityContent() {
             <div>
               <h2
                 id="enquiry-heading"
-                className="mb-3 text-xl font-bold text-primary sm:text-2xl"
+                className="mb-3 text-2xl font-bold text-primary"
               >
                 Request the Confidential Investment Memorandum
               </h2>
@@ -349,9 +317,8 @@ export default function InvestmentOpportunityContent() {
           </div>
         </section>
 
-        {/* SECTION 11: LEGAL DISCLAIMER */}
         <section
-          className="rounded-lg border border-border bg-section-alt p-6 sm:p-8"
+          className="border border-border bg-section-alt p-6 sm:p-8"
           aria-labelledby="disclaimer-heading"
         >
           <h2

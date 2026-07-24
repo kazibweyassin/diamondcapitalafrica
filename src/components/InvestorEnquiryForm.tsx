@@ -6,7 +6,7 @@ import { investmentRanges, investorTypes } from "@/data/investment";
 import { trackEvent } from "@/lib/analytics";
 
 const inputClass =
-  "w-full rounded border border-border px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-1 focus:ring-gold focus-visible:ring-2";
+  "w-full rounded border border-border px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-1 focus:ring-gold";
 
 const initialForm = {
   name: "",
@@ -121,7 +121,7 @@ export default function InvestorEnquiryForm() {
             setForm(initialForm);
             setErrors({});
           }}
-          className="mt-6 text-sm font-semibold text-gold-dark transition hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+          className="mt-6 text-sm font-semibold text-gold-dark transition hover:text-gold"
         >
           Submit another enquiry
         </button>
@@ -302,7 +302,7 @@ export default function InvestorEnquiryForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex min-h-11 w-full items-center justify-center rounded bg-gold px-6 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="inline-flex min-h-11 w-full items-center justify-center rounded bg-gold px-6 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {submitting ? "Submitting…" : "Request confidential memorandum"}
       </button>

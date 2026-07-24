@@ -10,7 +10,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Download, X } from "lucide-react";
+import { X } from "lucide-react";
 import { investmentOverviewPdf } from "@/data/investment";
 import { trackEvent } from "@/lib/analytics";
 import {
@@ -34,18 +34,6 @@ function useIsClient() {
   );
 }
 
-function usePrefersReducedMotion() {
-  return useSyncExternalStore(
-    (onStoreChange) => {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      mq.addEventListener("change", onStoreChange);
-      return () => mq.removeEventListener("change", onStoreChange);
-    },
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    () => false
-  );
-}
-
 function isExcludedPath(pathname: string): boolean {
   if (pathname === "/investors/investment-opportunity") return true;
   if (pathname.startsWith("/legal")) return true;
@@ -61,7 +49,6 @@ function isOtherOverlayOpen(): boolean {
 export default function InvestmentPopup() {
   const pathname = usePathname();
   const isClient = useIsClient();
-  const reduceMotion = usePrefersReducedMotion();
   const titleId = useId();
   const descId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -107,7 +94,6 @@ export default function InvestmentPopup() {
     [pagePath]
   );
 
-  // Triggers: 10s dwell or 40% scroll
   useEffect(() => {
     if (!isClient) return;
     if (!canConsiderShowing()) return;
@@ -126,8 +112,7 @@ export default function InvestmentPopup() {
       const doc = document.documentElement;
       const scrollable = doc.scrollHeight - window.innerHeight;
       if (scrollable <= 0) return;
-      const ratio = window.scrollY / scrollable;
-      if (ratio >= SCROLL_THRESHOLD) openOnce();
+      if (window.scrollY / scrollable >= SCROLL_THRESHOLD) openOnce();
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -139,7 +124,6 @@ export default function InvestmentPopup() {
     };
   }, [isClient, canConsiderShowing, tryOpen, pagePath]);
 
-  // When overlays close, honour pending open
   useEffect(() => {
     if (!isClient) return;
 
@@ -158,14 +142,12 @@ export default function InvestmentPopup() {
       window.removeEventListener("dca:overlay-change", onOverlayChange);
   }, [isClient, canConsiderShowing, tryOpen]);
 
-  // Analytics: viewed only when visible
   useEffect(() => {
     if (!showDialog || viewedTracked.current) return;
     viewedTracked.current = true;
     trackEvent("investment_popup_viewed", { page_path: pagePath });
   }, [showDialog, pagePath]);
 
-  // Body scroll lock + focus trap + Escape
   useEffect(() => {
     if (!showDialog) return;
 
@@ -178,8 +160,7 @@ export default function InvestmentPopup() {
         ? (Array.from(dialog.querySelectorAll(FOCUSABLE)) as HTMLElement[])
         : [];
 
-    const first = focusables()[0];
-    first?.focus();
+    focusables()[0]?.focus();
 
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -212,16 +193,12 @@ export default function InvestmentPopup() {
 
   if (!isClient || !showDialog) return null;
 
-  const animClass = reduceMotion
-    ? "opacity-100"
-    : "animate-[dca-popup-in_220ms_ease-out]";
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-4">
+    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4">
       <button
         type="button"
         aria-label="Close investment opportunity dialog"
-        className="absolute inset-0 bg-primary-dark/70 backdrop-blur-[1px]"
+        className="absolute inset-0"
         onClick={() => dismiss("overlay")}
       />
 
@@ -231,16 +208,16 @@ export default function InvestmentPopup() {
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descId}
-        className={`relative z-10 flex max-h-[min(92vh,720px)] w-full max-w-[620px] flex-col overflow-hidden rounded-t-2xl border border-gold/30 bg-white shadow-2xl sm:rounded-xl ${animClass}`}
+        className="relative z-10 flex max-h-[min(92vh,680px)] w-full max-w-xl flex-col overflow-hidden rounded-t-lg bg-white shadow-xl sm:rounded-lg"
       >
-        <div className="flex items-start justify-between gap-3 border-b border-border bg-primary px-5 py-4 sm:px-6">
+        <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4 sm:px-6">
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-gold sm:text-xs">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gold">
               Strategic investment opportunity
             </p>
             <h2
               id={titleId}
-              className="mt-1 text-lg font-bold leading-snug text-white sm:text-xl"
+              className="mt-1 text-lg font-bold leading-snug text-primary sm:text-xl"
             >
               Help Build East Africa&apos;s Integrated Precious Metals Platform
             </h2>
@@ -249,7 +226,7 @@ export default function InvestmentPopup() {
             type="button"
             onClick={() => dismiss("close")}
             aria-label="Close dialog"
-            className="shrink-0 rounded p-2 text-white/80 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            className="shrink-0 rounded p-2 text-muted transition hover:bg-section-alt hover:text-foreground"
           >
             <X size={20} aria-hidden />
           </button>
@@ -262,58 +239,34 @@ export default function InvestmentPopup() {
             refinery, assay laboratory and responsible-sourcing infrastructure.
           </p>
 
-          <ul className="mt-5 space-y-2 rounded-lg border border-border bg-section-alt p-4 text-sm text-foreground">
-            <li className="flex gap-2">
-              <span
-                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                aria-hidden
-              />
-              <span>
-                <strong className="font-semibold text-primary">
-                  Preliminary capital requirement:
-                </strong>{" "}
-                USD 4 million
-              </span>
+          <ul className="mt-5 space-y-2 border border-border bg-section-alt p-4 text-sm text-foreground">
+            <li>
+              <span className="font-semibold text-primary">
+                Preliminary capital requirement:
+              </span>{" "}
+              USD 4 million
             </li>
-            <li className="flex gap-2">
-              <span
-                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                aria-hidden
-              />
-              <span>
-                <strong className="font-semibold text-primary">
-                  Planned initial capacity:
-                </strong>{" "}
-                50 kg per month
-              </span>
+            <li>
+              <span className="font-semibold text-primary">
+                Planned initial capacity:
+              </span>{" "}
+              50 kg per month
             </li>
-            <li className="flex gap-2">
-              <span
-                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                aria-hidden
-              />
-              <span>
-                <strong className="font-semibold text-primary">
-                  Planned expansion capacity:
-                </strong>{" "}
-                Up to 150 kg per month
-              </span>
+            <li>
+              <span className="font-semibold text-primary">
+                Planned expansion capacity:
+              </span>{" "}
+              Up to 150 kg per month
             </li>
-            <li className="flex gap-2">
-              <span
-                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                aria-hidden
-              />
-              <span>
-                <strong className="font-semibold text-primary">
-                  Development and commissioning target:
-                </strong>{" "}
-                9–12 months
-              </span>
+            <li>
+              <span className="font-semibold text-primary">
+                Development and commissioning target:
+              </span>{" "}
+              9–12 months
             </li>
           </ul>
 
-          <p className="mt-3 text-[11px] font-medium uppercase tracking-wider text-muted">
+          <p className="mt-3 text-xs text-muted">
             All figures are preliminary planning assumptions and remain subject
             to independent due diligence.
           </p>
@@ -328,7 +281,7 @@ export default function InvestmentPopup() {
                 setInvestmentPopupDismissed();
                 setOpen(false);
               }}
-              className="inline-flex min-h-12 items-center justify-center rounded bg-gold px-5 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="inline-flex min-h-11 items-center justify-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
             >
               Explore the Opportunity
             </Link>
@@ -340,15 +293,14 @@ export default function InvestmentPopup() {
                   page_path: pagePath,
                 });
               }}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded border border-border px-5 py-3 text-sm font-semibold text-primary transition hover:border-gold hover:bg-section-alt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="inline-flex min-h-11 items-center justify-center rounded border border-border px-5 py-2.5 text-sm font-semibold text-primary transition hover:border-gold hover:bg-section-alt"
             >
-              <Download size={16} aria-hidden />
               Download Investment Overview
             </a>
             <button
               type="button"
               onClick={() => dismiss("not_now")}
-              className="min-h-11 text-sm font-semibold text-muted transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="min-h-10 text-sm font-medium text-muted transition hover:text-primary"
             >
               Not now
             </button>
