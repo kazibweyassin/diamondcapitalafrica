@@ -320,26 +320,6 @@ export default function InvestmentOpportunityContent() {
           </div>
         </section>
 
-        <section
-          className="border border-border bg-section-alt p-6 sm:p-8"
-          aria-labelledby="disclaimer-heading"
-        >
-          <h2
-            id="disclaimer-heading"
-            className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted"
-          >
-            Legal disclaimer
-          </h2>
-          <p className="text-sm leading-relaxed text-muted">
-            This page and the accompanying Investment Overview are provided
-            solely for preliminary discussion with qualified investors and
-            strategic partners. They do not constitute an offer to sell
-            securities, a solicitation to invest, investment advice, a financing
-            commitment or a guarantee of returns. All project, financial,
-            operational, legal, technical and ESG information remains subject to
-            independent verification, due diligence and definitive agreements.
-          </p>
-        </section>
       </div>
     </>
   );
