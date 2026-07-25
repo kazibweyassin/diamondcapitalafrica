@@ -1,7 +1,27 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { company, navItems } from "@/data/content";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { company, navItems, socialLinks } from "@/data/content";
+import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
 import BrandLogo from "./BrandLogo";
+
+function XIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+    </svg>
+  );
+}
+
+const socialIcons: Record<(typeof socialLinks)[number]["id"], ReactNode> = {
+  linkedin: <Linkedin size={18} aria-hidden />,
+  x: <XIcon className="h-[18px] w-[18px]" />,
+  facebook: <Facebook size={18} aria-hidden />,
+};
 
 export default function Footer() {
   return (
@@ -22,7 +42,10 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0 text-gold" />
-                <a href={`tel:${company.phoneTel}`} className="transition hover:text-gold">
+                <a
+                  href={`tel:${company.phoneTel}`}
+                  className="transition hover:text-gold"
+                >
                   {company.contactName}: {company.phone}
                 </a>
               </p>
@@ -35,6 +58,27 @@ export default function Footer() {
                   {company.email}
                 </a>
               </p>
+            </div>
+
+            <div className="mt-6">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gold">
+                Follow us
+              </p>
+              <ul className="flex flex-wrap items-center gap-2">
+                {socialLinks.map((link) => (
+                  <li key={link.id}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer me"
+                      aria-label={`${company.name} on ${link.label}`}
+                      className="inline-flex h-10 w-10 items-center justify-center rounded border border-white/15 text-white/80 transition hover:border-gold hover:text-gold"
+                    >
+                      {socialIcons[link.id]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 

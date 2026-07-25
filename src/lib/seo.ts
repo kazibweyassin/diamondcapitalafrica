@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { buyerProcedureSteps } from "@/data/buyer-education";
-import { company, companyFacts, services } from "@/data/content";
+import { company, companyFacts, services, socialLinks } from "@/data/content";
 import type { FaqItem } from "@/data/faqs";
 
 const PRODUCTION_SITE_URL = "https://www.diamondcapitalafrica.com";
@@ -159,6 +159,7 @@ export function organizationJsonLd() {
       "Responsible gold sourcing",
       "Physical gold savings",
     ],
+    sameAs: socialLinks.map((link) => link.href),
   };
 }
 

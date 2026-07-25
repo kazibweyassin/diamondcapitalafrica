@@ -20,6 +20,25 @@ export const company = {
   founded: 2012,
 };
 
+/** Public social profiles (footer + organization sameAs). */
+export const socialLinks = [
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/diamond-capital-africa/",
+  },
+  {
+    id: "x",
+    label: "X",
+    href: "https://x.com/diamondcapit/",
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: "https://www.facebook.com/xentesolutions/",
+  },
+] as const;
+
 /** Canonical facts for search engines and AI. Keep aligned with the live site. */
 export const companyFacts = {
   legalName: "Diamond Capital Africa",
