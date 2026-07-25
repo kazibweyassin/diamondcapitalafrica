@@ -79,12 +79,6 @@ export default function InvestmentOpportunityContent() {
         </div>
       </section>
 
-      <p className="border-b border-border bg-section-alt px-4 py-4 text-center text-sm text-muted lg:px-8">
-        This opportunity remains at the development and capital-formation stage.
-        All capacities, costs, projections and timelines are preliminary and
-        subject to independent due diligence.
-      </p>
-
       {/* At a glance — same card pattern as company stats */}
       <section
         className="border-b border-border py-12 sm:py-16"
