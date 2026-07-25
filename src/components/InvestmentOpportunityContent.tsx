@@ -14,6 +14,7 @@ import {
 } from "@/data/investment";
 import { images } from "@/data/images";
 import { trackEvent } from "@/lib/analytics";
+import InvestmentCharts from "./InvestmentCharts";
 import InvestmentPdfViewer from "./InvestmentPdfViewer";
 import InvestorEnquiryForm from "./InvestorEnquiryForm";
 
@@ -219,6 +220,8 @@ export default function InvestmentOpportunityContent() {
             investor-approved financial modelling.
           </p>
         </section>
+
+        <InvestmentCharts />
 
         <section className="mb-16" aria-labelledby="roadmap-heading">
           <h2

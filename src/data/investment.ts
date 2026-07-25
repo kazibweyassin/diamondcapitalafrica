@@ -81,6 +81,70 @@ export const investmentUseOfFunds = [
   },
 ] as const;
 
+/**
+ * Illustrative five-year base case from the public Investment Overview.
+ * Forward-looking management assumptions — not guaranteed outcomes.
+ */
+export const investmentFinancialOutlook = [
+  {
+    year: "Y1",
+    label: "Year 1",
+    annualThroughputKg: 300,
+    revenueMusd: 0.56,
+    ebitdaMusd: -0.05,
+  },
+  {
+    year: "Y2",
+    label: "Year 2",
+    annualThroughputKg: 540,
+    revenueMusd: 1.15,
+    ebitdaMusd: 0.3,
+  },
+  {
+    year: "Y3",
+    label: "Year 3",
+    annualThroughputKg: 900,
+    revenueMusd: 2.15,
+    ebitdaMusd: 0.9,
+  },
+  {
+    year: "Y4",
+    label: "Year 4",
+    annualThroughputKg: 1320,
+    revenueMusd: 3.31,
+    ebitdaMusd: 1.56,
+  },
+  {
+    year: "Y5",
+    label: "Year 5",
+    annualThroughputKg: 1680,
+    revenueMusd: 4.34,
+    ebitdaMusd: 2.14,
+  },
+] as const;
+
+/** Year-5 scenario comparison (illustrative). */
+export const investmentScenarios = [
+  {
+    name: "Downside",
+    y5ThroughputKg: 900,
+    y5RevenueMusd: 2.25,
+    fiveYearEbitdaMusd: 1.8,
+  },
+  {
+    name: "Base case",
+    y5ThroughputKg: 1680,
+    y5RevenueMusd: 4.34,
+    fiveYearEbitdaMusd: 4.85,
+  },
+  {
+    name: "Upside",
+    y5ThroughputKg: 1800,
+    y5RevenueMusd: 5.6,
+    fiveYearEbitdaMusd: 7.2,
+  },
+] as const;
+
 export const investmentRoadmap = [
   { phase: 1, title: "Project validation and due diligence" },
   { phase: 2, title: "Site selection, engineering and permits" },
