@@ -154,6 +154,14 @@ export default function InstitutionalPaymentInstructions({
               >
                 {wire.phone}
               </a>
+              {" · "}
+              <a
+                href={`tel:${company.phoneAltTel}`}
+                className="font-semibold text-foreground hover:text-gold"
+              >
+                {wire.phoneAlt}
+              </a>
+              <span className="text-muted/80"> (if primary offline)</span>
             </p>
           </div>
         </div>

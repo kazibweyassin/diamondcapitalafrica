@@ -14,6 +14,9 @@ export const company = {
   privacyEmail: "privacy@diamondcapitalafrica.com",
   phone: "+256 704 833 021",
   phoneTel: "+256704833021",
+  /** Backup line if the primary number is offline. WhatsApp widget stays on primary. */
+  phoneAlt: "+256 791 462 554",
+  phoneAltTel: "+256791462554",
   whatsappUrl:
     "https://wa.me/256704833021?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20gold%20services.",
   address: "Plot 42, Nakasero Road, Kampala, Uganda",
@@ -56,6 +59,7 @@ export const companyFacts = {
   ],
   contactPerson: "Tom",
   phone: company.phone,
+  phoneAlt: company.phoneAlt,
   email: company.email,
   website: "https://www.diamondcapitalafrica.com",
 };

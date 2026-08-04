@@ -172,4 +172,4 @@ Confirm that:
 - The investor-page link works
 - It is not displayed on excluded pages
 - No hydration or rendering errors are introduced
-- The production build passes
+- The production build passesyes

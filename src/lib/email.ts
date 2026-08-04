@@ -97,6 +97,7 @@ export async function sendInstitutionalApplicationEmail({
     `${company.contactName}: ${company.name}`,
     company.investorsEmail,
     company.phone,
+    `Alt (if primary offline): ${company.phoneAlt}`,
   ].join("\n");
 
   const html = `
@@ -118,7 +119,7 @@ export async function sendInstitutionalApplicationEmail({
     <p>Portal credentials are emailed after DCA confirms your payment.<br />
     <a href="${accessUrl}">View payment instructions online</a></p>
     <p>${company.contactName}: ${company.name}<br />
-    <a href="mailto:${company.investorsEmail}">${company.investorsEmail}</a> · ${company.phone}</p>
+    <a href="mailto:${company.investorsEmail}">${company.investorsEmail}</a> · ${company.phone} · Alt: ${company.phoneAlt}</p>
   `;
 
   await sendEmail({
@@ -241,6 +242,7 @@ export async function sendInstitutionalCredentialsEmail({
     `${company.contactName}: ${company.name}`,
     company.email,
     company.phone,
+    `Alt (if primary offline): ${company.phoneAlt}`,
   ].join("\n");
 
   const html = `
@@ -257,7 +259,7 @@ export async function sendInstitutionalCredentialsEmail({
     <p>Sign in to browse Level 3+ verified supply and submit structured quote requests through the Verified Gold Exchange.</p>
     <p>Keep this password confidential. Contact us if you need it reset.</p>
     <p>${company.contactName}: ${company.name}<br />
-    <a href="mailto:${company.email}">${company.email}</a> · ${company.phone}</p>
+    <a href="mailto:${company.email}">${company.email}</a> · ${company.phone} · Alt: ${company.phoneAlt}</p>
   `;
 
   await sendEmail({

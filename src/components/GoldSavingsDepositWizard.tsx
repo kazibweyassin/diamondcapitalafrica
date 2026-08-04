@@ -487,7 +487,7 @@ export default function GoldSavingsDepositWizard() {
                 className="w-full text-sm text-muted file:mr-3 file:rounded file:border-0 file:bg-section-alt file:px-3 file:py-2 file:text-sm file:font-medium"
               />
               <p className="mt-1 text-xs text-muted">
-                Or WhatsApp your screenshot to {company.phone} with your
+                Or WhatsApp your screenshot to {company.phone} (or {company.phoneAlt} if offline) with your
                 reference number.
               </p>
             </div>

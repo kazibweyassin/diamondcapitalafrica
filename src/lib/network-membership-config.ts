@@ -39,6 +39,7 @@ export function getInstitutionalMembershipPayment() {
       email: company.investorsEmail,
       contactName: company.contactName,
       phone: company.phone,
+      phoneAlt: company.phoneAlt,
     },
   };
 }

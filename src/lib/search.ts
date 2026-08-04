@@ -78,7 +78,7 @@ const staticPages: SearchResult[] = [
   {
     title: "Contact Us",
     href: "/contact",
-    excerpt: `${company.contactName}, ${company.phone}, ${company.address}`,
+    excerpt: `${company.contactName}, ${company.phone} / ${company.phoneAlt}, ${company.address}`,
     category: "Contact",
   },
   {

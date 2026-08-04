@@ -104,7 +104,7 @@ export default function AboutPage() {
               </dt>
               <dd className="mt-1 text-sm text-foreground">
                 {companyFacts.contactPerson} · {companyFacts.phone} ·{" "}
-                {companyFacts.email}
+                {companyFacts.phoneAlt} · {companyFacts.email}
               </dd>
             </div>
           </dl>

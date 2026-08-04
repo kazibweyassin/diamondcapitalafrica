@@ -239,9 +239,16 @@ export default function ContactPage() {
                   <p className="font-semibold">{company.contactName}</p>
                   <a
                     href={`tel:${company.phoneTel}`}
-                    className="text-sm text-muted transition hover:text-gold"
+                    className="block text-sm text-muted transition hover:text-gold"
                   >
                     {company.phone}
+                  </a>
+                  <a
+                    href={`tel:${company.phoneAltTel}`}
+                    className="mt-1 block text-sm text-muted transition hover:text-gold"
+                  >
+                    {company.phoneAlt}
+                    <span className="text-muted/80"> (if primary is offline)</span>
                   </a>
                 </div>
               </div>
