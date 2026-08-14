@@ -2,15 +2,11 @@ import type { Metadata } from "next";
 import InvestmentOpportunityContent from "@/components/InvestmentOpportunityContent";
 import JsonLd from "@/components/JsonLd";
 import { company } from "@/data/content";
+import { investmentPageMeta } from "@/data/investment";
 import { images } from "@/data/images";
 import { absoluteUrl, investmentOpportunityJsonLd } from "@/lib/seo";
 
-const title = "Strategic Investment Opportunity";
-const description =
-  "Explore Diamond Capital Africa’s proposed integrated precious-metals platform, including a planned gold refinery, assay laboratory, responsible-sourcing infrastructure and regional mining partnerships.";
-const ogTitle = "Building East Africa’s Integrated Precious Metals Platform";
-const ogDescription =
-  "Diamond Capital Africa is seeking strategic investment to develop a modern gold refinery, assay laboratory and responsible precious-metals processing platform.";
+const { title, description, ogTitle, ogDescription } = investmentPageMeta;
 const path = "/investors/investment-opportunity";
 const image = images.pageHero.operations;
 
@@ -20,6 +16,8 @@ const investmentKeywords = [
   "precious metals investment Uganda",
   "assay laboratory investment Africa",
   "strategic investment gold Africa",
+  "gold-linked investment Africa",
+  "equity investment gold refinery",
   "East Africa gold infrastructure",
   "Kampala gold refining project",
   "responsible gold sourcing investment",

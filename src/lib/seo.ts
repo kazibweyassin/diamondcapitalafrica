@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buyerProcedureSteps } from "@/data/buyer-education";
 import { company, companyFacts, services, socialLinks } from "@/data/content";
 import type { FaqItem } from "@/data/faqs";
+import { investmentFaqs, investmentPageMeta } from "@/data/investment";
 
 const PRODUCTION_SITE_URL = "https://www.diamondcapitalafrica.com";
 
@@ -354,9 +355,8 @@ export function investmentOpportunityJsonLd() {
   const pdfUrl = absoluteUrl(
     "/investors/diamond-capital-africa-investment-overview-2026.pdf"
   );
-  const pageName = "Strategic Investment Opportunity";
-  const pageDescription =
-    "Explore Diamond Capital Africa's proposed integrated precious-metals platform, including a planned gold refinery, assay laboratory, responsible-sourcing infrastructure and regional mining partnerships.";
+  const pageName = investmentPageMeta.title;
+  const pageDescription = investmentPageMeta.description;
 
   return {
     "@context": "https://schema.org",
@@ -418,45 +418,20 @@ export function investmentOpportunityJsonLd() {
           name: company.name,
           url: siteUrl,
         },
-        about: "Strategic investment opportunity — proposed gold refinery and assay laboratory",
+        about:
+          "Strategic investment opportunity — proposed gold refinery and assay laboratory",
       },
       {
         "@type": "FAQPage",
         "@id": `${pageUrl}#faq`,
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What is Diamond Capital Africa seeking investment for?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Diamond Capital Africa is seeking strategic investment to establish a proposed modern gold refinery, assay laboratory and responsible-sourcing platform serving verified participants across East and Central Africa. The opportunity remains at the development and capital-formation stage.",
-            },
+        mainEntity: investmentFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
           },
-          {
-            "@type": "Question",
-            name: "What is the preliminary capital requirement?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "The preliminary capital requirement is USD 4 million. All capacities, costs, projections and timelines are preliminary planning assumptions subject to independent due diligence.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Where can I read the public Investment Overview?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: `The public Investment Overview PDF is available at ${pdfUrl}. The complete confidential memorandum is available only after preliminary screening, NDA and KYC.`,
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Does this page constitute an offer of securities?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "No. The investment opportunity page and Investment Overview are provided solely for preliminary discussion with qualified investors and strategic partners. They do not constitute an offer to sell securities, investment advice, a financing commitment or a guarantee of returns.",
-            },
-          },
-        ],
+        })),
       },
     ],
   };
