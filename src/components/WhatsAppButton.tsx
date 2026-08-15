@@ -1,10 +1,15 @@
+"use client";
+
 import { company } from "@/data/content";
+import { useActiveWhatsAppUrl } from "@/lib/whatsapp";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 export default function WhatsAppButton() {
+  const href = useActiveWhatsAppUrl();
+
   return (
     <a
-      href={company.whatsappUrl}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Chat with ${company.contactName} on WhatsApp`}

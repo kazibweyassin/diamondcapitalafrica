@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
+import RotatingPhones from "@/components/RotatingPhones";
 import { company, internationalBuyerRegions } from "@/data/content";
 import { goldFaqs } from "@/data/faqs";
 import { images } from "@/data/images";
@@ -106,17 +107,7 @@ export default function GoldInUgandaPage() {
               Contact {company.contactName} for gold prices, refining slots, or
               export enquiries.
             </p>
-            <p className="mb-1 text-sm font-semibold text-foreground">
-              <a href={`tel:${company.phoneTel}`} className="hover:text-gold">
-                {company.phone}
-              </a>
-            </p>
-            <p className="mb-1 text-sm text-muted">
-              <a href={`tel:${company.phoneAltTel}`} className="hover:text-gold">
-                Alt: {company.phoneAlt}
-              </a>
-              <span className="text-muted/80"> (if primary is offline)</span>
-            </p>
+            <RotatingPhones variant="card" />
             <p className="mb-6 text-sm text-muted">{company.email}</p>
             <Link
               href="/contact?subject=Gold%20Buying%20Enquiry"

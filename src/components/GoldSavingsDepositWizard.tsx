@@ -7,6 +7,7 @@ import { goldSavings } from "@/data/gold-savings";
 import { marketPrices as fallbackPrices } from "@/data/content";
 import type { MarketQuote } from "@/types";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { useActiveWhatsAppUrl } from "@/lib/whatsapp";
 
 type Step = "amount" | "details" | "payment" | "proof" | "done";
 
@@ -59,6 +60,7 @@ function CopyButton({ text, label }: { text: string; label: string }) {
 }
 
 export default function GoldSavingsDepositWizard() {
+  const whatsappUrl = useActiveWhatsAppUrl();
   const [step, setStep] = useState<Step>("amount");
   const [amount, setAmount] = useState(String(goldSavings.minDepositUsd));
   const [spotPerGram, setSpotPerGram] = useState<number | null>(null);
@@ -438,7 +440,7 @@ export default function GoldSavingsDepositWizard() {
               I have paid. Submit proof
             </button>
             <a
-              href={company.whatsappUrl}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex flex-1 items-center justify-center gap-2 rounded border border-border px-6 py-3 text-sm font-semibold text-primary transition hover:bg-section-alt"

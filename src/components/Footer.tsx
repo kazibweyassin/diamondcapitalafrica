@@ -3,6 +3,7 @@ import Link from "next/link";
 import { company, navItems, socialLinks } from "@/data/content";
 import { Mail, Phone, MapPin } from "lucide-react";
 import BrandLogo from "./BrandLogo";
+import RotatingPhones from "./RotatingPhones";
 
 function SocialSvg({
   className,
@@ -65,20 +66,7 @@ export default function Footer() {
               </p>
               <p className="flex items-start gap-2">
                 <Phone size={16} className="mt-0.5 shrink-0 text-gold" />
-                <span className="flex flex-col gap-1">
-                  <a
-                    href={`tel:${company.phoneTel}`}
-                    className="transition hover:text-gold"
-                  >
-                    {company.contactName}: {company.phone}
-                  </a>
-                  <a
-                    href={`tel:${company.phoneAltTel}`}
-                    className="transition hover:text-gold"
-                  >
-                    Alt: {company.phoneAlt}
-                  </a>
-                </span>
+                <RotatingPhones variant="footer" />
               </p>
               <p className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 text-gold" />
