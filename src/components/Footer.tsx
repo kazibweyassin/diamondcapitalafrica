@@ -271,10 +271,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {company.name} Ltd. All rights
             reserved.
           </p>
-          <p className="max-w-md md:max-w-none">
-            Licensed by the Ministry of Energy & Mineral Development, Uganda
-          </p>
-        </div>
+         </div>
       </div>
     </footer>
   );
