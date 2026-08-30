@@ -1,72 +1,23 @@
--- CreateTable
-CREATE TABLE "Enquiry" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "reference" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "phone" TEXT,
-    "subject" TEXT NOT NULL,
-    "message" TEXT NOT NULL,
-    "status" TEXT NOT NULL DEFAULT 'new',
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
-);
-
--- CreateTable
-CREATE TABLE "NewsArticle" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "slug" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "summary" TEXT NOT NULL,
-    "body" TEXT NOT NULL,
-    "category" TEXT NOT NULL,
-    "type" TEXT NOT NULL,
-    "size" TEXT NOT NULL,
-    "date" TEXT NOT NULL,
-    "day" TEXT NOT NULL,
-    "month" TEXT NOT NULL,
-    "published" BOOLEAN NOT NULL DEFAULT true,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
-);
-
--- CreateTable
-CREATE TABLE "Document" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "slug" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "type" TEXT NOT NULL,
-    "category" TEXT NOT NULL,
-    "summary" TEXT NOT NULL,
-    "content" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
-);
-
--- CreateTable
-CREATE TABLE "MarketSnapshot" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "quotes" TEXT NOT NULL,
-    "source" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
--- CreateTable
-CREATE TABLE "AdminUser" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
--- CreateIndex
+CREATE TABLE "Enquiry" ("id" TEXT NOT NULL, "reference" TEXT NOT NULL, "name" TEXT NOT NULL, "email" TEXT NOT NULL, "phone" TEXT, "subject" TEXT NOT NULL, "message" TEXT NOT NULL, "status" TEXT NOT NULL DEFAULT 'new', "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "Enquiry_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "NewsArticle" ("id" TEXT NOT NULL, "slug" TEXT NOT NULL, "title" TEXT NOT NULL, "summary" TEXT NOT NULL, "body" TEXT NOT NULL, "category" TEXT NOT NULL, "type" TEXT NOT NULL, "size" TEXT NOT NULL, "date" TEXT NOT NULL, "day" TEXT NOT NULL, "month" TEXT NOT NULL, "sourceUrl" TEXT, "published" BOOLEAN NOT NULL DEFAULT true, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "NewsArticle_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "Document" ("id" TEXT NOT NULL, "slug" TEXT NOT NULL, "title" TEXT NOT NULL, "type" TEXT NOT NULL, "category" TEXT NOT NULL, "summary" TEXT NOT NULL, "sourceUrl" TEXT, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "Document_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "MarketSnapshot" ("id" TEXT NOT NULL, "quotes" TEXT NOT NULL, "source" TEXT NOT NULL, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "MarketSnapshot_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "AdminUser" ("id" TEXT NOT NULL, "email" TEXT NOT NULL, "password" TEXT NOT NULL, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "AdminUser_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "GoldDeposit" ("id" TEXT NOT NULL, "reference" TEXT NOT NULL, "name" TEXT NOT NULL, "email" TEXT NOT NULL, "phone" TEXT NOT NULL, "amountUsd" DECIMAL(12,2) NOT NULL, "gramsQuoted" DECIMAL(12,6) NOT NULL, "spotPricePerG" DECIMAL(12,4) NOT NULL, "priceLockedUntil" TIMESTAMP(3) NOT NULL, "paymentMethod" TEXT NOT NULL DEFAULT 'usdt', "status" TEXT NOT NULL DEFAULT 'pending_payment', "txHash" TEXT, "proofUrl" TEXT, "adminNotes" TEXT, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "GoldDeposit_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "NetworkMember" ("id" TEXT NOT NULL, "reference" TEXT NOT NULL, "companyName" TEXT NOT NULL, "contactName" TEXT NOT NULL, "email" TEXT NOT NULL, "phone" TEXT NOT NULL, "licenseNumber" TEXT, "location" TEXT NOT NULL, "productType" TEXT NOT NULL, "volumeRange" TEXT NOT NULL, "notes" TEXT, "status" TEXT NOT NULL DEFAULT 'pending', "verificationLevel" INTEGER NOT NULL DEFAULT 0, "adminNotes" TEXT, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "NetworkMember_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "VerifiedSupply" ("id" TEXT NOT NULL, "reference" TEXT NOT NULL, "memberId" TEXT NOT NULL, "title" TEXT NOT NULL, "productType" TEXT NOT NULL, "purity" TEXT, "volumeEstimate" TEXT NOT NULL, "location" TEXT NOT NULL, "verificationLevel" INTEGER NOT NULL DEFAULT 3, "assayRef" TEXT, "status" TEXT NOT NULL DEFAULT 'draft', "summary" TEXT, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "VerifiedSupply_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "InstitutionalAccount" ("id" TEXT NOT NULL, "reference" TEXT NOT NULL, "companyName" TEXT NOT NULL, "contactName" TEXT NOT NULL, "email" TEXT NOT NULL, "phone" TEXT, "country" TEXT, "buyerType" TEXT NOT NULL, "message" TEXT, "passwordHash" TEXT, "status" TEXT NOT NULL DEFAULT 'pending', "membershipTier" TEXT NOT NULL DEFAULT 'standard', "membershipExpiresAt" TIMESTAMP(3), "paymentReceivedAt" TIMESTAMP(3), "credentialsSentAt" TIMESTAMP(3), "adminNotes" TEXT, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "InstitutionalAccount_pkey" PRIMARY KEY ("id"));
+CREATE TABLE "ExchangeEnquiry" ("id" TEXT NOT NULL, "reference" TEXT NOT NULL, "supplyId" TEXT NOT NULL, "accountId" TEXT, "contactName" TEXT NOT NULL, "email" TEXT NOT NULL, "companyName" TEXT, "message" TEXT NOT NULL, "status" TEXT NOT NULL DEFAULT 'new', "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL, CONSTRAINT "ExchangeEnquiry_pkey" PRIMARY KEY ("id"));
 CREATE UNIQUE INDEX "Enquiry_reference_key" ON "Enquiry"("reference");
-
--- CreateIndex
 CREATE UNIQUE INDEX "NewsArticle_slug_key" ON "NewsArticle"("slug");
-
--- CreateIndex
 CREATE UNIQUE INDEX "Document_slug_key" ON "Document"("slug");
-
--- CreateIndex
 CREATE UNIQUE INDEX "AdminUser_email_key" ON "AdminUser"("email");
+CREATE UNIQUE INDEX "GoldDeposit_reference_key" ON "GoldDeposit"("reference");
+CREATE UNIQUE INDEX "NetworkMember_reference_key" ON "NetworkMember"("reference");
+CREATE UNIQUE INDEX "VerifiedSupply_reference_key" ON "VerifiedSupply"("reference");
+CREATE UNIQUE INDEX "InstitutionalAccount_reference_key" ON "InstitutionalAccount"("reference");
+CREATE UNIQUE INDEX "InstitutionalAccount_email_key" ON "InstitutionalAccount"("email");
+CREATE UNIQUE INDEX "ExchangeEnquiry_reference_key" ON "ExchangeEnquiry"("reference");
+ALTER TABLE "VerifiedSupply" ADD CONSTRAINT "VerifiedSupply_memberId_fkey" FOREIGN KEY ("memberId") REFERENCES "NetworkMember"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "ExchangeEnquiry" ADD CONSTRAINT "ExchangeEnquiry_supplyId_fkey" FOREIGN KEY ("supplyId") REFERENCES "VerifiedSupply"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "ExchangeEnquiry" ADD CONSTRAINT "ExchangeEnquiry_accountId_fkey" FOREIGN KEY ("accountId") REFERENCES "InstitutionalAccount"("id") ON DELETE SET NULL ON UPDATE CASCADE;

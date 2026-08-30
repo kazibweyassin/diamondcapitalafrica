@@ -59,7 +59,7 @@ function CopyButton({ text, label }: { text: string; label: string }) {
   );
 }
 
-export default function GoldSavingsDepositWizard() {
+export default function GoldSavingsDepositWizard({ customer }: { customer?: { name: string; email: string; phone: string | null } }) {
   const whatsappUrl = useActiveWhatsAppUrl();
   const [step, setStep] = useState<Step>("amount");
   const [amount, setAmount] = useState(String(goldSavings.minDepositUsd));
@@ -71,9 +71,9 @@ export default function GoldSavingsDepositWizard() {
   const [deposit, setDeposit] = useState<DepositRecord | null>(null);
 
   const [details, setDetails] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    name: customer?.name ?? "",
+    email: customer?.email ?? "",
+    phone: customer?.phone ?? "",
   });
   const [detailErrors, setDetailErrors] = useState<Record<string, string>>({});
 
@@ -167,7 +167,6 @@ export default function GoldSavingsDepositWizard() {
 
     try {
       const formData = new FormData();
-      formData.append("email", deposit.email);
       formData.append("txHash", proof.txHash.trim());
       if (proofFile) formData.append("proof", proofFile);
 
@@ -324,6 +323,7 @@ export default function GoldSavingsDepositWizard() {
                 id="dep-email"
                 type="email"
                 value={details.email}
+                readOnly={Boolean(customer)}
                 onChange={(e) => setDetails({ ...details, email: e.target.value })}
                 className="w-full rounded border border-border px-4 py-3 text-sm outline-none transition focus:border-gold focus:ring-1 focus:ring-gold"
               />

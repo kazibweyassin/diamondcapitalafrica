@@ -251,7 +251,7 @@ export default function AdminDashboard({ email }: { email: string }) {
                 {deposit.proofUrl && (
                   <p className="mb-2 text-sm">
                     <a
-                      href={deposit.proofUrl}
+                      href={`/api/gold-deposits/manage/${deposit.id}/proof`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-semibold text-gold-dark underline hover:text-gold"

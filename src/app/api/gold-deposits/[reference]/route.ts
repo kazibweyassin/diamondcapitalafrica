@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { jsonOk, jsonError } from "@/lib/api-response";
 import { serializeGoldDeposit } from "@/lib/gold-deposits";
+import { requireGoldCustomer } from "@/lib/auth";
 
 export async function GET(
   request: Request,
@@ -8,23 +9,19 @@ export async function GET(
 ) {
   try {
     const { reference } = await params;
-    const { searchParams } = new URL(request.url);
-    const email = searchParams.get("email")?.trim().toLowerCase();
-
-    if (!email) {
-      return jsonError("Email is required to look up this deposit", 400);
-    }
+    void request;
+    const session = await requireGoldCustomer();
 
     const deposit = await prisma.goldDeposit.findUnique({
       where: { reference },
     });
 
-    if (!deposit || deposit.email.toLowerCase() !== email) {
+    if (!deposit || deposit.customerId !== session.customerId) {
       return jsonError("Deposit not found", 404);
     }
 
     return jsonOk(serializeGoldDeposit(deposit));
-  } catch {
-    return jsonError("Failed to fetch deposit", 500);
+  } catch (error) {
+    return jsonError(error instanceof Error && error.message === "Unauthorized" ? "Unauthorized" : "Failed to fetch deposit", error instanceof Error && error.message === "Unauthorized" ? 401 : 500);
   }
 }

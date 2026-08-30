@@ -170,7 +170,7 @@ export default function AboutPage() {
             {[
               {
                 icon: Shield,
-                title: "Licensed Dealer",
+                title: "Dealer",
                 desc: "Ministry of Energy & Mineral Development, Uganda",
               },
               {

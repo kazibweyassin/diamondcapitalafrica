@@ -3,6 +3,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { createSession } from "@/lib/auth";
 import { jsonOk, jsonError } from "@/lib/api-response";
+import { rateLimit, requestIp } from "@/lib/rate-limit";
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -10,6 +11,7 @@ const loginSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  if (!rateLimit(`admin-login:${requestIp(request)}`, 6, 15 * 60_000).allowed) return jsonError("Too many attempts. Try again later.", 429);
   try {
     const body = await request.json();
     const parsed = loginSchema.safeParse(body);

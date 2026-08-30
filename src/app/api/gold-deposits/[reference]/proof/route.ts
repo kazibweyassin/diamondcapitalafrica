@@ -3,11 +3,12 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { jsonOk, jsonError } from "@/lib/api-response";
 import { serializeGoldDeposit } from "@/lib/gold-deposits";
+import { requireGoldCustomer } from "@/lib/auth";
+import { rateLimit, requestIp } from "@/lib/rate-limit";
 
 const txHashPattern = /^(0x)?[a-fA-F0-9]{40,64}$/;
 
 const proofSchema = z.object({
-  email: z.string().email(),
   txHash: z
     .string()
     .min(40, "Enter a valid transaction hash")
@@ -21,17 +22,27 @@ const allowedTypes = new Set([
   "application/pdf",
 ]);
 
+async function verifiedFileType(file: File) {
+  const bytes = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const hex = Array.from(bytes).map((b) => b.toString(16).padStart(2, "0")).join("");
+  if (hex.startsWith("ffd8ff")) return "image/jpeg";
+  if (hex.startsWith("89504e470d0a1a0a")) return "image/png";
+  if (hex.startsWith("52494646") && new TextDecoder().decode(bytes.slice(8, 12)) === "WEBP") return "image/webp";
+  if (new TextDecoder().decode(bytes.slice(0, 5)) === "%PDF-") return "application/pdf";
+  return null;
+}
+
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ reference: string }> }
 ) {
+  if (!rateLimit(`proof:${requestIp(request)}`, 10, 60 * 60_000).allowed) return jsonError("Too many submissions. Try again later.", 429);
   try {
     const { reference } = await params;
     const formData = await request.formData();
-    const email = String(formData.get("email") ?? "").trim().toLowerCase();
     const txHash = String(formData.get("txHash") ?? "").trim();
 
-    const parsed = proofSchema.safeParse({ email, txHash });
+    const parsed = proofSchema.safeParse({ txHash });
     if (!parsed.success) {
       return jsonError(parsed.error.issues[0]?.message ?? "Invalid input", 422);
     }
@@ -40,7 +51,8 @@ export async function POST(
       where: { reference },
     });
 
-    if (!deposit || deposit.email.toLowerCase() !== parsed.data.email) {
+    const session = await requireGoldCustomer();
+    if (!deposit || deposit.customerId !== session.customerId) {
       return jsonError("Deposit not found", 404);
     }
 
@@ -76,6 +88,10 @@ export async function POST(
       if (!allowedTypes.has(proofFile.type)) {
         return jsonError("Proof must be JPG, PNG, WebP, or PDF", 422);
       }
+      const detectedType = await verifiedFileType(proofFile);
+      if (!detectedType || detectedType !== proofFile.type) {
+        return jsonError("Proof file contents do not match its declared type", 422);
+      }
       if (proofFile.size > 5 * 1024 * 1024) {
         return jsonError("Proof file must be under 5 MB", 422);
       }
@@ -88,11 +104,11 @@ export async function POST(
       }
 
       const blob = await put(
-        `gold-deposits/${reference}-${Date.now()}-${proofFile.name}`,
+        `gold-deposits/${reference}-${Date.now()}.${detectedType === "application/pdf" ? "pdf" : detectedType.split("/")[1]}`,
         proofFile,
-        { access: "public" }
+        { access: "private" }
       );
-      proofUrl = blob.url;
+      proofUrl = blob.pathname;
     }
 
     const updated = await prisma.goldDeposit.update({
@@ -105,7 +121,8 @@ export async function POST(
     });
 
     return jsonOk(serializeGoldDeposit(updated));
-  } catch {
+  } catch (error) {
+    if (error instanceof Error && error.message === "Unauthorized") return jsonError("Unauthorized", 401);
     return jsonError("Failed to submit proof of payment", 500);
   }
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Gem } from "lucide-react";
-import GoldSavingsDepositWizard from "@/components/GoldSavingsDepositWizard";
+import GoldSavingsAccount from "@/components/GoldSavingsAccount";
 import JsonLd from "@/components/JsonLd";
 import { company } from "@/data/content";
 import {
@@ -91,7 +91,7 @@ export default function GoldSavingsPage() {
               <ArrowRight size={16} />
             </Link>
           </div>
-          <GoldSavingsDepositWizard />
+          <GoldSavingsAccount />
         </div>
 
         <section className="mt-16">

@@ -10,6 +10,9 @@ import {
   validateDepositAmount,
 } from "@/lib/gold-deposits";
 import { getPriceLockUntil, getUsdtConfig } from "@/lib/gold-savings-config";
+import { requireGoldCustomer } from "@/lib/auth";
+import { rateLimit, requestIp } from "@/lib/rate-limit";
+import { isEmailConfigured, sendGoldSavingsConfirmation } from "@/lib/email";
 
 const createSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -19,6 +22,9 @@ const createSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  if (!rateLimit(`deposit:${requestIp(request)}`, 10, 60 * 60_000).allowed) {
+    return jsonError("Too many deposit requests. Try again later.", 429);
+  }
   try {
     const usdt = getUsdtConfig();
     if (!usdt.configured || !usdt.wallet) {
@@ -36,6 +42,10 @@ export async function POST(request: Request) {
     }
 
     const { name, email, phone, amountUsd } = parsed.data;
+    const customerSession = await requireGoldCustomer();
+    if (customerSession.email.toLowerCase() !== email.toLowerCase()) {
+      return jsonError("Use the email associated with your Gold Savings account", 403);
+    }
 
     if (!validateDepositAmount(amountUsd)) {
       return jsonError("Minimum deposit is $20", 422);
@@ -57,8 +67,12 @@ export async function POST(request: Request) {
         priceLockedUntil,
         paymentMethod: "usdt",
         status: "pending_payment",
+        customerId: customerSession.customerId,
       },
     });
+    if (isEmailConfigured()) {
+      void sendGoldSavingsConfirmation({ to: email, name, subject: `Gold Savings deposit created (${deposit.reference})`, lines: [`Deposit: $${amountUsd.toFixed(2)} USDT`, `Gold quoted: ${gramsQuoted.toFixed(4)} g`, `Reference: ${deposit.reference}`, `Price lock expires: ${priceLockedUntil.toISOString()}`] }).catch(() => undefined);
+    }
 
     return jsonOk(
       {

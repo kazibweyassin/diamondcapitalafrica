@@ -2,6 +2,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { jsonOk, jsonError } from "@/lib/api-response";
 import { generateNetworkReference } from "@/lib/network";
+import { rateLimit, requestIp } from "@/lib/rate-limit";
 
 const supplierSchema = z.object({
   companyName: z.string().min(2),
@@ -16,6 +17,7 @@ const supplierSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  if (!rateLimit(`supplier:${requestIp(request)}`, 5, 60 * 60_000).allowed) return jsonError("Too many applications. Try again later.", 429);
   try {
     const body = await request.json();
     const parsed = supplierSchema.safeParse(body);

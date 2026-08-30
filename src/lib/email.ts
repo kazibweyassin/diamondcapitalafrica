@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 import { company } from "@/data/content";
 import { getInstitutionalMembershipPayment } from "@/lib/network-membership-config";
 import { siteUrl } from "@/lib/seo";
+import { escapeHtml } from "@/lib/html";
 
 function smtpConfigured() {
   return Boolean(
@@ -155,6 +156,13 @@ export async function sendInvestorEnquiryNotification({
   phone?: string;
   message?: string;
 }) {
+  const safe = {
+    reference: escapeHtml(reference), name: escapeHtml(name), email: escapeHtml(email),
+    organisation: escapeHtml(organisation), position: escapeHtml(position), country: escapeHtml(country),
+    investorType: escapeHtml(investorType), investmentRange: escapeHtml(investmentRange),
+    website: website ? escapeHtml(website) : "", phone: phone ? escapeHtml(phone) : "",
+    message: message ? escapeHtml(message).replace(/\n/g, "<br />") : "(none)",
+  };
   const to =
     process.env.INVESTOR_NOTIFICATION_EMAIL ??
     company.investorsEmail ??
@@ -182,20 +190,20 @@ export async function sendInvestorEnquiryNotification({
     .join("\n");
 
   const html = `
-    <p><strong>New investor enquiry</strong> (${reference})</p>
+    <p><strong>New investor enquiry</strong> (${safe.reference})</p>
     <ul>
-      <li><strong>Name:</strong> ${name}</li>
-      <li><strong>Organisation:</strong> ${organisation}</li>
-      <li><strong>Position:</strong> ${position}</li>
-      <li><strong>Email:</strong> <a href="mailto:${email}">${email}</a></li>
-      <li><strong>Country:</strong> ${country}</li>
-      <li><strong>Investor type:</strong> ${investorType}</li>
-      <li><strong>Indicative range:</strong> ${investmentRange}</li>
-      ${website ? `<li><strong>Website / LinkedIn:</strong> ${website}</li>` : ""}
-      ${phone ? `<li><strong>Phone / WhatsApp:</strong> ${phone}</li>` : ""}
+      <li><strong>Name:</strong> ${safe.name}</li>
+      <li><strong>Organisation:</strong> ${safe.organisation}</li>
+      <li><strong>Position:</strong> ${safe.position}</li>
+      <li><strong>Email:</strong> ${safe.email}</li>
+      <li><strong>Country:</strong> ${safe.country}</li>
+      <li><strong>Investor type:</strong> ${safe.investorType}</li>
+      <li><strong>Indicative range:</strong> ${safe.investmentRange}</li>
+      ${website ? `<li><strong>Website / LinkedIn:</strong> ${safe.website}</li>` : ""}
+      ${phone ? `<li><strong>Phone / WhatsApp:</strong> ${safe.phone}</li>` : ""}
     </ul>
     <p><strong>Message</strong></p>
-    <p>${message ? message.replace(/\n/g, "<br />") : "(none)"}</p>
+    <p>${safe.message}</p>
     <p><em>Do not auto-send the confidential memorandum. Complete screening, NDA and preliminary KYC first.</em></p>
   `;
 
@@ -204,6 +212,17 @@ export async function sendInvestorEnquiryNotification({
     subject: `[Investor] Confidential memorandum request — ${reference}`,
     text,
     html,
+  });
+}
+
+export async function sendGoldSavingsConfirmation({ to, name, subject, lines }: { to: string; name: string; subject: string; lines: string[] }) {
+  const text = [`Dear ${name},`, "", ...lines, "", `Gold Savings dashboard: ${siteUrl}/gold-savings`, "", company.name].join("\n");
+  const htmlLines = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  await sendEmail({
+    to,
+    subject,
+    text,
+    html: `<p>Dear ${escapeHtml(name)},</p>${htmlLines}<p><a href="${siteUrl}/gold-savings">Open your Gold Savings dashboard</a></p><p>${escapeHtml(company.name)}</p>`,
   });
 }
 

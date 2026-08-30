@@ -6,6 +6,7 @@ import {
   sendInstitutionalApplicationEmail,
 } from "@/lib/email";
 import { generateNetworkReference } from "@/lib/network";
+import { rateLimit, requestIp } from "@/lib/rate-limit";
 
 const accessSchema = z.object({
   companyName: z.string().min(2),
@@ -18,6 +19,7 @@ const accessSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  if (!rateLimit(`institutional:${requestIp(request)}`, 5, 60 * 60_000).allowed) return jsonError("Too many applications. Try again later.", 429);
   try {
     const body = await request.json();
     const parsed = accessSchema.safeParse(body);

@@ -6,6 +6,7 @@ import {
   isEmailConfigured,
   sendInvestorEnquiryNotification,
 } from "@/lib/email";
+import { rateLimit, requestIp } from "@/lib/rate-limit";
 import {
   investmentRanges,
   investorTypes,
@@ -73,6 +74,7 @@ function sanitise(value: string) {
 }
 
 export async function POST(request: Request) {
+  if (!rateLimit(`enquiry:${requestIp(request)}`, 6, 60 * 60_000).allowed) return jsonError("Too many enquiries. Try again later.", 429);
   try {
     const ip = getClientIp(request);
     if (isRateLimited(ip)) {
