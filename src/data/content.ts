@@ -57,7 +57,6 @@ export const companyFacts = {
     "Export facilitation for verified counterparties (FOB Kampala, CIF Dubai where agreed)",
     "Developing a proposed gold refinery and modern assay laboratory",
     "Working with mining, refining, logistics and trading stakeholders",
-    "Gold Savings: physical bullion accumulation from $20",
   ],
   contactPerson: "Tom",
   phone: company.phone,
@@ -115,6 +114,7 @@ export const navItems = [
       { label: "How to Buy Gold", href: "/how-to-buy" },
       { label: "Export Services", href: "/services#export" },
       { label: "Gold Buying", href: "/services#buying" },
+      { label: "Sell larger lots", href: "/network/apply" },
       { label: "Gold Refining", href: "/services#refining" },
       { label: "Assay & Testing", href: "/services#assay" },
       { label: "Buyer Guides", href: "/guides" },
@@ -146,9 +146,7 @@ export const navItems = [
         label: "Investment Opportunity",
         href: "/investors/investment-opportunity",
       },
-      { label: "Gold Savings", href: "/gold-savings" },
       { label: "How to Buy Gold", href: "/how-to-buy" },
-      { label: "Institutional Network", href: "/network" },
       { label: "About Gold", href: "/about-gold" },
       { label: "Buyer Guides", href: "/guides" },
       { label: "Market Data", href: "/#market-prices" },
@@ -156,7 +154,6 @@ export const navItems = [
       { label: "Compliance", href: "/about#compliance" },
     ],
   },
-  { label: "Network", href: "/network" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -191,11 +188,11 @@ export const heroSlides = [
   {
     id: 4,
     image: images.pageHero.operations,
-    title: "Institutional Gold Network",
+    title: "Sell gold to us. Buy gold from us.",
     description:
-      "Verified supply, institutional buyer access, and DCA-coordinated quotes through our Verified Gold Exchange, not an open marketplace.",
-    cta: { label: "Explore the Network", href: "/network" },
-    tab: "Network",
+      "We buy verified gold at our collection centres and from licensed suppliers, then sell it ourselves. Buyers are not introduced to suppliers.",
+    cta: { label: "Sell gold", href: "/services#buying" },
+    tab: "Buying",
   },
 ];
 

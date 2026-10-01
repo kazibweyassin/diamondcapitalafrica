@@ -152,14 +152,13 @@ export const buyerGuides: BuyerGuide[] = [
         heading: "What you are buying",
         paragraphs: [
           "Diamond Capital Africa coordinates fire-assay verified fine gold supply from Kampala. Typical institutional formats include 10 oz, 1 kg, and 12.5 kg where available, with certificates. This is physical bullion supply, not mining shares or paper gold. DCA is also developing a proposed modern refinery and assay laboratory.",
-          "We also operate Gold Savings for individuals who want to accumulate physical gold from $20 via USDT, redeemable from 20 g at Kampala or Arua.",
         ],
       },
       {
         heading: "Who should buy this way",
         paragraphs: [
-          "Institutional importers, Middle East and European traders, family offices, and professional bullion buyers who need documentation and chain of custody. Individuals who want small physical holdings use Gold Savings rather than wholesale export tickets.",
-          "Artisanal sellers who want to sell doré to us use collection centres or the Network supplier path. That is a different process from buying refined bars.",
+          "Institutional importers, Middle East and European traders, family offices, and professional bullion buyers who need documentation and chain of custody.",
+          "Artisanal sellers who want to sell doré to us use the Kampala or Arua collection centres. Licensed suppliers with larger lots can offer metal to DCA for purchase. Buyers are not introduced to those suppliers. That is a different process from buying refined bars.",
         ],
       },
       {

@@ -14,10 +14,9 @@ interface SupplyItem {
   volumeEstimate: string;
   location: string;
   verificationLevel: number;
-  assayRef: string | null;
+  assayOnFile: boolean;
   summary: string | null;
-  supplierName: string;
-  supplierLevel: number;
+  seller: string;
 }
 
 interface Account {
@@ -86,7 +85,9 @@ export default function NetworkPortal() {
         setError(json.error ?? "Failed to submit");
         return;
       }
-      setFeedback(`Quote request submitted (${json.data.reference}). DCA will respond shortly.`);
+      setFeedback(
+        `Purchase request submitted (${json.data.reference}). DCA will quote this metal.`,
+      );
       setQuoteFor(null);
       setMessage("");
     } catch {
@@ -107,14 +108,14 @@ export default function NetworkPortal() {
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-gold">
-            Verified Gold Exchange
+            Buy from Diamond Capital Africa
           </p>
           <h1 className="text-2xl font-bold text-primary md:text-3xl">
             Institutional portal
           </h1>
           {account && (
             <p className="mt-1 text-sm text-muted">
-              {account.companyName} · {account.membershipTier} membership
+              {account.companyName} · buying from DCA
             </p>
           )}
         </div>
@@ -142,7 +143,7 @@ export default function NetworkPortal() {
       {supply.length === 0 ? (
         <div className="rounded-lg border border-dashed border-border bg-section-alt px-6 py-12 text-center">
           <p className="text-sm text-muted">
-            No Level 3+ verified supply is published yet. Check back soon or{" "}
+            No DCA supply is open for purchase right now. Check back soon or{" "}
             <Link href="/contact" className="font-semibold text-gold-dark underline">
               contact DCA
             </Link>
@@ -176,19 +177,19 @@ export default function NetworkPortal() {
                   <dd className="font-medium">{item.volumeEstimate}</dd>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <dt className="text-muted">Location</dt>
+                  <dt className="text-muted">Region</dt>
                   <dd className="font-medium">{item.location}</dd>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <dt className="text-muted">Supplier</dt>
-                  <dd className="font-medium">{item.supplierName}</dd>
+                  <dt className="text-muted">Seller</dt>
+                  <dd className="font-medium">{item.seller}</dd>
                 </div>
-                {item.assayRef && (
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Assay ref</dt>
-                    <dd className="font-mono text-xs">{item.assayRef}</dd>
-                  </div>
-                )}
+                <div className="flex justify-between gap-4">
+                  <dt className="text-muted">Assay</dt>
+                  <dd className="font-medium">
+                    {item.assayOnFile ? "On file with DCA" : "Arranged by DCA"}
+                  </dd>
+                </div>
               </dl>
               {item.summary && (
                 <p className="mb-4 text-sm leading-relaxed text-muted">
@@ -201,7 +202,7 @@ export default function NetworkPortal() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
-                    placeholder="Describe your quote requirements (volume, delivery, settlement)..."
+                    placeholder="Volume, delivery (FOB Kampala, CIF Dubai, or escorted), and settlement. You are buying from Diamond Capital Africa."
                     className="w-full rounded border border-border px-3 py-2 text-sm"
                   />
                   <div className="flex gap-2">
@@ -211,7 +212,7 @@ export default function NetworkPortal() {
                       onClick={() => submitQuote(item.id)}
                       className="rounded bg-gold px-4 py-2 text-sm font-semibold text-primary transition hover:bg-gold-light disabled:opacity-50"
                     >
-                      {submitting ? "Sending..." : "Submit quote request"}
+                      {submitting ? "Sending..." : "Request purchase"}
                     </button>
                     <button
                       type="button"
@@ -228,7 +229,7 @@ export default function NetworkPortal() {
                   onClick={() => setQuoteFor(item.id)}
                   className="rounded bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark"
                 >
-                  Request quote
+                  Request to buy
                 </button>
               )}
             </article>

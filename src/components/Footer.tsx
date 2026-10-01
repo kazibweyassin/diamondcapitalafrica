@@ -190,14 +190,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/gold-savings"
-                  className="text-sm text-white/70 transition hover:text-gold"
-                >
-                  Gold Savings
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/network"
                   className="text-sm text-white/70 transition hover:text-gold"
                 >

@@ -122,15 +122,7 @@ export default function HowToBuyPage() {
           </h2>
           <p className="mb-8 max-w-3xl text-muted">
             Every contract differs by volume and destination. This is the
-            standard path for wholesale and export buyers. Individuals
-            accumulating small amounts should use{" "}
-            <Link
-              href="/gold-savings"
-              className="font-semibold text-gold-dark hover:text-gold"
-            >
-              Gold Savings
-            </Link>
-            .
+            standard path for wholesale and export buyers.
           </p>
           <ol className="space-y-6">
             {buyerProcedureSteps.map((step, index) => (

@@ -13,7 +13,7 @@ export default function NetworkLoginPage() {
       <section className="bg-primary py-12 text-white md:py-16">
         <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-wider text-gold">
-            Verified Gold Exchange
+            Buy from Diamond Capital Africa
           </p>
           <h1 className="mt-2 text-3xl font-bold">Institutional portal</h1>
         </div>

@@ -2,9 +2,9 @@ import SupplierApplyForm from "@/components/SupplierApplyForm";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Apply as Verified Supplier",
+  title: "Offer Gold to DCA",
   description:
-    "Apply free to join the Diamond Capital Africa Institutional Gold Network as a verified gold supplier.",
+    "Offer gold to Diamond Capital Africa. We verify the license and the metal, then purchase. Your name is not shown to buyers.",
   path: "/network/apply",
 });
 
@@ -14,12 +14,13 @@ export default function SupplierApplyPage() {
       <section className="bg-primary py-12 text-white md:py-16">
         <div className="mx-auto max-w-3xl px-4 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-wider text-gold">
-            Free to apply
+            Sell to Diamond Capital Africa
           </p>
-          <h1 className="mt-2 text-3xl font-bold">Verified supplier application</h1>
+          <h1 className="mt-2 text-3xl font-bold">Offer gold to DCA</h1>
           <p className="mt-3 text-white/80">
-            Join the Institutional Gold Network. DCA verifies your license and
-            product before supply is published on the Verified Gold Exchange.
+            We verify your license and the metal, then make a purchase offer.
+            Buyers are not shown your company name, site, or contacts. For
+            same-day settlement, use a Kampala or Arua collection centre.
           </p>
         </div>
       </section>

@@ -14,13 +14,13 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Institutional Gold Network",
   description:
-    "Diamond Capital Africa Institutional Gold Network and Verified Gold Exchange: verified supply, institutional buyer access, and DCA-facilitated transaction coordination.",
+    "Diamond Capital Africa buys verified gold and sells it to institutional buyers. Supplier identities are not published.",
   path: "/network",
   image: images.pageHero.operations,
   keywords: [
-    "institutional gold network",
-    "verified gold exchange",
-    "gold supplier Uganda",
+    "sell gold Uganda",
+    "buy gold from Uganda dealer",
+    "licensed gold dealer Kampala",
     "institutional gold buyer",
   ],
 });
@@ -43,31 +43,28 @@ export default function NetworkPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
           <div className="relative mx-auto flex min-h-[26rem] max-w-7xl flex-col justify-center px-4 py-10 md:min-h-96 lg:px-8">
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gold sm:text-sm sm:tracking-wider">
-              <span className="sm:hidden">Verified Gold Exchange</span>
-              <span className="hidden sm:inline">
-                Verified Institutional Gold Transaction Network
-              </span>
+              Licensed dealer
             </p>
             <h1 className="max-w-3xl text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
-              Institutional Gold Network
+              We buy the gold. We sell the gold.
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
-              {company.name} verifies supply, grants institutional access, and
-              coordinates quotes through our Verified Gold Exchange, not an open
-              marketplace.
+              {company.name} verifies metal, purchases it, and sells it to
+              institutional buyers. This is not an exchange. Buyers are not
+              introduced to suppliers.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/network/access"
+                href="/services#buying"
                 className="inline-flex min-h-11 items-center justify-center rounded bg-gold px-5 py-2.5 text-center text-sm font-semibold text-primary transition hover:bg-gold-light sm:w-auto"
               >
-                Request institutional access
+                Sell gold to DCA
               </Link>
               <Link
-                href="/network/apply"
+                href="/how-to-buy"
                 className="inline-flex min-h-11 items-center justify-center rounded border border-white/40 px-5 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-white/10 sm:w-auto"
               >
-                Apply as verified supplier
+                Buy gold from DCA
               </Link>
             </div>
           </div>
@@ -103,8 +100,9 @@ export default function NetworkPage() {
             Verification levels
           </h2>
           <p className="mb-4 max-w-3xl text-sm leading-relaxed text-muted md:mb-6">
-            Only Level 3 and above appears in the institutional buyer portal.
-            DCA assigns levels after KYC, license checks, and product inspection.
+            DCA assigns a level after identity, license, and product checks.
+            Only metal we are prepared to sell is shown to approved buyers, and
+            never with the supplier&apos;s name or site.
           </p>
           <ul className="space-y-2 md:space-y-3">
             {verificationLevels.map((item) => (
@@ -170,37 +168,36 @@ export default function NetworkPage() {
           <div className="rounded-lg border border-border bg-primary p-5 text-white md:p-8">
             <h2 className="text-xl font-bold">For institutional buyers</h2>
             <p className="mt-3 text-sm leading-relaxed text-white/80">
-              {institutionalMembership.name} from $
-              {institutionalMembership.feeUsd.toLocaleString()}/year. Level 3+
-              verified supply, assay documentation, and structured quote requests
-              through DCA.
+              {institutionalMembership.summary} You buy from {company.name}.
             </p>
             <Link
               href="/network/access"
               className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-gold transition hover:text-gold-light"
             >
-              Request access <ArrowRight size={14} />
+              Request buyer access <ArrowRight size={14} />
             </Link>
           </div>
           <div className="rounded-lg border border-border bg-white p-5 shadow-sm md:p-8">
-            <h2 className="text-xl font-bold text-primary">For verified suppliers</h2>
+            <h2 className="text-xl font-bold text-primary">For suppliers</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Apply free. DCA verifies your license and product before supply
-              appears on the Verified Gold Exchange.
+              Offer gold to DCA. We verify your license and the metal, then
+              make a purchase offer. Your company is not shown to buyers.
+              Same-day buying is also available at our Kampala and Arua
+              collection centres.
             </p>
             <Link
               href="/network/apply"
               className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
             >
-              Apply now <ArrowRight size={14} />
+              Offer gold to DCA <ArrowRight size={14} />
             </Link>
           </div>
         </section>
 
         <p className="mt-12 text-center text-sm text-muted">
-          Active members{" "}
+          Approved buyers{" "}
           <Link href="/network/login" className="font-semibold text-gold-dark underline">
-            sign in to the portal
+            sign in to request a purchase
           </Link>
           .
         </p>

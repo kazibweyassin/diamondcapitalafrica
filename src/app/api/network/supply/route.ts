@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { jsonOk, jsonError } from "@/lib/api-response";
 import { getInstitutionalSession } from "@/lib/auth";
-import { anonymizeLocation } from "@/lib/network";
+import { anonymizeLocation, buyerVisibleSummary } from "@/lib/network";
 
 export async function GET() {
   try {
@@ -18,7 +18,6 @@ export async function GET() {
         member: {
           select: {
             companyName: true,
-            verificationLevel: true,
           },
         },
       },
@@ -31,14 +30,11 @@ export async function GET() {
       productType: item.productType,
       purity: item.purity,
       volumeEstimate: item.volumeEstimate,
-      location: isMember
-        ? item.location
-        : anonymizeLocation(item.location),
+      location: anonymizeLocation(item.location),
       verificationLevel: item.verificationLevel,
-      assayRef: isMember ? item.assayRef : null,
-      summary: item.summary,
-      supplierLevel: item.member.verificationLevel,
-      supplierName: isMember ? item.member.companyName : "Verified supplier",
+      assayOnFile: Boolean(item.assayRef),
+      summary: buyerVisibleSummary(item.summary, item.member.companyName),
+      seller: "Diamond Capital Africa",
       updatedAt: item.updatedAt.toISOString(),
     }));
 

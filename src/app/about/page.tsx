@@ -210,14 +210,6 @@ export default function AboutPage() {
               laboratory and responsible-sourcing platform. For investor
               enquiries, partnership opportunities, or access to confidential
               materials after screening, please contact our corporate team.
-              Retail savers can also join our{" "}
-              <a
-                href="/gold-savings"
-                className="font-semibold text-gold underline hover:text-gold-light"
-              >
-                Gold Savings programme
-              </a>{" "}
-              to accumulate physical bullion from $20 via USDT.
             </p>
             <div className="mb-8 flex flex-wrap gap-3">
               <a

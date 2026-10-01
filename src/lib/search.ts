@@ -51,13 +51,6 @@ const staticPages: SearchResult[] = [
     category: "Network",
   },
   {
-    title: "Gold Savings",
-    href: "/gold-savings",
-    excerpt:
-      "Save in physical assay-verified gold from $20. Bullion accumulation, not mining shares.",
-    category: "Investors",
-  },
-  {
     title: "Our Services",
     href: "/services",
     excerpt: "Gold buying, planned refining, assay testing, and export services.",

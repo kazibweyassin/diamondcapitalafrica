@@ -34,43 +34,39 @@ export const buyerTypes = [
 
 export const networkPillars = [
   {
-    title: "Verified supply",
+    title: "We buy the gold",
     description:
-      "Every supplier passes KYC and multi-level verification before supply appears on the Exchange.",
+      "Suppliers sell to Diamond Capital Africa. Verification decides whether we purchase, not whether a buyer can see the supplier.",
   },
   {
-    title: "Institutional access",
+    title: "We sell the gold",
     description:
-      "Buyers pay for membership to view Level 3+ verified supply and request structured quotes.",
+      "Institutional buyers purchase from DCA. Assay, export, and settlement stay on our contract.",
   },
   {
-    title: "DCA coordination",
+    title: "Names stay inside DCA",
     description:
-      "Diamond Capital Africa structures assay, compliance, and execution, not open peer-to-peer contact.",
+      "Buyers never see the supplier's company, site, or contacts. We do not introduce the two sides.",
   },
 ] as const;
 
 export const institutionalMembership = {
-  id: "network-membership",
-  name: "Institutional Network Membership",
-  feeUsd: 1500,
-  period: "annual",
+  id: "network-buyer",
+  name: "Institutional buyer access",
   summary:
-    "Full access to Level 3+ verified supply, assay documentation, and structured quote requests through the Verified Gold Exchange.",
+    "Approved buyers request a purchase quote on metal Diamond Capital Africa is selling. There is no membership fee and no supplier directory.",
   includes: [
-    "Browse Level 3+ verified supply in the institutional portal",
-    "Submit structured quote requests coordinated by DCA",
-    "Assay references and verification detail on listings",
-    "Dedicated institutional onboarding and support",
+    "Request allocation on DCA supply",
+    "FOB Kampala, CIF Dubai, or escorted delivery where agreed",
+    "Assay and chain of custody handled by DCA",
+    "Supplier identity is not disclosed",
   ],
-  paymentNote:
-    "Include your application reference in the USDT memo or wire payment reference so we can match your payment.",
 } as const;
 
 export const networkSteps = [
-  { step: 1, label: "Apply", detail: "Suppliers apply free; buyers request institutional access." },
-  { step: 2, label: "Verify", detail: "DCA assigns verification levels and approves supply." },
-  { step: 3, label: "Access", detail: "Active institutional members enter the Network portal." },
-  { step: 4, label: "Quote", detail: "Request quotes on verified supply through the Exchange." },
-  { step: 5, label: "Execute", detail: "DCA coordinates assay, finance, and settlement." },
+  { step: 1, label: "Offer", detail: "Suppliers offer gold to DCA. Buyers ask to purchase from DCA." },
+  { step: 2, label: "Verify", detail: "DCA checks identity, license, and the metal before buying." },
+  { step: 3, label: "Purchase", detail: "Approved metal is bought onto the DCA book." },
+  { step: 4, label: "Allocate", detail: "Buyers request a quote on metal DCA is selling." },
+  { step: 5, label: "Deliver", detail: "DCA completes assay, export, and settlement." },
 ] as const;
