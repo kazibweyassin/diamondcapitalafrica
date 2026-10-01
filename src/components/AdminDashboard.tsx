@@ -290,7 +290,7 @@ export default function AdminDashboard({ email }: { email: string }) {
       </div>
 
       <div className="mb-12">
-        <NetworkAdminPanel />
+        <NetworkAdminPanel adminEmail={email} />
       </div>
 
       <div className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">

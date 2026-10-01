@@ -185,12 +185,20 @@ export default function NetworkPage() {
               Same-day buying is also available at our Kampala and Arua
               collection centres.
             </p>
-            <Link
-              href="/network/apply"
-              className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
-            >
-              Offer gold to DCA <ArrowRight size={14} />
-            </Link>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Link
+                href="/network/apply"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+              >
+                Offer gold to DCA <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/network/supplier/login"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark transition hover:text-gold"
+              >
+                Supplier sign in <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         </section>
 

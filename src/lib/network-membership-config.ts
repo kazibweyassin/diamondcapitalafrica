@@ -33,7 +33,6 @@ export function getInstitutionalMembershipPayment() {
       wallet: usdt.wallet,
       network: usdt.network,
       networkGuide: usdt.networkGuide,
-      amount: institutionalMembership.feeUsd,
     },
     wire: {
       email: company.investorsEmail,

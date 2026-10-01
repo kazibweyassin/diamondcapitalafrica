@@ -128,7 +128,10 @@ model NetworkMember {
   status            String           @default("pending")
   verificationLevel Int              @default(0)
   adminNotes        String?
+  passwordHash      String?
+  portalSentAt      DateTime?
   supply            VerifiedSupply[]
+  lots              GoldLot[]
   createdAt         DateTime         @default(now())
   updatedAt         DateTime         @updatedAt
 }
@@ -170,6 +173,7 @@ model InstitutionalAccount {
   credentialsSentAt   DateTime?
   adminNotes          String?
   enquiries           ExchangeEnquiry[]
+  bids                LotBid[]
   createdAt           DateTime          @default(now())
   updatedAt           DateTime          @updatedAt
 }
@@ -188,4 +192,59 @@ model ExchangeEnquiry {
   status        String                @default("new")
   createdAt     DateTime              @default(now())
   updatedAt     DateTime              @updatedAt
+}
+
+model GoldLot {
+  id                String        @id @default(cuid())
+  reference         String        @unique
+  memberId          String
+  member            NetworkMember @relation(fields: [memberId], references: [id], onDelete: Restrict)
+  productType       String
+  estimatedWeightG  Decimal       @db.Decimal(12, 3)
+  estimatedPurityPct Decimal      @db.Decimal(6, 3)
+  documentUrl       String?
+  documentName      String?
+  status            String        @default("submitted")
+  declineReason     String?
+  decidedByEmail    String?
+  decidedAt         DateTime?
+  finalWeightG      Decimal?      @db.Decimal(12, 3)
+  finalPurityPct    Decimal?      @db.Decimal(6, 3)
+  assayedByEmail    String?
+  assayedAt         DateTime?
+  settledBidId      String?
+  fineGrams         Decimal?      @db.Decimal(14, 6)
+  grossUsd          Decimal?      @db.Decimal(14, 2)
+  commissionUsd     Decimal?      @db.Decimal(14, 2)
+  assayFeeUsd       Decimal?      @db.Decimal(14, 2)
+  netUsd            Decimal?      @db.Decimal(14, 2)
+  spotUsdPerOz      Decimal?      @db.Decimal(12, 4)
+  spotUsdPerG       Decimal?      @db.Decimal(12, 6)
+  premiumPct        Decimal?      @db.Decimal(6, 3)
+  payoutApprovedByEmail String?
+  payoutApprovedAt  DateTime?
+  bids              LotBid[]
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  @@index([memberId])
+  @@index([status])
+}
+
+model LotBid {
+  id           String               @id @default(cuid())
+  reference    String               @unique
+  lotId        String
+  lot          GoldLot              @relation(fields: [lotId], references: [id], onDelete: Restrict)
+  accountId    String
+  account      InstitutionalAccount @relation(fields: [accountId], references: [id], onDelete: Restrict)
+  spotUsdPerOz Decimal              @db.Decimal(12, 4)
+  spotUsdPerG  Decimal              @db.Decimal(12, 6)
+  premiumPct   Decimal              @db.Decimal(6, 3)
+  spotSource   String
+  status       String               @default("open")
+  createdAt    DateTime             @default(now())
+
+  @@index([lotId])
+  @@index([accountId])
 }

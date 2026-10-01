@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs";
 const COOKIE_NAME = "dca_admin_session";
 const INSTITUTIONAL_COOKIE = "dca_institutional_session";
 const GOLD_CUSTOMER_COOKIE = "dca_gold_customer_session";
+const SUPPLIER_COOKIE = "dca_supplier_session";
 
 function getSecret() {
   const secret = process.env.AUTH_SECRET;
@@ -140,6 +141,50 @@ export async function getGoldCustomerSession() {
 
 export async function requireGoldCustomer() {
   const session = await getGoldCustomerSession();
+  if (!session) throw new Error("Unauthorized");
+  return session;
+}
+
+export async function createSupplierSession(memberId: string, email: string) {
+  const token = await new SignJWT({ memberId, email, role: "supplier" })
+    .setProtectedHeader({ alg: "HS256" })
+    .setIssuedAt()
+    .setExpirationTime("24h")
+    .sign(getSecret());
+
+  const cookieStore = await cookies();
+  cookieStore.set(SUPPLIER_COOKIE, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    maxAge: 60 * 60 * 24,
+  });
+}
+
+export async function destroySupplierSession() {
+  const cookieStore = await cookies();
+  cookieStore.delete(SUPPLIER_COOKIE);
+}
+
+export async function getSupplierSession() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get(SUPPLIER_COOKIE)?.value;
+  if (!token) return null;
+
+  try {
+    const { payload } = await jwtVerify(token, getSecret());
+    if (payload.role !== "supplier" || typeof payload.memberId !== "string") {
+      return null;
+    }
+    return payload as { memberId: string; email: string; role: "supplier" };
+  } catch {
+    return null;
+  }
+}
+
+export async function requireSupplier() {
+  const session = await getSupplierSession();
   if (!session) throw new Error("Unauthorized");
   return session;
 }

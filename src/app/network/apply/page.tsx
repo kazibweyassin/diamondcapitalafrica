@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SupplierApplyForm from "@/components/SupplierApplyForm";
 import { pageMetadata } from "@/lib/seo";
 
@@ -21,6 +22,13 @@ export default function SupplierApplyPage() {
             We verify your license and the metal, then make a purchase offer.
             Buyers are not shown your company name, site, or contacts. For
             same-day settlement, use a Kampala or Arua collection centre.
+          </p>
+          <p className="mt-4 text-sm text-white/80">
+            Already verified?{" "}
+            <Link href="/network/supplier/login" className="font-semibold text-gold underline">
+              Sign in to submit a lot
+            </Link>
+            .
           </p>
         </div>
       </section>

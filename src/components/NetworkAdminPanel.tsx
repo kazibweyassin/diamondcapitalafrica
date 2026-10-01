@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import LotAdminSection from "./LotAdminSection";
 import VerificationBadge from "./VerificationBadge";
 
 interface NetworkMember {
@@ -16,6 +17,7 @@ interface NetworkMember {
   status: string;
   verificationLevel: number;
   adminNotes: string | null;
+  portalSentAt: string | null;
 }
 
 interface VerifiedSupply {
@@ -81,7 +83,7 @@ const emptySupply: SupplyDraft = {
   summary: "",
 };
 
-export default function NetworkAdminPanel() {
+export default function NetworkAdminPanel({ adminEmail }: { adminEmail: string }) {
   const [suppliers, setSuppliers] = useState<NetworkMember[]>([]);
   const [supply, setSupply] = useState<VerifiedSupply[]>([]);
   const [institutional, setInstitutional] = useState<InstitutionalAccount[]>([]);
@@ -93,8 +95,6 @@ export default function NetworkAdminPanel() {
   const [institutionalActionId, setInstitutionalActionId] = useState("");
 
   async function load() {
-    setLoading(true);
-    setError("");
     try {
       const res = await fetch("/api/network/admin");
       const json = await res.json();
@@ -114,16 +114,45 @@ export default function NetworkAdminPanel() {
   }
 
   useEffect(() => {
-    load();
+    const pending = fetch("/api/network/admin");
+    void pending
+      .then(async (res) => {
+        const json = await res.json();
+        if (!json.success) {
+          setError(json.error ?? "Failed to load network data");
+          return;
+        }
+        setSuppliers(json.data.suppliers);
+        setSupply(json.data.supply);
+        setInstitutional(json.data.institutional);
+        setEnquiries(json.data.enquiries);
+      })
+      .catch(() => setError("Network error"))
+      .finally(() => setLoading(false));
   }, []);
 
   async function patchSupplier(id: string, data: Record<string, unknown>) {
+    setError("");
+    setActionMessage("");
     const res = await fetch(`/api/network/admin/suppliers/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-    if (res.ok) load();
+    const json = await res.json();
+    if (!res.ok) {
+      setError(json.error ?? "Failed to update supplier");
+      return;
+    }
+    if (data.sendPortalAccess) {
+      const login = `${json.data.email}: ${json.data.temporaryPassword}`;
+      setActionMessage(
+        json.data.emailSent
+          ? `Supplier portal password emailed to ${json.data.email}. Backup copy: ${login}`
+          : `Supplier portal password created for ${json.data.email}. ${json.data.emailError ?? ""} Share sign-in: ${login}`,
+      );
+    }
+    load();
   }
 
   async function patchSupply(id: string, data: Record<string, unknown>) {
@@ -301,12 +330,23 @@ export default function NetworkAdminPanel() {
                       </option>
                     ))}
                   </select>
+                  {member.status === "verified" && (
+                    <button
+                      type="button"
+                      onClick={() => patchSupplier(member.id, { sendPortalAccess: true })}
+                      className="rounded border border-border px-3 py-1.5 text-xs font-medium"
+                    >
+                      {member.portalSentAt ? "Reset lot portal password" : "Send lot portal password"}
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         )}
       </section>
+
+      <LotAdminSection adminEmail={adminEmail} />
 
       <section className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
         <div className="border-b border-border px-6 py-4">

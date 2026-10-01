@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import InstitutionalPaymentInstructions from "@/components/InstitutionalPaymentInstructions";
+
 import { buyerTypes } from "@/data/network";
 
 const inputClass =
@@ -62,9 +62,8 @@ export default function InstitutionalAccessForm() {
         <div className="rounded-lg border border-gold/30 bg-gold/10 p-6 text-center sm:p-8">
           <h2 className="text-xl font-bold text-primary">Access request received</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            DCA will review your application. Complete membership payment below
-            using your reference. Portal credentials are emailed after payment
-            is confirmed.
+            DCA will review your application. There is no membership fee.
+            Portal credentials are emailed after approval.
           </p>
           <Link
             href="/network/login"
@@ -73,7 +72,6 @@ export default function InstitutionalAccessForm() {
             Already have credentials? Sign in
           </Link>
         </div>
-        <InstitutionalPaymentInstructions reference={reference} showTierSummary={false} />
       </div>
     );
   }

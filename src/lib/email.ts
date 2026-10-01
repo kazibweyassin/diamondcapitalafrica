@@ -70,7 +70,7 @@ export async function sendInstitutionalApplicationEmail({
   reference: string;
 }) {
   const accessUrl = `${siteUrl}/network/access`;
-  const { tier, usdt, wire } = getInstitutionalMembershipPayment();
+  const { tier } = getInstitutionalMembershipPayment();
 
   const text = [
     `Dear ${contactName},`,
@@ -79,21 +79,10 @@ export async function sendInstitutionalApplicationEmail({
     "",
     `Reference: ${reference}`,
     `Company: ${companyName}`,
-    `Membership: ${tier.name}: $${tier.feeUsd.toLocaleString()} / ${tier.period}`,
+    `Membership: ${tier.name}. There is no membership fee.`,
     "",
-    "Payment instructions:",
-    "",
-    `Option 1: USDT (${usdt.networkGuide.label})`,
-    `Amount: ${usdt.amount.toLocaleString()} USDT`,
-    `Wallet: ${usdt.wallet}`,
-    `Reference / memo: ${reference}`,
-    `Binance: choose network ${usdt.networkGuide.binanceLabel}`,
-    "",
-    "Option 2: Bank wire",
-    `Email ${wire.email} with reference ${reference} for a proforma invoice and bank details.`,
-    "",
-    "Portal credentials are emailed after DCA confirms your payment.",
-    `Payment details: ${accessUrl}`,
+    "DCA will review the application. Portal credentials are emailed after approval.",
+    `Application page: ${accessUrl}`,
     "",
     `${company.contactName}: ${company.name}`,
     company.investorsEmail,
@@ -106,26 +95,16 @@ export async function sendInstitutionalApplicationEmail({
     <p>Thank you for applying to the <strong>${company.name} Institutional Gold Network</strong>.</p>
     <p><strong>Reference:</strong> ${reference}<br />
     <strong>Company:</strong> ${companyName}<br />
-    <strong>Membership:</strong> ${tier.name}: $${tier.feeUsd.toLocaleString()} / ${tier.period}</p>
-    <p><strong>Option 1: USDT (${usdt.networkGuide.label})</strong></p>
-    <ul>
-      <li><strong>Amount:</strong> ${usdt.amount.toLocaleString()} USDT</li>
-      <li><strong>Network:</strong> ${usdt.networkGuide.label}</li>
-      <li><strong>Wallet:</strong> <code>${usdt.wallet}</code></li>
-      <li><strong>Reference / memo:</strong> <code>${reference}</code></li>
-      <li><strong>Binance:</strong> select network <strong>${usdt.networkGuide.binanceLabel}</strong></li>
-    </ul>
-    <p><strong>Option 2: Bank wire</strong><br />
-    Email <a href="mailto:${wire.email}">${wire.email}</a> with reference <code>${reference}</code> for a proforma invoice and bank details.</p>
-    <p>Portal credentials are emailed after DCA confirms your payment.<br />
-    <a href="${accessUrl}">View payment instructions online</a></p>
+    <strong>Membership:</strong> ${tier.name}. There is no membership fee.</p>
+    <p>DCA will review the application. Portal credentials are emailed after approval.<br />
+    <a href="${accessUrl}">View your application page</a></p>
     <p>${company.contactName}: ${company.name}<br />
     <a href="mailto:${company.investorsEmail}">${company.investorsEmail}</a> · ${company.phone} · Alt: ${company.phoneAlt}</p>
   `;
 
   await sendEmail({
     to,
-    subject: `${company.name} Institutional Network: payment instructions (${reference})`,
+    subject: `${company.name} Institutional Network: application received (${reference})`,
     text,
     html,
   });
@@ -223,6 +202,45 @@ export async function sendGoldSavingsConfirmation({ to, name, subject, lines }: 
     subject,
     text,
     html: `<p>Dear ${escapeHtml(name)},</p>${htmlLines}<p><a href="${siteUrl}/gold-savings">Open your Gold Savings dashboard</a></p><p>${escapeHtml(company.name)}</p>`,
+  });
+}
+
+export async function sendSupplierPortalEmail({
+  to,
+  contactName,
+  companyName,
+  reference,
+  password,
+}: {
+  to: string;
+  contactName: string;
+  companyName: string;
+  reference: string;
+  password: string;
+}) {
+  const loginUrl = `${siteUrl}/network/supplier/login`;
+  const text = [
+    `Dear ${contactName},`,
+    "",
+    `${company.name} has opened a supplier portal for ${companyName}.`,
+    "",
+    `Reference: ${reference}`,
+    `Sign in: ${loginUrl}`,
+    `Email: ${to}`,
+    `Temporary password: ${password}`,
+    "",
+    "Use it to offer a lot to Diamond Capital Africa. Buyers are not shown your company, site, or documents.",
+    "",
+    `${company.contactName}: ${company.name}`,
+    company.email,
+    company.phone,
+  ].join("\n");
+
+  await sendEmail({
+    to,
+    subject: `${company.name} supplier portal`,
+    text,
+    html: `<p>Dear ${escapeHtml(contactName)},</p><p>${escapeHtml(company.name)} has opened a supplier portal for ${escapeHtml(companyName)}.</p><p>Reference: ${escapeHtml(reference)}<br/>Email: ${escapeHtml(to)}<br/>Temporary password: ${escapeHtml(password)}</p><p><a href="${loginUrl}">Sign in and offer a lot</a></p><p>Buyers are not shown your company, site, or documents.</p>`,
   });
 }
 

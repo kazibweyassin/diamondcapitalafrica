@@ -19,12 +19,6 @@ export default function InstitutionalPaymentInstructions({
             Membership
           </p>
           <h2 className="mt-1 text-xl font-bold text-primary">{tier.name}</h2>
-          <p className="mt-2 text-2xl font-bold text-primary">
-            ${tier.feeUsd.toLocaleString()}
-            <span className="ml-1 text-sm font-medium text-muted">
-              / {tier.period}
-            </span>
-          </p>
           <p className="mt-3 text-sm leading-relaxed text-muted">{tier.summary}</p>
           <ul className="mt-4 space-y-2">
             {tier.includes.map((item) => (
@@ -60,7 +54,6 @@ export default function InstitutionalPaymentInstructions({
             <p className="mt-1 font-mono text-lg font-bold text-primary">
               {reference}
             </p>
-            <p className="mt-2 text-xs text-muted">{tier.paymentNote}</p>
           </div>
         )}
 
@@ -70,12 +63,6 @@ export default function InstitutionalPaymentInstructions({
               Option 1: USDT ({usdt.networkGuide.label})
             </p>
             <dl className="mt-3 space-y-2 text-sm">
-              <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between">
-                <dt className="text-muted">Amount</dt>
-                <dd className="font-semibold text-foreground">
-                  {usdt.amount.toLocaleString()} USDT
-                </dd>
-              </div>
               <div className="flex flex-col gap-0.5 sm:flex-row sm:justify-between">
                 <dt className="text-muted">Network</dt>
                 <dd className="font-semibold text-foreground">
