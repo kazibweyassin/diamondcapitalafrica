@@ -68,7 +68,7 @@ const staticPages: SearchResult[] = [
     title: "Supplier sign up",
     href: "/network/apply",
     excerpt:
-      "Supplier sign up to offer gold to Diamond Capital Africa. Your company is not shown to buyers.",
+      "Supplier sign up to offer gold to Diamond Capital Africa.",
     category: "Network",
   },
   {

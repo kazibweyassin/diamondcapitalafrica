@@ -36,17 +36,12 @@ export const networkPillars = [
   {
     title: "We buy the gold",
     description:
-      "Suppliers sell to Diamond Capital Africa. Verification decides whether we purchase, not whether a buyer can see the supplier.",
+      "Suppliers sell to Diamond Capital Africa. We verify the license and the metal before we purchase.",
   },
   {
     title: "We sell the gold",
     description:
       "Institutional buyers purchase from DCA. Assay, export, and settlement stay on our contract.",
-  },
-  {
-    title: "Names stay inside DCA",
-    description:
-      "Buyers never see the supplier's company, site, or contacts. We do not introduce the two sides.",
   },
 ] as const;
 
@@ -54,12 +49,11 @@ export const institutionalMembership = {
   id: "network-buyer",
   name: "Institutional buyer access",
   summary:
-    "Approved buyers request a purchase quote on metal Diamond Capital Africa is selling. There is no membership fee and no supplier directory.",
+    "Approved buyers request a purchase quote on metal Diamond Capital Africa is selling. There is no membership fee.",
   includes: [
     "Request allocation on DCA supply",
     "FOB Kampala, CIF Dubai, or escorted delivery where agreed",
     "Assay and chain of custody handled by DCA",
-    "Supplier identity is not disclosed",
   ],
 } as const;
 

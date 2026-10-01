@@ -158,7 +158,7 @@ export const buyerGuides: BuyerGuide[] = [
         heading: "Who should buy this way",
         paragraphs: [
           "Institutional importers, Middle East and European traders, family offices, and professional bullion buyers who need documentation and chain of custody.",
-          "Artisanal sellers who want to sell doré to us use the Kampala or Arua collection centres. Licensed suppliers with larger lots can offer metal to DCA for purchase. Buyers are not introduced to those suppliers. That is a different process from buying refined bars.",
+          "Artisanal sellers who want to sell doré to us use the Kampala or Arua collection centres. Licensed suppliers with larger lots can offer metal to DCA for purchase. That is a different process from buying refined bars.",
         ],
       },
       {

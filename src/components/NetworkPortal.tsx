@@ -218,7 +218,7 @@ export default function NetworkPortal() {
         <h2 className="mb-2 text-xl font-bold text-primary">Lots on the DCA book</h2>
         <p className="mb-6 text-sm text-muted">
           A bid is an offer to buy from Diamond Capital Africa. The spot price is
-          locked when you submit it. The supplier is not shown.
+          locked when you submit it.
         </p>
         {lots.length === 0 ? (
           <p className="rounded-lg border border-dashed border-border bg-section-alt px-6 py-8 text-sm text-muted">

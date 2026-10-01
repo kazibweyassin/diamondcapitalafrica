@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Supplier Portal Sign In",
   description:
-    "Verified suppliers sign in to offer a gold lot to Diamond Capital Africa. Buyer identities are not shown.",
+    "Verified suppliers sign in to offer a gold lot to Diamond Capital Africa.",
   path: "/network/supplier/login",
 });
 

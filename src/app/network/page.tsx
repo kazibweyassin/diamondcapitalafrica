@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, Users, Workflow } from "lucide-react";
+import { ShieldCheck, Users } from "lucide-react";
 import { company } from "@/data/content";
 import { images } from "@/data/images";
 import { institutionalMembership, networkPillars } from "@/data/network";
@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Institutional Gold Network",
   description:
-    "Sign up or sign in as a buyer or a supplier. Diamond Capital Africa buys verified gold and sells it to institutional buyers. Supplier identities are not published.",
+    "Sign up or sign in as a buyer or a supplier. Diamond Capital Africa buys verified gold and sells it to institutional buyers.",
   path: "/network",
   image: images.pageHero.operations,
   keywords: [
@@ -22,7 +22,7 @@ export const metadata = pageMetadata({
   ],
 });
 
-const pillarIcons = [ShieldCheck, Users, Workflow];
+const pillarIcons = [ShieldCheck, Users];
 
 const actionButton =
   "inline-flex min-h-11 flex-1 items-center justify-center rounded px-5 py-2.5 text-center text-sm font-semibold transition";
@@ -49,8 +49,7 @@ export default function NetworkPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
             {company.name} verifies metal, purchases it, and sells it to
-            institutional buyers. This is not an exchange. Buyers are not
-            introduced to suppliers.
+            institutional buyers.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -80,8 +79,7 @@ export default function NetworkPage() {
               <h2 className="text-xl font-bold">Suppliers</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 Sign up to offer gold to DCA. We verify your license and the
-                metal, then email a password. Your company is not shown to
-                buyers.
+                metal, then email a password.
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -107,7 +105,7 @@ export default function NetworkPage() {
           <h2 className="mb-5 text-xl font-bold text-primary md:mb-6 md:text-2xl">
             How it works
           </h2>
-          <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+          <div className="grid gap-4 md:grid-cols-2 md:gap-6">
             {networkPillars.map((pillar, i) => {
               const Icon = pillarIcons[i] ?? ShieldCheck;
               return (

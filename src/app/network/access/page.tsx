@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Buy Gold from DCA",
   description:
-    "Request access to buy gold from Diamond Capital Africa. No membership fee. Supplier identities are not shared.",
+    "Request access to buy gold from Diamond Capital Africa. No membership fee.",
   path: "/network/access",
 });
 

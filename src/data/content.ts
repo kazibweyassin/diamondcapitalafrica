@@ -200,7 +200,7 @@ export const heroSlides = [
     image: images.pageHero.operations,
     title: "Sell gold to us. Buy gold from us.",
     description:
-      "We buy verified gold at our collection centres and from licensed suppliers, then sell it ourselves. Buyers are not introduced to suppliers.",
+      "We buy verified gold at our collection centres and from licensed suppliers, then sell it ourselves.",
     cta: { label: "Sell gold", href: "/services#buying" },
     tab: "Buying",
   },

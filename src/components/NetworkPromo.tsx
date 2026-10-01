@@ -23,15 +23,14 @@ export default function NetworkPromo() {
           <div className="p-6 sm:p-8 lg:p-10">
             <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold sm:text-sm">
               <ShieldCheck size={16} />
-              Verified Gold Exchange
+              Licensed dealer
             </p>
             <h2 className="mb-3 text-xl font-bold text-white sm:mb-4 sm:text-2xl md:text-3xl">
               Institutional Gold Network
             </h2>
             <p className="mb-6 text-sm leading-relaxed text-white/80 sm:mb-8 sm:text-base">
               Suppliers apply free. Institutional buyers request access to
-              Level 3+ verified supply and structured quotes, coordinated by
-              Diamond Capital Africa, not peer-to-peer trading.
+              buy gold from Diamond Capital Africa.
             </p>
 
             <ul className="mb-6 space-y-3 sm:mb-8">

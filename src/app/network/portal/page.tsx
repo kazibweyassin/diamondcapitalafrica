@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Institutional Portal",
   description:
-    "Request a purchase quote on gold Diamond Capital Africa is selling. Supplier identities are not shown.",
+    "Request a purchase quote on gold Diamond Capital Africa is selling.",
   path: "/network/portal",
 });
 

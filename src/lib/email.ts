@@ -229,7 +229,7 @@ export async function sendSupplierPortalEmail({
     `Email: ${to}`,
     `Temporary password: ${password}`,
     "",
-    "Use it to offer a lot to Diamond Capital Africa. Buyers are not shown your company, site, or documents.",
+    "Use it to offer a lot to Diamond Capital Africa.",
     "",
     `${company.contactName}: ${company.name}`,
     company.email,
@@ -240,7 +240,7 @@ export async function sendSupplierPortalEmail({
     to,
     subject: `${company.name} supplier portal`,
     text,
-    html: `<p>Dear ${escapeHtml(contactName)},</p><p>${escapeHtml(company.name)} has opened a supplier portal for ${escapeHtml(companyName)}.</p><p>Reference: ${escapeHtml(reference)}<br/>Email: ${escapeHtml(to)}<br/>Temporary password: ${escapeHtml(password)}</p><p><a href="${loginUrl}">Sign in and offer a lot</a></p><p>Buyers are not shown your company, site, or documents.</p>`,
+    html: `<p>Dear ${escapeHtml(contactName)},</p><p>${escapeHtml(company.name)} has opened a supplier portal for ${escapeHtml(companyName)}.</p><p>Reference: ${escapeHtml(reference)}<br/>Email: ${escapeHtml(to)}<br/>Temporary password: ${escapeHtml(password)}</p><p><a href="${loginUrl}">Sign in and offer a lot</a></p>`,
   });
 }
 

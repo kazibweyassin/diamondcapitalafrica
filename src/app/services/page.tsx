@@ -340,9 +340,8 @@ export default function ServicesPage() {
             Institutional Gold Network
           </h2>
           <p className="mb-6 max-w-2xl text-white/80">
-            Browse Level 3+ verified supply, request structured quotes, or apply
-            as a supplier through our Verified Gold Exchange, coordinated by
-            DCA, not an open marketplace.
+            Buyers purchase gold from Diamond Capital Africa. Suppliers offer
+            gold to DCA.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
