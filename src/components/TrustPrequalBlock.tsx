@@ -10,11 +10,14 @@ type TrustPrequalBlockProps = {
   /** Compact variant for sidebars and contact column */
   compact?: boolean;
   showProcedureLink?: boolean;
+  /** White cards, for pages that should not use the tinted panel */
+  plain?: boolean;
 };
 
 export default function TrustPrequalBlock({
   compact = false,
   showProcedureLink = true,
+  plain = false,
 }: TrustPrequalBlockProps) {
   return (
     <div
@@ -59,9 +62,13 @@ export default function TrustPrequalBlock({
 
       <div
         className={
-          compact
-            ? "rounded-xl border border-gold/30 bg-section-alt p-5"
-            : "rounded-xl border border-gold/30 bg-section-alt p-6 md:p-8"
+          plain
+            ? compact
+              ? "rounded-xl border border-border bg-white p-5"
+              : "rounded-xl border border-border bg-white p-6 md:p-8"
+            : compact
+              ? "rounded-xl border border-gold/30 bg-section-alt p-5"
+              : "rounded-xl border border-gold/30 bg-section-alt p-6 md:p-8"
         }
       >
         <h2
