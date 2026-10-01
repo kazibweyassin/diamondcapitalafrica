@@ -198,6 +198,38 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/network/access"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Buyer sign up
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/network/login"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Buyer sign in
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/network/apply"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Supplier sign up
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/network/supplier/login"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Supplier sign in
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/gold-in-uganda"
                   className="text-sm text-white/70 transition hover:text-gold"
                 >

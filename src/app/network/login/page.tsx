@@ -1,3 +1,4 @@
+import NetworkAccountLinks from "@/components/NetworkAccountLinks";
 import NetworkLoginForm from "@/components/NetworkLoginForm";
 import { pageMetadata } from "@/lib/seo";
 
@@ -15,7 +16,10 @@ export default function NetworkLoginPage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-gold">
             Buy from Diamond Capital Africa
           </p>
-          <h1 className="mt-2 text-3xl font-bold">Institutional portal</h1>
+          <h1 className="mt-2 text-3xl font-bold">Buyer sign in</h1>
+          <div className="mt-6 flex justify-center">
+            <NetworkAccountLinks current="/network/login" />
+          </div>
         </div>
       </section>
       <div className="mx-auto max-w-3xl px-4 py-12 lg:px-8">

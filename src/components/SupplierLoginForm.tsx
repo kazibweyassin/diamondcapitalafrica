@@ -75,7 +75,7 @@ export default function SupplierLoginForm() {
       <p className="text-center text-sm text-muted">
         New supplier?{" "}
         <Link href="/network/apply" className="font-semibold text-gold-dark underline">
-          Offer gold to DCA
+          Supplier sign up
         </Link>
       </p>
     </form>

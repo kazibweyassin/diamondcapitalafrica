@@ -154,6 +154,16 @@ export const navItems = [
       { label: "Compliance", href: "/about#compliance" },
     ],
   },
+  {
+    label: "Network",
+    href: "/network",
+    children: [
+      { label: "Buyer sign up", href: "/network/access" },
+      { label: "Buyer sign in", href: "/network/login" },
+      { label: "Supplier sign up", href: "/network/apply" },
+      { label: "Supplier sign in", href: "/network/supplier/login" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 

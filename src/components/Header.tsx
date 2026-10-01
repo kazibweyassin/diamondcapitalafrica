@@ -56,7 +56,7 @@ export default function Header() {
                 href="/network"
                 className="hidden text-sm font-semibold text-white/90 transition hover:text-gold lg:block"
               >
-                Institutional Network
+                Sign up or sign in
               </Link>
               <Link
                 href="/contact?subject=Gold%20Buying%20Enquiry"
@@ -162,7 +162,7 @@ export default function Header() {
                   className="flex min-h-11 items-center justify-center rounded border border-white/30 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Institutional Network
+                  Sign up or sign in
                 </Link>
               </li>
               <li className="px-0 py-4">

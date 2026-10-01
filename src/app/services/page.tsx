@@ -346,17 +346,28 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/network"
-              className="inline-flex items-center gap-2 rounded bg-gold px-6 py-3 text-sm font-semibold text-primary transition hover:bg-gold-light"
+              href="/network/access"
+              className="inline-flex min-h-11 items-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
             >
-              Explore the Network
-              <ArrowRight size={16} />
+              Buyer sign up
             </Link>
             <Link
-              href="/network/access"
-              className="inline-flex items-center gap-2 rounded border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              href="/network/login"
+              className="inline-flex min-h-11 items-center rounded border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Request institutional access
+              Buyer sign in
+            </Link>
+            <Link
+              href="/network/apply"
+              className="inline-flex min-h-11 items-center rounded border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Supplier sign up
+            </Link>
+            <Link
+              href="/network/supplier/login"
+              className="inline-flex min-h-11 items-center rounded border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Supplier sign in
             </Link>
           </div>
         </section>

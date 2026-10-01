@@ -75,7 +75,7 @@ export default function NetworkLoginForm() {
       <p className="text-center text-sm text-muted">
         Need access?{" "}
         <Link href="/network/access" className="font-semibold text-gold-dark underline">
-          Request institutional membership
+          Buyer sign up
         </Link>
       </p>
     </form>

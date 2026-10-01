@@ -1,4 +1,5 @@
 import InstitutionalAccessForm from "@/components/InstitutionalAccessForm";
+import NetworkAccountLinks from "@/components/NetworkAccountLinks";
 import { institutionalMembership } from "@/data/network";
 import { pageMetadata } from "@/lib/seo";
 
@@ -17,10 +18,14 @@ export default function InstitutionalAccessPage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-gold">
             {institutionalMembership.name}
           </p>
-          <h1 className="mt-2 text-3xl font-bold">Buy gold from DCA</h1>
+          <h1 className="mt-2 text-3xl font-bold">Buyer sign up</h1>
           <p className="mt-3 text-white/80">
-            {institutionalMembership.summary}
+            {institutionalMembership.summary} Already approved? Use Buyer sign
+            in. DCA emails a password after approval.
           </p>
+          <div className="mt-6">
+            <NetworkAccountLinks current="/network/access" />
+          </div>
         </div>
       </section>
       <div className="mx-auto max-w-3xl px-4 py-12 lg:px-8">

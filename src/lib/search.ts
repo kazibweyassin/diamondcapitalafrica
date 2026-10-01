@@ -47,7 +47,35 @@ const staticPages: SearchResult[] = [
     title: "Institutional Gold Network",
     href: "/network",
     excerpt:
-      "Verified supply network and institutional buyer access to the DCA Verified Gold Exchange.",
+      "Sign up or sign in as a buyer or a supplier. Diamond Capital Africa buys the gold and sells the gold.",
+    category: "Network",
+  },
+  {
+    title: "Buyer sign up",
+    href: "/network/access",
+    excerpt:
+      "Sign up to buy gold from Diamond Capital Africa. No membership fee. A password is emailed after approval.",
+    category: "Network",
+  },
+  {
+    title: "Buyer sign in",
+    href: "/network/login",
+    excerpt:
+      "Buyer sign in for the institutional portal. Request a purchase from Diamond Capital Africa.",
+    category: "Network",
+  },
+  {
+    title: "Supplier sign up",
+    href: "/network/apply",
+    excerpt:
+      "Supplier sign up to offer gold to Diamond Capital Africa. Your company is not shown to buyers.",
+    category: "Network",
+  },
+  {
+    title: "Supplier sign in",
+    href: "/network/supplier/login",
+    excerpt:
+      "Supplier sign in. Verified suppliers submit a gold lot to Diamond Capital Africa.",
     category: "Network",
   },
   {
