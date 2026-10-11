@@ -12,6 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 import InvestmentEnquiryForm from "@/components/InvestmentEnquiryForm";
+import JsonLd from "@/components/JsonLd";
 import SectorEnquiryLink from "@/components/SectorEnquiryLink";
 import { company } from "@/data/content";
 
@@ -25,6 +26,16 @@ const heroImage =
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
+  keywords: [
+    "invest in Uganda",
+    "Uganda investment opportunities",
+    "Uganda business opportunities",
+    "Uganda market entry",
+    "doing business in Uganda",
+    "Uganda local business partnerships",
+    "East Africa market entry",
+    "Uganda agricultural processing",
+  ],
   alternates: { canonical: canonicalUrl },
   openGraph: {
     type: "website",
@@ -156,6 +167,30 @@ const anchorClass =
 export default function UgandaInvestmentPage() {
   return (
     <div className="investment-landing bg-white text-[#18372e]">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: pageTitle,
+          description: pageDescription,
+          inLanguage: "en-UG",
+          about: [
+            { "@type": "Country", name: "Uganda" },
+            { "@type": "Thing", name: "Business market entry and commercial opportunities" },
+          ],
+          publisher: {
+            "@type": "Organization",
+            name: company.name,
+            url: "https://www.diamondcapitalafrica.com/",
+          },
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: heroImage,
+          },
+        }}
+      />
       <header className="relative z-20 border-b border-white/15 bg-[#17382e] text-white">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-14">
           <Link href="#top" aria-label="Diamond Capital Africa — home" className={`flex items-center gap-3 ${anchorClass}`}>
