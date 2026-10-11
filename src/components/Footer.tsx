@@ -158,6 +158,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="https://invest.diamondcapitalafrica.com/"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Invest in Uganda
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/news"
                   className="text-sm text-white/70 transition hover:text-gold"
                 >
