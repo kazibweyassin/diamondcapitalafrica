@@ -113,7 +113,7 @@ export const navItems = [
     children: [
       { label: "How to Buy Gold", href: "/how-to-buy" },
       { label: "Export Services", href: "/services#export" },
-      { label: "Gold Buying", href: "/services#buying" },
+      { label: "Sell Gold to DCA", href: "/services#buying" },
       { label: "Sell larger lots", href: "/network/apply" },
       { label: "Gold Refining", href: "/services#refining" },
       { label: "Assay & Testing", href: "/services#assay" },
@@ -378,9 +378,9 @@ export const serviceProcess = [
 export const services = [
   {
     id: "buying",
-    title: "Gold Buying",
-    shortTitle: "Buying",
-    tagline: "Fair prices, same-day settlement",
+    title: "Sell Gold to DCA",
+    shortTitle: "We Buy Gold",
+    tagline: "Transparent quotes and same-day settlement",
     description:
       "We purchase gold from licensed artisanal miners, small-scale operators, and institutional sellers at transparent, LBMA-referenced spot prices. Same-day payment via mobile money or bank transfer.",
     image: images.services.buying,
@@ -504,7 +504,7 @@ export const services = [
     tagline: "Review a prospective gold seller before you commit",
     description:
       "For institutional and serious private buyers assessing a gold seller or supplier other than DCA, we can discuss a scoped review of the counterparty and proposed transaction. Depending on the agreed scope and available records, checks may cover company identity, representatives and authority, applicable licence information, source and lot documentation, assay records, and export, payment or delivery arrangements. DCA also sells gold; we disclose that commercial interest, and a review does not require you to buy from DCA.",
-    image: images.about.corporate,
+    image: images.services.dueDiligence,
     highlights: [
       { label: "For", value: "Gold buyers" },
       { label: "Focus", value: "Seller & deal checks" },

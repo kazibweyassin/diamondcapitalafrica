@@ -21,6 +21,7 @@ export const images = {
     refining: "/images/services/refining.jpg",
     assay: "/images/services/assay.jpg",
     export: "/images/services/export.jpg",
+    dueDiligence: "/images/Due deligence.png",
   } as const,
   operations: {
     refinery: "/images/operations/refinery.jpg", // assay laboratory
