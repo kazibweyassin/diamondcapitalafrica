@@ -93,12 +93,14 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={localBusinessJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
-        <Header />
+        <div className="site-chrome"><Header /></div>
         <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <CookieBanner />
-        <InvestmentPopup />
+        <div className="site-chrome">
+          <Footer />
+          <WhatsAppButton />
+          <CookieBanner />
+          <InvestmentPopup />
+        </div>
       </body>
     </html>
   );

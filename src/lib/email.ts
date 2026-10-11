@@ -194,6 +194,35 @@ export async function sendInvestorEnquiryNotification({
   });
 }
 
+export async function sendGeneralEnquiryNotification({
+  reference,
+  name,
+  email,
+  subject,
+  message,
+}: {
+  reference: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}) {
+  const safe = {
+    reference: escapeHtml(reference),
+    name: escapeHtml(name),
+    email: escapeHtml(email),
+    subject: escapeHtml(subject),
+    message: escapeHtml(message).replace(/\n/g, "<br />"),
+  };
+  const to = process.env.INVESTOR_NOTIFICATION_EMAIL ?? company.investorsEmail ?? company.email;
+  await sendEmail({
+    to,
+    subject: `[Business enquiry] ${subject} (${reference})`,
+    text: [`New business enquiry (${reference})`, "", `Name: ${name}`, `Email: ${email}`, `Subject: ${subject}`, "", message].join("\n"),
+    html: `<p><strong>New business enquiry</strong> (${safe.reference})</p><p><strong>Name:</strong> ${safe.name}<br/><strong>Email:</strong> ${safe.email}<br/><strong>Subject:</strong> ${safe.subject}</p><p>${safe.message}</p>`,
+  });
+}
+
 export async function sendGoldSavingsConfirmation({ to, name, subject, lines }: { to: string; name: string; subject: string; lines: string[] }) {
   const text = [`Dear ${name},`, "", ...lines, "", `Gold Savings dashboard: ${siteUrl}/gold-savings`, "", company.name].join("\n");
   const htmlLines = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");

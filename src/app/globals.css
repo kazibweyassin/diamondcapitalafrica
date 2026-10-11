@@ -43,3 +43,7 @@ body {
   background: var(--gold);
   color: white;
 }
+
+body:has(main .investment-landing) > .site-chrome {
+  display: none !important;
+}

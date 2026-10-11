@@ -4,6 +4,7 @@ import { requireAdmin } from "@/lib/auth";
 import { jsonOk, jsonError } from "@/lib/api-response";
 import {
   isEmailConfigured,
+  sendGeneralEnquiryNotification,
   sendInvestorEnquiryNotification,
 } from "@/lib/email";
 import { rateLimit, requestIp } from "@/lib/rate-limit";
@@ -37,6 +38,28 @@ const investorEnquirySchema = z.object({
   consent: z
     .boolean()
     .refine((v) => v === true, { message: "Consent is required" }),
+  companyUrl: z.string().max(0).optional().or(z.literal("")),
+});
+
+const ugandaSectors = [
+  "Agriculture & agro-processing",
+  "Manufacturing & industrial equipment",
+  "Food processing & value addition",
+  "Energy & infrastructure",
+  "Logistics & distribution",
+  "Other",
+] as const;
+
+const ugandaInvestmentSchema = z.object({
+  type: z.literal("uganda_investment"),
+  name: z.string().trim().min(2, "Full name is required").max(200),
+  companyName: z.string().trim().min(1, "Company name is required").max(200),
+  email: z.string().trim().email("Valid business email is required").max(320),
+  country: z.string().trim().min(1, "Country is required").max(100),
+  sector: z.enum(ugandaSectors),
+  investmentRange: z.string().max(100).optional().or(z.literal("")),
+  message: z.string().trim().min(20, "Please add a little more detail").max(3000),
+  consent: z.boolean().refine((v) => v, { message: "Consent is required" }),
   companyUrl: z.string().max(0).optional().or(z.literal("")),
 });
 
@@ -163,6 +186,63 @@ export async function POST(request: Request) {
       );
     }
 
+    if (body?.type === "uganda_investment") {
+      const parsed = ugandaInvestmentSchema.safeParse(body);
+      if (!parsed.success) {
+        return jsonError(parsed.error.issues[0]?.message ?? "Invalid input", 422);
+      }
+
+      const data = parsed.data;
+      const name = sanitise(data.name);
+      const companyName = sanitise(data.companyName);
+      const email = sanitise(data.email).toLowerCase();
+      const country = sanitise(data.country);
+      const sector = sanitise(data.sector);
+      const investmentRange = sanitise(data.investmentRange ?? "") || "Not provided";
+      const message = sanitise(data.message);
+      const subject = `Uganda investment enquiry — ${sector}`;
+      const structuredMessage = [
+        `Company: ${companyName}`,
+        `Country: ${country}`,
+        `Industry / sector: ${sector}`,
+        `Estimated investment range: ${investmentRange}`,
+        "",
+        "What the company is exploring:",
+        message,
+        "",
+        "Contact consent: yes",
+      ].join("\n");
+
+      const enquiry = await prisma.enquiry.create({
+        data: {
+          reference: generateReference(),
+          name,
+          email,
+          subject,
+          message: structuredMessage,
+        },
+      });
+
+      if (isEmailConfigured()) {
+        try {
+          await sendGeneralEnquiryNotification({
+            reference: enquiry.reference,
+            name,
+            email,
+            subject,
+            message: structuredMessage,
+          });
+        } catch {
+          // The enquiry stays stored for admin review if email is temporarily unavailable.
+        }
+      }
+
+      return jsonOk(
+        { id: enquiry.reference, createdAt: enquiry.createdAt.toISOString() },
+        201
+      );
+    }
+
     const parsed = generalEnquirySchema.safeParse({
       ...body,
       type: body?.type === "general" ? "general" : undefined,
@@ -183,6 +263,20 @@ export async function POST(request: Request) {
         message: sanitise(data.message),
       },
     });
+
+    if (isEmailConfigured()) {
+      try {
+        await sendGeneralEnquiryNotification({
+          reference: enquiry.reference,
+          name: enquiry.name,
+          email: enquiry.email,
+          subject: enquiry.subject,
+          message: enquiry.message,
+        });
+      } catch {
+        // The enquiry is stored for admin review even if email delivery fails.
+      }
+    }
 
     return jsonOk(
       {

@@ -59,5 +59,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...newsEntries];
+  const investmentLanding: MetadataRoute.Sitemap[number] = {
+    url: "https://invest.diamondcapitalafrica.com/",
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  };
+
+  return [...staticEntries, ...newsEntries, investmentLanding];
 }
