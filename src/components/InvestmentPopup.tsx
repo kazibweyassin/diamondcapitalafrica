@@ -194,7 +194,7 @@ export default function InvestmentPopup() {
   if (!isClient || !showDialog) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4">
+    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-slate-950/55 p-0 sm:items-center sm:p-4">
       <button
         type="button"
         aria-label="Close investment opportunity dialog"
@@ -208,18 +208,18 @@ export default function InvestmentPopup() {
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descId}
-        className="relative z-10 flex max-h-[min(92vh,680px)] w-full max-w-xl flex-col overflow-hidden rounded-t-lg bg-white shadow-xl sm:rounded-lg"
+        className="relative z-10 flex max-h-[min(88vh,560px)] w-full max-w-lg flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl sm:rounded-2xl"
       >
         <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4 sm:px-6">
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gold">
-              Strategic investment opportunity
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+              Refinery development · Uganda
             </p>
             <h2
               id={titleId}
               className="mt-1 text-lg font-bold leading-snug text-primary sm:text-xl"
             >
-              Help Build East Africa&apos;s Integrated Precious Metals Platform
+              Build a modern gold refinery
             </h2>
           </div>
           <button
@@ -232,46 +232,44 @@ export default function InvestmentPopup() {
           </button>
         </div>
 
-        <div className="overflow-y-auto px-5 py-5 sm:px-6 sm:py-6">
+        <div className="overflow-y-auto px-5 py-4 sm:px-6">
           <p id={descId} className="text-sm leading-relaxed text-muted">
-            Diamond Capital Africa is seeking strategic investors and operating
-            partners to support the development of a proposed modern gold
-            refinery, assay laboratory and responsible-sourcing infrastructure.
+            We&apos;re inviting strategic investors and operating partners to
+            explore a proposed precious-metals processing platform in East Africa.
           </p>
 
-          <ul className="mt-5 space-y-2 border border-border bg-section-alt p-4 text-sm text-foreground">
-            <li>
-              <span className="font-semibold text-primary">
-                Preliminary capital requirement:
-              </span>{" "}
-              USD 4 million
+          <ul className="mt-4 grid grid-cols-2 gap-2.5 text-sm">
+            <li className="rounded-lg border border-border bg-section-alt px-3.5 py-3">
+              <span className="block text-[11px] font-medium uppercase tracking-wide text-muted">
+                Indicative capital
+              </span>
+              <span className="mt-1 block font-semibold text-primary">USD 4 million</span>
             </li>
-            <li>
-              <span className="font-semibold text-primary">
-                Planned initial capacity:
-              </span>{" "}
-              50 kg per month
+            <li className="rounded-lg border border-border bg-section-alt px-3.5 py-3">
+              <span className="block text-[11px] font-medium uppercase tracking-wide text-muted">
+                Initial capacity
+              </span>
+              <span className="mt-1 block font-semibold text-primary">50 kg / month</span>
             </li>
-            <li>
-              <span className="font-semibold text-primary">
-                Planned expansion capacity:
-              </span>{" "}
-              Up to 150 kg per month
+            <li className="rounded-lg border border-border bg-section-alt px-3.5 py-3">
+              <span className="block text-[11px] font-medium uppercase tracking-wide text-muted">
+                Planned expansion
+              </span>
+              <span className="mt-1 block font-semibold text-primary">Up to 150 kg / month</span>
             </li>
-            <li>
-              <span className="font-semibold text-primary">
-                Development and commissioning target:
-              </span>{" "}
-              9–12 months
+            <li className="rounded-lg border border-border bg-section-alt px-3.5 py-3">
+              <span className="block text-[11px] font-medium uppercase tracking-wide text-muted">
+                Target timeline
+              </span>
+              <span className="mt-1 block font-semibold text-primary">9–12 months</span>
             </li>
           </ul>
 
-          <p className="mt-3 text-xs text-muted">
-            All figures are preliminary planning assumptions and remain subject
-            to independent due diligence.
+          <p className="mt-2 text-[11px] leading-relaxed text-muted">
+            Preliminary planning assumptions; subject to independent due diligence.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3">
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
             <Link
               href="/investors/investment-opportunity"
               onClick={() => {
@@ -281,9 +279,9 @@ export default function InvestmentPopup() {
                 setInvestmentPopupDismissed();
                 setOpen(false);
               }}
-              className="inline-flex min-h-11 items-center justify-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
+              className="inline-flex min-h-11 flex-1 items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-dark"
             >
-              Explore the Opportunity
+              Explore the project
             </Link>
             <a
               href={investmentOverviewPdf.path}
@@ -293,20 +291,20 @@ export default function InvestmentPopup() {
                   page_path: pagePath,
                 });
               }}
-              className="inline-flex min-h-11 items-center justify-center rounded border border-border px-5 py-2.5 text-sm font-semibold text-primary transition hover:border-gold hover:bg-section-alt"
+              className="inline-flex min-h-11 flex-1 items-center justify-center rounded-lg border border-primary/25 px-4 py-2.5 text-sm font-semibold text-primary transition hover:border-primary hover:bg-section-alt"
             >
-              Download Investment Overview
+              Download overview
             </a>
             <button
               type="button"
               onClick={() => dismiss("not_now")}
-              className="min-h-10 text-sm font-medium text-muted transition hover:text-primary"
+              className="min-h-10 text-sm font-medium text-muted transition hover:text-primary sm:px-3"
             >
               Not now
             </button>
           </div>
 
-          <p className="mt-5 text-xs leading-relaxed text-muted">
+          <p className="mt-3 text-[11px] leading-relaxed text-muted">
             This communication is provided solely for preliminary discussion. It
             does not constitute an offer of securities, investment advice, a
             financing commitment or a guarantee of returns.
