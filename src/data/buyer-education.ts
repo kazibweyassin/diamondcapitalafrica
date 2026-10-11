@@ -81,6 +81,8 @@ export interface BuyerGuide {
   date: string;
   keywords: string[];
   sections: { heading: string; paragraphs: string[] }[];
+  resources?: { label: string; href: string }[];
+  ctaNote?: string;
   cta: { label: string; href: string };
 }
 
@@ -232,6 +234,90 @@ export const buyerGuides: BuyerGuide[] = [
     cta: {
       label: "Read how buying works",
       href: "/how-to-buy",
+    },
+  },
+  {
+    slug: "gold-bullion-scams-africa",
+    title: "Gold Bullion Scams in Africa: Red Flags and a Buyer Checklist",
+    description:
+      "A practical guide to fake gold offers, cloned dealer identities, forged documents, advance-fee traps and payment risks—with checks buyers and sellers can make before a transaction.",
+    date: "2026-10-11",
+    keywords: [
+      "gold bullion scams Africa",
+      "gold scams in Africa",
+      "how to verify a gold buyer",
+      "gold buyer due diligence",
+      "verify gold dealer licence Uganda",
+      "gold assay certificate fraud",
+      "gold transaction red flags",
+    ],
+    sections: [
+      {
+        heading: "First, be clear about what kind of gold is being offered",
+        paragraphs: [
+          "An offer described simply as “gold bullion” may refer to very different material. Ore or concentrate is not a finished bullion bar. Doré is an unrefined or partly refined product whose gold content and other metals must be established by assay and refining. Refined bars should be described by weight, fineness, producer and form; a stamp or certificate by itself does not prove that a particular bar is genuine or available.",
+          "Ask whether the offer is for doré, refined bars, scrap or another form of gold-bearing material, and make sure the contract, assay, lot identifiers, photographs, export documents and delivery terms all describe the same material. Physical bullion is also different from a metal account, certificate or other financial exposure that does not give you possession of specific bars.",
+        ],
+      },
+      {
+        heading: "Common gold-offer and bullion scams to watch for",
+        paragraphs: [
+          "These are warning patterns in cross-border gold transactions, not a claim that every African country or dealer has the same risks. Rules, supply chains and reporting channels differ by jurisdiction. A red flag is a reason to pause and verify—not, on its own, proof that a person or company has committed fraud.",
+          "Cloned companies and fake mandates: a fraudster copies a real dealer’s name, logo, licence or staff profile, or claims to represent a mine, refinery or government office without authority. Contact the company using details you independently find on its official website or registry—not only the phone number or email in the offer.",
+          "Fictitious stock and recycled paperwork: stock photos, videos, assay reports, export permits and vault receipts can be copied or altered. Ask for evidence tied to the specific lot, then verify the issuer, licence and document reference directly through an independently sourced channel. Do not treat a PDF, bar photo, video call or certificate as proof of ownership, availability or export permission.",
+          "Advance-fee and release-fee demands: a contact may ask for money for a “tax”, registration, refinery slot, assay, export clearance, security escort, insurance or airport release before the transaction is verified. Some legitimate transactions do have costs. Verify each charge, its legal or contractual basis, the payee and the official invoice with the named authority or service provider; be especially cautious of personal accounts, changing beneficiaries and pressure to pay immediately.",
+          "Under-market or guaranteed-return pitches: unusually cheap metal, fixed high returns, “risk-free” profits or a deadline to secure a large allocation are pressure tactics. Recalculate the economics using a current independent spot reference, realistic premiums, assay, taxes and logistics, and get the full written terms reviewed before committing.",
+          "Fake payment evidence and buyer impersonation: screenshots, forged bank messages, purported SWIFT confirmations or letters of credit can be fabricated. Confirm payment status directly with your own bank through known contacts; do not release metal or title based on a screenshot, forwarded email or a contact supplied by the counterparty.",
+          "Material substitution or non-delivery: a small sample or displayed bar may not represent the shipment, and an assay document may not relate to the lot you receive. Agree in advance on independent sampling, an acceptable assay facility, lot identification, chain of custody, inspection rights, delivery point and what happens if weight or fineness differs.",
+        ],
+      },
+      {
+        heading: "A practical due-diligence checklist before funds or metal move",
+        paragraphs: [
+          "Verify the legal entity, registration number, physical business address, directors or beneficial owners, authorised signatory and the person’s authority to offer or purchase the material. Check relevant licences in the jurisdiction and for the specific role—dealer, exporter, refiner or other activity—using official registers where available. A licence for one activity or company is not proof of authority for every transaction.",
+          "Map the transaction: who owns the gold, where it is now, what form it is in, how it was sourced, who will assay it, who exports it, who insures it, who pays whom and when, and which party bears each risk. Trace each answer to a named party and a document or independent confirmation. Look for inconsistent company names, weights, purity, lot numbers, dates, ports, bank beneficiaries or routes.",
+          "Use a mutually agreed independent assay and secure inspection process. Have your own bank confirm payment and trade-finance arrangements. Verify shipping, insurance, customs and export requirements with the named providers and relevant authorities. Have qualified legal and compliance advisers review the contract and the rules in every country involved.",
+          "Do not send blank signed documents, passport copies, proof-of-funds material or bank instruments to an unverified contact. Share sensitive records only when necessary, through a secure channel, with a verified counterparty and under agreed privacy and confidentiality terms. If anyone demands secrecy, bypasses normal controls or changes payment details at the last moment, pause and independently re-confirm.",
+        ],
+      },
+      {
+        heading: "If you are buying from a seller other than DCA",
+        paragraphs: [
+          "A buyer should verify the seller’s company and representatives, confirm their authority and relevant licence, establish who owns the gold and how it was sourced, and match lot identifiers across provenance, assay, export and transaction documents. Agree independent sampling and inspection, confirm payment and delivery arrangements directly with your bank and named providers, and make title transfer and remedies explicit in the contract. A seller’s website, claimed mine or refinery relationship, licence copy or assay certificate is not by itself proof that the offered lot exists, is lawfully sourced or matches the documents.",
+          "Diamond Capital Africa can discuss a scoped review of a prospective gold seller or supplier and the proposed transaction. DCA also sells gold, so we disclose that commercial interest; requesting a review does not require you to buy from DCA. Scope and deliverables must be agreed before sensitive documents are shared. This support is not a legal opinion, assay, bank confirmation, regulatory approval, independent certification or guarantee of authenticity, payment, performance or safety. Use your own lawyer, bank, compliance adviser and independent assay or logistics providers for decisions within their expertise.",
+        ],
+      },
+      {
+        heading: "What to do if an offer looks suspicious",
+        paragraphs: [
+          "Pause the transaction. Preserve the original messages, email headers, contracts, payment instructions, account details and document files. Do not confront a suspected fraudster with sensitive evidence or send more money to recover an earlier payment. Contact your bank promptly if funds or financial details were shared, and report the matter to the relevant police, financial-intelligence or mining regulator in the country involved. Procedures differ by jurisdiction.",
+          "This guide is general education, not legal, investment, banking or assay advice. Gold-trade licensing, export rules and remedies vary by country and change over time. Confirm current requirements with the competent authority and qualified advisers before acting.",
+        ],
+      },
+    ],
+    resources: [
+      {
+        label: "Uganda Mining Cadastre: active mineral dealer and refining licences",
+        href: "https://dgsmportal.minerals.go.ug/site/CustomHtml.aspx?PageID=52f595a4-c713-4809-9e33-89e0a2ac6ea5",
+      },
+      {
+        label: "OECD Due Diligence Guidance for Responsible Mineral Supply Chains",
+        href: "https://www.oecd.org/en/publications/2016/04/oecd-due-diligence-guidance-for-responsible-supply-chains-of-minerals-from-conflict-affected-and-high-risk-areas_g1g65996.html",
+      },
+      {
+        label: "FATF/APG report: money-laundering risks and vulnerabilities associated with gold",
+        href: "https://www.fatf-gafi.org/en/publications/Methodsandtrends/Ml-tf-risks-and-vulnerabilities-gold.html",
+      },
+      {
+        label: "US FTC consumer alert: requests to buy and hand over gold bars",
+        href: "https://consumer.ftc.gov/consumer-alerts/2025/07/real-government-agents-arent-asking-you-buy-and-deliver-gold-bars",
+      },
+    ],
+    ctaNote:
+      "Buying gold from another supplier? We can help you review the seller and transaction.",
+    cta: {
+      label: "Ask about supplier due diligence",
+      href: "/services#buyer-due-diligence",
     },
   },
 ];

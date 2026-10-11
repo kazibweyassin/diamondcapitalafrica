@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata = pageMetadata({
   title: "Buy Gold Bars Uganda | Assay, Export & Planned Refining",
   description:
-    "Gold buying, export coordination, assay services, and a planned refining platform from Diamond Capital Africa in Kampala. CIF Dubai, FOB Kampala, and OECD-aligned traceability.",
+    "Gold buying, export coordination, assay services, scoped supplier due diligence for gold buyers, and a proposed refining platform from Diamond Capital Africa in Kampala.",
   path: "/services",
   image: images.pageHero.services,
   keywords: [
@@ -22,6 +22,9 @@ export const metadata = pageMetadata({
     "gold export Kampala",
     "gold refining Uganda",
     "fire assay Uganda",
+    "gold buyer due diligence",
+    "verify gold buyer Africa",
+    "gold counterparty checks",
   ],
 });
 
@@ -48,8 +51,8 @@ export default function ServicesPage() {
               End-to-end gold services
             </h1>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/80 md:text-base">
-              Buying, assay, planned refining, and licensed export from
-              Kampala.
+              Buying, supplier due diligence for gold buyers, assay, proposed refining, and
+              licensed export from Kampala.
             </p>
           </div>
         </div>

@@ -134,6 +134,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/services#buyer-due-diligence"
+                  className="text-sm text-white/70 transition hover:text-gold"
+                >
+                  Supplier Due Diligence for Buyers
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/guides"
                   className="text-sm text-white/70 transition hover:text-gold"
                 >

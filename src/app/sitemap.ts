@@ -33,6 +33,7 @@ const staticRoutes: {
   { path: "/guides/cif-dubai-real-vs-scam", changeFrequency: "monthly", priority: 0.7 },
   { path: "/guides/buy-gold-uganda-refinery", changeFrequency: "monthly", priority: 0.7 },
   { path: "/guides/linkedin-gold-scams", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/guides/gold-bullion-scams-africa", changeFrequency: "monthly", priority: 0.8 },
   { path: "/operations", changeFrequency: "monthly", priority: 0.8 },
   { path: "/sustainability", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.8 },

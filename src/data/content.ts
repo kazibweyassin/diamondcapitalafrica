@@ -117,6 +117,7 @@ export const navItems = [
       { label: "Sell larger lots", href: "/network/apply" },
       { label: "Gold Refining", href: "/services#refining" },
       { label: "Assay & Testing", href: "/services#assay" },
+      { label: "Supplier Due Diligence for Buyers", href: "/services#buyer-due-diligence" },
       { label: "Buyer Guides", href: "/guides" },
     ],
   },
@@ -495,6 +496,36 @@ export const services = [
       },
     ],
     cta: { label: "Start an export", subject: "Gold Export Enquiry" },
+  },
+  {
+    id: "buyer-due-diligence",
+    title: "Gold Supplier Due Diligence",
+    shortTitle: "Supplier Due Diligence",
+    tagline: "Review a prospective gold seller before you commit",
+    description:
+      "For institutional and serious private buyers assessing a gold seller or supplier other than DCA, we can discuss a scoped review of the counterparty and proposed transaction. Depending on the agreed scope and available records, checks may cover company identity, representatives and authority, applicable licence information, source and lot documentation, assay records, and export, payment or delivery arrangements. DCA also sells gold; we disclose that commercial interest, and a review does not require you to buy from DCA.",
+    image: images.about.corporate,
+    highlights: [
+      { label: "For", value: "Gold buyers" },
+      { label: "Focus", value: "Seller & deal checks" },
+      { label: "Scope", value: "Agreed in advance" },
+    ],
+    features: [
+      "Check the seller's company identity and registration against available official records",
+      "Review representatives, authority, applicable licence information and stated source",
+      "Compare lot, provenance, assay, export and transaction documents for gaps or inconsistencies",
+      "Identify questions to verify with your own lawyer, bank, compliance adviser and independent assay provider",
+    ],
+    steps: [
+      "Share the seller's country, proposed transaction and your questions; do not send sensitive documents before the review is scoped.",
+      "Agree the scope, deliverable, confidentiality terms and commercial arrangements before engagement.",
+      "We review the agreed documents and accessible records, noting what could and could not be independently verified.",
+      "Use the findings alongside advice from your own legal, banking, assay and logistics providers before deciding.",
+    ],
+    cta: {
+      label: "Ask about a supplier review",
+      subject: "Gold Supplier Due Diligence",
+    },
   },
 ];
 

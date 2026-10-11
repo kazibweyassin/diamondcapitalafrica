@@ -25,6 +25,7 @@ export async function generateMetadata({
     description: guide.description,
     path: `/guides/${guide.slug}`,
     type: "article",
+    publishedTime: guide.date,
     keywords: guide.keywords,
   });
 }
@@ -87,14 +88,35 @@ export default async function GuidePage({
           ))}
         </div>
 
+        {guide.resources && guide.resources.length > 0 && (
+          <section className="mt-10 border-t border-border pt-8">
+            <h2 className="mb-3 text-lg font-bold text-primary">
+              Official references and further reading
+            </h2>
+            <ul className="list-inside list-disc space-y-2 text-sm text-muted">
+              {guide.resources.map((resource) => (
+                <li key={resource.href}>
+                  <a
+                    href={resource.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-primary underline decoration-primary/30 underline-offset-2 transition hover:decoration-primary"
+                  >
+                    {resource.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <div className="mt-12 rounded-xl border border-gold/30 bg-section-alt p-6 md:p-8">
           <p className="text-sm font-semibold uppercase tracking-wider text-gold-dark">
             Next step
           </p>
           <p className="mt-2 text-muted">
-            {company.name} is a licensed gold dealer and refinery in Kampala.
-            Serious buyers should follow the published procedure, not cold
-            social-media shortcuts.
+            {guide.ctaNote ??
+              `${company.name} is a licensed gold dealer and exporter in Kampala, developing a proposed refinery. Serious buyers should follow the published procedure, not cold social-media shortcuts.`}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link

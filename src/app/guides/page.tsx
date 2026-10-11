@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Buyer Guides | Gold Export & Scam Awareness",
   description:
-    "Guides for buying gold from a licensed Uganda refinery: real CIF Dubai vs scams, how to buy bars, and spotting LinkedIn gold fraud. From Diamond Capital Africa.",
+    "Practical gold-buyer guides from Diamond Capital Africa: gold bullion scams across Africa, real CIF Dubai exports, how to buy gold, and spotting fake dealer profiles.",
   path: "/guides",
   keywords: [
     "gold buyer guides",
@@ -31,8 +31,8 @@ export default function GuidesIndexPage() {
             Buyer guides
           </h1>
           <p className="mt-3 max-w-2xl text-white/80">
-            Practical reading from {company.name}: how legitimate export works,
-            and how to avoid the scams that dominate cold outreach.
+            Practical guidance from {company.name} on gold products, legitimate
+            exports, counterparty checks, and common fraud warning signs.
           </p>
         </div>
       </section>

@@ -16,6 +16,7 @@ const subjects = [
   "Refining Services",
   "Assay & Testing",
   "Export Services",
+  "Gold Supplier Due Diligence",
   "Institutional Network Access",
   "Verified Supplier Application",
   "Investor Relations",
