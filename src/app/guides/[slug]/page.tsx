@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ShareButtons from "@/components/ShareButtons";
 import JsonLd from "@/components/JsonLd";
+import MarketPrices from "@/components/MarketPrices";
 import { buyerGuides, getBuyerGuide } from "@/data/buyer-education";
 import { company } from "@/data/content";
 import { articleJsonLd, pageMetadata } from "@/lib/seo";
@@ -67,6 +68,12 @@ export default async function GuidePage({
         </div>
       </section>
 
+      {guide.slug === "gold-price-per-gram-uganda" && (
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <MarketPrices />
+        </div>
+      )}
+
       <article className="mx-auto max-w-3xl px-4 py-12 lg:px-8">
         <div className="space-y-10">
           {guide.sections.map((section) => (
@@ -84,6 +91,17 @@ export default async function GuidePage({
                   </p>
                 ))}
               </div>
+              {section.cta && (
+                <div className="mt-6">
+                  <Link
+                    href={section.cta.href}
+                    className="inline-flex items-center gap-2 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
+                  >
+                    {section.cta.label}
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
+              )}
             </section>
           ))}
         </div>
@@ -133,6 +151,30 @@ export default async function GuidePage({
               Contact {company.contactName}
             </Link>
           </div>
+          {guide.secondaryCtas && guide.secondaryCtas.length > 0 && (
+            <div className="mt-6 space-y-4 border-t border-border pt-6">
+              {guide.secondaryCtas.map((item) => (
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      item.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="inline-flex items-center gap-2 rounded border border-border bg-white px-5 py-2.5 text-sm font-semibold text-primary transition hover:border-gold"
+                  >
+                    {item.label}
+                    <ArrowRight size={16} />
+                  </Link>
+                  {item.note && (
+                    <p className="mt-2 text-sm text-muted">{item.note}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-border pt-8">

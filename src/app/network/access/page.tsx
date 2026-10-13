@@ -8,6 +8,7 @@ export const metadata = pageMetadata({
   description:
     "Request access to buy gold from Diamond Capital Africa. No membership fee.",
   path: "/network/access",
+  robots: { index: false, follow: true },
 });
 
 export default function InstitutionalAccessPage() {

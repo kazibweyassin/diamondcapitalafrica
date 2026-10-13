@@ -64,6 +64,7 @@ interface PageMetadataOptions {
   type?: "website" | "article";
   publishedTime?: string;
   keywords?: string[];
+  robots?: Metadata["robots"];
 }
 
 export function pageMetadata({
@@ -74,6 +75,7 @@ export function pageMetadata({
   type = "website",
   publishedTime,
   keywords,
+  robots,
 }: PageMetadataOptions): Metadata {
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
@@ -112,6 +114,7 @@ export function pageMetadata({
         },
       ],
     },
+    ...(robots ? { robots } : {}),
   };
 }
 

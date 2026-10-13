@@ -7,6 +7,7 @@ export const metadata = pageMetadata({
   description:
     "Offer gold to Diamond Capital Africa. We verify the license and the metal, then purchase.",
   path: "/network/apply",
+  robots: { index: false, follow: true },
 });
 
 export default function SupplierApplyPage() {

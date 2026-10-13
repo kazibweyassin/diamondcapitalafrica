@@ -13,10 +13,12 @@ import RotatingPhones from "@/components/RotatingPhones";
 
 const subjects = [
   "Gold Buying Enquiry",
+  "Individual Gold Buying Question",
   "Refining Services",
   "Assay & Testing",
   "Export Services",
   "Gold Supplier Due Diligence",
+  "Seller Licence Review",
   "Institutional Network Access",
   "Verified Supplier Application",
   "Investor Relations",

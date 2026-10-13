@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Buyer Guides | Gold Export & Scam Awareness",
   description:
-    "Practical gold-buyer guides from Diamond Capital Africa: gold bullion scams across Africa, real CIF Dubai exports, how to buy gold, and spotting fake dealer profiles.",
+    "Practical gold-buyer guides from Diamond Capital Africa: gold bullion scams across Africa, real CIF Dubai exports, how to buy gold, verifying a Uganda gold dealer licence, and how the gold price per gram is calculated.",
   path: "/guides",
   keywords: [
     "gold buyer guides",
@@ -15,6 +15,11 @@ export const metadata = pageMetadata({
     "buy gold Uganda guide",
     "LinkedIn gold scam",
     "gold export education",
+    "gold export services",
+    "gold export scam awareness",
+    "gold price per gram Uganda",
+    "how to buy gold in Uganda",
+    "verify gold dealer licence Uganda",
   ],
 });
 

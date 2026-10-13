@@ -74,16 +74,23 @@ export const buyPaths: {
   },
 ];
 
+export interface GuideCta {
+  label: string;
+  href: string;
+  note?: string;
+}
+
 export interface BuyerGuide {
   slug: string;
   title: string;
   description: string;
   date: string;
   keywords: string[];
-  sections: { heading: string; paragraphs: string[] }[];
+  sections: { heading: string; paragraphs: string[]; cta?: GuideCta }[];
   resources?: { label: string; href: string }[];
   ctaNote?: string;
-  cta: { label: string; href: string };
+  cta: GuideCta;
+  secondaryCtas?: GuideCta[];
 }
 
 export const buyerGuides: BuyerGuide[] = [
@@ -247,7 +254,6 @@ export const buyerGuides: BuyerGuide[] = [
       "gold scams in Africa",
       "how to verify a gold buyer",
       "gold buyer due diligence",
-      "verify gold dealer licence Uganda",
       "gold assay certificate fraud",
       "gold transaction red flags",
     ],
@@ -319,6 +325,305 @@ export const buyerGuides: BuyerGuide[] = [
       label: "Ask about supplier due diligence",
       href: "/services#buyer-due-diligence",
     },
+  },
+  {
+    slug: "verify-uganda-gold-dealer-licence",
+    title: "How to Verify a Uganda Gold Dealer Licence: A Step-by-Step Buyer Guide",
+    description:
+      "A practical checklist for confirming that a Uganda gold dealer or exporter is properly licensed: what to ask for, how to check it independently, and the licence red flags that should stop a deal.",
+    date: "2026-10-13",
+    keywords: [
+      "verify gold dealer licence Uganda",
+      "Uganda mineral dealer licence",
+      "licensed gold dealer Uganda",
+      "how to check gold dealer is legitimate",
+      "Uganda gold export licence",
+      "Uganda Mining Cadastre licence check",
+      "gold dealer due diligence Uganda",
+    ],
+    sections: [
+      {
+        heading: "Why a licence check comes before everything else",
+        paragraphs: [
+          "In cross-border gold deals, a licence is often the first document a seller shows and the first one a fraudster copies. A licence copy sent as a PDF or photo proves very little on its own. What matters is whether the licence is real, current, held by the same legal entity you are contracting with, and valid for the activity being offered.",
+          "This guide explains how to check those points independently. It is general information about the verification process. Licensing categories, requirements and procedures are set by Ugandan authorities and can change, so confirm current rules with the competent authority and your own advisers before acting.",
+        ],
+      },
+      {
+        heading: "Step 1: Ask for the right documents, in the right way",
+        paragraphs: [
+          "Ask the seller for the full legal name of the company, its registration details, its physical address, and a copy of each licence it relies on, showing the licence type, number, holder, issue date and expiry date. Ask which licence covers which activity in your transaction, for example buying, dealing, refining or exporting.",
+          "Treat the copy as a lead to verify, not as proof. A genuine seller will expect you to check it and will not object to independent confirmation.",
+        ],
+      },
+      {
+        heading: "Step 2: Check the licence against an official source",
+        paragraphs: [
+          "Do not rely on contact details printed on the document or supplied by the seller. Find the competent authority through its official website or published channels and use those details to confirm the licence. Uganda publishes mineral licence information through its Mining Cadastre, and the active dealer and refining licence list is a useful starting point for cross-checking a name and licence number.",
+          "Compare each detail: the exact company name, the licence number, the licence type, the status and the expiry date. If the register does not show the licence, shows a different holder, or shows it as expired or inactive, pause and ask the seller to explain in writing. A register that is incomplete or temporarily unavailable is not proof either way, so ask the authority to confirm directly.",
+        ],
+      },
+      {
+        heading: "Step 3: Match the licence to the legal entity and the activity",
+        paragraphs: [
+          "The company that holds the licence must be the same legal entity that signs the contract, issues the invoice and receives or sends payment. A licence held by a sister company, a \"partner\", an agent or an individual does not automatically cover the party in front of you.",
+          "Also check that the licence type fits the activity. A licence for one activity, such as mining or buying from small-scale miners, is not automatically authority to refine, export or sell refined bars. Ask in writing which licences and permits apply to your specific shipment, and confirm export requirements with the relevant authorities and your customs or logistics provider.",
+        ],
+      },
+      {
+        heading: "Step 4: Verify the company and the people",
+        paragraphs: [
+          "Confirm the company's registration with the national business registry, and check its directors or beneficial owners, registered address and signatory authority. Visit or arrange an inspection of the stated business premises where practical, or use a verified local agent.",
+          "Check that the person you are speaking to is actually authorised to act for the company. Call the company on a number you found independently and ask for that person by name. Cloned identities and fake mandates are common, so a matching name on a licence is not enough if the contact is not who they claim to be.",
+        ],
+      },
+      {
+        heading: "Licence red flags that should stop the deal",
+        paragraphs: [
+          "Pause and verify further if you see any of the following: a licence shown only as a photo or low-quality scan; a name that is similar to, but not exactly the same as, the contracting company; an expired or \"renewal pending\" licence presented as current; a licence number that does not appear on any official source; a seller who relies on a third party's licence; pressure to skip checks because \"the buyer is waiting\"; or reluctance to let you contact the authority.",
+          "A red flag is a reason to verify, not proof of fraud. But no commercial promise is worth sending money or documents before the licence and the entity are confirmed.",
+        ],
+        cta: {
+          label: "Have an offer you are unsure about? Ask us to review it",
+          href: "/contact?subject=Seller%20Licence%20Review",
+        },
+      },
+      {
+        heading: "A licence is necessary, not sufficient",
+        paragraphs: [
+          "A valid licence does not prove that a particular lot exists, is lawfully sourced, or matches the paperwork. After the licence check, still confirm provenance and chain of custody, agree independent sampling and assay, match lot identifiers across documents, confirm payment instructions directly with your own bank, and have your lawyer and compliance team review the contract.",
+          "Responsible-sourcing frameworks such as the OECD Due Diligence Guidance expect buyers to assess the supply chain, not just the seller's paperwork.",
+        ],
+      },
+      {
+        heading: "How Diamond Capital Africa's licensing can be checked",
+        paragraphs: [
+          "Diamond Capital Africa is a licensed gold dealer and exporter based at Plot 42, Nakasero Road, Kampala. We encourage buyers to confirm a dealer's licence details with the authority directly rather than rely on any website.",
+          "DCA's refinery and assay laboratory are in development and are not operating production facilities. Buyers should treat any seller's claim of in-house refining, including ours, as something to verify against documents and an inspection. If you are considering a seller other than DCA, we can discuss a scoped review of the seller and the proposed transaction. DCA also sells gold, so we disclose that commercial interest, and a review does not require you to buy from us. It is not a legal opinion, assay, bank confirmation, regulatory approval or guarantee.",
+        ],
+        cta: {
+          label: "Enquire about buying from DCA",
+          href: "/contact?subject=Gold%20Buying%20Enquiry",
+        },
+      },
+    ],
+    resources: [
+      {
+        label: "Uganda Mining Cadastre: active mineral dealer and refining licences",
+        href: "https://dgsmportal.minerals.go.ug/site/CustomHtml.aspx?PageID=52f595a4-c713-4809-9e33-89e0a2ac6ea5",
+      },
+      {
+        label: "OECD Due Diligence Guidance for Responsible Mineral Supply Chains",
+        href: "https://www.oecd.org/en/publications/2016/04/oecd-due-diligence-guidance-for-responsible-supply-chains-of-minerals-from-conflict-affected-and-high-risk-areas_g1g65996.html",
+      },
+      {
+        label: "FATF/APG report: money-laundering risks and vulnerabilities associated with gold",
+        href: "https://www.fatf-gafi.org/en/publications/Methodsandtrends/Ml-tf-risks-and-vulnerabilities-gold.html",
+      },
+    ],
+    ctaNote:
+      "Considering a gold offer and not sure the seller is real? Send us the seller's name, licence copy and the offer. We will tell you what we can review and what it covers, before you share anything sensitive or send money.",
+    cta: {
+      label: "Request a seller licence review",
+      href: "/contact?subject=Seller%20Licence%20Review",
+    },
+    secondaryCtas: [
+      {
+        label: "Buying gold from DCA? Start the buyer process",
+        href: "/how-to-buy",
+        note: "KYC, quote, assay, export documents and delivery, step by step.",
+      },
+      {
+        label: "WhatsApp Tom",
+        href: "https://wa.me/256704833021?text=Hello%2C%20I%20read%20your%20licence%20verification%20guide%20and%20would%20like%20to%20enquire.",
+        note: "Fastest for a quick question. Use the number published on this website only.",
+      },
+    ],
+  },
+  {
+    slug: "gold-price-per-gram-uganda",
+    title: "Gold Price per Gram in Uganda Today: How It Is Calculated",
+    description:
+      "See today's gold price per gram in Uganda and learn how it is worked out from the international spot price, the dollar rate and a dealer's premium, so you know what a fair price looks like before you buy.",
+    date: "2026-10-13",
+    keywords: [
+      "gold price per gram Uganda",
+      "gold price today Uganda",
+      "gold price UGX per gram",
+      "how much is a gram of gold in Uganda",
+      "gold rate Kampala",
+      "buy gold per gram Uganda",
+    ],
+    sections: [
+      {
+        heading: "Today's gold price in Uganda",
+        paragraphs: [
+          "The live prices at the top of this page show the international gold spot price in US dollars per ounce, the UGX to USD exchange rate, and the Diamond Capital Africa rate in US dollars per gram. They refresh as the market moves, because gold is priced all day on global markets and changes minute to minute.",
+          "The price you pay for physical gold is not the spot price alone. It is the spot price converted to grams and shillings, plus a dealer premium that covers refining, assay, handling, security and the dealer's margin. The sections below show you how to check this yourself.",
+        ],
+      },
+      {
+        heading: "How to turn the spot price into a price per gram",
+        paragraphs: [
+          "Gold is quoted internationally per troy ounce, and one troy ounce is 31.1035 grams. To get the price per gram in US dollars, divide the ounce price by 31.1035. To get shillings, multiply by the UGX to USD rate.",
+          "Illustrative example only, not a current price: if spot were US$2,000 per ounce, one gram of pure gold would be about US$64.30 (2,000 divided by 31.1035). At an exchange rate of 3,700 shillings per dollar, that is about UGX 237,900 per gram, before any premium.",
+        ],
+      },
+      {
+        heading: "Why dealer prices differ from the spot price",
+        paragraphs: [
+          "Retail gold usually costs more than spot, and the same gram can be priced differently by different dealers. The difference comes from the premium, which depends on the form of the gold (a small bar usually carries a higher premium per gram than a large one), the cost of verifying purity, storage and security, and the dealer's margin.",
+          "A dealer should be able to show you how the quote is built: the spot reference, the exchange rate used, the premium and any fees. Be cautious of anyone who cannot explain the price, or whose price is far below the spot price. Real gold does not sell well under market, and unusually cheap offers are a common scam signal.",
+        ],
+      },
+      {
+        heading: "Pure gold, carats and why purity changes the price",
+        paragraphs: [
+          "The spot price is for pure gold. Gold bars sold by licensed dealers are typically near-pure (24 carat, around 99.9% fine). Jewellery is often 18 carat (75% gold), 14 carat (about 58%) or lower, so a gram of jewellery contains less than a gram of gold and is priced accordingly.",
+          "To compare offers fairly, always ask for the fineness of the gold, the weight in grams, and a testing or assay document that matches the item you are buying.",
+        ],
+      },
+      {
+        heading: "How to buy gold by the gram",
+        paragraphs: [
+          "If you want to start small, Diamond Capital Africa's Gold Savings lets you buy physical, assay-verified fine gold by the gram from US$20, paid in USDT. You enter an amount, receive payment instructions with a 24-hour price lock, submit proof of payment, and the grams are credited to you. You can collect physical gold in person from 20 g at our Kampala or Arua centres with a valid ID.",
+          "Gold Savings is physical bullion, not mining shares and not paper gold. Gold prices go up and down, gold does not earn interest, and you should only buy an amount you are comfortable holding through price swings. Read the full terms before you pay.",
+        ],
+        cta: {
+          label: "Start with Gold Savings",
+          href: "/gold-savings",
+        },
+      },
+      {
+        heading: "Before you pay any dealer",
+        paragraphs: [
+          "Check that the dealer is licensed, that the licence is current and held by the company you are paying, and that payment instructions come from the company's official website, not from a message or a personal account. Our guide on how to verify a Uganda gold dealer licence walks through each step.",
+          "Prices on this page are for general information and are not an offer or a quote. Actual prices depend on the time of purchase, the form of gold and the agreed terms.",
+        ],
+      },
+    ],
+    resources: [
+      {
+        label: "Uganda Mining Cadastre: active mineral dealer and refining licences",
+        href: "https://dgsmportal.minerals.go.ug/site/CustomHtml.aspx?PageID=52f595a4-c713-4809-9e33-89e0a2ac6ea5",
+      },
+    ],
+    ctaNote:
+      "Have a question about buying your first gold? Message us and we will explain how it works. No pressure and no minimum conversation.",
+    cta: {
+      label: "Ask a question about buying gold",
+      href: "/contact?subject=Individual%20Gold%20Buying%20Question",
+    },
+    secondaryCtas: [
+      {
+        label: "WhatsApp us",
+        href: "https://wa.me/256704833021?text=Hello%2C%20I%20am%20new%20to%20buying%20gold%20and%20have%20a%20question.",
+        note: "Quick answers for first-time buyers.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-buy-gold-uganda-beginners",
+    title: "How to Buy Gold in Uganda: A Beginner's Guide",
+    description:
+      "New to buying gold? This guide explains the ways to own gold in Uganda, how pricing and purity work, what to check before you pay, the risks, and how to start with a small amount.",
+    date: "2026-10-13",
+    keywords: [
+      "how to buy gold in Uganda",
+      "buy gold Uganda beginners",
+      "start buying gold",
+      "buy physical gold Uganda",
+      "gold bars Uganda for individuals",
+      "gold savings Uganda",
+      "is gold a good investment Uganda",
+    ],
+    sections: [
+      {
+        heading: "Why people buy gold",
+        paragraphs: [
+          "People buy gold to hold value over the long term, to spread their savings across more than one kind of asset, and as protection when currencies lose purchasing power. Gold has been used as a store of value for thousands of years and is accepted around the world.",
+          "Gold is not a guaranteed profit. Its price rises and falls, it does not pay interest or dividends, and you may pay a premium when you buy and receive less than that when you sell. It suits people who can leave the money untouched for years. This guide is general education, not financial advice, so consider your own situation and speak to a qualified adviser for big decisions.",
+        ],
+      },
+      {
+        heading: "The main ways to own gold",
+        paragraphs: [
+          "Physical gold bars and coins: you own metal that you can hold. Bars carry a lower premium per gram as they get bigger, and you need a safe way to store them.",
+          "Gold jewellery: widely available, but you pay for design and labour on top of the gold, and the purity is lower than bullion, so it is usually a weak way to save and a harder one to resell at a fair price.",
+          "Gold savings programmes: you buy small amounts of physical gold over time. For example, Diamond Capital Africa's Gold Savings starts from US$20 and credits grams of assay-verified gold that you can collect in person from 20 g.",
+          "Paper or digital gold, such as certificates, accounts or funds: you hold a claim rather than the metal itself, which adds counterparty risk. Be sure you know what you actually own and who is responsible for it.",
+        ],
+      },
+      {
+        heading: "How pricing works, in simple terms",
+        paragraphs: [
+          "Gold is priced worldwide in US dollars per troy ounce, and one ounce is 31.1035 grams. Dealers convert that to grams and shillings and add a premium for refining, testing, handling and their margin. Our page on the gold price per gram in Uganda shows the calculation step by step.",
+          "Always ask for the price in writing, showing the spot reference, exchange rate, premium and any fees, so you can see exactly what you are paying for.",
+        ],
+      },
+      {
+        heading: "Purity, weight and proof",
+        paragraphs: [
+          "Check three things on any purchase: the weight in grams, the purity (fineness, for example 99.9% or 24 carat), and the proof that backs both up, such as an assay certificate or a clearly marked bar from a recognised producer. A certificate on its own does not prove the item in front of you is genuine, so ask how the dealer verifies it and whether you can have it tested.",
+          "Keep every receipt, certificate and message about the purchase. You will need them if you ever resell or if something goes wrong.",
+        ],
+      },
+      {
+        heading: "How to start safely, step by step",
+        paragraphs: [
+          "1. Decide how much you can leave invested for several years. Start small.",
+          "2. Choose a licensed dealer and verify the licence yourself. Our guide on how to verify a Uganda gold dealer licence shows how.",
+          "3. Ask for the full price breakdown and the purity and weight in writing.",
+          "4. Pay only through the payment details published on the dealer's official website, never to a personal account or a number sent in a message.",
+          "5. Keep your records, and confirm how and where you can collect or store your gold.",
+        ],
+        cta: {
+          label: "See how Gold Savings works",
+          href: "/gold-savings",
+        },
+      },
+      {
+        heading: "Storing your gold safely",
+        paragraphs: [
+          "Decide before you buy where the gold will be kept. Options include a secure vault or safe deposit service, a quality home safe, or leaving small amounts credited with a dealer until you reach a collection amount. Each has risks, such as theft, loss or the dealer's own failure, so choose one you trust and understand, and consider insurance for larger amounts.",
+          "Do not tell people how much gold you hold, and be wary of anyone who asks.",
+        ],
+      },
+      {
+        heading: "Scams that target first-time buyers",
+        paragraphs: [
+          "Be careful with offers of gold well below the market price, pressure to pay quickly, requests to send money to a personal mobile money or bank account, and strangers who contact you first by message or social media. A genuine dealer lets you verify them, explains the price, and does not rush you.",
+          "If you are unsure, pause and ask questions. Our guide on gold bullion scams in Africa explains the most common tricks and how to check an offer.",
+        ],
+      },
+    ],
+    resources: [
+      {
+        label: "Uganda Mining Cadastre: active mineral dealer and refining licences",
+        href: "https://dgsmportal.minerals.go.ug/site/CustomHtml.aspx?PageID=52f595a4-c713-4809-9e33-89e0a2ac6ea5",
+      },
+      {
+        label: "US FTC consumer alert: requests to buy and hand over gold bars",
+        href: "https://consumer.ftc.gov/consumer-alerts/2025/07/real-government-agents-arent-asking-you-buy-and-deliver-gold-bars",
+      },
+    ],
+    ctaNote:
+      "Ready to start small? Gold Savings lets you buy physical gold by the gram from US$20, with a 24-hour price lock.",
+    cta: {
+      label: "Start buying gold from $20",
+      href: "/gold-savings",
+    },
+    secondaryCtas: [
+      {
+        label: "Ask us a question first",
+        href: "/contact?subject=Individual%20Gold%20Buying%20Question",
+        note: "Plain answers for first-time buyers.",
+      },
+      {
+        label: "WhatsApp us",
+        href: "https://wa.me/256704833021?text=Hello%2C%20I%20am%20new%20to%20buying%20gold%20and%20have%20a%20question.",
+      },
+    ],
   },
 ];
 

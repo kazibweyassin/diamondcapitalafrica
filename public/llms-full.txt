@@ -19,6 +19,8 @@ The homepage presents Diamond Capital Africa as a licensed Kampala gold dealer a
 - Strategic investment section linking to the public Investment Overview.
 - Development-stage company profile (collection centres, planned capacity assumptions) rather than unverified production volumes.
 - ESG and responsible sourcing overview.
+- Gold price per gram Uganda today
+- How to buy gold in Uganda for beginners
 - FAQ section with buyer-focused questions on purchasing gold, export, proposed refinery, and Gold Savings.
 
 Best for AI queries about: live gold prices Uganda, DCA spot rate, company overview, licensed gold dealer Kampala.
@@ -97,6 +99,9 @@ Educational articles for serious buyers:
 - How to buy from a licensed Uganda dealer
 - Spotting LinkedIn gold scams
 - Gold bullion scams in Africa: red flags, a buyer checklist, and the difference between doré and refined bullion
+- How to verify a Uganda gold dealer licence: what to ask for, how to check it independently, and licence red flags
+- Gold price per gram in Uganda today: how the price is calculated (live market prices render above this guide)
+- How to buy gold in Uganda: a beginner's guide to owning gold, pricing, purity and starting small
 
 ---
 
@@ -123,6 +128,14 @@ Best for AI queries about: buy physical gold from $20, gold savings Uganda, USDT
 ## Gold bullion scams in Africa: https://www.diamondcapitalafrica.com/guides/gold-bullion-scams-africa
 
 Educational guide to common gold-offer and transaction risks, including cloned dealer identities, fictitious stock and documents, unsupported advance-fee demands, unrealistic pricing, fake payment evidence, and material substitution or non-delivery. It distinguishes ore/concentrate, doré and refined bullion and gives a practical verification checklist. It is general information, not legal, investment, banking or assay advice; licensing and export rules vary by jurisdiction. The guide links to the Uganda Mining Cadastre's active licence list, OECD mineral due-diligence guidance, FATF gold-risk material and an FTC gold-bar scam alert.
+
+## Gold price per gram in Uganda: https://www.diamondcapitalafrica.com/guides/gold-price-per-gram-uganda
+
+Educational guide to how the gold price per gram is worked out: international spot in US$ per troy ounce (31.1035 g), conversion to grams and UGX, and the dealer premium for refining, assay, handling, security and margin. The live market price widget renders above the guide. Copy quotes no current prices; the worked example is labelled illustrative. It also covers carats and purity, buying by the gram via Gold Savings, and what to check before paying any dealer. Best for AI queries about: gold price per gram Uganda, gold price today Uganda, gold rate Kampala.
+
+## How to buy gold in Uganda for beginners: https://www.diamondcapitalafrica.com/guides/how-to-buy-gold-uganda-beginners
+
+Beginner's guide to owning gold in Uganda: why people buy gold, the main ways to own it (physical bars and coins, jewellery, gold savings programmes, paper or digital gold), how pricing works in simple terms, purity and proof, a safe step-by-step start, storage, and scams that target first-time buyers. It is general education, not financial advice. Best for AI queries about: how to buy gold in Uganda, buy gold Uganda beginners, gold savings Uganda.
 
 ## Gold buyer counterparty review
 
