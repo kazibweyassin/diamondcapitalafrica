@@ -435,7 +435,7 @@ export const buyerGuides: BuyerGuide[] = [
       },
       {
         label: "WhatsApp Tom",
-        href: "https://wa.me/256704833021?text=Hello%2C%20I%20read%20your%20licence%20verification%20guide%20and%20would%20like%20to%20enquire.",
+        href: "https://wa.me/256791462554?text=Hello%2C%20I%20read%20your%20licence%20verification%20guide%20and%20would%20like%20to%20enquire.",
         note: "Fastest for a quick question. Use the number published on this website only.",
       },
     ],
@@ -517,7 +517,7 @@ export const buyerGuides: BuyerGuide[] = [
     secondaryCtas: [
       {
         label: "WhatsApp us",
-        href: "https://wa.me/256704833021?text=Hello%2C%20I%20am%20new%20to%20buying%20gold%20and%20have%20a%20question.",
+        href: "https://wa.me/256791462554?text=Hello%2C%20I%20am%20new%20to%20buying%20gold%20and%20have%20a%20question.",
         note: "Quick answers for first-time buyers.",
       },
     ],
@@ -621,7 +621,7 @@ export const buyerGuides: BuyerGuide[] = [
       },
       {
         label: "WhatsApp us",
-        href: "https://wa.me/256704833021?text=Hello%2C%20I%20am%20new%20to%20buying%20gold%20and%20have%20a%20question.",
+        href: "https://wa.me/256791462554?text=Hello%2C%20I%20am%20new%20to%20buying%20gold%20and%20have%20a%20question.",
       },
     ],
   },
