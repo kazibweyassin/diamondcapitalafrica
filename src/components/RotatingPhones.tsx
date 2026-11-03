@@ -7,15 +7,17 @@ type Variant = "footer" | "contact" | "card";
 
 export default function RotatingPhones({ variant }: { variant: Variant }) {
   const { active, fallback } = useActiveInquiryLine();
+  const getLineLabel = (tel: string) =>
+    tel === company.phoneAltTel ? "International/WhatsApp line" : "Uganda line";
 
   if (variant === "footer") {
     return (
       <span className="flex flex-col gap-1">
         <a href={`tel:${active.tel}`} className="transition hover:text-gold">
-          {company.contactName}: {active.display}
+          {company.contactName}: {getLineLabel(active.tel)} {active.display}
         </a>
         <a href={`tel:${fallback.tel}`} className="transition hover:text-gold">
-          If no answer: {fallback.display}
+          {getLineLabel(fallback.tel)} {fallback.display}
         </a>
       </span>
     );
@@ -29,14 +31,13 @@ export default function RotatingPhones({ variant }: { variant: Variant }) {
           href={`tel:${active.tel}`}
           className="block text-sm text-muted transition hover:text-gold"
         >
-          {active.display}
+          {getLineLabel(active.tel)}: {active.display}
         </a>
         <a
           href={`tel:${fallback.tel}`}
           className="mt-1 block text-sm text-muted transition hover:text-gold"
         >
-          {fallback.display}
-          <span className="text-muted/80"> (if no answer)</span>
+          {getLineLabel(fallback.tel)}: {fallback.display}
         </a>
       </div>
     );
@@ -46,14 +47,13 @@ export default function RotatingPhones({ variant }: { variant: Variant }) {
     <>
       <p className="mb-1 text-sm font-semibold text-foreground">
         <a href={`tel:${active.tel}`} className="hover:text-gold">
-          {active.display}
+          {getLineLabel(active.tel)}: {active.display}
         </a>
       </p>
       <p className="mb-1 text-sm text-muted">
         <a href={`tel:${fallback.tel}`} className="hover:text-gold">
-          {fallback.display}
+          {getLineLabel(fallback.tel)}: {fallback.display}
         </a>
-        <span className="text-muted/80"> (if no answer)</span>
       </p>
     </>
   );
