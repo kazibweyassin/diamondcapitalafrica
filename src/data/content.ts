@@ -15,12 +15,12 @@ export const company = {
   phone: "+256 791 462 554",
   phoneTel: "+256 791 462 554",
   /** Second inquiry line. WhatsApp and listed phones rotate this with phone every 3 days; the off-duty number stays as fallback. */
-  phoneAlt: "+256 791 462 554",
-  phoneAltTel: "+256791462554",
+  phoneAlt: "+90 536 897 6110",
+  phoneAltTel: "+905368976110",
   whatsappUrl:
     "https://wa.me/256791462554?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20gold%20services.",
   whatsappUrlAlt:
-    "https://wa.me/256791462554?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20gold%20services.",
+    "https://wa.me/905368976110?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20gold%20services.",
   address: "Plot 42, Nakasero Road, Kampala, Uganda",
   founded: 2012,
 };
