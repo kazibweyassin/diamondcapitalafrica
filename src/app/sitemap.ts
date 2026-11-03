@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { buyerGuides } from "@/data/buyer-education";
 import { getSitemapNewsEntries } from "@/lib/news";
 import { siteUrl } from "@/lib/seo";
-// Adjust this import to wherever your buyerGuides array lives.
-import { buyerGuides } from "@/lib/guides";
 
 export const revalidate = 3600;
 
