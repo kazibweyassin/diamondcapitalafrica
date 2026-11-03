@@ -65,7 +65,7 @@ export function buildGoldFaqs(): FaqItem[] {
     },
     {
       question: "How can buyers contact Diamond Capital Africa?",
-      answer: `Contact Tom at +256 791 462 554 or email info@diamondcapitalafrica.com. Visit ${homeUrl} for live market prices, export enquiries, Gold Savings, and the strategic investment opportunity at ${investUrl}.`,
+      answer: `Contact Tim at +256 791 462 554 or email info@diamondcapitalafrica.com. Visit ${homeUrl} for live market prices, export enquiries, Gold Savings, and the strategic investment opportunity at ${investUrl}.`,
     },
   ];
 }

@@ -30,7 +30,7 @@ export const prequalificationItems = [
 export const buyerProcedureSteps = [
   {
     title: "Enquire with intent",
-    body: "Contact Tom with volume, destination, and delivery preference. We respond within one business day. Cold emails with no KYC path or fake \"discount below spot\" offers are not our model.",
+    body: "Contact Tim with volume, destination, and delivery preference. We respond within one business day. Cold emails with no KYC path or fake \"discount below spot\" offers are not our model.",
   },
   {
     title: "KYC and commercial fit",
@@ -234,7 +234,7 @@ export const buyerGuides: BuyerGuide[] = [
         heading: "If you were approached about \"Uganda gold\" online",
         paragraphs: [
           "Do not send funds or documents to the cold contact. Independently open the corporate site of any company named, call the published number, and ask for the export desk. Compare the LinkedIn story with what the company actually offers.",
-          "Diamond Capital Africa publishes how buying works, including FOB Kampala and CIF Dubai for real institutional orders. Start there, or contact Tom on the numbers listed on this website, not through a random profile that claims to \"represent\" us without introduction.",
+          "Diamond Capital Africa publishes how buying works, including FOB Kampala and CIF Dubai for real institutional orders. Start there, or contact Tim on the numbers listed on this website, not through a random profile that claims to \"represent\" us without introduction.",
         ],
       },
     ],
@@ -434,7 +434,7 @@ export const buyerGuides: BuyerGuide[] = [
         note: "KYC, quote, assay, export documents and delivery, step by step.",
       },
       {
-        label: "WhatsApp Tom",
+        label: "WhatsApp Tim",
         href: "https://wa.me/256791462554?text=Hello%2C%20I%20read%20your%20licence%20verification%20guide%20and%20would%20like%20to%20enquire.",
         note: "Fastest for a quick question. Use the number published on this website only.",
       },

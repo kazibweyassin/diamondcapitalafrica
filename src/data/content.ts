@@ -8,7 +8,7 @@ export const company = {
     "Licensed gold dealer and exporter based in Kampala, Uganda. Diamond Capital Africa is developing an integrated precious-metals processing platform through strategic partnerships, including a planned gold refinery and assay laboratory. OECD-aligned responsible sourcing across East and Central Africa.",
   purpose:
     "Our purpose is to advance Africa's formal gold economy with integrity—connecting verified upstream production to institutional markets while developing modern processing infrastructure.",
-  contactName: "Tom",
+  contactName: "Tim",
   email: "info@diamondcapitalafrica.com",
   investorsEmail: "investors@diamondcapitalafrica.com",
   privacyEmail: "privacy@diamondcapitalafrica.com",
@@ -58,7 +58,7 @@ export const companyFacts = {
     "Developing a proposed gold refinery and modern assay laboratory",
     "Working with mining, refining, logistics and trading stakeholders",
   ],
-  contactPerson: "Tom",
+  contactPerson: "Tim",
   phone: company.phone,
   phoneAlt: company.phoneAlt,
   email: company.email,
