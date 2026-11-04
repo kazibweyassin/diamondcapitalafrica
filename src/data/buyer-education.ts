@@ -625,6 +625,224 @@ export const buyerGuides: BuyerGuide[] = [
       },
     ],
   },
+  {
+    slug: "uganda-gold-export-documents",
+    title: "What documents are needed to export gold from Uganda?",
+    description:
+      "A practical checklist for buyers and sellers: identity, assay, commercial, customs and transport documents to discuss before a Uganda gold export transaction.",
+    date: "2026-11-04",
+    keywords: [
+      "Uganda gold export documents",
+      "gold export paperwork Uganda",
+      "Uganda gold customs documents",
+      "gold export checklist",
+      "buy gold Uganda documents",
+    ],
+    sections: [
+      {
+        heading: "Start with the parties and the transaction",
+        paragraphs: [
+          "Before discussing shipment, identify the legal seller, buyer, delivery destination, quantity, purity, price basis and agreed delivery term. The names on the quote, contract, invoice, payment instructions and export paperwork should match the parties actually trading.",
+          "A WhatsApp message or a polished PDF is not a substitute for a contract. Ask who is responsible for assay, export clearance, freight, insurance, import clearance and taxes in the destination country.",
+        ],
+      },
+      {
+        heading: "Product and assay documents",
+        paragraphs: [
+          "Ask for product information that can be checked against the metal: weight, fineness, bar or lot identifiers, assay method, assay date and the laboratory or facility responsible. The final documents should identify the same lot that is inspected and shipped.",
+          "Do not treat a certificate alone as proof that metal exists. Confirm the inspection process, the location of the metal and whether an independent assay or buyer inspection is available before settlement.",
+        ],
+      },
+      {
+        heading: "Commercial and export documents",
+        paragraphs: [
+          "A legitimate transaction normally requires commercial documents such as a signed quotation or contract, commercial invoice, packing or bar list, and agreed payment terms. Export and customs documents depend on the shipment and the authorities involved, so the exporter should explain which approvals and declarations apply.",
+          "For a Uganda-origin shipment, ask how the exporter will handle applicable mineral, customs, foreign-exchange and destination-import requirements. A responsible counterparty does not promise that taxes, licences or clearance can simply be skipped.",
+        ],
+      },
+      {
+        heading: "Before you pay or travel",
+        paragraphs: [
+          "Verify the seller's legal identity, address, licence position and bank details independently. Payment instructions should come from the verified company and should not change at the last minute to a personal account or an unrelated third party.",
+          "Use a written checklist and keep copies of the documents you reviewed. If the seller refuses reasonable KYC, rushes you to send a deposit, or cannot explain who issues each document, pause the transaction.",
+        ],
+      },
+    ],
+    resources: [
+      {
+        label: "Uganda Mining Cadastre: active mineral dealer and refining licences",
+        href: "https://dgsmportal.minerals.go.ug/site/CustomHtml.aspx?PageID=52f595a4-c713-4809-9e33-89e0a2ac6ea5",
+      },
+    ],
+    ctaNote:
+      "Document requirements vary by product, route and destination. Confirm the current requirements with the exporter, customs authorities and a qualified adviser.",
+    cta: {
+      label: "Ask about export documentation",
+      href: "/contact?subject=Export%20Services",
+    },
+  },
+  {
+    slug: "gold-assay-how-buyers-verify-purity",
+    title: "Gold assay explained: how buyers verify purity before payment",
+    description:
+      "Learn what an assay proves, how sampling and testing work, and what private buyers should check before relying on a gold purity certificate.",
+    date: "2026-11-04",
+    keywords: [
+      "gold assay explained",
+      "how to verify gold purity",
+      "gold purity certificate",
+      "fire assay gold buying",
+      "gold testing before payment",
+    ],
+    sections: [
+      {
+        heading: "What an assay tells you",
+        paragraphs: [
+          "An assay estimates the precious-metal content of a representative sample. In a gold transaction, the result may be expressed as fineness, karat or percentage, together with the tested weight and identifying details for the sample or lot.",
+          "An assay is evidence about the tested material. It is not automatically proof that an online seller owns the metal, that the whole shipment matches one sample, or that a certificate has not been altered.",
+        ],
+      },
+      {
+        heading: "Common testing methods",
+        paragraphs: [
+          "Fire assay is a laboratory method used to determine precious-metal content from a prepared sample. X-ray fluorescence can provide fast, non-destructive screening, but readings can be affected by surface composition, plating, shape and calibration.",
+          "For higher-value purchases, ask which method was used, who performed it, when it was performed and whether the buyer can arrange an independent check. A screening result and a final settlement assay should not be confused.",
+        ],
+      },
+      {
+        heading: "What to compare on the certificate",
+        paragraphs: [
+          "Compare the certificate with the physical lot: seller and laboratory names, date, sample or bar identifier, gross and fine weight, fineness, signatures or verification features and the description of the material tested. Inconsistencies are a reason to stop and ask questions.",
+          "A photograph of a certificate is easy to copy. Contact a laboratory or issuer through independently sourced contact details, not only the phone number printed on a document sent by the seller.",
+        ],
+      },
+      {
+        heading: "Assay is only one part of due diligence",
+        paragraphs: [
+          "A purity result does not replace checks on title, origin, responsible sourcing, export permissions, sanctions, payment instructions or delivery risk. Buyers should review the counterparty and the transaction as a whole.",
+          "Never release a large payment solely because a seller sends a certificate or video. Agree in writing when sampling, independent inspection, final assay and settlement occur.",
+        ],
+      },
+    ],
+    resources: [
+      {
+        label: "OECD Due Diligence Guidance for Responsible Supply Chains",
+        href: "https://www.oecd.org/corporate/mne/mining.htm",
+      },
+    ],
+    ctaNote:
+      "The right testing process depends on the product and transaction value. Agree the assay and inspection process before funds move.",
+    cta: {
+      label: "Discuss an assay-backed purchase",
+      href: "/contact?subject=Gold%20Buying%20Enquiry",
+    },
+  },
+  {
+    slug: "fob-kampala-vs-cif-dubai",
+    title: "FOB Kampala vs CIF Dubai: which gold delivery term fits?",
+    description:
+      "Understand the practical difference between FOB Kampala and CIF Dubai, including logistics, insurance, risk, documents and the questions buyers should ask.",
+    date: "2026-11-04",
+    keywords: [
+      "FOB Kampala gold",
+      "CIF Dubai gold",
+      "gold delivery terms",
+      "Uganda gold export Dubai",
+      "gold shipping insurance",
+    ],
+    sections: [
+      {
+        heading: "FOB Kampala in plain language",
+        paragraphs: [
+          "With an FOB Kampala arrangement, the buyer generally takes responsibility for the agreed collection and onward logistics from the named Kampala handover point. The contract must define the exact place, documents, inspection, insurance and point at which risk and cost transfer.",
+          "FOB can suit an experienced buyer with a trusted freight forwarder, insurance provider, vault or refinery relationship. It can also provide more direct control over onward transport, but the buyer must coordinate those responsibilities properly.",
+        ],
+      },
+      {
+        heading: "CIF Dubai in plain language",
+        paragraphs: [
+          "With CIF Dubai, the seller arranges the agreed freight and insurance to the named destination or delivery point, subject to the contract and applicable trade-term rules. The buyer still needs to understand import clearance, duties, taxes, destination handling and when risk transfers.",
+          "CIF is not the same as free delivery or guaranteed customs clearance. A serious quote should state the destination, what insurance covers, which documents are supplied and which destination costs remain with the buyer.",
+        ],
+      },
+      {
+        heading: "Questions to settle before choosing",
+        paragraphs: [
+          "Ask who selects the carrier, who pays for security and insurance, what the insured value is, where inspection occurs, who handles export and import clearance, and which party bears delay, loss or damage risk at each stage.",
+          "Also agree the assay point, settlement trigger, currency, bar or lot identifiers and the process for resolving a weight or purity difference. These details matter more than the label FOB or CIF by itself.",
+        ],
+      },
+      {
+        heading: "Avoid delivery-term scams",
+        paragraphs: [
+          "Be cautious when a stranger promises CIF delivery at a price far below the market and asks for a travel fee, registration charge, ticket payment or personal-account deposit. Real logistics costs and responsibilities are explained in a contract and supported by verifiable counterparties.",
+          "Compare the offer with the official contact details on the seller's website. Do not rely on a broker's changed bank details or a social-media profile that cannot be connected to the legal seller.",
+        ],
+      },
+    ],
+    ctaNote:
+      "Delivery terms must be adapted to the route and destination. Confirm the commercial, customs and insurance details before signing.",
+    cta: {
+      label: "Discuss FOB Kampala or CIF Dubai",
+      href: "/contact?subject=Export%20Services",
+    },
+  },
+  {
+    slug: "how-to-spot-fake-gold-bars",
+    title: "How to spot fake gold bars and misleading certificates",
+    description:
+      "A practical first-time buyer checklist for detecting plated bars, copied certificates, unusual payment requests and other warning signs before buying gold.",
+    date: "2026-11-04",
+    keywords: [
+      "how to spot fake gold bars",
+      "fake gold certificate",
+      "gold bar buying scams",
+      "verify gold bar authenticity",
+      "gold buying warning signs",
+    ],
+    sections: [
+      {
+        heading: "Start with the seller, not the bar",
+        paragraphs: [
+          "A genuine-looking bar can still be offered by a fraudulent seller. Begin by checking the legal company, physical address, licence position, named contact and whether the payment account belongs to that company.",
+          "Be especially careful with unsolicited social-media offers, pressure to act immediately, discounts far below the market, and requests to pay a personal account, release fee or travel expense.",
+        ],
+      },
+      {
+        heading: "Check the bar and its identifiers",
+        paragraphs: [
+          "Record the refiner or manufacturer, serial number, stated weight, fineness, dimensions and packaging condition. Compare those details with independent information from the manufacturer where possible, but do not assume a serial number alone proves authenticity.",
+          "Visual checks, magnets and inexpensive electronic testers can help identify obvious problems, but they are not a complete authentication method. Plating, tungsten cores, altered packaging and surface-only tests can defeat casual checks.",
+        ],
+      },
+      {
+        heading: "Treat certificates as supporting evidence",
+        paragraphs: [
+          "A certificate should match the bar or lot and identify the issuer, date, test method, weight and purity. Contact the issuer using independently found details and ask whether the document format and reference can be verified.",
+          "Do not send a large payment because a seller provides a certificate photo, a warehouse video or a claimed refinery licence. Arrange an independent inspection or assay with a qualified facility before final settlement.",
+        ],
+      },
+      {
+        heading: "A safer buying sequence",
+        paragraphs: [
+          "Verify the seller, agree the product and price basis in writing, inspect or independently assay the metal, confirm the export and delivery documents, and pay only according to the agreed settlement process. Keep a complete record of the people and companies involved.",
+          "If any stage cannot be verified, pause. A legitimate seller should be able to explain the process without threats, secrecy or unreasonable urgency.",
+        ],
+      },
+    ],
+    resources: [
+      {
+        label: "FTC consumer alert about gold-bar delivery scams",
+        href: "https://consumer.ftc.gov/consumer-alerts/2025/07/real-government-agents-arent-asking-you-buy-and-deliver-gold-bars",
+      },
+    ],
+    ctaNote:
+      "No online checklist can authenticate a high-value bar by itself. Use an independent qualified inspection and verify the counterparty before payment.",
+    cta: {
+      label: "Ask about a safe buying process",
+      href: "/contact?subject=Individual%20Gold%20Buying%20Question",
+    },
+  },
 ];
 
 export function getBuyerGuide(slug: string): BuyerGuide | undefined {
