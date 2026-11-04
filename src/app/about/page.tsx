@@ -5,8 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { Shield, Award, Globe, Users } from "lucide-react";
 
 export const metadata = pageMetadata({
-  title: "About Us | Licensed Gold Dealer Uganda",
-  description: `${company.name} corporate profile: licensed gold dealer and exporter in Kampala, Uganda since ${company.founded}. Developing a proposed refining and assay platform. Leadership, compliance, and investor information.`,
+  title: "Diamond Capital Africa | Gold Dealer & Exporter, Kampala",
+  description: `${company.name} is a licensed gold dealer and exporter in Kampala, Uganda, operating since ${company.founded}. Explore our services, sourcing, leadership and proposed refinery plans.`,
   path: "/about",
   image: images.pageHero.about,
 });
@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-4 lg:px-8">
           <h1 className="text-3xl font-bold text-white md:text-4xl">
-            Corporate Profile
+            Diamond Capital Africa: Licensed Gold Dealer and Exporter in Kampala
           </h1>
           <p className="mt-2 max-w-xl text-white/80">
             {company.tagline}
@@ -41,14 +41,27 @@ export default function AboutPage() {
               Who we are
             </h2>
             <p className="mb-4 leading-relaxed text-muted">
-              Founded in {company.founded}, {company.name} has grown from a
-              Kampala buying desk into a regional gold dealer and exporter. We
-              work with mining, refining, logistics and international trading
-              stakeholders while developing our own proposed processing
-              infrastructure, with a focus on purity documentation, traceability
-              and compliance.
+              Since {company.founded}, {company.name} has grown from a Kampala
+              buying desk into a gold dealer and exporter serving East and
+              Central Africa. We connect verified upstream production with
+              institutional buyers and focus on assay documentation,
+              traceability and compliance.
             </p>
             <p className="leading-relaxed text-muted">{company.purpose}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/services"
+                className="inline-flex min-h-11 items-center rounded bg-gold px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-gold-light"
+              >
+                Explore our services
+              </a>
+              <a
+                href="/contact"
+                className="inline-flex min-h-11 items-center rounded border border-border px-5 py-2.5 text-sm font-semibold text-primary transition hover:border-gold hover:bg-section-alt"
+              >
+                Contact the team
+              </a>
+            </div>
           </div>
           <div className="relative h-72 overflow-hidden rounded-lg shadow-lg lg:h-96">
             <Image
@@ -103,8 +116,9 @@ export default function AboutPage() {
                 Contact
               </dt>
               <dd className="mt-1 text-sm text-foreground">
-                {companyFacts.contactPerson} · {companyFacts.phone} ·{" "}
-                {companyFacts.phoneAlt} · {companyFacts.email}
+                {companyFacts.contactPerson} · Uganda line: {companyFacts.phone}{" "}
+                · International/WhatsApp line: {companyFacts.phoneAlt} ·{" "}
+                {companyFacts.email}
               </dd>
             </div>
           </dl>
@@ -115,6 +129,112 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section id="services" className="mt-20">
+          <h2 className="mb-8 text-2xl font-bold text-primary">Services</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-lg border border-border p-6">
+              <h3 className="mb-2 text-lg font-bold text-gold-dark">
+                Gold dealing
+              </h3>
+              <p className="text-sm leading-relaxed text-muted">
+                We coordinate verified gold buying and institutional supply
+                with assay documentation and agreed transaction terms.
+              </p>
+              <a
+                href="/services#buying"
+                className="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-gold"
+              >
+                Gold buying services
+              </a>
+            </div>
+            <div className="rounded-lg border border-border p-6">
+              <h3 className="mb-2 text-lg font-bold text-gold-dark">
+                Export facilitation
+              </h3>
+              <p className="text-sm leading-relaxed text-muted">
+                We help verified counterparties coordinate documentation,
+                logistics and delivery options for agreed export transactions.
+              </p>
+              <a
+                href="/services#export"
+                className="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-gold"
+              >
+                Export services
+              </a>
+            </div>
+            <div className="rounded-lg border border-border p-6">
+              <h3 className="mb-2 text-lg font-bold text-gold-dark">
+                Planned processing platform
+              </h3>
+              <p className="text-sm leading-relaxed text-muted">
+                We are developing a proposed modern refinery and assay
+                laboratory through strategic partnerships and investment.
+              </p>
+              <a
+                href="/investors/investment-opportunity"
+                className="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-gold"
+              >
+                View the investment opportunity
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="sourcing" className="mt-20">
+          <h2 className="mb-4 text-2xl font-bold text-primary">
+            Gold Sourcing and Traceability
+          </h2>
+          <p className="max-w-3xl leading-relaxed text-muted">
+            Our sourcing approach is designed to connect verified suppliers,
+            assay results, transport records and export documentation in an
+            auditable chain of custody. Buyers can review the applicable
+            documentation and transaction terms before funds or metal move.
+          </p>
+          <a
+            href="/sustainability#sourcing"
+            className="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-gold"
+          >
+            Read about responsible sourcing
+          </a>
+        </section>
+
+        <section id="export-terms" className="mt-20">
+          <h2 className="mb-4 text-2xl font-bold text-primary">
+            Export Terms and Delivery
+          </h2>
+          <p className="max-w-3xl leading-relaxed text-muted">
+            Depending on the transaction, buyers may discuss FOB Kampala
+            collection or CIF Dubai delivery. Availability, KYC, assay,
+            customs clearance, insurance, risk and title transfer are agreed
+            in definitive transaction documents.
+          </p>
+          <a
+            href="/services#export"
+            className="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-gold"
+          >
+            Review export options
+          </a>
+        </section>
+
+        <section id="refinery-status" className="mt-20">
+          <h2 className="mb-4 text-2xl font-bold text-primary">
+            Refinery Project Status
+          </h2>
+          <p className="max-w-3xl leading-relaxed text-muted">
+            The proposed refinery and assay laboratory remain at the
+            development and capital-formation stage. The public Investment
+            Overview explains the preliminary project assumptions, planned
+            capacity and investor engagement process. It is not a claim that a
+            production refinery is currently operating.
+          </p>
+          <a
+            href="/investors/investment-opportunity#investment-overview"
+            className="mt-4 inline-block text-sm font-semibold text-gold-dark hover:text-gold"
+          >
+            Read the public Investment Overview
+          </a>
         </section>
 
         <section id="values" className="mt-20">
