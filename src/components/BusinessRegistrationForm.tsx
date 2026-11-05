@@ -12,7 +12,7 @@ export default function BusinessRegistrationForm() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const message = [
-      "Hello Tim, I would like a quote to register a company in Uganda.",
+      "Hello, I would like a quote to register a company in Uganda.",
       `Name: ${String(data.get("name") ?? "").trim()}`,
       `Country: ${String(data.get("country") ?? "").trim()}`,
       `Package: ${String(data.get("package") ?? "").trim()}`,
@@ -21,7 +21,7 @@ export default function BusinessRegistrationForm() {
 
     setSubmitted(true);
     window.open(
-      `https://wa.me/256791462554?text=${encodeURIComponent(message)}`,
+      `https://wa.me/256704833021?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );
@@ -32,9 +32,9 @@ export default function BusinessRegistrationForm() {
       <div className="rounded-lg border border-gold/40 bg-white/10 p-6 text-white">
         <h3 className="text-xl font-semibold">Your WhatsApp message is ready</h3>
         <p className="mt-2 text-sm leading-6 text-white/75">
-          If WhatsApp did not open, message Tim directly on{" "}
-          <a className="font-semibold text-gold-light underline" href="tel:+256791462554">
-            +256 791 462 554
+          If WhatsApp did not open, message our registration desk directly on{" "}
+          <a className="font-semibold text-gold-light underline" href="tel:+256704833021">
+            +256 704 833 021
           </a>
           .
         </p>

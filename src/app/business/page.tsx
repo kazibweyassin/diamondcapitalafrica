@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, FileText, MessageCircle, ShieldCheck } from "lucide-react";
 import BusinessRegistrationForm from "@/components/BusinessRegistrationForm";
 import { company } from "@/data/content";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const canonicalUrl = "https://invest.diamondcapitalafrica.com/";
 
@@ -49,11 +51,11 @@ const steps = [
 ];
 
 const whatsappUrl =
-  "https://wa.me/256791462554?text=Hello%20Tim%2C%20I%20would%20like%20a%20quote%20to%20register%20a%20company%20in%20Uganda.";
+  "https://wa.me/256704833021?text=Hello%2C%20I%20would%20like%20a%20quote%20to%20register%20a%20company%20in%20Uganda.";
 
 function packageWhatsAppUrl(packageName: string) {
-  const message = `Hello Tim, I would like a quote for the ${packageName} company registration package in Uganda.`;
-  return `https://wa.me/256791462554?text=${encodeURIComponent(message)}`;
+  const message = `Hello, I would like a quote for the ${packageName} company registration package in Uganda.`;
+  return `https://wa.me/256704833021?text=${encodeURIComponent(message)}`;
 }
 
 export default function BusinessRegistrationPage() {
@@ -61,33 +63,36 @@ export default function BusinessRegistrationPage() {
     <div className="business-landing bg-[#f2f6f5] text-[#14211f]">
       <header className="bg-[#083331] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link href="#top" className="font-semibold tracking-tight">
-            Diamond Capital <span className="text-gold">Africa</span>
+          <Link href="#top" className="flex items-center gap-3 font-semibold tracking-tight">
+            <Image src="/Logo.png" alt="" width={38} height={38} className="size-9 rounded-sm object-contain" />
+            <span>Diamond Capital <span className="text-gold">Africa</span></span>
           </Link>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-md bg-gold px-4 py-2 text-sm font-semibold text-[#1b1403]">
-            WhatsApp Tim
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-gold px-4 py-2 text-sm font-semibold text-[#1b1403]">
+            <WhatsAppIcon className="size-4" /> WhatsApp us
           </a>
         </div>
       </header>
 
       <main id="top">
-        <section className="bg-[#0e4a47] text-white">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-24">
+        <section className="relative overflow-hidden bg-[#0e4a47] text-white">
+          <div className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full border border-gold/20" />
+          <div className="pointer-events-none absolute -bottom-48 -left-24 size-96 rounded-full border border-white/10" />
+          <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-24">
             <div>
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-gold-light">
-                Kampala, Uganda
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-gold-light">
+                <span className="size-1.5 rounded-full bg-gold" /> Kampala, Uganda
               </p>
               <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                Register your company in Uganda. We handle the paperwork.
+                Establish your business presence in Uganda with confidence.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
-                Fixed-price support for foreign investors, expats and diaspora
-                founders. Send your documents and our Kampala team coordinates
-                the registration process and next steps.
+                Clear, fixed-fee company registration support for foreign
+                investors, expats and diaspora founders. From name reservation
+                to your company file, we coordinate the practical next steps.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-md bg-gold px-5 py-3 text-sm font-semibold text-[#1b1403] hover:bg-gold-light">
-                  Get a quote on WhatsApp
+                  Get your quote on WhatsApp
                 </a>
                 <a href="#quote" className="rounded-md border border-white/40 px-5 py-3 text-sm font-semibold hover:bg-white/10">
                   Request a quote
@@ -95,7 +100,8 @@ export default function BusinessRegistrationPage() {
               </div>
             </div>
             <div className="rounded-lg border-t-4 border-gold bg-white p-6 text-[#14211f] shadow-2xl">
-              <h2 className="text-xl font-semibold">Your Uganda company file</h2>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-dark">Your setup roadmap</p>
+              <h2 className="mt-2 text-xl font-semibold">A company file built for your next move</h2>
               <p className="mt-1 text-sm text-muted">What the setup process can cover</p>
               <ul className="mt-5 space-y-3">
                 {["Company name search and reservation", "Certificate of incorporation", "Tax registration guidance", "Bank account guidance (Business Ready+)", "Work-permit guidance (Investor)"].map((item) => (
@@ -119,6 +125,21 @@ export default function BusinessRegistrationPage() {
               <div key={title} className="flex gap-3">
                 <ShieldCheck className="size-6 shrink-0 text-gold-dark" />
                 <p className="text-sm text-muted"><strong className="block text-[#14211f]">{title}</strong>{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#e8f0ed]">
+          <div className="mx-auto grid max-w-6xl gap-5 px-5 py-8 sm:px-8 sm:grid-cols-3">
+            {[
+              ["3", "fixed-fee packages"],
+              ["4", "clear setup stages"],
+              ["1", "Kampala coordination team"],
+            ].map(([value, label]) => (
+              <div key={label} className="border-l-2 border-gold px-5">
+                <p className="text-3xl font-semibold tracking-tight text-[#0e4a47]">{value}</p>
+                <p className="mt-1 text-sm text-muted">{label}</p>
               </div>
             ))}
           </div>
@@ -192,9 +213,8 @@ export default function BusinessRegistrationPage() {
             <div className="text-white">
               <MessageCircle className="size-9 text-gold" />
               <h2 className="mt-5 text-3xl font-semibold tracking-tight">Get your quote today</h2>
-              <p className="mt-4 leading-7 text-white/75">Share four details and WhatsApp will open with a prepared message for Tim.</p>
-              <p className="mt-6 text-sm text-white/70">Uganda line: <a className="font-semibold text-gold-light" href="tel:+256791462554">+256 791 462 554</a></p>
-              <p className="mt-2 text-sm text-white/70">International/WhatsApp line: <a className="font-semibold text-gold-light" href="tel:+905368976110">+90 536 897 6110</a></p>
+              <p className="mt-4 leading-7 text-white/75">Share four details and WhatsApp will open with a prepared quote request.</p>
+              <p className="mt-6 text-sm text-white/70">Registration WhatsApp: <a className="font-semibold text-gold-light" href="tel:+256704833021">+256 704 833 021</a></p>
             </div>
             <BusinessRegistrationForm />
           </div>
@@ -206,6 +226,16 @@ export default function BusinessRegistrationPage() {
           <p><strong className="text-white">{company.name}</strong> · {company.address}</p>
         </div>
       </footer>
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with the company registration desk on WhatsApp"
+        className="fixed bottom-5 right-5 z-30 inline-flex items-center gap-3 rounded-full bg-[#25d366] px-5 py-3 text-sm font-semibold text-white shadow-xl transition hover:bg-[#20bd5a] hover:shadow-2xl"
+      >
+        <WhatsAppIcon className="size-5" />
+        <span className="hidden sm:inline">Chat on WhatsApp</span>
+      </a>
     </div>
   );
 }
