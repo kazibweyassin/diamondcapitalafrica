@@ -111,43 +111,74 @@ const audiences = [
   "Traders and exporters needing a local company",
 ];
 
-const investorServices = [
+const investorServices: { number: string; title: string; text: string; deliverable: string; mark?: string }[] = [
   {
     number: "01",
     title: "Understand the market",
-    text: "A focused orientation on your sector, location, customer and operating model before you commit to setup costs.",
-    deliverable: "Sector and market-entry brief",
+    text: "Name the sector, the customer and where you will operate. We write that down before a filing fee is spent.",
+    deliverable: "Sector brief",
   },
   {
     number: "02",
     title: "Plan the setup",
-    text: "A practical checklist covering ownership, company structure, tax, banking, staffing and the first approvals to investigate.",
-    deliverable: "Project setup checklist",
+    text: "We record the owners, the company form, and the tax, banking and approval items to settle before filing.",
+    deliverable: "Setup checklist",
   },
   {
     number: "03",
     title: "Establish the company",
-    text: "Name reservation, incorporation filing, TIN coordination and a consolidated company file from a Kampala desk.",
-    deliverable: "Certificate and company file",
+    text: "We reserve the name, file the incorporation and return the certificate and TIN in one company file.",
+    deliverable: "Certificate and TIN",
+    mark: "Fixed-fee filing",
   },
   {
     number: "04",
     title: "Prepare for compliance",
-    text: "We help you identify the licences, permits, standards, immigration or environmental questions relevant to your activity.",
-    deliverable: "Authority and approvals map",
+    text: "We name the licences, permits and standards your activity has to clear, and the authority for each one.",
+    deliverable: "Approvals list",
   },
   {
     number: "05",
     title: "Activate operations",
-    text: "Introductions to relevant local contacts, suppliers or service providers, followed by practical Kampala coordination.",
-    deliverable: "Introductions and next actions",
+    text: "We prepare the bank document pack, coordinate a registered office in Kampala, and introduce the contacts the activity needs.",
+    deliverable: "Bank pack and introductions",
   },
   {
     number: "06",
-    title: "Support the next phase",
-    text: "Return for help with a new location, additional activity, partner conversation or a bottleneck in your setup journey.",
-    deliverable: "Follow-up coordination",
+    title: "Return to the desk",
+    text: "A new site, another activity or a stuck file comes back to the same Kampala desk.",
+    deliverable: "Next instruction",
   },
+];
+
+const ugandaReasons = [
+  {
+    number: "01",
+    title: "Build a local operating base",
+    text: "A Ugandan company gives your project a defined local structure for contracts, staff, suppliers and day-to-day operations.",
+  },
+  {
+    number: "02",
+    title: "Reach customers in the region",
+    text: "Use Uganda as a base for testing demand, building local partnerships and assessing East African distribution routes.",
+  },
+  {
+    number: "03",
+    title: "Turn an idea into an investable plan",
+    text: "Incorporation is a practical first step for opening conversations with banks, partners, advisers and the authorities relevant to your activity.",
+  },
+  {
+    number: "04",
+    title: "Keep the next steps organized",
+    text: "A company file, tax registration and approvals map give you a clearer starting point for compliance and operational decisions.",
+  },
+];
+
+const opportunitySectors = [
+  ["Agriculture and food", "Production, processing, storage, packaging and distribution."],
+  ["Manufacturing and equipment", "Local production, machinery, inputs and technical services."],
+  ["Logistics and trade", "Sourcing, warehousing, distribution and regional supply chains."],
+  ["Energy and infrastructure", "Productive infrastructure, services and project partnerships."],
 ];
 
 const questions = [
@@ -171,6 +202,8 @@ export default function BusinessRegistrationPage() {
             <Image src="/Logo.png" alt="" width={168} height={68} priority className="h-12 w-auto object-contain" />
           </Link>
           <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm text-white/75 lg:flex">
+            <a className={`${anchorClass} hover:text-white`} href="#why-uganda">Why Uganda</a>
+            <a className={`${anchorClass} hover:text-white`} href="#opportunities">Sectors</a>
             <a className={`${anchorClass} hover:text-white`} href="#services">Services</a>
             <a className={`${anchorClass} hover:text-white`} href="#packages">Packages</a>
             <a className={`${anchorClass} hover:text-white`} href="#process">Process</a>
@@ -183,6 +216,8 @@ export default function BusinessRegistrationPage() {
           <details className="relative lg:hidden">
             <summary className={`cursor-pointer list-none border border-white/30 px-3 py-2 text-sm ${anchorClass}`}>Menu</summary>
             <nav aria-label="Mobile navigation" className="absolute right-0 top-12 z-30 flex w-56 flex-col gap-1 border border-[#dce3dc] bg-white p-3 text-sm text-[#18372e] shadow-xl">
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#why-uganda">Why Uganda</a>
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#opportunities">Sectors</a>
               <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#services">Services</a>
               <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#packages">Packages</a>
               <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#process">Process</a>
@@ -278,42 +313,105 @@ export default function BusinessRegistrationPage() {
           </div>
         </section>
 
-        <section id="services" className="scroll-mt-20 bg-[#eef3f7] px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+        <section id="why-uganda" className="scroll-mt-20 bg-[#17382e] px-5 py-20 text-white sm:px-8 lg:px-14 lg:py-28">
           <div className="mx-auto max-w-[1440px]">
-            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-20">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">The investor journey</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a6d7f1]">Why incorporate in Uganda</p>
                 <h2 className="mt-4 max-w-xl text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
-                  More than incorporation: a clear route into Uganda
+                  Give your Uganda opportunity a real operating base
                 </h2>
               </div>
-              <p className="max-w-2xl text-sm leading-7 text-[#5b6c63] lg:justify-self-end">
-                Use us at the stage where you need help. We turn an early
-                question into a short brief, checklist, introduction or
-                follow-up action. Official agencies make the decisions; we
-                help you prepare, coordinate and keep the work moving.
+              <p className="max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+                Incorporation is not the investment decision by itself. It is
+                the structure that lets you research the market, contract
+                locally, organize suppliers and prepare the approvals your
+                project may need.
               </p>
             </div>
-            <div className="mt-12 grid border-t border-[#cfdad4] sm:grid-cols-2 lg:grid-cols-3">
-              {investorServices.map((service) => (
-                <article key={service.number} className="border-b border-[#cfdad4] py-7 sm:px-6 sm:odd:border-r lg:px-8 lg:nth-[3n+1]:border-r lg:nth-[3n+2]:border-r lg:first:pl-0 lg:nth-[3n+1]:pl-0">
-                  <span className="font-serif text-sm text-[#397ba0]">{service.number}</span>
-                  <h3 className="mt-4 text-lg font-medium">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#5b6c63]">{service.text}</p>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#397ba0]">{service.deliverable}</p>
+            <div className="mt-12 grid border-t border-white/15 md:grid-cols-2">
+              {ugandaReasons.map((reason) => (
+                <article key={reason.number} className="border-b border-white/15 py-7 md:px-8 md:odd:border-r lg:py-9 lg:first:pl-0 lg:odd:first:pl-0">
+                  <span className="font-serif text-sm text-[#a6d7f1]">{reason.number}</span>
+                  <h3 className="mt-4 text-xl font-medium">{reason.title}</h3>
+                  <p className="mt-3 max-w-lg text-sm leading-6 text-white/65">{reason.text}</p>
                 </article>
               ))}
             </div>
-            <div className="mt-10 flex flex-col gap-4 border-l-2 border-[#74b8df] pl-5 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-2xl text-sm leading-6 text-[#40584d]">
-                We are an independent private service, not a government
-                one-stop centre. Licences, permits, incentives and approvals
-                remain subject to the relevant Ugandan authorities.
+          </div>
+        </section>
+
+        <section id="opportunities" className="scroll-mt-20 bg-[#eef3f7] px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">Where to explore</p>
+              <h2 className="mt-4 max-w-md text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+                Choose the activity before you choose the structure
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-7 text-[#5b6c63] sm:text-base">
+                Your sector determines the questions to ask about premises,
+                staffing, standards, permits and tax. We help you identify
+                those questions before you instruct the filing.
               </p>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#18372e] hover:text-[#397ba0]">
-                Discuss your project <ArrowRight size={15} />
+              <a
+                href="https://ugandainvest.go.ug/investment-opportunities"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#18372e] underline decoration-[#74b8df] underline-offset-4 hover:text-[#397ba0]"
+              >
+                Explore official Uganda opportunities <ArrowRight size={15} />
               </a>
             </div>
+            <div className="grid border-t border-[#cfdad4] sm:grid-cols-2">
+              {opportunitySectors.map(([title, text], index) => (
+                <article key={title} className="border-b border-[#cfdad4] py-6 sm:px-6 sm:odd:border-r lg:px-8 lg:first:pl-0">
+                  <span className="font-serif text-sm text-[#397ba0]">0{index + 1}</span>
+                  <h3 className="mt-3 text-lg font-medium">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5b6c63]">{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="scroll-mt-20 bg-[#eef3f7] px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-20">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">Services</p>
+              <h2 className="mt-4 max-w-sm text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+                The investor journey
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-7 text-[#5b6c63] sm:text-base">
+                The company file is the fixed-fee instruction. The steps before it and after it are agreed in writing, then run from the same Kampala desk.
+              </p>
+              <p className="mt-6 max-w-md border-l-2 border-[#74b8df] pl-5 text-sm leading-6 text-[#40584d]">
+                We prepare and file. We do not issue licences or grant approvals. Those decisions stay with the Ugandan authorities.
+              </p>
+              <a href="#quote" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold hover:text-[#397ba0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#74b8df]">
+                Instruct the desk <ArrowRight size={15} />
+              </a>
+            </div>
+            <ol className="border-t border-[#cfdad4]">
+              {investorServices.map((service) => (
+                <li key={service.number} className="grid grid-cols-[3rem_1fr] gap-x-4 gap-y-2 border-b border-[#cfdad4] py-6 sm:grid-cols-[3.5rem_1fr_auto] sm:items-baseline sm:gap-x-6">
+                  <span className="font-serif text-sm text-[#397ba0]">{service.number}</span>
+                  <div>
+                    <h3 className="text-lg font-medium tracking-[-0.02em]">
+                      {service.title}
+                      {service.mark ? (
+                        <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.16em] text-[#397ba0] sm:mt-0 sm:ml-3 sm:inline">
+                          {service.mark}
+                        </span>
+                      ) : null}
+                    </h3>
+                    <p className="mt-2 max-w-xl text-sm leading-6 text-[#5b6c63]">{service.text}</p>
+                  </div>
+                  <p className="col-start-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#397ba0] sm:col-start-auto sm:text-right">
+                    {service.deliverable}
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
