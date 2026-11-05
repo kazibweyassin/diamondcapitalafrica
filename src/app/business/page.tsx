@@ -354,12 +354,12 @@ export default function BusinessRegistrationPage() {
                 those questions before you instruct the filing.
               </p>
               <a
-                href="https://ugandainvest.go.ug/investment-opportunities"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#18372e] underline decoration-[#74b8df] underline-offset-4 hover:text-[#397ba0]"
               >
-                Explore official Uganda opportunities <ArrowRight size={15} />
+                Discuss your opportunity <ArrowRight size={15} />
               </a>
             </div>
             <div className="grid border-t border-[#cfdad4] sm:grid-cols-2">
@@ -644,7 +644,7 @@ export default function BusinessRegistrationPage() {
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs text-white/70">
               <a className="underline-offset-4 hover:text-white hover:underline" href="https://www.diamondcapitalafrica.com/legal/privacy">Privacy policy</a>
               <a className="underline-offset-4 hover:text-white hover:underline" href="https://www.diamondcapitalafrica.com/">Main website</a>
-              <a className="underline-offset-4 hover:text-white hover:underline" href="https://ugandainvest.go.ug/" target="_blank" rel="noopener noreferrer">Uganda Investment Authority</a>
+              <a className="underline-offset-4 hover:text-white hover:underline" href={whatsappUrl} target="_blank" rel="noopener noreferrer">Discuss your opportunity</a>
             </div>
           </div>
           <p className="max-w-3xl pt-6 text-[11px] leading-5 text-white/50">
