@@ -1,26 +1,34 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, FileText, MessageCircle, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import BusinessRegistrationForm from "@/components/BusinessRegistrationForm";
 import { company } from "@/data/content";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const canonicalUrl = "https://invest.diamondcapitalafrica.com/";
-const facilitationImage =
-  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85";
+const registrationDesk = "+256 704 833 021";
+const registrationTel = "+256704833021";
+const registrationWa = "256704833021";
+
+const instructionMessage =
+  "Hello, I want to register a company in Uganda. Please send the document checklist and the government fees.";
+
+const whatsappUrl = `https://wa.me/${registrationWa}?text=${encodeURIComponent(instructionMessage)}`;
+
+const anchorClass =
+  "rounded-sm outline-none transition focus-visible:ring-2 focus-visible:ring-[#74b8df] focus-visible:ring-offset-2 focus-visible:ring-offset-[#17382e]";
 
 export const metadata: Metadata = {
   title: { absolute: "Register a Company in Uganda | Diamond Capital Africa" },
   description:
-    "Fixed-price company registration support in Uganda for foreign investors, expats and diaspora founders. Company, TIN and business setup guidance from a Kampala team.",
+    "Fixed-fee company registration in Uganda for foreign investors, expats and diaspora founders. Name reservation, incorporation and TIN from a Kampala desk.",
   alternates: { canonical: canonicalUrl },
   openGraph: {
     type: "website",
     url: canonicalUrl,
     title: "Register a Company in Uganda | Diamond Capital Africa",
     description:
-      "Fixed-price company registration support in Uganda for foreign investors, expats and diaspora founders.",
+      "Fixed-fee company registration in Uganda. Name reservation, incorporation and TIN from a Kampala desk.",
     siteName: company.name,
   },
   robots: { index: true, follow: true },
@@ -30,299 +38,388 @@ const packages = [
   {
     name: "Starter",
     price: "US$450",
-    items: ["Name search and reservation", "Company registration filing", "Certificate of incorporation", "Tax registration guidance"],
+    items: [
+      "Name search and reservation",
+      "Company registration filing",
+      "Certificate of incorporation",
+      "URA tax registration (TIN)",
+    ],
   },
   {
     name: "Business Ready",
     price: "US$650",
     featured: true,
-    items: ["Everything in Starter", "Bank account guidance", "Registered address coordination", "Tax and compliance setup guidance"],
+    items: [
+      "Everything in Starter",
+      "Bank introduction and the account document pack",
+      "Registered office coordination in Kampala",
+      "Post-incorporation compliance setup",
+    ],
   },
   {
     name: "Investor",
     price: "US$950",
-    items: ["Everything in Business Ready", "Investor and work-permit guidance", "Local introductions where relevant", "Practical next-step coordination"],
+    items: [
+      "Everything in Business Ready",
+      "Work-permit brief for the directors",
+      "Sector introductions for your activity",
+      "A written plan for banking, tax and the first operating approvals",
+    ],
   },
 ];
 
 const steps = [
-  ["Message us", "Tell us your business, country and preferred package."],
-  ["Send documents", "Share the documents on the checklist so we can confirm the route."],
-  ["We file", "We submit, follow up and update you as the application moves."],
-  ["Receive your file", "Get your company documents, TIN information and next steps together."],
+  ["Instruct us", "Share the package, the activity and the proposed names."],
+  ["Documents", "We send the checklist and prepare the forms from your passports and addresses."],
+  ["Filing", "We lodge the application, track it and keep you informed."],
+  ["Company file", "You receive the certificate, TIN details and the next actions in one pack."],
 ];
 
-const whatsappUrl =
-  "https://wa.me/256704833021?text=Hello%2C%20I%20would%20like%20a%20quote%20to%20register%20a%20company%20in%20Uganda.";
+const deliverables = [
+  "Company name search and reservation",
+  "Certificate of incorporation",
+  "URA tax registration (TIN)",
+  "Bank introduction and the account document pack (Business Ready and Investor)",
+  "Work-permit brief (Investor)",
+];
+
+const afterIncorporation = [
+  "Sector brief for your activity",
+  "Introductions to relevant local contacts",
+  "Approvals your activity must clear",
+  "Follow-up from the Kampala desk",
+];
+
+const filingNeeds = [
+  "Passport copy for each director and shareholder",
+  "Proof of address for each director",
+  "Two or three proposed company names",
+  "A short description of the company activity",
+  "Email and phone number for each director",
+];
+
+const audiences = [
+  "Foreign investors entering the Ugandan market",
+  "Expats living in Uganda",
+  "Diaspora founders setting up from abroad",
+  "Traders and exporters needing a local company",
+];
+
+const questions = [
+  ["Can a foreigner register a company in Uganda?", "Yes. A foreign national can incorporate and own a Ugandan company. Before we file, we confirm the shareholding, the director rules and any restriction on your activity."],
+  ["Can I do this from outside Uganda?", "Yes. We run the filing from Kampala on documents you send. We tell you at the start if your case needs an original signature or a visit."],
+  ["How much does it cost in total?", "The package fee above, plus government and bank charges. We send that second figure and wait for your approval before anything is lodged."],
+  ["How long does it take?", "We give you the working-day range for your case once the names and passports are in. Name approval and authority processing sit outside the service fee."],
+];
 
 function packageWhatsAppUrl(packageName: string) {
-  const message = `Hello, I would like a quote for the ${packageName} company registration package in Uganda.`;
-  return `https://wa.me/256704833021?text=${encodeURIComponent(message)}`;
+  const message = `Hello, I want to start the ${packageName} company registration package in Uganda. Please send the document checklist and the government fees.`;
+  return `https://wa.me/${registrationWa}?text=${encodeURIComponent(message)}`;
 }
 
 export default function BusinessRegistrationPage() {
   return (
-    <div className="business-landing bg-[#f2f6f5] text-[#14211f]">
-      <header className="bg-[#083331] text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link href="#top" className="flex items-center gap-3 font-semibold tracking-tight">
-            <Image src="/Logo.png" alt="Diamond Capital Africa" width={94} height={38} className="h-9 w-auto object-contain" />
-            <span>Diamond Capital <span className="text-[#a6d7f1]">Africa</span></span>
+    <div className="business-landing bg-white text-[#18372e]">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#17382e] text-white">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-14">
+          <Link href="#top" aria-label="Diamond Capital Africa" className={`flex items-center ${anchorClass}`}>
+            <Image src="/Logo.png" alt="" width={168} height={68} className="h-10 w-auto object-contain" />
           </Link>
-          <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm text-white/75 lg:flex">
-            <a href="#packages" className="transition hover:text-white">Packages</a>
-            <a href="#process" className="transition hover:text-white">Process</a>
-            <a href="#faq" className="transition hover:text-white">FAQ</a>
-            <a href="#quote" className="transition hover:text-white">Contact</a>
+          <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm text-white/75 lg:flex">
+            <a className={`${anchorClass} hover:text-white`} href="#packages">Packages</a>
+            <a className={`${anchorClass} hover:text-white`} href="#process">Process</a>
+            <a className={`${anchorClass} hover:text-white`} href="#documents">Documents</a>
+            <a className={`${anchorClass} hover:text-white`} href="#faq">FAQ</a>
           </nav>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-[#74b8df] px-4 py-2 text-sm font-semibold text-[#102c3d] transition hover:bg-[#a6d7f1]">
-            <WhatsAppIcon className="size-4" /> WhatsApp us
+          <a href="#quote" className={`hidden shrink-0 border border-[#74b8df] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#74b8df] hover:text-[#102c3d] sm:inline-flex ${anchorClass}`}>
+            Instruct the desk
           </a>
+          <details className="relative lg:hidden">
+            <summary className={`cursor-pointer list-none border border-white/30 px-3 py-2 text-sm ${anchorClass}`}>Menu</summary>
+            <nav aria-label="Mobile navigation" className="absolute right-0 top-12 z-30 flex w-56 flex-col gap-1 border border-[#dce3dc] bg-white p-3 text-sm text-[#18372e] shadow-xl">
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#packages">Packages</a>
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#process">Process</a>
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#documents">Documents</a>
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#faq">FAQ</a>
+              <a className="mt-1 bg-[#17382e] px-3 py-2 font-semibold text-white" href="#quote">Instruct the desk</a>
+            </nav>
+          </details>
         </div>
       </header>
 
       <main id="top">
-        <section className="relative overflow-hidden bg-[#0e4a47] text-white">
-          <div className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full border border-[#74b8df]/20" />
-          <div className="pointer-events-none absolute -bottom-48 -left-24 size-96 rounded-full border border-white/10" />
-          <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-24">
+        <section className="bg-[#102c25] text-white">
+          <div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-16 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:px-14 lg:py-24">
             <div>
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#74b8df]/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#a6d7f1]">
-                <span className="size-1.5 rounded-full bg-[#74b8df]" /> Kampala, Uganda
+              <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#a6d7f1]">
+                <span className="h-px w-9 bg-[#74b8df]" /> Company formation · Kampala
               </p>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-                Establish your business presence in Uganda with confidence.
+              <h1 className="max-w-3xl text-4xl font-medium leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                Register your Ugandan company from anywhere.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
-                Clear, fixed-fee company registration support for foreign
-                investors, expats and diaspora founders. From name reservation
-                to your company file, we coordinate the practical next steps.
+              <p className="mt-7 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
+                Diamond Capital Africa reserves the name, files the incorporation, and returns the certificate and TIN details in one company file. Fixed fees for foreign investors, expats and diaspora founders.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-md bg-[#74b8df] px-5 py-3 text-sm font-semibold text-[#102c3d] hover:bg-[#a6d7f1]">
-                  Get your quote on WhatsApp
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#74b8df] px-6 py-3 text-sm font-semibold text-[#102c3d] transition hover:bg-[#a6d7f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                  Instruct us on WhatsApp <ArrowRight size={16} />
                 </a>
-                <a href="#quote" className="rounded-md border border-white/40 px-5 py-3 text-sm font-semibold hover:bg-white/10">
-                  Request a quote
+                <a href="#quote" className="inline-flex min-h-12 items-center justify-center border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#74b8df]">
+                  Send an instruction
                 </a>
               </div>
+              <p className="mt-6 text-sm text-white/60">We reply the same business day.</p>
             </div>
-            <div className="rounded-lg border-t-4 border-[#74b8df] bg-white p-6 text-[#14211f] shadow-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1d5b73]">Your setup roadmap</p>
-              <h2 className="mt-2 text-xl font-semibold">A company file built for your next move</h2>
-              <p className="mt-1 text-sm text-muted">What the setup process can cover</p>
-              <ul className="mt-5 space-y-3">
-                {["Company name search and reservation", "Certificate of incorporation", "Tax registration guidance", "Bank account guidance (Business Ready+)", "Work-permit guidance (Investor)"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 border-t border-border pt-3 text-sm">
-                    <Check className="mt-0.5 size-5 shrink-0 text-[#0e4a47]" />
+
+            <aside className="border border-white/15 bg-white text-[#18372e]">
+              <div className="flex items-center justify-between border-b border-[#e4ebe6] px-6 py-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#397ba0]">What you receive</p>
+                <p className="font-serif text-xs tracking-wide text-[#397ba0]">DCA · Kampala</p>
+              </div>
+              <div className="px-6 py-6">
+                <h2 className="text-2xl font-medium tracking-[-0.02em]">Certificate, TIN and the next actions</h2>
+                <ol className="mt-6 divide-y divide-[#e4ebe6] border-y border-[#e4ebe6]">
+                  {deliverables.map((item, index) => (
+                    <li key={item} className="grid grid-cols-[2.5rem_1fr] gap-3 py-3.5 text-sm leading-6">
+                      <span className="font-serif text-[#397ba0]">0{index + 1}</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <p className="border-t border-[#e4ebe6] px-6 py-4 text-xs leading-5 text-[#5b6c63]">
+                The service fee is confirmed in writing before filing.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section className="border-b border-[#e4ebe6]">
+          <div className="mx-auto grid max-w-[1440px] md:grid-cols-3">
+            {[
+              ["Kampala desk", "Plot 42, Nakasero Road, Kampala."],
+              ["Fee agreed first", "The service fee is confirmed in writing before filing."],
+              ["Instruct from abroad", "Directors can instruct us and sign from outside Uganda."],
+            ].map(([title, text], index) => (
+              <div key={title} className={`px-5 py-7 sm:px-8 lg:px-14 ${index > 0 ? "md:border-l md:border-[#e4ebe6]" : ""}`}>
+                <p className="text-sm font-semibold">{title}</p>
+                <p className="mt-2 text-sm leading-6 text-[#5b6c63]">{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="packages" className="scroll-mt-20 px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto max-w-[1440px] border-b border-[#e4ebe6] pb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">The outcome</p>
+            <h2 className="mt-4 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+              A company file that moves your business forward
+            </h2>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[#5b6c63] sm:text-base">
+              Registration is the starting point. We organize the filing,
+              explain what happens next, and help you move from incorporation
+              toward practical operations in Uganda.
+            </p>
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
+              {[
+                ["Clarity before filing", "Know the ownership route, documents, timeline and government charges before work begins."],
+                ["A complete company file", "Receive the incorporation documents and TIN information together, with the next actions explained."],
+                ["Support beyond registration", "Get sector orientation, relevant introductions and an approval checklist for your operating model."],
+              ].map(([title, text]) => (
+                <div key={title} className="border-t-2 border-[#74b8df] pt-4">
+                  <h3 className="font-medium">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5b6c63]">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">Then, the fees</p>
+              <h2 className="mt-4 max-w-md text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+                Choose the level of support that fits your next move.
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-[#5b6c63] lg:justify-self-end">
+              Tell us the ownership, the activity and the package. We confirm the scope, then we file. Government and third-party fees sit outside the service fee. We confirm them in writing before filing.
+            </p>
+          </div>
+          <div className="mx-auto mt-12 grid max-w-[1440px] border border-[#dce2da] lg:grid-cols-3">
+            {packages.map((item) => (
+              <article
+                key={item.name}
+                className={`flex flex-col border-b border-[#dce2da] p-7 last:border-b-0 sm:p-8 lg:border-b-0 lg:border-r lg:last:border-r-0 ${item.featured ? "bg-[#18372e] text-white" : "bg-white"}`}
+              >
+                <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${item.featured ? "text-[#a6d7f1]" : "text-[#397ba0]"}`}>
+                  {item.featured ? "Standard engagement" : "Service fee"}
+                </p>
+                <h3 className="mt-4 text-2xl font-medium tracking-[-0.02em]">{item.name}</h3>
+                <p className="mt-5 text-4xl font-medium tracking-[-0.03em]">
+                  {item.price}
+                  <span className={`mt-2 block text-xs font-normal uppercase tracking-[0.16em] ${item.featured ? "text-white/55" : "text-[#758178]"}`}>
+                    Service fee
+                  </span>
+                </p>
+                <ul className={`mt-8 flex-1 divide-y text-sm leading-6 ${item.featured ? "divide-white/15 text-white/85" : "divide-[#e4ebe6] text-[#40584d]"}`}>
+                  {item.items.map((feature) => (
+                    <li key={feature} className="py-3">{feature}</li>
+                  ))}
+                </ul>
+                <a
+                  href={packageWhatsAppUrl(item.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-8 inline-flex items-center gap-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#74b8df] ${item.featured ? "text-[#a6d7f1] hover:text-white" : "text-[#18372e] hover:text-[#397ba0]"}`}
+                >
+                  Start with {item.name} <ArrowRight size={15} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="process" className="scroll-mt-20 bg-[#102c25] px-5 py-20 text-white sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto max-w-[1440px]">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a6d7f1]">The engagement</p>
+            <h2 className="mt-4 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">The filing sequence</h2>
+            <ol className="mt-12 grid border-y border-white/15 md:grid-cols-2 lg:grid-cols-4">
+              {steps.map(([title, text], index) => (
+                <li key={title} className="border-b border-white/15 py-7 md:px-6 md:odd:border-r lg:border-b-0 lg:border-r lg:px-8 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0">
+                  <span className="font-serif text-sm text-[#a6d7f1]">0{index + 1}</span>
+                  <h3 className="mt-4 text-lg font-medium">{title}</h3>
+                  <p className="mt-3 max-w-xs text-sm leading-6 text-white/70">{text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-14 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">After incorporation</p>
+              <h2 className="mt-4 max-w-lg text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+                From the company file to the first operating steps
+              </h2>
+              <p className="mt-5 max-w-lg text-sm leading-7 text-[#5b6c63] sm:text-base">
+                After incorporation, we brief you on the sector, introduce relevant local contacts, and list the approvals your activity must clear.
+              </p>
+              <p className="mt-8 border-l-2 border-[#74b8df] pl-5 text-lg font-medium leading-7 tracking-[-0.02em]">
+                One Kampala desk from the instruction to the company file.
+              </p>
+              <p className="mt-4 max-w-md text-sm leading-6 text-[#5b6c63]">
+                Start with registration. We then take the next step for your sector, ownership and operating model.
+              </p>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 border-b border-[#74b8df] pb-1 text-sm font-semibold hover:text-[#397ba0] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#74b8df]">
+                Instruct us on WhatsApp <ArrowRight size={15} />
+              </a>
+            </div>
+            <ol className="border-y border-[#dce2da]">
+              {afterIncorporation.map((item, index) => (
+                <li key={item} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-[#dce2da] py-5 last:border-b-0">
+                  <span className="font-serif text-sm text-[#397ba0]">0{index + 1}</span>
+                  <span className="text-sm leading-6 text-[#40584d]">{item}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section id="documents" className="scroll-mt-20 border-t border-[#e4ebe6] bg-[#eef3f7] px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">To file</p>
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.025em]">What we need to file</h2>
+              <ol className="mt-8 border-t border-[#d5e0e8]">
+                {filingNeeds.map((item, index) => (
+                  <li key={item} className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-[#d5e0e8] py-4 text-sm leading-6">
+                    <span className="font-serif text-[#397ba0]">0{index + 1}</span>
                     <span>{item}</span>
                   </li>
+                ))}
+              </ol>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">Clients</p>
+              <h2 className="mt-4 text-3xl font-medium tracking-[-0.025em]">Who this is for</h2>
+              <ul className="mt-8 border-t border-[#d5e0e8]">
+                {audiences.map((item) => (
+                  <li key={item} className="border-b border-[#d5e0e8] py-4 text-sm leading-6">{item}</li>
                 ))}
               </ul>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto grid max-w-6xl gap-6 px-5 py-7 sm:px-8 md:grid-cols-3">
-            {[
-              ["Based in Kampala", "A local team you can reach on WhatsApp."],
-              ["Fixed service fees", "The package fee is clear before work starts."],
-              ["Works from abroad", "Many documents can be sent and signed digitally."],
-            ].map(([title, text]) => (
-              <div key={title} className="flex gap-3">
-                <ShieldCheck className="size-6 shrink-0 text-[#1d5b73]" />
-                <p className="text-sm text-muted"><strong className="block text-[#14211f]">{title}</strong>{text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="bg-[#e8f0ed]">
-          <div className="mx-auto grid max-w-6xl gap-5 px-5 py-8 sm:px-8 sm:grid-cols-3">
-            {[
-              ["3", "fixed-fee packages"],
-              ["4", "clear setup stages"],
-              ["1", "Kampala coordination team"],
-            ].map(([value, label]) => (
-              <div key={label} className="border-l-2 border-[#74b8df] px-5">
-                <p className="text-3xl font-semibold tracking-tight text-[#0e4a47]">{value}</p>
-                <p className="mt-1 text-sm text-muted">{label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="packages" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <h2 className="max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">Choose the level of support you need</h2>
-          <p className="mt-4 max-w-2xl text-muted">Every package starts with a conversation so we can confirm the right route for your ownership, sector and documents.</p>
-          <div className="mt-9 grid gap-5 lg:grid-cols-3">
-            {packages.map((item) => (
-              <article key={item.name} className={`flex flex-col rounded-lg border bg-white p-6 ${item.featured ? "border-2 border-[#0e4a47] shadow-lg" : "border-border"}`}>
-                {item.featured && <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-[#0e4a47]">Most chosen</p>}
-                <h3 className="text-xl font-semibold">{item.name}</h3>
-                <p className="mt-3 text-4xl font-semibold tracking-tight">{item.price}<span className="ml-2 text-sm font-normal text-muted">service fee</span></p>
-                <ul className="mt-5 flex-1 space-y-3 text-sm text-muted">{item.items.map((feature) => <li key={feature} className="flex gap-2"><Check className="size-5 shrink-0 text-[#0e4a47]" />{feature}</li>)}</ul>
-                <a href={packageWhatsAppUrl(item.name)} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center justify-center gap-2 rounded-md bg-[#0e4a47] px-4 py-3 text-sm font-semibold text-white hover:bg-[#083331]">
-                  Ask about {item.name} <ArrowRight size={16} />
-                </a>
-              </article>
-            ))}
-          </div>
-          <p className="mt-5 text-sm text-muted">Service fees exclude government fees and third-party costs. We quote those separately and confirm them before filing.</p>
-        </section>
-
-        <section id="process" className="bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">How it works</h2>
-            <div className="mt-9 grid gap-4 md:grid-cols-4">
-              {steps.map(([title, text], index) => (
-                <div key={title} className="rounded-lg border-l-4 border-[#74b8df] bg-[#f2f6f5] p-5">
-                  <p className="text-2xl font-semibold text-[#1d5b73]">0{index + 1}</p>
-                  <h3 className="mt-2 font-semibold">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{text}</p>
-                </div>
+        <section id="faq" className="scroll-mt-20 px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">Questions</p>
+              <h2 className="mt-4 text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">Common questions</h2>
+            </div>
+            <div className="border-t border-[#dce2da]">
+              {questions.map(([question, answer]) => (
+                <details key={question} className="group border-b border-[#dce2da]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-base font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#74b8df]">
+                    {question}
+                    <span className="font-serif text-lg text-[#397ba0] group-open:hidden" aria-hidden="true">+</span>
+                    <span className="hidden font-serif text-lg text-[#397ba0] group-open:inline" aria-hidden="true">–</span>
+                  </summary>
+                  <p className="max-w-2xl pb-6 text-sm leading-7 text-[#5b6c63]">{answer}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#eef4f7]">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-            <div className="relative min-h-72 overflow-hidden rounded-xl bg-[#dbe8ed]">
-              <Image
-                src={facilitationImage}
-                alt="Modern workspace for business planning and investor meetings"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
+        <section id="quote" className="scroll-mt-20 bg-[#eef3f7] px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1d5b73]">
-                Beyond registration
-              </p>
-              <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-                A practical route from company setup to market entry
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">Instruction</p>
+              <h2 className="mt-4 max-w-md text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+                Instruct the registration desk
               </h2>
-              <p className="mt-4 max-w-2xl leading-7 text-muted">
-                Once your company is registered, we can help structure the next
-                conversation: sector research, local partner screening,
-                introductions, and a checklist of approvals to investigate.
+              <p className="mt-5 max-w-md text-sm leading-7 text-[#5b6c63] sm:text-base">
+                Send your name, country, package and activity. We reply on WhatsApp with the document checklist and the government fees for your case.
               </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {[
-                  "Sector and market-entry orientation",
-                  "Local partner and supplier introductions",
-                  "Investor journey and approval checklist",
-                  "Follow-up coordination in Kampala",
-                ].map((item) => (
-                  <div key={item} className="rounded-md border border-[#cbdce4] bg-white p-4 text-sm font-medium text-[#214858]">
-                    <Check className="mb-2 size-5 text-[#1d5b73]" />
-                    {item}
-                  </div>
-                ))}
+              <div className="mt-9 border-l-2 border-[#74b8df] pl-5 text-sm leading-6 text-[#5b6c63]">
+                <p className="font-semibold text-[#18372e]">Diamond Capital Africa</p>
+                <p className="mt-2">{company.address}</p>
+                <a className="mt-2 inline-block underline decoration-[#74b8df] underline-offset-4 hover:text-[#18372e]" href={`mailto:${company.email}`}>{company.email}</a>
+                <p className="mt-2">
+                  Registration desk: <a className="font-semibold text-[#18372e]" href={`tel:${registrationTel}`}>{registrationDesk}</a>
+                </p>
+                <p className="mt-3 text-[#18372e]">We reply the same business day.</p>
               </div>
-              <p className="mt-5 text-xs leading-5 text-muted">
-                Diamond Capital Africa is independent and is not the Uganda
-                Investment Authority or a government agency. Licensing,
-                approvals, tax and eligibility depend on your project and must
-                be confirmed with the relevant authorities.
-              </p>
-              <a
-                href="https://ugandainvest.go.ug/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1d5b73] underline underline-offset-4"
-              >
-                Review official Uganda investor information <ArrowRight size={15} />
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#0e4a47] text-white">
-          <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:px-8 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#a6d7f1]">
-                Built for founders
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                One local contact for the next practical question
-              </h2>
-              <p className="mt-4 max-w-2xl leading-7 text-white/75">
-                Start with registration, then ask what comes next for your
-                sector, ownership structure and operating model in Uganda.
-              </p>
-            </div>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-[#74b8df] px-5 py-3 text-sm font-semibold text-[#102c3d] transition hover:bg-[#a6d7f1]"
-            >
-              Discuss your next step <ArrowRight size={16} />
-            </a>
-          </div>
-        </section>
-
-        <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-2">
-          <div>
-            <h2 className="text-2xl font-semibold">What we need from you</h2>
-            <ul className="mt-5 space-y-3 text-muted">
-              {["Passport copy for each director and shareholder", "Proof of address for each director", "Two or three proposed company names", "A short description of the company activity", "Email and phone number for each director"].map((item) => <li key={item} className="flex gap-2"><FileText className="size-5 shrink-0 text-[#1d5b73]" />{item}</li>)}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-2xl font-semibold">Who this is for</h2>
-            <ul className="mt-5 space-y-3 text-muted">
-              {["Foreign investors entering the Ugandan market", "Expats living in Uganda", "Diaspora founders setting up from abroad", "Traders and exporters needing a local company"].map((item) => <li key={item} className="flex gap-2"><Check className="size-5 shrink-0 text-[#1d5b73]" />{item}</li>)}
-            </ul>
-          </div>
-        </section>
-
-        <section id="faq" className="bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-            <h2 className="text-3xl font-semibold tracking-tight">Common questions</h2>
-            <div className="mt-7 max-w-3xl space-y-3">
-              {[
-                ["Can a foreigner register a company in Uganda?", "Foreign ownership and director requirements depend on the structure and activity. We confirm the route and current requirements before filing."],
-                ["Can I do this from outside Uganda?", "Many steps can be handled remotely, but we confirm whether your case requires an original signature, visit or additional verification."],
-                ["How much does it cost in total?", "You pay the selected service fee plus applicable government and third-party costs. We confirm the full amount before filing anything."],
-                ["How long does it take?", "Timing depends on name approval, document quality, authority processing and how quickly you respond. We give a realistic estimate after reviewing your case."],
-              ].map(([question, answer]) => <details key={question} className="rounded-md border border-border p-4"><summary className="cursor-pointer font-semibold">{question}</summary><p className="mt-3 text-sm leading-6 text-muted">{answer}</p></details>)}
-            </div>
-          </div>
-        </section>
-
-        <section id="quote" className="bg-[#0e4a47]">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
-            <div className="text-white">
-              <MessageCircle className="size-9 text-[#74b8df]" />
-              <h2 className="mt-5 text-3xl font-semibold tracking-tight">Get your quote today</h2>
-              <p className="mt-4 leading-7 text-white/75">Share four details and WhatsApp will open with a prepared quote request.</p>
-              <p className="mt-6 text-sm text-white/70">Registration WhatsApp: <a className="font-semibold text-[#a6d7f1]" href="tel:+256704833021">+256 704 833 021</a></p>
             </div>
             <BusinessRegistrationForm />
           </div>
         </section>
       </main>
 
-      <footer className="bg-[#083331] px-5 py-8 text-sm text-white/65 sm:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p><strong className="text-white">{company.name}</strong> · {company.address}</p>
+      <footer className="bg-[#102c25] px-5 py-10 text-white sm:px-8 lg:px-14">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="flex flex-col gap-7 border-b border-white/15 pb-8 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p className="text-sm font-semibold tracking-[0.12em]">DIAMOND CAPITAL AFRICA</p>
+              <p className="mt-2 text-xs text-white/60">{company.address}</p>
+              <p className="mt-2 text-xs text-white/60">
+                <a className="underline-offset-4 hover:text-white hover:underline" href={`mailto:${company.email}`}>{company.email}</a>
+                <span className="mx-2 text-white/30">·</span>
+                <a className="underline-offset-4 hover:text-white hover:underline" href={`tel:${registrationTel}`}>{registrationDesk}</a>
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs text-white/70">
+              <a className="underline-offset-4 hover:text-white hover:underline" href="https://www.diamondcapitalafrica.com/legal/privacy">Privacy policy</a>
+              <a className="underline-offset-4 hover:text-white hover:underline" href="https://www.diamondcapitalafrica.com/">Main website</a>
+              <a className="underline-offset-4 hover:text-white hover:underline" href="https://ugandainvest.go.ug/" target="_blank" rel="noopener noreferrer">Uganda Investment Authority</a>
+            </div>
+          </div>
+          <p className="max-w-3xl pt-6 text-[11px] leading-5 text-white/50">
+            Diamond Capital Africa prepares and files company and tax applications from Kampala. We do not issue licences, grant investment approvals, or give legal, tax or immigration advice. Government fees are confirmed before filing.
+          </p>
         </div>
       </footer>
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with the company registration desk on WhatsApp"
-        className="fixed bottom-5 right-5 z-30 inline-flex items-center gap-3 rounded-full bg-[#25d366] px-5 py-3 text-sm font-semibold text-white shadow-xl transition hover:bg-[#20bd5a] hover:shadow-2xl"
-      >
-        <WhatsAppIcon className="size-5" />
-        <span className="hidden sm:inline">Chat on WhatsApp</span>
-      </a>
     </div>
   );
 }
