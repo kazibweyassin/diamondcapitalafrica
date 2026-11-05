@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, FileText, MessageCircle, ShieldCheck } from "lucide-react";
 import BusinessRegistrationForm from "@/components/BusinessRegistrationForm";
@@ -63,7 +64,7 @@ export default function BusinessRegistrationPage() {
       <header className="bg-[#083331] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
           <Link href="#top" className="flex items-center gap-3 font-semibold tracking-tight">
-            <span className="flex size-9 items-center justify-center rounded-sm bg-[#74b8df] text-sm font-bold text-[#102c3d]">DCA</span>
+            <Image src="/Logo.png" alt="Diamond Capital Africa" width={94} height={38} className="h-9 w-auto object-contain" />
             <span>Diamond Capital <span className="text-[#a6d7f1]">Africa</span></span>
           </Link>
           <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm text-white/75 lg:flex">
@@ -181,6 +182,85 @@ export default function BusinessRegistrationPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-[#eef4f7]">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+            <div className="relative min-h-72 overflow-hidden rounded-xl bg-[#dbe8ed]">
+              <Image
+                src="/images/heroes/operations.jpg"
+                alt="Gold operations and business activity in Uganda"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1d5b73]">
+                Beyond registration
+              </p>
+              <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+                A practical route from company setup to market entry
+              </h2>
+              <p className="mt-4 max-w-2xl leading-7 text-muted">
+                Once your company is registered, we can help structure the next
+                conversation: sector research, local partner screening,
+                introductions, and a checklist of approvals to investigate.
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Sector and market-entry orientation",
+                  "Local partner and supplier introductions",
+                  "Investor journey and approval checklist",
+                  "Follow-up coordination in Kampala",
+                ].map((item) => (
+                  <div key={item} className="rounded-md border border-[#cbdce4] bg-white p-4 text-sm font-medium text-[#214858]">
+                    <Check className="mb-2 size-5 text-[#1d5b73]" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <p className="mt-5 text-xs leading-5 text-muted">
+                Diamond Capital Africa is independent and is not the Uganda
+                Investment Authority or a government agency. Licensing,
+                approvals, tax and eligibility depend on your project and must
+                be confirmed with the relevant authorities.
+              </p>
+              <a
+                href="https://ugandainvest.go.ug/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1d5b73] underline underline-offset-4"
+              >
+                Review official Uganda investor information <ArrowRight size={15} />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#0e4a47] text-white">
+          <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:px-8 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#a6d7f1]">
+                Built for founders
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                One local contact for the next practical question
+              </h2>
+              <p className="mt-4 max-w-2xl leading-7 text-white/75">
+                Start with registration, then ask what comes next for your
+                sector, ownership structure and operating model in Uganda.
+              </p>
+            </div>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-[#74b8df] px-5 py-3 text-sm font-semibold text-[#102c3d] transition hover:bg-[#a6d7f1]"
+            >
+              Discuss your next step <ArrowRight size={16} />
+            </a>
           </div>
         </section>
 
