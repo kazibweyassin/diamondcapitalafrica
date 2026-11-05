@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const fieldClass =
-  "mt-2 w-full rounded-md border border-white/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-gold focus:ring-2 focus:ring-gold/30";
+  "mt-2 w-full rounded-md border border-white/20 bg-white px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-[#74b8df] focus:ring-2 focus:ring-[#74b8df]/30";
 
 export default function BusinessRegistrationForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -29,11 +29,11 @@ export default function BusinessRegistrationForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-lg border border-gold/40 bg-white/10 p-6 text-white">
+      <div className="rounded-lg border border-[#74b8df]/40 bg-white/10 p-6 text-white">
         <h3 className="text-xl font-semibold">Your WhatsApp message is ready</h3>
         <p className="mt-2 text-sm leading-6 text-white/75">
           If WhatsApp did not open, message our registration desk directly on{" "}
-          <a className="font-semibold text-gold-light underline" href="tel:+256704833021">
+          <a className="font-semibold text-[#a6d7f1] underline" href="tel:+256704833021">
             +256 704 833 021
           </a>
           .
@@ -41,7 +41,7 @@ export default function BusinessRegistrationForm() {
         <button
           type="button"
           onClick={() => setSubmitted(false)}
-          className="mt-5 text-sm font-semibold text-gold-light underline underline-offset-4"
+          className="mt-5 text-sm font-semibold text-[#a6d7f1] underline underline-offset-4"
         >
           Send another enquiry
         </button>
@@ -82,7 +82,7 @@ export default function BusinessRegistrationForm() {
       </label>
       <button
         type="submit"
-        className="mt-2 rounded-md bg-gold px-5 py-3 text-sm font-semibold text-[#1b1403] transition hover:bg-gold-light"
+        className="mt-2 rounded-md bg-[#74b8df] px-5 py-3 text-sm font-semibold text-[#102c3d] transition hover:bg-[#a6d7f1]"
       >
         Send quote request on WhatsApp
       </button>

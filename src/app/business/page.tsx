@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, FileText, MessageCircle, ShieldCheck } from "lucide-react";
 import BusinessRegistrationForm from "@/components/BusinessRegistrationForm";
@@ -64,10 +63,16 @@ export default function BusinessRegistrationPage() {
       <header className="bg-[#083331] text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
           <Link href="#top" className="flex items-center gap-3 font-semibold tracking-tight">
-            <Image src="/Logo.png" alt="" width={38} height={38} className="size-9 rounded-sm object-contain" />
-            <span>Diamond Capital <span className="text-gold">Africa</span></span>
+            <span className="flex size-9 items-center justify-center rounded-sm bg-[#74b8df] text-sm font-bold text-[#102c3d]">DCA</span>
+            <span>Diamond Capital <span className="text-[#a6d7f1]">Africa</span></span>
           </Link>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-gold px-4 py-2 text-sm font-semibold text-[#1b1403]">
+          <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm text-white/75 lg:flex">
+            <a href="#packages" className="transition hover:text-white">Packages</a>
+            <a href="#process" className="transition hover:text-white">Process</a>
+            <a href="#faq" className="transition hover:text-white">FAQ</a>
+            <a href="#quote" className="transition hover:text-white">Contact</a>
+          </nav>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-[#74b8df] px-4 py-2 text-sm font-semibold text-[#102c3d] transition hover:bg-[#a6d7f1]">
             <WhatsAppIcon className="size-4" /> WhatsApp us
           </a>
         </div>
@@ -75,12 +80,12 @@ export default function BusinessRegistrationPage() {
 
       <main id="top">
         <section className="relative overflow-hidden bg-[#0e4a47] text-white">
-          <div className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full border border-gold/20" />
+          <div className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full border border-[#74b8df]/20" />
           <div className="pointer-events-none absolute -bottom-48 -left-24 size-96 rounded-full border border-white/10" />
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:py-24">
             <div>
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-gold-light">
-                <span className="size-1.5 rounded-full bg-gold" /> Kampala, Uganda
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#74b8df]/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#a6d7f1]">
+                <span className="size-1.5 rounded-full bg-[#74b8df]" /> Kampala, Uganda
               </p>
               <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
                 Establish your business presence in Uganda with confidence.
@@ -91,7 +96,7 @@ export default function BusinessRegistrationPage() {
                 to your company file, we coordinate the practical next steps.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-md bg-gold px-5 py-3 text-sm font-semibold text-[#1b1403] hover:bg-gold-light">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-md bg-[#74b8df] px-5 py-3 text-sm font-semibold text-[#102c3d] hover:bg-[#a6d7f1]">
                   Get your quote on WhatsApp
                 </a>
                 <a href="#quote" className="rounded-md border border-white/40 px-5 py-3 text-sm font-semibold hover:bg-white/10">
@@ -99,8 +104,8 @@ export default function BusinessRegistrationPage() {
                 </a>
               </div>
             </div>
-            <div className="rounded-lg border-t-4 border-gold bg-white p-6 text-[#14211f] shadow-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-dark">Your setup roadmap</p>
+            <div className="rounded-lg border-t-4 border-[#74b8df] bg-white p-6 text-[#14211f] shadow-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1d5b73]">Your setup roadmap</p>
               <h2 className="mt-2 text-xl font-semibold">A company file built for your next move</h2>
               <p className="mt-1 text-sm text-muted">What the setup process can cover</p>
               <ul className="mt-5 space-y-3">
@@ -123,7 +128,7 @@ export default function BusinessRegistrationPage() {
               ["Works from abroad", "Many documents can be sent and signed digitally."],
             ].map(([title, text]) => (
               <div key={title} className="flex gap-3">
-                <ShieldCheck className="size-6 shrink-0 text-gold-dark" />
+                <ShieldCheck className="size-6 shrink-0 text-[#1d5b73]" />
                 <p className="text-sm text-muted"><strong className="block text-[#14211f]">{title}</strong>{text}</p>
               </div>
             ))}
@@ -137,7 +142,7 @@ export default function BusinessRegistrationPage() {
               ["4", "clear setup stages"],
               ["1", "Kampala coordination team"],
             ].map(([value, label]) => (
-              <div key={label} className="border-l-2 border-gold px-5">
+              <div key={label} className="border-l-2 border-[#74b8df] px-5">
                 <p className="text-3xl font-semibold tracking-tight text-[#0e4a47]">{value}</p>
                 <p className="mt-1 text-sm text-muted">{label}</p>
               </div>
@@ -164,13 +169,13 @@ export default function BusinessRegistrationPage() {
           <p className="mt-5 text-sm text-muted">Service fees exclude government fees and third-party costs. We quote those separately and confirm them before filing.</p>
         </section>
 
-        <section className="bg-white">
+        <section id="process" className="bg-white">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">How it works</h2>
             <div className="mt-9 grid gap-4 md:grid-cols-4">
               {steps.map(([title, text], index) => (
-                <div key={title} className="rounded-lg border-l-4 border-gold bg-[#f2f6f5] p-5">
-                  <p className="text-2xl font-semibold text-gold-dark">0{index + 1}</p>
+                <div key={title} className="rounded-lg border-l-4 border-[#74b8df] bg-[#f2f6f5] p-5">
+                  <p className="text-2xl font-semibold text-[#1d5b73]">0{index + 1}</p>
                   <h3 className="mt-2 font-semibold">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted">{text}</p>
                 </div>
@@ -183,13 +188,13 @@ export default function BusinessRegistrationPage() {
           <div>
             <h2 className="text-2xl font-semibold">What we need from you</h2>
             <ul className="mt-5 space-y-3 text-muted">
-              {["Passport copy for each director and shareholder", "Proof of address for each director", "Two or three proposed company names", "A short description of the company activity", "Email and phone number for each director"].map((item) => <li key={item} className="flex gap-2"><FileText className="size-5 shrink-0 text-gold-dark" />{item}</li>)}
+              {["Passport copy for each director and shareholder", "Proof of address for each director", "Two or three proposed company names", "A short description of the company activity", "Email and phone number for each director"].map((item) => <li key={item} className="flex gap-2"><FileText className="size-5 shrink-0 text-[#1d5b73]" />{item}</li>)}
             </ul>
           </div>
           <div>
             <h2 className="text-2xl font-semibold">Who this is for</h2>
             <ul className="mt-5 space-y-3 text-muted">
-              {["Foreign investors entering the Ugandan market", "Expats living in Uganda", "Diaspora founders setting up from abroad", "Traders and exporters needing a local company"].map((item) => <li key={item} className="flex gap-2"><Check className="size-5 shrink-0 text-gold-dark" />{item}</li>)}
+              {["Foreign investors entering the Ugandan market", "Expats living in Uganda", "Diaspora founders setting up from abroad", "Traders and exporters needing a local company"].map((item) => <li key={item} className="flex gap-2"><Check className="size-5 shrink-0 text-[#1d5b73]" />{item}</li>)}
             </ul>
           </div>
         </section>
@@ -211,10 +216,10 @@ export default function BusinessRegistrationPage() {
         <section id="quote" className="bg-[#0e4a47]">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
             <div className="text-white">
-              <MessageCircle className="size-9 text-gold" />
+              <MessageCircle className="size-9 text-[#74b8df]" />
               <h2 className="mt-5 text-3xl font-semibold tracking-tight">Get your quote today</h2>
               <p className="mt-4 leading-7 text-white/75">Share four details and WhatsApp will open with a prepared quote request.</p>
-              <p className="mt-6 text-sm text-white/70">Registration WhatsApp: <a className="font-semibold text-gold-light" href="tel:+256704833021">+256 704 833 021</a></p>
+              <p className="mt-6 text-sm text-white/70">Registration WhatsApp: <a className="font-semibold text-[#a6d7f1]" href="tel:+256704833021">+256 704 833 021</a></p>
             </div>
             <BusinessRegistrationForm />
           </div>
