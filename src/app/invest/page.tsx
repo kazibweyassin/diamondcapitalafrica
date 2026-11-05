@@ -19,7 +19,7 @@ import { company } from "@/data/content";
 const pageTitle = "Explore Business Opportunities in Uganda | Diamond Capital Africa";
 const pageDescription =
   "Explore commercial opportunities in Uganda across agriculture, manufacturing, food processing, energy and regional distribution. Start a practical conversation about market entry.";
-const canonicalUrl = "https://invest.diamondcapitalafrica.com/";
+const canonicalUrl = "https://www.diamondcapitalafrica.com/invest";
 const heroImage =
   "https://images.unsplash.com/photo-1763220207281-c4d0febb61a8?auto=format&fit=crop&w=2400&q=85";
 

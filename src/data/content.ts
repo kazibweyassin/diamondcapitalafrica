@@ -149,7 +149,7 @@ export const navItems = [
       },
       {
         label: "Invest in Uganda",
-        href: "https://invest.diamondcapitalafrica.com/",
+        href: "/invest",
       },
       { label: "How to Buy Gold", href: "/how-to-buy" },
       { label: "About Gold", href: "/about-gold" },

@@ -4,7 +4,7 @@ import { ArrowRight, Check, FileText, MessageCircle, ShieldCheck } from "lucide-
 import BusinessRegistrationForm from "@/components/BusinessRegistrationForm";
 import { company } from "@/data/content";
 
-const canonicalUrl = "https://business.diamondcapitalafrica.com/";
+const canonicalUrl = "https://invest.diamondcapitalafrica.com/";
 
 export const metadata: Metadata = {
   title: { absolute: "Register a Company in Uganda | Diamond Capital Africa" },

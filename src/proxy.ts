@@ -1,7 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 const INVEST_HOST = "invest.diamondcapitalafrica.com";
-const BUSINESS_HOST = "business.diamondcapitalafrica.com";
 
 export function proxy(request: NextRequest) {
   const requestHost = (request.headers.get("x-forwarded-host") ?? request.headers.get("host") ?? request.nextUrl.hostname)
@@ -10,13 +9,11 @@ export function proxy(request: NextRequest) {
     .split(":")[0]
     .toLowerCase();
 
-  if (requestHost !== INVEST_HOST && requestHost !== BUSINESS_HOST) {
+  if (requestHost !== INVEST_HOST) {
     return NextResponse.next();
   }
 
-  return NextResponse.rewrite(
-    new URL(requestHost === BUSINESS_HOST ? "/business" : "/invest", request.url),
-  );
+  return NextResponse.rewrite(new URL("/business", request.url));
 }
 
 export const config = {
