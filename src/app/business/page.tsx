@@ -15,6 +15,11 @@ const instructionMessage =
 
 const whatsappUrl = `https://wa.me/${registrationWa}?text=${encodeURIComponent(instructionMessage)}`;
 
+const heroImage =
+  "https://images.unsplash.com/photo-1675756261486-09bd1e0f6c8a?auto=format&fit=crop&w=2400&q=80";
+const streetImage =
+  "https://images.unsplash.com/photo-1568635446747-e5981ccd1264?auto=format&fit=crop&w=1800&q=80";
+
 const anchorClass =
   "rounded-sm outline-none transition focus-visible:ring-2 focus-visible:ring-[#74b8df] focus-visible:ring-offset-2 focus-visible:ring-offset-[#17382e]";
 
@@ -30,6 +35,7 @@ export const metadata: Metadata = {
     description:
       "Fixed-fee company registration in Uganda. Name reservation, incorporation and TIN from a Kampala desk.",
     siteName: company.name,
+    images: [{ url: heroImage, alt: "Kampala, seen from above Kingdom Kampala" }],
   },
   robots: { index: true, follow: true },
 };
@@ -189,8 +195,18 @@ export default function BusinessRegistrationPage() {
       </header>
 
       <main id="top">
-        <section className="bg-[#102c25] text-white">
-          <div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-16 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:px-14 lg:py-24">
+        <section className="relative isolate min-h-[720px] overflow-hidden bg-[#102c25] text-white lg:min-h-[760px]">
+          <Image
+            src={heroImage}
+            alt="Kampala, seen from above Kingdom Kampala and the hills"
+            fill
+            preload
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-[72%_40%]"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,44,37,0.88)_0%,rgba(16,44,37,0.62)_48%,rgba(16,44,37,0.82)_100%)] lg:bg-[linear-gradient(90deg,rgba(16,44,37,0.94)_0%,rgba(16,44,37,0.82)_34%,rgba(16,44,37,0.34)_68%,rgba(16,44,37,0.12)_100%)]" />
+          <div className="relative mx-auto grid min-h-[720px] max-w-[1440px] gap-14 px-5 py-16 sm:px-8 lg:min-h-[760px] lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:px-14 lg:py-16">
             <div>
               <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#a6d7f1]">
                 <span className="h-px w-9 bg-[#74b8df]" /> Company formation · Kampala
@@ -210,9 +226,21 @@ export default function BusinessRegistrationPage() {
                 </a>
               </div>
               <p className="mt-6 text-sm text-white/60">We reply the same business day.</p>
+              <p className="mt-4 text-[11px] text-white/55">
+                Kampala · Photo by{" "}
+                <a
+                  href="https://unsplash.com/photos/a-view-of-a-city-from-a-tall-building-lii0uaz8Ieo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/30 underline-offset-2 hover:text-white"
+                >
+                  Keith Kasaija
+                </a>{" "}
+                / Unsplash
+              </p>
             </div>
 
-            <aside className="border border-white/15 bg-white text-[#18372e]">
+            <aside className="relative z-10 border border-white/15 bg-white text-[#18372e]">
               <div className="flex items-center justify-between border-b border-[#e4ebe6] px-6 py-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#397ba0]">What you receive</p>
                 <p className="font-serif text-xs tracking-wide text-[#397ba0]">DCA · Kampala</p>
@@ -394,14 +422,40 @@ export default function BusinessRegistrationPage() {
                 Instruct us on WhatsApp <ArrowRight size={15} />
               </a>
             </div>
-            <ol className="border-y border-[#dce2da]">
+            <div>
+              <figure>
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#102c25]">
+                  <Image
+                    src={streetImage}
+                    alt="A busy crossroad in Kampala"
+                    fill
+                    unoptimized
+                    sizes="(min-width: 1024px) 640px, 100vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[11px] leading-5 text-[#758178]">
+                  Kampala · Photo by{" "}
+                  <a
+                    href="https://unsplash.com/photos/people-and-vehicle-6uYFl_LJEFM"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-[#c5d0c8] underline-offset-2 hover:text-[#18372e]"
+                  >
+                    Alessandro Leonardi
+                  </a>{" "}
+                  / Unsplash
+                </figcaption>
+              </figure>
+              <ol className="mt-8 border-y border-[#dce2da]">
               {afterIncorporation.map((item, index) => (
                 <li key={item} className="grid grid-cols-[3rem_1fr] gap-4 border-b border-[#dce2da] py-5 last:border-b-0">
                   <span className="font-serif text-sm text-[#397ba0]">0{index + 1}</span>
                   <span className="text-sm leading-6 text-[#40584d]">{item}</span>
                 </li>
               ))}
-            </ol>
+              </ol>
+            </div>
           </div>
         </section>
 
