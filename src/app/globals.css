@@ -47,3 +47,7 @@ body {
 body:has(main .investment-landing) > .site-chrome {
   display: none !important;
 }
+
+body:has(main .business-landing) > .site-chrome {
+  display: none !important;
+}
