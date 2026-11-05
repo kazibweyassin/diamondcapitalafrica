@@ -204,7 +204,6 @@ export default function BusinessRegistrationPage() {
       <footer className="bg-[#083331] px-5 py-8 text-sm text-white/65 sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p><strong className="text-white">{company.name}</strong> · {company.address}</p>
-          <p>General information only; confirm legal, tax and regulatory requirements with qualified advisers.</p>
         </div>
       </footer>
     </div>
