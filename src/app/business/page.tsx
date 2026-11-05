@@ -105,6 +105,45 @@ const audiences = [
   "Traders and exporters needing a local company",
 ];
 
+const investorServices = [
+  {
+    number: "01",
+    title: "Understand the market",
+    text: "A focused orientation on your sector, location, customer and operating model before you commit to setup costs.",
+    deliverable: "Sector and market-entry brief",
+  },
+  {
+    number: "02",
+    title: "Plan the setup",
+    text: "A practical checklist covering ownership, company structure, tax, banking, staffing and the first approvals to investigate.",
+    deliverable: "Project setup checklist",
+  },
+  {
+    number: "03",
+    title: "Establish the company",
+    text: "Name reservation, incorporation filing, TIN coordination and a consolidated company file from a Kampala desk.",
+    deliverable: "Certificate and company file",
+  },
+  {
+    number: "04",
+    title: "Prepare for compliance",
+    text: "We help you identify the licences, permits, standards, immigration or environmental questions relevant to your activity.",
+    deliverable: "Authority and approvals map",
+  },
+  {
+    number: "05",
+    title: "Activate operations",
+    text: "Introductions to relevant local contacts, suppliers or service providers, followed by practical Kampala coordination.",
+    deliverable: "Introductions and next actions",
+  },
+  {
+    number: "06",
+    title: "Support the next phase",
+    text: "Return for help with a new location, additional activity, partner conversation or a bottleneck in your setup journey.",
+    deliverable: "Follow-up coordination",
+  },
+];
+
 const questions = [
   ["Can a foreigner register a company in Uganda?", "Yes. A foreign national can incorporate and own a Ugandan company. Before we file, we confirm the shareholding, the director rules and any restriction on your activity."],
   ["Can I do this from outside Uganda?", "Yes. We run the filing from Kampala on documents you send. We tell you at the start if your case needs an original signature or a visit."],
@@ -123,9 +162,10 @@ export default function BusinessRegistrationPage() {
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#17382e] text-white">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-14">
           <Link href="#top" aria-label="Diamond Capital Africa" className={`flex items-center ${anchorClass}`}>
-            <Image src="/Logo.png" alt="" width={168} height={68} className="h-10 w-auto object-contain" />
+            <Image src="/Logo.png" alt="" width={168} height={68} priority className="h-12 w-auto object-contain" />
           </Link>
           <nav aria-label="Main navigation" className="hidden items-center gap-8 text-sm text-white/75 lg:flex">
+            <a className={`${anchorClass} hover:text-white`} href="#services">Services</a>
             <a className={`${anchorClass} hover:text-white`} href="#packages">Packages</a>
             <a className={`${anchorClass} hover:text-white`} href="#process">Process</a>
             <a className={`${anchorClass} hover:text-white`} href="#documents">Documents</a>
@@ -137,6 +177,7 @@ export default function BusinessRegistrationPage() {
           <details className="relative lg:hidden">
             <summary className={`cursor-pointer list-none border border-white/30 px-3 py-2 text-sm ${anchorClass}`}>Menu</summary>
             <nav aria-label="Mobile navigation" className="absolute right-0 top-12 z-30 flex w-56 flex-col gap-1 border border-[#dce3dc] bg-white p-3 text-sm text-[#18372e] shadow-xl">
+              <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#services">Services</a>
               <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#packages">Packages</a>
               <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#process">Process</a>
               <a className="px-3 py-2 hover:bg-[#eef3f7]" href="#documents">Documents</a>
@@ -209,6 +250,45 @@ export default function BusinessRegistrationPage() {
           </div>
         </section>
 
+        <section id="services" className="scroll-mt-20 bg-[#eef3f7] px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">The investor journey</p>
+                <h2 className="mt-4 max-w-xl text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl">
+                  More than incorporation: a clear route into Uganda
+                </h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-7 text-[#5b6c63] lg:justify-self-end">
+                Use us at the stage where you need help. We turn an early
+                question into a short brief, checklist, introduction or
+                follow-up action. Official agencies make the decisions; we
+                help you prepare, coordinate and keep the work moving.
+              </p>
+            </div>
+            <div className="mt-12 grid border-t border-[#cfdad4] sm:grid-cols-2 lg:grid-cols-3">
+              {investorServices.map((service) => (
+                <article key={service.number} className="border-b border-[#cfdad4] py-7 sm:px-6 sm:odd:border-r lg:px-8 lg:nth-[3n+1]:border-r lg:nth-[3n+2]:border-r lg:first:pl-0 lg:nth-[3n+1]:pl-0">
+                  <span className="font-serif text-sm text-[#397ba0]">{service.number}</span>
+                  <h3 className="mt-4 text-lg font-medium">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-[#5b6c63]">{service.text}</p>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#397ba0]">{service.deliverable}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-10 flex flex-col gap-4 border-l-2 border-[#74b8df] pl-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-2xl text-sm leading-6 text-[#40584d]">
+                We are an independent private service, not a government
+                one-stop centre. Licences, permits, incentives and approvals
+                remain subject to the relevant Ugandan authorities.
+              </p>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#18372e] hover:text-[#397ba0]">
+                Discuss your project <ArrowRight size={15} />
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section id="packages" className="scroll-mt-20 px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
           <div className="mx-auto max-w-[1440px] border-b border-[#e4ebe6] pb-16">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#397ba0]">The outcome</p>
@@ -250,8 +330,8 @@ export default function BusinessRegistrationPage() {
                 key={item.name}
                 className={`flex flex-col border-b border-[#dce2da] p-7 last:border-b-0 sm:p-8 lg:border-b-0 lg:border-r lg:last:border-r-0 ${item.featured ? "bg-[#18372e] text-white" : "bg-white"}`}
               >
-                <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${item.featured ? "text-[#a6d7f1]" : "text-[#397ba0]"}`}>
-                  {item.featured ? "Standard engagement" : "Service fee"}
+                <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${item.featured ? "text-[#a6d7f1]" : "text-transparent"}`} aria-hidden={item.featured ? undefined : true}>
+                  Standard engagement
                 </p>
                 <h3 className="mt-4 text-2xl font-medium tracking-[-0.02em]">{item.name}</h3>
                 <p className="mt-5 text-4xl font-medium tracking-[-0.03em]">
