@@ -7,6 +7,8 @@ import { company } from "@/data/content";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const canonicalUrl = "https://invest.diamondcapitalafrica.com/";
+const facilitationImage =
+  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85";
 
 export const metadata: Metadata = {
   title: { absolute: "Register a Company in Uganda | Diamond Capital Africa" },
@@ -189,8 +191,8 @@ export default function BusinessRegistrationPage() {
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
             <div className="relative min-h-72 overflow-hidden rounded-xl bg-[#dbe8ed]">
               <Image
-                src="/images/heroes/operations.jpg"
-                alt="Gold operations and business activity in Uganda"
+                src={facilitationImage}
+                alt="Modern workspace for business planning and investor meetings"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
